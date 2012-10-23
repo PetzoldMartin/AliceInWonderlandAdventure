@@ -24,9 +24,9 @@ public class HelpCommand extends Command
      */
     public boolean execute(Player player)
     {
-        System.out.println("You are lost. You are alone. You wander");
-        System.out.println("around at the university.");
-        System.out.println();
+        System.out.println("You are lost. You are alone. You know");
+        System.out.println("you fall in a fountain ,when you.");
+        System.out.println("follows the white Rabbit");
         System.out.println("Your command words are:");
         commandWords.showAll();
         return false;
