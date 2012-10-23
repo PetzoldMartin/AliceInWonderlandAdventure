@@ -26,6 +26,7 @@ public class CommandWords
         commands.put("go", new GoCommand());
         commands.put("help", new HelpCommand(this));
         commands.put("quit", new QuitCommand());
+        commands.put("restart", new RestartCommand());
     }
 
     /**
@@ -42,7 +43,7 @@ public class CommandWords
      */
     public void showAll() 
     {
-        for(Iterator i = commands.keySet().iterator(); i.hasNext(); ) {
+        for(Iterator<String>  i = commands.keySet().iterator(); i.hasNext(); ) {
             System.out.print(i.next() + "  ");
         }
         System.out.println();

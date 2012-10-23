@@ -26,9 +26,10 @@ class Game
      */
     public Game() 
     {
-        player = new Player();
+
         parser = new Parser();
-        createRooms();
+        newGameInitialize();
+        
     }
     
     /**
@@ -42,11 +43,14 @@ class Game
     /**
      * Create all the rooms and link their exits together.
      */
-    private void createRooms()
+    private void newGameInitialize()
     {
+        player = new Player();
     	LC= new LevelCreator();
+
     	player.setCurrentRoom(LC.getStartRoom());
     }
+    
 
     /**
      *  Main play routine.  Loops until end of play.
@@ -60,6 +64,7 @@ class Game
                 
         boolean finished = false;
         while(! finished) {
+        	
             Command command = parser.getCommand();
                 finished = command.execute(player);
         }
