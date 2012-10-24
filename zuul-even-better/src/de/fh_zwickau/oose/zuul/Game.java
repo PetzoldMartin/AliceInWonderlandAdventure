@@ -83,4 +83,8 @@ class Game
         System.out.println();
         System.out.println(player.getCurrentRoom().getLongDescription());
     }
+
+	public LevelCreator getLC() {
+		return LC;
+	}
 }

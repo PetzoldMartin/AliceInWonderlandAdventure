@@ -19,12 +19,12 @@ public class LevelCreator
 	    eastCave = new Room("you are in a cave near the fountain");
 	    northCave = new Room("you are in a cave near the fountain");
 	    southCave = new Room("you are in a cave near the fountain");
-	    insideTheVase = new Room("you are inside of a brown Vase");
-	    attic = new Room("the attic of the eastCave");
+	    insideTheVase = new Room("you are inside of a brown Vase",0);
+	    attic = new Room("the attic of the eastCave",2);
 	    madHaddersHouse = new Room("The crazy House of Mad Hadder");
 	    madHaddersGarden = new Room("The Garden from Mad Hadder");
 	    madHaddersKitchen = new Room("The Kitchen from Mad Hadder");
-	    insideTheFurnance = new Room("you are inside the Furnance the Walls are black");
+	    insideTheFurnance = new Room("you are inside the Furnance the Walls are black",0);
 	    whichCave = new Room("The Cave of the bad Which");
 	    
 	    // initialise room exits
@@ -53,6 +53,9 @@ public class LevelCreator
 	    // the player starts the game outside
 	    startRoom=fountain;
 		
+	    
+	    madHaddersHouse.setClosed(true);
+	    whichCave.setClosed(true);
 	}
 
 	public Room getStartRoom()

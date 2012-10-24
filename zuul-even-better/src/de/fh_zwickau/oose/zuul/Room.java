@@ -20,19 +20,30 @@ import java.util.Iterator;
 public class Room 
 {
     private String description;
-    private HashMap<String, Room> exits;        // stores exits of this room.
+    private HashMap<String, Room> exits;// stores exits of this room.
+    private int sizeExpected;
+    private boolean closed;
     
     /**
      * Create a room described "description". Initially, it has no exits.
      * "description" is something like "in a kitchen" or "in an open court 
      * yard".
      */
-    public Room(String description) 
+    public Room(String description,int sizeExpeced) 
     {
+    	this.sizeExpected=sizeExpeced;
         this.description = description;
         exits = new HashMap<String, Room>();
+        closed=false;
     }
 
+    public Room(String description) 
+    {
+    	this.sizeExpected=1;
+        this.description = description;
+        exits = new HashMap<String, Room>();
+       closed=false;
+    }
     /**
      * Define an exit from this room.
      */
@@ -81,5 +92,21 @@ public class Room
     {
         return exits.get(direction);
     }
+
+	public int getSizeExpected() {
+		return sizeExpected;
+	}
+
+	public void setSizeExpected(int sizeExpected) {
+		this.sizeExpected = sizeExpected;
+	}
+
+	public boolean isClosed() {
+		return closed;
+	}
+
+	public void setClosed(boolean closed) {
+		this.closed = closed;
+	}
 }
 
