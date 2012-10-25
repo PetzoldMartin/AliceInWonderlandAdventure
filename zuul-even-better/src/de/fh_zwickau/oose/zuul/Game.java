@@ -64,7 +64,6 @@ class Game
                 
         boolean finished = false;
         while(! finished) {
-        	
             Command command = parser.getCommand();
                 finished = command.execute(player);
         }

@@ -24,4 +24,10 @@ public class NullCommand extends Command
     	System.out.println("I don't understand...(Type \"help\" for help.)");
         return false;
     }
+
+	@Override
+	public void showSpecialHelp() {
+		// TODO Auto-generated method stub
+		
+	}
 }

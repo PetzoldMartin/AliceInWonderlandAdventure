@@ -2,6 +2,11 @@ package de.fh_zwickau.oose.zuul;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import commands.GoCommand;
+import commands.HelpCommand;
+import commands.QuitCommand;
+import commands.RestartCommand;
+
 /**
  * This class is the main class of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.
@@ -48,4 +53,18 @@ public class CommandWords
         }
         System.out.println();
     }
+
+	public void showspecialhelp(String whoUnclear) {
+		
+		this.get(whoUnclear).showSpecialHelp();
+		
+//		for(Iterator<String>  i = commands.keySet().iterator(); i.hasNext(); ) {
+//			String toTest=i.next();
+//            if(toTest.equals( whoUnclear)){
+//            System.out.print( toTest+ "  ");
+//		}
+//		
+//        }
+		
+	}
 }

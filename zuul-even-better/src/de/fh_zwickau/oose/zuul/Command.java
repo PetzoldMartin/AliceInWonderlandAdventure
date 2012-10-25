@@ -59,6 +59,11 @@ public abstract class Command
      * 
      * @return True, if game should exit; false otherwise.
      */
+   
     public abstract boolean execute(Player player);
+
+	public abstract void showSpecialHelp() ;
+    
+
 }
 

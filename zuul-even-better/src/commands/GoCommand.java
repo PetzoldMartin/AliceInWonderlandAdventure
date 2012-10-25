@@ -1,4 +1,8 @@
-package de.fh_zwickau.oose.zuul;
+package commands;
+
+import de.fh_zwickau.oose.zuul.Command;
+import de.fh_zwickau.oose.zuul.Player;
+
 /**
  * Implementation of the 'go' user command.
  * 
@@ -30,4 +34,10 @@ public class GoCommand extends Command
         }
         return false;
     }
+
+	@Override
+	public void showSpecialHelp() {
+		System.out.println("the command with which you can walk arround");
+		
+	}
 }

@@ -3,6 +3,9 @@ import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import GamePlayEnums.LockedStatus;
+import GamePlayEnums.PlayerSize;
+
 /**
  * Class Room - a room in an adventure game.
  *
@@ -21,28 +24,28 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;// stores exits of this room.
-    private int sizeExpected;
-    private boolean closed;
+    private PlayerSize sizeExpected;
+    private LockedStatus closed;
     
     /**
      * Create a room described "description". Initially, it has no exits.
      * "description" is something like "in a kitchen" or "in an open court 
      * yard".
      */
-    public Room(String description,int sizeExpeced) 
+    public Room(String description,PlayerSize sizeExpeced) 
     {
     	this.sizeExpected=sizeExpeced;
         this.description = description;
         exits = new HashMap<String, Room>();
-        closed=false;
+        closed=LockedStatus.UNLOCKED;
     }
 
     public Room(String description) 
     {
-    	this.sizeExpected=1;
+    	this.sizeExpected=PlayerSize.NORMAL;
         this.description = description;
         exits = new HashMap<String, Room>();
-       closed=false;
+       closed=LockedStatus.UNLOCKED;
     }
     /**
      * Define an exit from this room.
@@ -93,19 +96,19 @@ public class Room
         return exits.get(direction);
     }
 
-	public int getSizeExpected() {
+	public PlayerSize getSizeExpected() {
 		return sizeExpected;
 	}
 
-	public void setSizeExpected(int sizeExpected) {
+	public void setSizeExpected(PlayerSize sizeExpected) {
 		this.sizeExpected = sizeExpected;
 	}
 
-	public boolean isClosed() {
+	public LockedStatus isClosed() {
 		return closed;
 	}
 
-	public void setClosed(boolean closed) {
+	public void setClosed(LockedStatus closed) {
 		this.closed = closed;
 	}
 }

@@ -1,4 +1,8 @@
-package de.fh_zwickau.oose.zuul;
+package commands;
+
+import de.fh_zwickau.oose.zuul.Command;
+import de.fh_zwickau.oose.zuul.Player;
+
 /**
  * Implementation of the 'quit' user command.
  * 
@@ -29,5 +33,11 @@ public class QuitCommand extends Command
             return false;
         }
     }
+
+	@Override
+	public void showSpecialHelp() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

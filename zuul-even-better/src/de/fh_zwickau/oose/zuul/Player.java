@@ -1,5 +1,8 @@
 package de.fh_zwickau.oose.zuul;
 
+import GamePlayEnums.LockedStatus;
+import GamePlayEnums.PlayerSize;
+
 /**
  * This class represents players in the game. Each player has a current
  * location.
@@ -10,7 +13,7 @@ package de.fh_zwickau.oose.zuul;
 
 public class Player {
 	private Room currentRoom;
-	private int size = 1;
+	private PlayerSize size = PlayerSize.NORMAL;
 
 	/**
 	 * Constructor for objects of class Player
@@ -44,8 +47,8 @@ public class Player {
 		if (nextRoom == null)
 			System.out.println("There is no door!");
 		else {
-			if (nextRoom.isClosed() == false) {
-				if (nextRoom.getSizeExpected() == 1) {
+			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {
+				if (nextRoom.getSizeExpected() == PlayerSize.NORMAL) {
 					walkReally(nextRoom);
 				} else {
 					if (nextRoom.getSizeExpected() == size) {
@@ -65,11 +68,11 @@ public class Player {
 		System.out.println(walkTrough.getLongDescription());
 	}
 
-	public int getSize() {
+	public PlayerSize getSize() {
 		return size;
 	}
 
-	public void setSize(int size) {
+	public void setSize(PlayerSize size) {
 		this.size = size;
 	}
 }

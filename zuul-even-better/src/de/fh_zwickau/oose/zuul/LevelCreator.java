@@ -1,5 +1,8 @@
 package de.fh_zwickau.oose.zuul;
 
+import GamePlayEnums.LockedStatus;
+import GamePlayEnums.PlayerSize;
+
 public class LevelCreator 
 
 {
@@ -19,12 +22,12 @@ public class LevelCreator
 	    eastCave = new Room("you are in a cave near the fountain");
 	    northCave = new Room("you are in a cave near the fountain");
 	    southCave = new Room("you are in a cave near the fountain");
-	    insideTheVase = new Room("you are inside of a brown Vase",0);
-	    attic = new Room("the attic of the eastCave",2);
+	    insideTheVase = new Room("you are inside of a brown Vase",PlayerSize.LITTLE);
+	    attic = new Room("the attic of the eastCave",PlayerSize.BIG);
 	    madHaddersHouse = new Room("The crazy House of Mad Hadder");
 	    madHaddersGarden = new Room("The Garden from Mad Hadder");
 	    madHaddersKitchen = new Room("The Kitchen from Mad Hadder");
-	    insideTheFurnance = new Room("you are inside the Furnance the Walls are black",0);
+	    insideTheFurnance = new Room("you are inside the Furnance the Walls are black",PlayerSize.LITTLE);
 	    whichCave = new Room("The Cave of the bad Which");
 	    
 	    // initialise room exits
@@ -54,8 +57,8 @@ public class LevelCreator
 	    startRoom=fountain;
 		
 	    
-	    madHaddersHouse.setClosed(true);
-	    whichCave.setClosed(true);
+	    madHaddersHouse.setClosed(LockedStatus.LOCKED);
+	    whichCave.setClosed(LockedStatus.LOCKED);
 	}
 
 	public Room getStartRoom()
