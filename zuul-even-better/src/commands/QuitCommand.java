@@ -29,7 +29,7 @@ public class QuitCommand extends Command
             return true;
         }
         else {
-            System.out.println("I cannot quit that...");
+            System.out.println("Ich kann das nicht beenden...");
             return false;
         }
     }

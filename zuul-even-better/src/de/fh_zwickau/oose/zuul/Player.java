@@ -45,7 +45,7 @@ public class Player {
 		Room nextRoom = currentRoom.getExit(direction);
 
 		if (nextRoom == null)
-			System.out.println("There is no door!");
+			System.out.println("Da ist keine Tür!");
 		else {
 			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {
 				if (nextRoom.getSizeExpected() == PlayerSize.NORMAL) {
@@ -54,11 +54,11 @@ public class Player {
 					if (nextRoom.getSizeExpected() == size) {
 						walkReally(nextRoom);
 					} else {
-						System.out.println("you have the wrong size");
+						System.out.println("du hast die falsche grösse");
 					}
 				}
 			}else{
-				System.out.println("the Door is locked");
+				System.out.println("die Tür ist verschlossen");
 			}
 		}
 	}

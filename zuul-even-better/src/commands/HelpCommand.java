@@ -36,10 +36,10 @@ public class HelpCommand extends Command
             
         }
         else{
-        	 System.out.println("You are lost. You are alone. You know");
-             System.out.println("you fall in a fountain ,when you.");
-             System.out.println("follows the white Rabbit");
-             System.out.println("Your command words are:");
+        	 System.out.println("Ja wo ist denn das Kaninchen");
+             System.out.println("du scheinst es verloren zu haben.");
+             System.out.println("versuche es wieder zu finden");
+             System.out.println("deine Befehlswörter sind:");
         commandWords.showAll();
         }
         return false;

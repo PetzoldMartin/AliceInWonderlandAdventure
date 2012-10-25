@@ -67,7 +67,7 @@ class Game
             Command command = parser.getCommand();
                 finished = command.execute(player);
         }
-        System.out.println("Thank you for playing.  Good bye.");
+        System.out.println("Danke fürs Spielen.  Schade das du Gehst.");
     }
 
     /**
@@ -76,9 +76,9 @@ class Game
     private void printWelcome()
     {
         System.out.println();
-        System.out.println("Welcome to The World of Zuul!");
-        System.out.println("The World of Zuul is a new, incredibly boring adventure game.");
-        System.out.println("Type 'help' if you need help.");
+        System.out.println("Aufstehen Alice!");
+        System.out.println("Weisst du wo du bist?");
+        System.out.println("Du bist dem Weissen Kaninchen gefolgt.");
         System.out.println();
         System.out.println(player.getCurrentRoom().getLongDescription());
     }

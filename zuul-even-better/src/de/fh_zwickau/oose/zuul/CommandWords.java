@@ -28,10 +28,11 @@ public class CommandWords
     public CommandWords()
     {
         commands = new HashMap<String, Command>();
-        commands.put("go", new GoCommand());
-        commands.put("help", new HelpCommand(this));
-        commands.put("quit", new QuitCommand());
-        commands.put("restart", new RestartCommand());
+        commands.put("geh", new GoCommand());
+        commands.put("hilfe", new HelpCommand(this));
+        commands.put("?", new HelpCommand(this));
+        commands.put("ende", new QuitCommand());
+        commands.put("neustart", new RestartCommand());
     }
 
     /**

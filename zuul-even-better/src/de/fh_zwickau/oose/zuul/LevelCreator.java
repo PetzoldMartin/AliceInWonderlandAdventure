@@ -17,42 +17,42 @@ public class LevelCreator
 	private void createRooms() {
 		Room fountain, westCave, eastCave, northCave, southCave,insideTheVase,attic,madHaddersHouse,madHaddersGarden,madHaddersKitchen,insideTheFurnance,whichCave;
 	    // create the rooms
-	    fountain = new Room("you are in a fountain");
-	    westCave = new Room("you are in a cave near the fountain");
-	    eastCave = new Room("you are in a cave near the fountain");
-	    northCave = new Room("you are in a cave near the fountain");
-	    southCave = new Room("you are in a cave near the fountain");
-	    insideTheVase = new Room("you are inside of a brown Vase",PlayerSize.LITTLE);
-	    attic = new Room("the attic of the eastCave",PlayerSize.BIG);
-	    madHaddersHouse = new Room("The crazy House of Mad Hadder");
-	    madHaddersGarden = new Room("The Garden from Mad Hadder");
-	    madHaddersKitchen = new Room("The Kitchen from Mad Hadder");
-	    insideTheFurnance = new Room("you are inside the Furnance the Walls are black",PlayerSize.LITTLE);
-	    whichCave = new Room("The Cave of the bad Which");
+	    fountain = new Room("du befindest dich in einem Brunnen");
+	    westCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
+	    eastCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
+	    northCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
+	    southCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
+	    insideTheVase = new Room("du bist in einer braunen Vase",PlayerSize.LITTLE);
+	    attic = new Room("der Dachbode!? der Osthöhle",PlayerSize.BIG);
+	    madHaddersHouse = new Room("das verückte Haus des noch Verückteren Hutmachers");
+	    madHaddersGarden = new Room("der Garten des Verückten Hutmachers");
+	    madHaddersKitchen = new Room("die unaufgeräumte Küche des Verrückten Hutmachers");
+	    insideTheFurnance = new Room("du bist im Inneren des Ofens die Wände sind schwarz",PlayerSize.LITTLE);
+	    whichCave = new Room("Die Höhle der bösen Hexe");
 	    
 	    // initialise room exits
-	    fountain.setExit("east", eastCave);
-	    fountain.setExit("west", westCave);
-	    fountain.setExit("north", northCave);
-	    fountain.setExit("south", southCave);
-	    westCave.setExit("east", fountain);
+	    fountain.setExit("osten", eastCave);
+	    fountain.setExit("westen", westCave);
+	    fountain.setExit("norden", northCave);
+	    fountain.setExit("sueden", southCave);
+	    westCave.setExit("osten", fountain);
 	    westCave.setExit("vase", insideTheVase);
-	    insideTheVase.setExit("out", westCave);
-	    eastCave.setExit("west", fountain);
-	    eastCave.setExit("up", attic);
-	    attic.setExit("down", eastCave);
-	    northCave.setExit("south", fountain);
-	    southCave.setExit("north", fountain);
-	    southCave.setExit("south", madHaddersHouse);
-	    madHaddersHouse.setExit("north", southCave);
-	    madHaddersHouse.setExit("west", madHaddersGarden);
-	    madHaddersHouse.setExit("east", madHaddersKitchen);
-	    madHaddersHouse.setExit("south", whichCave);
-	    madHaddersGarden.setExit("east", madHaddersHouse);
-	    madHaddersKitchen.setExit("west", madHaddersHouse);
-	    madHaddersKitchen.setExit("furnance", insideTheFurnance);
-	    insideTheFurnance.setExit("out", madHaddersKitchen);
-	    whichCave.setExit("out", madHaddersHouse);
+	    insideTheVase.setExit("raus", westCave);
+	    eastCave.setExit("westen", fountain);
+	    eastCave.setExit("hoch", attic);
+	    attic.setExit("runter", eastCave);
+	    northCave.setExit("sueden", fountain);
+	    southCave.setExit("norden", fountain);
+	    southCave.setExit("süden", madHaddersHouse);
+	    madHaddersHouse.setExit("norden", southCave);
+	    madHaddersHouse.setExit("westen", madHaddersGarden);
+	    madHaddersHouse.setExit("osten", madHaddersKitchen);
+	    madHaddersHouse.setExit("süden", whichCave);
+	    madHaddersGarden.setExit("osten", madHaddersHouse);
+	    madHaddersKitchen.setExit("westen", madHaddersHouse);
+	    madHaddersKitchen.setExit("ofen", insideTheFurnance);
+	    insideTheFurnance.setExit("raus", madHaddersKitchen);
+	    whichCave.setExit("norden", madHaddersHouse);
 	    // the player starts the game outside
 	    startRoom=fountain;
 		

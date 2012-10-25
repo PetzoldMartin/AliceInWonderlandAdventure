@@ -30,14 +30,14 @@ public class GoCommand extends Command
         }
         else {
             // if there is no second word, we don't know where to go...
-            System.out.println("Go where?");
+            System.out.println("wohin soll ich gehen?");
         }
         return false;
     }
 
 	@Override
 	public void showSpecialHelp() {
-		System.out.println("the command with which you can walk arround");
+		System.out.println("der Befehl mit dem du laufen kannst");
 		
 	}
 }

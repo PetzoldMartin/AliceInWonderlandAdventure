@@ -21,7 +21,7 @@ public class NullCommand extends Command
      */
     public boolean execute(Player player)
     {
-    	System.out.println("I don't understand...(Type \"help\" for help.)");
+    	System.out.println("Was willst du...(Schreibe hilfe oder ? für Hilfe.)");
         return false;
     }
 
