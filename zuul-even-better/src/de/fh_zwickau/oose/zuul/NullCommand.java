@@ -1,4 +1,7 @@
 package de.fh_zwickau.oose.zuul;
+
+import GamePlayEnums.GameStatus;
+
 /**
  * Implementation of the 'help' user command.
  * 
@@ -19,10 +22,10 @@ public class NullCommand extends Command
     /**
      * Print out an error message
      */
-    public boolean execute(Player player)
+    public GameStatus execute(Player player)
     {
     	System.out.println("Was willst du...(Schreibe hilfe oder ? für Hilfe.)");
-        return false;
+        return GameStatus.GO;
     }
 
 	@Override

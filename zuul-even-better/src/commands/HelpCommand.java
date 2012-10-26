@@ -1,5 +1,6 @@
 package commands;
 
+import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Player;
@@ -27,7 +28,7 @@ public class HelpCommand extends Command
      * cryptic message and a list of the command words.
      * Returns always false.
      */
-    public boolean execute(Player player)
+    public GameStatus execute(Player player)
     {
        
         if(hasSecondWord()) {
@@ -42,12 +43,12 @@ public class HelpCommand extends Command
              System.out.println("deine Befehlswörter sind:");
         commandWords.showAll();
         }
-        return false;
+        return GameStatus.GO;
     }
 
 	@Override
 	public void showSpecialHelp() {
-		// TODO Auto-generated method stub
+		System.out.println("Dies ist das komando für die Hilfe wie du schon herausgefunden hast");
 		
 	}
 }

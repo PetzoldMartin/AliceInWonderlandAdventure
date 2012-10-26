@@ -1,5 +1,6 @@
 package commands;
 
+import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
@@ -22,7 +23,7 @@ public class GoCommand extends Command
      * Try to go to one direction. If there is an exit, enter the new
      * room, otherwise print an error message. Returns always 'false'.
      */
-    public boolean execute(Player player)
+    public GameStatus execute(Player player)
     {
         if(hasSecondWord()) {
             String direction = getSecondWord();
@@ -32,7 +33,7 @@ public class GoCommand extends Command
             // if there is no second word, we don't know where to go...
             System.out.println("wohin soll ich gehen?");
         }
-        return false;
+        return GameStatus.GO;
     }
 
 	@Override

@@ -1,4 +1,7 @@
 package de.fh_zwickau.oose.zuul;
+
+import GamePlayEnums.GameStatus;
+
 /**
  * This class is an abstract superclass for all command classes in the game.
  * Each user command is implemented by a specific command subclass.
@@ -60,7 +63,7 @@ public abstract class Command
      * @return True, if game should exit; false otherwise.
      */
    
-    public abstract boolean execute(Player player);
+    public abstract GameStatus execute(Player player);
 
 	public abstract void showSpecialHelp() ;
     

@@ -1,5 +1,6 @@
 package commands;
 
+import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
@@ -23,20 +24,20 @@ public class QuitCommand extends Command
      * we really quit the game. Return true, if we should quit, false
      * otherwise.
      */
-    public boolean execute(Player player)
+    public GameStatus execute(Player player)
     {
         if(getSecondWord() == null) {
-            return true;
+            return GameStatus.STOP;
         }
         else {
             System.out.println("Ich kann das nicht beenden...");
-            return false;
+            return GameStatus.GO;
         }
     }
 
 	@Override
 	public void showSpecialHelp() {
-		// TODO Auto-generated method stub
+		System.out.println("mit diesem Kommando Beendes du das Spiel");
 		
 	}
 

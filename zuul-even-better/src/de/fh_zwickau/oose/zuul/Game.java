@@ -1,4 +1,7 @@
 package de.fh_zwickau.oose.zuul;
+
+import GamePlayEnums.GameStatus;
+
 /**
  *  This class is the main class of the "World of Zuul" application. 
  *  "World of Zuul" is a very simple, text based adventure game.  Users 
@@ -62,12 +65,18 @@ class Game
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
                 
-        boolean finished = false;
-        while(! finished) {
+        GameStatus gameStatus = GameStatus.GO;
+        while(gameStatus==GameStatus.GO) {
             Command command = parser.getCommand();
-                finished = command.execute(player);
+                gameStatus = command.execute(player);
         }
-        System.out.println("Danke fürs Spielen.  Schade das du Gehst.");
+        if(gameStatus==GameStatus.RESTART){
+        	this.newGameInitialize();
+        	this.play();
+        }else{
+        	System.out.println("Danke fürs Spielen.  Schade das du Gehst.");
+        }
+        
     }
 
     /**

@@ -1,5 +1,6 @@
 package commands;
 
+import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
@@ -11,7 +12,7 @@ public class RestartCommand extends Command
 	    }
 
 
-	    public boolean execute(Player player)
+	    public GameStatus execute(Player player)
 	    {
 
 	    	
@@ -22,13 +23,13 @@ public class RestartCommand extends Command
 	        
 	        
 	        
-	        return false;
+	        return GameStatus.RESTART ;
 	    }
 
 
 		@Override
 		public void showSpecialHelp() {
-			// TODO Auto-generated method stub
+			System.out.println("mit diesem kommando startest du das spiel neu");
 			
 		}
 
