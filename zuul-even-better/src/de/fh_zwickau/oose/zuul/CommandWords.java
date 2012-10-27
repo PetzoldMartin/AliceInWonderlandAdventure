@@ -14,8 +14,8 @@ import commands.RestartCommand;
  * This class holds a collection of all command words known to the game.
  * It is used to recognise commands as they are typed in.
  *
- * @author  Michael Kolling and David J. Barnes
- * @version 2.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 public class CommandWords

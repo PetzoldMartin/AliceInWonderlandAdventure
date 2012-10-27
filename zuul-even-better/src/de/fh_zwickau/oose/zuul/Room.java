@@ -16,8 +16,8 @@ import GamePlayEnums.PlayerSize;
  * connected to other rooms via exits.  For each existing exit, the room 
  * stores a reference to the neighboring room.
  * 
- * @author  Michael Kolling and David J. Barnes
- * @version 2008.03.30
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 public class Room 
@@ -71,7 +71,7 @@ public class Room
      */
     public String getLongDescription()
     {
-        return "  " + description + ".\n" + getExitString();
+        return "" + description + ".\n" + getExitString();
     }
     
     /**

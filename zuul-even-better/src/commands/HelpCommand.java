@@ -6,17 +6,17 @@ import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Player;
 
 /**
- * Implementation of the 'help' user command.
+ * Implementiert das Hilfe Kommando
  * 
- * @author Michael Kolling
- * @version 1.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 public class HelpCommand extends Command
 {
     private CommandWords commandWords;
     
     /**
-     * Constructor for objects of class HelpCommand
+     * Konstruktor von Objekten der Klasse HelpCommando
      */
     public HelpCommand(CommandWords words)
     {
@@ -24,9 +24,9 @@ public class HelpCommand extends Command
     }
     
     /**
-     * Print out some help information. Here we print some stupid, 
-     * cryptic message and a list of the command words.
-     * Returns always false.
+     * Ohne zweites Kommando Wort werden ein Text und die Befehlswörter Ausgegeben
+     * bei einem zweiten Kommandowort wird die Spezielle Hilfe Ausgegeben
+     * Gibt immer den gamestatus RUN zurück
      */
     public GameStatus execute(Player player)
     {
@@ -43,9 +43,10 @@ public class HelpCommand extends Command
              System.out.println("deine Befehlswörter sind:");
         commandWords.showAll();
         }
-        return GameStatus.GO;
+        return GameStatus.RUN;
     }
 
+    //die spezzielle Hilfe für das Hilfe Kommando
 	@Override
 	public void showSpecialHelp() {
 		System.out.println("Dies ist das komando für die Hilfe wie du schon herausgefunden hast");

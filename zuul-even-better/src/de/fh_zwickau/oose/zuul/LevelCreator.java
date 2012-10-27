@@ -6,6 +6,11 @@ import GamePlayEnums.PlayerSize;
 public class LevelCreator 
 
 {
+	/**
+	 * 
+	 * @author Martin Petzold
+	 * @version 0.1 (October 2012)
+	 */
 	private Room startRoom;
 	
 	public LevelCreator()

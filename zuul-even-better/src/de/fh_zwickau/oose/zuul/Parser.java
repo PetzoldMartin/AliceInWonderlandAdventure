@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-/*
+/**
  * This class is the main class of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
  *
@@ -16,8 +16,8 @@ import java.util.StringTokenizer;
  * the known commands, and if the input is not one of the known commands, it
  * returns a command object that is marked as an unknown command.
  * 
- * @author  Michael Kolling and David J. Barnes
- * @version 1.1 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 class Parser 

@@ -5,8 +5,8 @@ import GamePlayEnums.GameStatus;
 /**
  * Implementation of the 'help' user command.
  * 
- * @author Michael Kolling
- * @version 1.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 public class NullCommand extends Command
 {
@@ -25,7 +25,7 @@ public class NullCommand extends Command
     public GameStatus execute(Player player)
     {
     	System.out.println("Was willst du...(Schreibe hilfe oder ? für Hilfe.)");
-        return GameStatus.GO;
+        return GameStatus.RUN;
     }
 
 	@Override

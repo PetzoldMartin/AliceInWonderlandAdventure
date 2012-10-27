@@ -7,8 +7,8 @@ import GamePlayEnums.PlayerSize;
  * This class represents players in the game. Each player has a current
  * location.
  * 
- * @author Michael Kolling
- * @version 1.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 public class Player {
@@ -57,7 +57,7 @@ public class Player {
 						System.out.println("du hast die falsche grösse");
 					}
 				}
-			}else{
+			} else {
 				System.out.println("die Tür ist verschlossen");
 			}
 		}

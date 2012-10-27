@@ -10,8 +10,8 @@ import GamePlayEnums.GameStatus;
  * word entered on the command line). If the command had only one word, 
  * then the second word is <null>.
  * 
- * @author  Michael Kolling and David J. Barnes
- * @version 2.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 public abstract class Command

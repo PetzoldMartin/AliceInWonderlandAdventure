@@ -14,8 +14,8 @@ import GamePlayEnums.GameStatus;
  *  This main class creates and initialises all the others: it creates all
  *  rooms, creates the parser and starts the game.
  * 
- * @author  Michael Kolling and David J. Barnes
- * @version 1.1 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 
 class Game 
@@ -65,8 +65,8 @@ class Game
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
                 
-        GameStatus gameStatus = GameStatus.GO;
-        while(gameStatus==GameStatus.GO) {
+        GameStatus gameStatus = GameStatus.RUN;
+        while(gameStatus==GameStatus.RUN) {
             Command command = parser.getCommand();
                 gameStatus = command.execute(player);
         }

@@ -5,23 +5,25 @@ import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
 /**
- * Implementation of the 'go' user command.
+ * implementiert das geh Kommando
  * 
- * @author Michael Kolling
- * @version 1.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 public class GoCommand extends Command
 {
     /**
-     * Constructor for objects of class GoCommand
+     * Konstruktor von Objekten der Klasse GoCommand
      */
     public GoCommand()
     {
     }
 
     /** 
-     * Try to go to one direction. If there is an exit, enter the new
-     * room, otherwise print an error message. Returns always 'false'.
+     * Versuche in einen Raum zu gehen wenn ein Ausgang vorhanden ist
+     * , der Spieler die richtige Grösse hat und der Raum nicht verschlossen ist
+     * erfolgreich gehe in den Raum
+     * wenn das nicht möglich ist schreibe Error Nachricht. Returnt immer Gamestatus RUN
      */
     public GameStatus execute(Player player)
     {
@@ -30,14 +32,15 @@ public class GoCommand extends Command
             player.walk(direction);
         }
         else {
-            // if there is no second word, we don't know where to go...
+            //Ausgabe wenn es kein zweites Kommand Wort gibt bzw keine Richtungsangabe
             System.out.println("wohin soll ich gehen?");
         }
-        return GameStatus.GO;
+        return GameStatus.RUN;
     }
 
 	@Override
 	public void showSpecialHelp() {
+		//Ausgabe wenn die Hilfe zu diesem Kommand abgefragt wird
 		System.out.println("der Befehl mit dem du laufen kannst");
 		
 	}

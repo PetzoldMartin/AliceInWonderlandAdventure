@@ -7,22 +7,21 @@ import de.fh_zwickau.oose.zuul.Player;
 /**
  * Implementation of the 'quit' user command.
  * 
- * @author Michael Kolling
- * @version 1.0 (December 2002)
+ * @author Martin Petzold
+ * @version 1.1 (October 2012)
  */
 public class QuitCommand extends Command
 {
     /**
-     * Constructor for objects of class QuitCommand
+     * Konstruktor von Objekten der Klasse  QuitCommand
      */
     public QuitCommand()
     {
     }
 
     /**
-     * "Quit" was entered. Check the argument to see whether
-     * we really quit the game. Return true, if we should quit, false
-     * otherwise.
+     * Beendet das Spiel wenn es kein zweites Kommando Wort gibt, gibte Gamestatus STOP zurück
+     * ansonsten Fehlerausgabe gibt Gamestatus RUN zurück
      */
     public GameStatus execute(Player player)
     {
@@ -31,10 +30,11 @@ public class QuitCommand extends Command
         }
         else {
             System.out.println("Ich kann das nicht beenden...");
-            return GameStatus.GO;
+            return GameStatus.RUN;
         }
     }
 
+    //Die spezielle Hilfe für das QuitCommand
 	@Override
 	public void showSpecialHelp() {
 		System.out.println("mit diesem Kommando Beendes du das Spiel");
