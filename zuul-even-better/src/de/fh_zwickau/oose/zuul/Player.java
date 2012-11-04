@@ -4,56 +4,55 @@ import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
 /**
- * This class represents players in the game. Each player has a current
- * location.
+ * Diese Klasse repräsentiert den Spieler im Spiel.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
  */
 
 public class Player {
-	private Room currentRoom;
-	private PlayerSize size = PlayerSize.NORMAL;
+	private Room currentRoom;//der Raum indem sich der Spieler befindet.
+	private PlayerSize size = PlayerSize.NORMAL;//die Grösse die der Spieler hat.
 
 	/**
-	 * Constructor for objects of class Player
+	 * Konstruktor für objekte der Klasse Player
 	 */
 	public Player() {
 		currentRoom = null;
 	}
 
 	/**
-	 * Return the current room for this player.
+	 * gibt den Raum zurück in dem sich der Spieler momentan befindet.
 	 */
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}
 
 	/**
-	 * Set the current room for this player.
+	 * Setzt den Momentanen Raum des Spielers.
 	 */
 	public void setCurrentRoom(Room room) {
 		currentRoom = room;
 	}
 
 	/**
-	 * Try to walk in a given direction. If there is a door this will change the
-	 * player's location.
+	 * Überprüfung ob der Spieler in die gesuchte Richtung laufen kann
+	 * 
 	 */
 	public void walk(String direction) {
-		// Try to leave current room.
+		// Versuch den aktuellen Raum zu verlassen
 		Room nextRoom = currentRoom.getExit(direction);
-		if (nextRoom == null)
+		if (nextRoom == null)//Überprüfung ob Raum vorhanden
 			System.out.println("Da ist keine Tür!");
 		else {
-			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {
+			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {//Überprüfung ob Raum Verschlossen
 				if (nextRoom.getSizeExpected() == PlayerSize.NORMAL) {
 					walkReally(nextRoom);
 				} else {
 					if (nextRoom.getSizeExpected() == size) {
 						walkReally(nextRoom);
 					} else {
-						System.out.println("du hast die falsche grösse");
+						System.out.println("du hast die falsche Grösse");
 					}
 				}
 			} else {
@@ -62,6 +61,10 @@ public class Player {
 		}
 	}
 
+	/**
+	 * Methode die den Player in einen anderen Raum befördert
+	 * @param walkTrough
+	 */
 	private void walkReally(Room walkTrough) {
 		setCurrentRoom(walkTrough);
 		System.out.println(walkTrough.getLongDescription());

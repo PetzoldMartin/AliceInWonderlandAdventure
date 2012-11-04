@@ -7,14 +7,12 @@ import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
 /**
- * Class Room - a room in an adventure game.
+ * Klasse Room - ein Raum im Spiel.
  *
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * Diese Klasse ist ein Teil der "World of Zuul" Anwendung. 
  *
- * A "Room" represents one location in the scenery of the game.  It is 
- * connected to other rooms via exits.  For each existing exit, the room 
- * stores a reference to the neighboring room.
+ * ein "Raum" repräsentiert ein Areal im Spiel
+ * Er ist durch Ausgänge mit  den Nachbar Räumen verbunden
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -22,15 +20,14 @@ import GamePlayEnums.PlayerSize;
 
 public class Room 
 {
-    private String description;
+    private String description;// Die Beschreibung des Raumes
     private HashMap<String, Room> exits;// stores exits of this room.
-    private PlayerSize sizeExpected;
-    private LockedStatus closed;
+    private PlayerSize sizeExpected;// die vom Raum erwartete Spielergrösse
+    private LockedStatus closed;// Status ob der Raum verschlossen ist oder nicht
     
     /**
-     * Create a room described "description". Initially, it has no exits.
-     * "description" is something like "in a kitchen" or "in an open court 
-     * yard".
+     * Konstruktor der Raumklasse mit Beschreibung und
+     * mit erwarteter Spielergrösse
      */
     public Room(String description,PlayerSize sizeExpeced) 
     {
@@ -40,6 +37,10 @@ public class Room
         closed=LockedStatus.UNLOCKED;
     }
 
+    /**
+     * Konstruktor der Raumklasse mit Beschreibung und
+     * ohne erwartete Spielergrösse
+     */
     public Room(String description) 
     {
     	this.sizeExpected=PlayerSize.NORMAL;
@@ -48,7 +49,7 @@ public class Room
        closed=LockedStatus.UNLOCKED;
     }
     /**
-     * Define an exit from this room.
+     * Diese Methode Definiert die Raumausgänge
      */
     public void setExit(String direction, Room neighbor) 
     {
@@ -56,8 +57,7 @@ public class Room
     }
 
     /**
-     * Return the description of the room (the one that was defined in the
-     * constructor).
+     * Gibt die im Konstruktor übergebene Beschreibung zurück
      */
     public String getShortDescription()
     {
@@ -65,9 +65,7 @@ public class Room
     }
 
     /**
-     * Return a long description of this room, in the form:
-     *     You are in the kitchen.
-     *     Exits: north west
+     * Gibt eine Lange Raumbeschreibung zurück, mit Ausgängen
      */
     public String getLongDescription()
     {
@@ -75,8 +73,7 @@ public class Room
     }
     
     /**
-     * Return a string describing the room's exits, for example
-     * "Exits: north west".
+     * Gibt die Ausgänge des Raumes zurück
      */
     private String getExitString()
     {
@@ -88,26 +85,41 @@ public class Room
     }
 
     /**
-     * Return the room that is reached if we go from this room in direction
-     * "direction". If there is no room in that direction, return null.
+     * gibt den Raum zurück der von einem Ausgang erreicht wird
      */
     public Room getExit(String direction) 
     {
         return exits.get(direction);
     }
 
+    /**
+     * gibt de erwartete Spielergrösse zurück
+     * @return sizeExpected {@link PlayerSize}
+     */
 	public PlayerSize getSizeExpected() {
 		return sizeExpected;
 	}
 
+	/**
+	 * 
+	 * @param sizeExpected {@link PlayerSize}
+	 */
 	public void setSizeExpected(PlayerSize sizeExpected) {
 		this.sizeExpected = sizeExpected;
 	}
 
+	/**
+	 * 
+	 * @return closed {@link LockedStatus}
+	 */
 	public LockedStatus isClosed() {
 		return closed;
 	}
 
+	/**
+	 * 
+	 * @param closed {@link LockedStatus}
+	 */
 	public void setClosed(LockedStatus closed) {
 		this.closed = closed;
 	}

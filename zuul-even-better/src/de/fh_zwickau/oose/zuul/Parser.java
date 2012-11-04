@@ -4,17 +4,14 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * This class is the main class of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
+ * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.
  *
- * This parser reads user input and tries to interpret it as an "Adventure"
- * command. Every time it is called it reads a line from the terminal and
- * tries to interpret the line as a two word command. It returns the command
- * as an object of class Command.
+ * Dieser Parser liest die Texteingabe und versucht diese als Game Commands zu interpretieren.
+ * Immer wenn er aufgerufen wird, liest er eine zeile vom Terminal ein und versucht diese
+ * als zwei wort kommando zu interpretieren. Es wird bei erfolg ein Objekt der Klasse des Kommandos zurückgegeben.
  *
- * The parser has a set of known command words. It checks user input against
- * the known commands, and if the input is not one of the known commands, it
- * returns a command object that is marked as an unknown command.
+ * Der parser hat eine Liste mit Kommandowörtern. Er prüft die Eingabe gegen 
+ * diese Liste, wenn die eingabe nicht gefunden wird gibt er das null command Objekt zurück.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -23,8 +20,7 @@ import java.util.StringTokenizer;
 class Parser 
 {
 
-    private CommandWords commands;  // holds all valid command words
-
+    private CommandWords commands;  // enthält alle KommandoWörter
     public Parser() 
     {
         commands = new CommandWords();
@@ -32,7 +28,7 @@ class Parser
 
     public Command getCommand() 
     {
-        String inputLine = "";   // will hold the full input line
+        String inputLine = "";   //enthält die gesamte Eingabe
         String word1;
         String word2;
 
@@ -51,15 +47,15 @@ class Parser
         StringTokenizer tokenizer = new StringTokenizer(inputLine);
 
         if(tokenizer.hasMoreTokens())
-            word1 = tokenizer.nextToken();      // get first word
+            word1 = tokenizer.nextToken();      // bekomme erstes Wort
         else
             word1 = null;
         if(tokenizer.hasMoreTokens())
-            word2 = tokenizer.nextToken();      // get second word
+            word2 = tokenizer.nextToken();      // bekomme zweites Wort
         else
             word2 = null;
 
-        // note: we just ignore the rest of the input line.
+        // Notiz: der Rest der Eingabe wird ignoriert
 
         Command command = commands.get(word1);
         if(command == null) {
