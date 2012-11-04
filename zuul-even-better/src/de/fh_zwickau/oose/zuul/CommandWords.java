@@ -8,11 +8,9 @@ import commands.QuitCommand;
 import commands.RestartCommand;
 
 /**
- * This class is the main class of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.
  * 
- * This class holds a collection of all command words known to the game.
- * It is used to recognise commands as they are typed in.
+ * Diese Klasse enthält eine Sammlung von allen Kommando Wörtern die das Spiel kennt.
+ * Es nutzt die erstelten Kommandos um zu erkennen wie diese aufgerufen werden.
  *
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -23,7 +21,7 @@ public class CommandWords
     private HashMap<String, Command> commands;
 
     /**
-     * Constructor - initialise the command words.
+     * Konstruktor der die Kommandos initialisiert
      */
     public CommandWords()
     {
@@ -36,8 +34,9 @@ public class CommandWords
     }
 
     /**
-     * Given a command word, find and return the matching command object.
-     * Return null if there is no command with this name.
+     * nimmt ein Kommando Wort, und gibt bei Übereinstimmung mit einem
+     * Objekt der Sammlung das Objekt zurück.
+     * Returnt  <null> wenn es das Kommando nicht gibt
      */
     public Command get(String word)
     {
@@ -45,7 +44,7 @@ public class CommandWords
     }
 
     /**
-     * Print all valid commands to System.out.
+     * Schreibt alle vorhandenen Kommandos auf die Ausgabe
      */
     public void showAll() 
     {
@@ -55,17 +54,12 @@ public class CommandWords
         System.out.println();
     }
 
+    /**
+     * ruft die Spezielle Hilfe eines Kommandos auf
+     * @param whoUnclear
+     */
 	public void showspecialhelp(String whoUnclear) {
 		
 		this.get(whoUnclear).showSpecialHelp();
-		
-//		for(Iterator<String>  i = commands.keySet().iterator(); i.hasNext(); ) {
-//			String toTest=i.next();
-//            if(toTest.equals( whoUnclear)){
-//            System.out.print( toTest+ "  ");
-//		}
-//		
-//        }
-		
 	}
 }

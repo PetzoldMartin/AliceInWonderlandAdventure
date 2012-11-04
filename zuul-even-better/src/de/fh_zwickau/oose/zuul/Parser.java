@@ -72,7 +72,7 @@ class Parser
     }
 
     /**
-     * Print out a list of valid command words.
+     * schreibt alle Komando wörter auf die Konsole
      */
     public void showCommands()
     {

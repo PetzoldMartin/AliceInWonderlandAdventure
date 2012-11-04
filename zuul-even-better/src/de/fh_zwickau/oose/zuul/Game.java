@@ -3,16 +3,14 @@ package de.fh_zwickau.oose.zuul;
 import GamePlayEnums.GameStatus;
 
 /**
- *  This class is the main class of the "World of Zuul" application. 
- *  "World of Zuul" is a very simple, text based adventure game.  Users 
- *  can walk around some scenery. That's all. It should really be extended 
- *  to make it more interesting!
+ *  Diese Klasse ist die Hauptklasse der "World of Zuul" Anwendung
+ *  "World of Zuul" ist ein einfaches Text basiertes Adventure Spiel.
+ *  
  * 
- *  To play this game, create an instance of this class and call the "play"
- *  method.
+ *  Um das Spiel zu spielen erzeuge Eine Instanz dieser Klasse und rufe 
+ *  die play klasse auf
  * 
- *  This main class creates and initialises all the others: it creates all
- *  rooms, creates the parser and starts the game.
+ *  Diese Main Klasse initiallisiert alle anderen Klassen.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -20,12 +18,12 @@ import GamePlayEnums.GameStatus;
 
 class Game 
 {
-    private Parser parser;
-    private Player player;
-    private LevelCreator LC;
+    private Parser parser;// der Textparser des Spieles
+    private Player player;// die Instanz der Player Klasse des Spieles
+    private LevelCreator LC;//der Level/Raum Creator des Spieles
 
     /**
-     * Create the game and initialise its internal map.
+     * Konstruktor der Game Klasse erstellt den Parser und Ruft die Initialisierungsmethode auf
      */
     public Game() 
     {
@@ -36,7 +34,7 @@ class Game
     }
     
     /**
-     * The main class creates a new Game object and starts its main method.
+     * Die Main Klasse erstellt ein Spiel und ruft die hauptmethode auf
      */
     public static void main(String[] args) {
     	Game game = new Game();
@@ -44,19 +42,19 @@ class Game
     }
 
     /**
-     * Create all the rooms and link their exits together.
+     * Die Spiel Initialisier Methode erstellt den Spieler, den LevelCreator der die Räume erstellt
+     * und setzt den Startraum fest
      */
     private void newGameInitialize()
     {
         player = new Player();
     	LC= new LevelCreator();
-
     	player.setCurrentRoom(LC.getStartRoom());
     }
     
 
     /**
-     *  Main play routine.  Loops until end of play.
+     *  Die Hauptmethode des Spieles
      */
     public void play() 
     {            
@@ -80,7 +78,7 @@ class Game
     }
 
     /**
-     * Print out the opening message for the player.
+     * Schreibt die Willkommensnachricht für den Spieler auf die Konsole
      */
     private void printWelcome()
     {

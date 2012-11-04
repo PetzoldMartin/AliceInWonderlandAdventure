@@ -3,12 +3,12 @@ package de.fh_zwickau.oose.zuul;
 import GamePlayEnums.GameStatus;
 
 /**
- * This class is an abstract superclass for all command classes in the game.
- * Each user command is implemented by a specific command subclass.
+ * Diese Klasse ist die abstrakte Superklasse für alle Kommandos im Spiel.
+ * jedes Nutzerkommando wird als spezielle Subklasse dieser Klasse eingebunden.
  *
- * Objects of class Command can store an optional argument word (a second
- * word entered on the command line). If the command had only one word, 
- * then the second word is <null>.
+ * Objekte der Klasse Command können ein optionales argument Wort beinhalten.
+ * (ein zweites Wort das in der Commandozeile geschrieben wird.
+ * Wenn das Kommando nur ein Wort hat ist das zweite Wort <null>
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -19,9 +19,10 @@ public abstract class Command
     private String secondWord;
 
     /**
-     * Create a command object. First and second word must be supplied, but
-     * either one (or both) can be null. The command word should be null to
-     * indicate that this was a command that is not recognised by this game.
+     * Erzeugt ein kommando Object, es werden das erste und das zweite  Wort
+     * unterstützt, aber beide oder eins können auch <null> sei. Das Kommando wort sollte 
+     * <null> sein , um zu zeigen das es nicht vom spiel akzeptiert wird.
+     * 
      */
     public Command()
     {
@@ -29,8 +30,8 @@ public abstract class Command
     }
 
     /**
-     * Return the second word of this command. If no
-     * second word was entered, the result is null.
+     * Gibt das zweite Wort zurück. Wenn es
+     * kein zweites Kommandowort gibt gibt es <null> zurück
      */
     public String getSecondWord()
     {
@@ -38,8 +39,7 @@ public abstract class Command
     }
 
     /**
-     * Check whether a second word was entered for this 
-     * command.
+     * überprüft ob das Kommando ein zweites  Wort hat
      */
     public boolean hasSecondWord()
     {
@@ -47,9 +47,9 @@ public abstract class Command
     }
 
     /**
-     * Define the second word of this command (the word
-     * entered after the command word). Null indicates that 
-     * there was no second word.
+     * Definiert das zweite  Wort des Kommandos (das Wort
+     * das nach dem Kommando wort steht)
+     * Null zeigt das es kein zweites Wort gibt
      */
     public void setSecondWord(String secondWord)
     {
@@ -57,13 +57,17 @@ public abstract class Command
     }
 
     /**
-     * Execute this command. A flag is returned indicating whether
-     * the game is over as a result of this command.
+     * wenn diese Methode ausgeführt wird wird der Gamestatus zurückgegeben.
      * 
-     * @return True, if game should exit; false otherwise.
+     * @return {@link GameStatus}, RUN wenn das Spiel weiterlaufen soll, STOP wenn das Spiel beendet werden soll
+     * und RESTART wenn das Spiel neu gestartet und Initialisiert werden soll.
      */
    
     public abstract GameStatus execute(Player player);
+    
+    /**
+     * Wenn diese Methode ausgeführt wird wird eine Spezielle Hilfenachricht auf die Konsole Ausgegeben
+     */
 
 	public abstract void showSpecialHelp() ;
     

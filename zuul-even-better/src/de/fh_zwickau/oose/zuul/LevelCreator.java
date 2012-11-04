@@ -7,21 +7,25 @@ public class LevelCreator
 
 {
 	/**
-	 * 
+	 * Diese Klasse beinhaltet alle Räume des Spieles und kan den Startraum zurückgeben
 	 * @author Martin Petzold
 	 * @version 0.1 (October 2012)
 	 */
 	private Room startRoom;
 	
+	/**
+	 * der Konstruktor des LevelCreators
+	 */
 	public LevelCreator()
 	{	
 	createRooms();
     
 	}
 	
+	// die Methode die Alle Räume erstellt die Verbindungen zwischen den Räumen Festlegt und alle Attribute der Räume festlegt
 	private void createRooms() {
 		Room fountain, westCave, eastCave, northCave, southCave,insideTheVase,attic,madHaddersHouse,madHaddersGarden,madHaddersKitchen,insideTheFurnance,whichCave;
-	    // create the rooms
+	    // erstellen der Räume mit der erwarteten Player Grösse, wenn keine Grösse angegeben, grösse Normal
 	    fountain = new Room("du befindest dich in einem Brunnen");
 	    westCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
 	    eastCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
@@ -35,7 +39,7 @@ public class LevelCreator
 	    insideTheFurnance = new Room("du bist im Inneren des Ofens die Wände sind schwarz",PlayerSize.LITTLE);
 	    whichCave = new Room("Die Höhle der bösen Hexe");
 	    
-	    // initialise room exits
+	    // Initialisieren der Raum Ein- und Ausgänge
 	    fountain.setExit("osten", eastCave);
 	    fountain.setExit("westen", westCave);
 	    fountain.setExit("norden", northCave);
@@ -58,10 +62,11 @@ public class LevelCreator
 	    madHaddersKitchen.setExit("ofen", insideTheFurnance);
 	    insideTheFurnance.setExit("raus", madHaddersKitchen);
 	    whichCave.setExit("norden", madHaddersHouse);
-	    // the player starts the game outside
+	    
+	    // Der Startraum für den Spieler
 	    startRoom=fountain;
 		
-	    
+	    // verschlossene Räume
 	    madHaddersHouse.setClosed(LockedStatus.LOCKED);
 	    whichCave.setClosed(LockedStatus.LOCKED);
 	}

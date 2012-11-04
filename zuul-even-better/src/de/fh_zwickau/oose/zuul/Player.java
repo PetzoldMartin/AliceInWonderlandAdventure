@@ -43,7 +43,6 @@ public class Player {
 	public void walk(String direction) {
 		// Try to leave current room.
 		Room nextRoom = currentRoom.getExit(direction);
-
 		if (nextRoom == null)
 			System.out.println("Da ist keine Tür!");
 		else {

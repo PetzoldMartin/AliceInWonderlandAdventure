@@ -3,7 +3,7 @@ package de.fh_zwickau.oose.zuul;
 import GamePlayEnums.GameStatus;
 
 /**
- * Implementation of the 'help' user command.
+ * Implementation des null Commands
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -12,15 +12,15 @@ public class NullCommand extends Command
 {
     
     /**
-     * Constructor for objects of class HelpCommand
+     * Konstruktor des Null Kommandos
      */
     public NullCommand()
     {
-        // nothing to do
+        // nichts zu tun
     }
     
     /**
-     * Print out an error message
+     * Schreibt eine Fehlernachricht auf die Ausgabe
      */
     public GameStatus execute(Player player)
     {
