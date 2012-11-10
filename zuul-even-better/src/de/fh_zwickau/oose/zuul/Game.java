@@ -1,5 +1,7 @@
 package de.fh_zwickau.oose.zuul;
 
+import commands.Command;
+
 import GamePlayEnums.GameStatus;
 
 /**
@@ -34,7 +36,7 @@ class Game
     }
     
     /**
-     * Die Main Klasse erstellt ein Spiel und ruft die hauptmethode auf
+     * Die Main Klasse erstellt ein Spiel und ruft die Hauptmethode auf.
      */
     public static void main(String[] args) {
     	Game game = new Game();
@@ -64,6 +66,8 @@ class Game
         // execute them until the game is over.
                 
         GameStatus gameStatus = GameStatus.RUN;
+        
+        //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
             Command command = parser.getCommand();
                 gameStatus = command.execute(player);
@@ -85,7 +89,7 @@ class Game
         System.out.println();
         System.out.println("Aufstehen Alice!");
         System.out.println("Weisst du wo du bist?");
-        System.out.println("Du bist dem Weissen Kaninchen gefolgt.");
+        System.out.println("Du bist dem Weiﬂen Kaninchen gefolgt. Finde es!");
         System.out.println();
         System.out.println(player.getCurrentRoom().getLongDescription());
     }

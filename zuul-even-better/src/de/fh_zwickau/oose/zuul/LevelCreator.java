@@ -26,18 +26,18 @@ public class LevelCreator
 	private void createRooms() {
 		Room fountain, westCave, eastCave, northCave, southCave,insideTheVase,attic,madHaddersHouse,madHaddersGarden,madHaddersKitchen,insideTheFurnance,whichCave;
 	    // erstellen der Räume mit der erwarteten Player Grösse, wenn keine Grösse angegeben, grösse Normal
-	    fountain = new Room("du befindest dich in einem Brunnen");
-	    westCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
-	    eastCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
-	    northCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
-	    southCave = new Room("du bist in einer Höhle in der nähe des Brunnens");
-	    insideTheVase = new Room("du bist in einer braunen Vase",PlayerSize.LITTLE);
-	    attic = new Room("der Dachbode!? der Osthöhle",PlayerSize.BIG);
-	    madHaddersHouse = new Room("das verückte Haus des noch Verückteren Hutmachers");
-	    madHaddersGarden = new Room("der Garten des Verückten Hutmachers");
-	    madHaddersKitchen = new Room("die unaufgeräumte Küche des Verrückten Hutmachers");
-	    insideTheFurnance = new Room("du bist im Inneren des Ofens die Wände sind schwarz",PlayerSize.LITTLE);
-	    whichCave = new Room("Die Höhle der bösen Hexe");
+	    fountain = new Room("Du befindest dich in einem Brunnen");
+	    westCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
+	    eastCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
+	    northCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
+	    southCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
+	    insideTheVase = new Room("Du bist in einer braunen Vase",PlayerSize.LITTLE);
+	    attic = new Room("Der Dachbode!? der Osthöhle.",PlayerSize.BIG);
+	    madHaddersHouse = new Room("Das verückte Haus des noch Verückteren Hutmachers.");
+	    madHaddersGarden = new Room("Der Garten des Verückten Hutmachers.");
+	    madHaddersKitchen = new Room("Die unaufgeräumte Küche des Verrückten Hutmachers.");
+	    insideTheFurnance = new Room("Du bist im Inneren des Ofens, die Wände sind schwarz.",PlayerSize.LITTLE);
+	    whichCave = new Room("Der Eingang zum Schloss der Roten Königin.");
 	    
 	    // Initialisieren der Raum Ein- und Ausgänge
 	    fountain.setExit("osten", eastCave);

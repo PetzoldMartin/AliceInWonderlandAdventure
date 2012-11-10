@@ -1,7 +1,6 @@
 package commands;
 
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
 /**
@@ -20,8 +19,8 @@ public class GoCommand extends Command
     }
 
     /** 
-     * Versuche in einen Raum zu gehen wenn ein Ausgang vorhanden ist
-     * , der Spieler die richtige Grösse hat und der Raum nicht verschlossen ist
+     * Versuche in einen Raum zu gehen, wenn ein Ausgang vorhanden ist.
+     * ,der Spieler die richtige Grösse hat und der Raum nicht verschlossen ist
      * erfolgreich gehe in den Raum
      * wenn das nicht möglich ist schreibe Error Nachricht. Returnt immer Gamestatus RUN
      */
@@ -32,8 +31,8 @@ public class GoCommand extends Command
             player.walk(direction);
         }
         else {
-            //Ausgabe wenn es kein zweites Kommand Wort gibt bzw keine Richtungsangabe
-            System.out.println("wohin soll ich gehen?");
+            //Ausgabe, das das 2. Wort fehlt. (Richtung)
+            System.out.println("Wohin soll ich gehen?");
         }
         return GameStatus.RUN;
     }
@@ -41,7 +40,7 @@ public class GoCommand extends Command
 	@Override
 	public void showSpecialHelp() {
 		//Ausgabe wenn die Hilfe zu diesem Kommand abgefragt wird
-		System.out.println("der Befehl mit dem du laufen kannst");
+		System.out.println("Es dient dazu dich im Wunderland zu bewegen.");
 		
 	}
 }

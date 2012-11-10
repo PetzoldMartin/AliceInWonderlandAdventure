@@ -1,7 +1,6 @@
 package commands;
 
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
 public class RestartCommand extends Command 
@@ -19,9 +18,9 @@ public class RestartCommand extends Command
 
 
 	    /**
-	     * Startet das spiel neu
-	     *  wenn es kein zweites Kommando Wort gibt, gibte Gamestatus RESTART zurück
-	     * ansonsten Fehlerausgabe gibt Gamestatus RUN zurück
+	     * Startet das spiel neu,
+	     *  wenn es kein zweites Kommando Wort gibt, gibte Gamestatus RESTART zurück.
+	     *  Ansonsten bei Fehlerausgabe gibt Gamestatus RUN zurück
 	     */
 	     
 	    public GameStatus execute(Player player)
@@ -48,7 +47,7 @@ public class RestartCommand extends Command
 	  //Die spezielle Hilfe für das RestartCommand
 		@Override
 		public void showSpecialHelp() {
-			System.out.println("mit diesem kommando startest du das spiel neu");
+			System.out.println("Mit diesen Befehl würd das Aktuelle Spiel neu gestartet. Alle Gegenstände verschwinden aus dem Inventar.");
 			
 		}
 

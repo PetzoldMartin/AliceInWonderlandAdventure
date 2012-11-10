@@ -2,6 +2,7 @@ package de.fh_zwickau.oose.zuul;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import commands.Command;
 import commands.GoCommand;
 import commands.HelpCommand;
 import commands.QuitCommand;

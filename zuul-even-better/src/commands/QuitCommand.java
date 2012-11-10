@@ -1,7 +1,6 @@
 package commands;
 
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Command;
 import de.fh_zwickau.oose.zuul.Player;
 
 /**
@@ -37,7 +36,7 @@ public class QuitCommand extends Command
     //Die spezielle Hilfe für das QuitCommand
 	@Override
 	public void showSpecialHelp() {
-		System.out.println("mit diesem Kommando Beendes du das Spiel");
+		System.out.println("Mithilfe dieses Befehls Beendest du das Spiel.");
 		
 	}
 

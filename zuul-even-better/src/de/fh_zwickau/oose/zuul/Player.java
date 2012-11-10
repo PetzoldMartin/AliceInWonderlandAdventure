@@ -42,21 +42,21 @@ public class Player {
 	public void walk(String direction) {
 		// Versuch den aktuellen Raum zu verlassen
 		Room nextRoom = currentRoom.getExit(direction);
-		if (nextRoom == null)//Überprüfung ob Raum vorhanden
-			System.out.println("Da ist keine Tür!");
+		if (nextRoom == null)//Überprüfung ob Raum vorhanden ist.
+			System.out.println("Da ist keine Durchgang!");
 		else {
-			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {//Überprüfung ob Raum Verschlossen
+			if (nextRoom.isClosed() == LockedStatus.UNLOCKED) {//Überprüfung ob Raum Verschlossen ist.
 				if (nextRoom.getSizeExpected() == PlayerSize.NORMAL) {
 					walkReally(nextRoom);
 				} else {
 					if (nextRoom.getSizeExpected() == size) {
 						walkReally(nextRoom);
 					} else {
-						System.out.println("du hast die falsche Grösse");
+						System.out.println("Hättest du nicht die Falsche Größe würdest du sogar da durch Passen!");
 					}
 				}
 			} else {
-				System.out.println("die Tür ist verschlossen");
+				System.out.println("Die Tür ist verschlossen.");
 			}
 		}
 	}
