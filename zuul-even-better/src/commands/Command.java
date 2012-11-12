@@ -22,7 +22,7 @@ public abstract class Command
 
     /**
      * Erzeugt ein Command-Objekt. Es werden das erste und das zweite  Wort
-     * unterstützt. Beide Worte oder das Zweite können auch <null> sei. 
+     * unterstützt. Beide Worte oder das Zweite können auch <null> sein. 
      * Das Kommando wort sollte <null> sein , um zu zeigen das es nicht vom spiel akzeptiert wird.
      */
     public Command()
