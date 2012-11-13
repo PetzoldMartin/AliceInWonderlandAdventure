@@ -1,6 +1,7 @@
 package commands;
 
 import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,7 +12,7 @@ import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Player;
 
-public class HelpCommandTest {
+public class HelpCommandTest extends TestCase{
 
 	HelpCommand command;
 	Player player;
