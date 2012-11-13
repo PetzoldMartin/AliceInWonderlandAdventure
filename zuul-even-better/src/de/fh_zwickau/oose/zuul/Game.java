@@ -1,5 +1,6 @@
 package de.fh_zwickau.oose.zuul;
 
+import gameBuilding.LevelCreator;
 import commands.Command;
 
 import GamePlayEnums.GameStatus;
@@ -96,5 +97,12 @@ class Game
 
 	public LevelCreator getLC() {
 		return LC;
+	}
+	public Player getPlayer() {
+		return player;
+	}
+	
+	public Parser getPlarser() {
+		return parser;
 	}
 }

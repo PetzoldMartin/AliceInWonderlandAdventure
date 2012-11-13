@@ -1,5 +1,6 @@
-package de.fh_zwickau.oose.zuul;
+package gameBuilding;
 
+import de.fh_zwickau.oose.zuul.Room;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
