@@ -1,4 +1,5 @@
 package de.fh_zwickau.oose.zuul;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -8,73 +9,74 @@ import commands.NullCommand;
 
 /**
  * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.
- *
- * Dieser Parser liest die Texteingabe und versucht diese als Game Commands zu interpretieren.
- * Immer wenn er aufgerufen wird, liest er eine zeile vom Terminal ein und versucht diese
- * als zwei wort kommando zu interpretieren. Es wird bei erfolg ein Objekt der Klasse des Kommandos zurückgegeben.
- *
- * Der parser hat eine Liste mit Kommandowörtern. Er prüft die Eingabe gegen 
- * diese Liste, wenn die eingabe nicht gefunden wird gibt er das null command Objekt zurück.
+ * 
+ * Dieser Parser liest die Texteingabe und versucht diese als Game Commands zu
+ * interpretieren. Immer wenn er aufgerufen wird, liest er eine zeile vom
+ * Terminal ein und versucht diese als zwei wort kommando zu interpretieren. Es
+ * wird bei erfolg ein Objekt der Klasse des Kommandos zurückgegeben.
+ * 
+ * Der parser hat eine Liste mit Kommandowörtern. Er prüft die Eingabe gegen
+ * diese Liste, wenn die eingabe nicht gefunden wird gibt er das null command
+ * Objekt zurück.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
  */
 
-class Parser 
-{
+class Parser {
 
-    private CommandWords commands;  // enthält alle KommandoWörter
-    public Parser() 
-    {
-        commands = new CommandWords();
-    }
+	private CommandWords commands; // enthält alle KommandoWörter
 
-    public Command getCommand() 
-    {
-        String inputLine = "";   //enthält die gesamte Eingabe
-        String word1;
-        String word2;
+	public Parser() {
+		commands = new CommandWords();
+	}
 
-        System.out.print("> ");     // print prompt
+	public Command consoleReader() {
+		String inputLine = ""; // enthält die gesamte Eingabe
+		BufferedReader reader = new BufferedReader(new InputStreamReader(
+				System.in));
+		try {
+			inputLine = reader.readLine();
+		} catch (java.io.IOException exc) {
+			System.out.println("There was an error during reading: "
+					+ exc.getMessage());
+		}
+		return getCommand(inputLine);
+	}
 
-        BufferedReader reader = 
-            new BufferedReader(new InputStreamReader(System.in));
-        try {
-            inputLine = reader.readLine();
-        }
-        catch(java.io.IOException exc) {
-            System.out.println ("There was an error during reading: "
-                                + exc.getMessage());
-        }
+	public Command getCommand(String inputLineFR) {
 
-        StringTokenizer tokenizer = new StringTokenizer(inputLine);
+		String word1;
+		String word2;
 
-        if(tokenizer.hasMoreTokens())
-            word1 = tokenizer.nextToken();      // bekomme erstes Wort
-        else
-            word1 = null;
-        if(tokenizer.hasMoreTokens())
-            word2 = tokenizer.nextToken();      // bekomme zweites Wort
-        else
-            word2 = null;
+		System.out.print("> "); // print prompt
 
-        // Notiz: der Rest der Eingabe wird ignoriert
+		StringTokenizer tokenizer = new StringTokenizer(inputLineFR);
 
-        Command command = commands.get(word1);
-        if(command == null) {
-        	command = new NullCommand();
-        }
-        else {
-        	command.setSecondWord(word2);
-        }
-        return command;
-    }
+		if (tokenizer.hasMoreTokens())
+			word1 = tokenizer.nextToken(); // bekomme erstes Wort
+		else
+			word1 = null;
+		if (tokenizer.hasMoreTokens())
+			word2 = tokenizer.nextToken(); // bekomme zweites Wort
+		else
+			word2 = null;
 
-    /**
-     * schreibt alle Komando wörter auf die Konsole
-     */
-    public void showCommands()
-    {
-        commands.showAll();
-    }
+		// Notiz: der Rest der Eingabe wird ignoriert
+
+		Command command = commands.get(word1);
+		if (command == null) {
+			command = new NullCommand();
+		} else {
+			command.setSecondWord(word2);
+		}
+		return command;
+	}
+
+	/**
+	 * schreibt alle Komando wörter auf die Konsole
+	 */
+	public void showCommands() {
+		commands.showAll();
+	}
 }

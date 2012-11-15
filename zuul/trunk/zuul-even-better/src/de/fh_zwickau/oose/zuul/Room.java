@@ -75,12 +75,13 @@ public class Room
     /**
      * Gibt die Ausgänge des Raumes zurück
      */
-    private String getExitString()
+	private String getExitString()
     {
         String returnString = "Ausgänge:";
         Set<String> keys = exits.keySet();
         for(Iterator<String> iter = keys.iterator(); iter.hasNext(); )
             returnString += " " + iter.next();
+        	
         return returnString;
     }
 
@@ -89,7 +90,12 @@ public class Room
      */
     public Room getExit(String direction) 
     {
-        return exits.get(direction);
+    	if (exits.get(direction)!=null){
+    		return exits.get(direction);
+    	}
+    	else{
+    		return this;
+    	}
     }
 
     /**

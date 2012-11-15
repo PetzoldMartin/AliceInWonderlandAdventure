@@ -70,7 +70,7 @@ class Game
         
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-            Command command = parser.getCommand();
+            Command command = parser.consoleReader();
                 gameStatus = command.execute(player);
         }
         if(gameStatus==GameStatus.RESTART){
