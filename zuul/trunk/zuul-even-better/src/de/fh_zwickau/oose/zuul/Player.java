@@ -1,5 +1,10 @@
 package de.fh_zwickau.oose.zuul;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
@@ -13,12 +18,27 @@ import GamePlayEnums.PlayerSize;
 public class Player {
 	private Room currentRoom;//der Raum indem sich der Spieler befindet.
 	private PlayerSize size = PlayerSize.NORMAL;//die Grösse die der Spieler hat.
-
+	 private ArrayList<GameObject>  inventory;
 	/**
 	 * Konstruktor für objekte der Klasse Player
 	 */
 	public Player() {
 		currentRoom = null;
+		inventory = new ArrayList<GameObject>();	}
+	
+	
+	
+    //* Müsste in einer eigenen klasse. 
+	public void itemStore(GameObject item) {
+		inventory.add(item);
+	}
+	
+	public void itemRemove(GameObject item) {
+		for(int i=0; i<inventory.size();i++) {
+			if(inventory.get(i).equals(item)) { 
+				inventory.remove(i);
+			}
+		}
 	}
 
 	/**
@@ -76,5 +96,13 @@ public class Player {
 
 	public void setSize(PlayerSize size) {
 		this.size = size;
+	}
+
+	public List<GameObject> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(ArrayList<GameObject> inventory) {
+		this.inventory = inventory;
 	}
 }

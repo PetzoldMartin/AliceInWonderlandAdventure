@@ -1,6 +1,7 @@
 package gameBuilding;
 
 import de.fh_zwickau.oose.zuul.Room;
+import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
@@ -70,6 +71,19 @@ public class LevelCreator
 	    // verschlossene Räume
 	    madHaddersHouse.setClosed(LockedStatus.LOCKED);
 	    whichCave.setClosed(LockedStatus.LOCKED);
+	    
+	    //--------------------------------------------------------
+	    
+	    //Items.Personen etc Erstellen
+	    GameObject flower= new GameObject("flower","blumen blumen", true,true);
+	    GameObject flower2= new GameObject("blumea","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false);
+	    
+	    // Einfügen der Oben erstellten Objekte
+	    fountain.itemStore(flower);
+	    fountain.itemStore(flower2);
+	    
+	    // Uselist hinzufügen.
+	    
 	}
 
 	public Room getStartRoom()

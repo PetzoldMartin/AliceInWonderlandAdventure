@@ -1,8 +1,11 @@
 package de.fh_zwickau.oose.zuul;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
 
@@ -24,19 +27,9 @@ public class Room
     private HashMap<String, Room> exits;// stores exits of this room.
     private PlayerSize sizeExpected;// die vom Raum erwartete Spielergrösse
     private LockedStatus closed;// Status ob der Raum verschlossen ist oder nicht
+    private ArrayList<GameObject> warehouse;
+ 
     
-    /**
-     * Konstruktor der Raumklasse mit Beschreibung und
-     * mit erwarteter Spielergrösse
-     */
-    public Room(String description,PlayerSize sizeExpeced) 
-    {
-    	this.sizeExpected=sizeExpeced;
-        this.description = description;
-        exits = new HashMap<String, Room>();
-        closed=LockedStatus.UNLOCKED;
-    }
-
     /**
      * Konstruktor der Raumklasse mit Beschreibung und
      * ohne erwartete Spielergrösse
@@ -47,7 +40,51 @@ public class Room
         this.description = description;
         exits = new HashMap<String, Room>();
        closed=LockedStatus.UNLOCKED;
+       warehouse = new ArrayList<GameObject>();
+    }    
+    /**
+     * Konstruktor der Raumklasse mit Beschreibung und
+     * mit erwarteter Spielergrösse
+     */
+    public Room(String description,PlayerSize sizeExpeced) 
+    {
+    	this.sizeExpected=sizeExpeced;
+        this.description = description;
+        exits = new HashMap<String, Room>();
+        closed=LockedStatus.UNLOCKED;
+        warehouse = new ArrayList<GameObject>();
     }
+
+
+    public List<GameObject> getWarehouse() {
+		return warehouse;
+	}
+
+
+	public void setWarehouse(ArrayList<GameObject> warehouse) {
+		this.warehouse = warehouse;
+	}
+
+
+	//* Müsste in einer eigenen klasse. 
+	public void itemStore(GameObject item) {
+		warehouse.add(item);
+	}
+	
+	public void itemRemove(GameObject item) {
+		for(int i=0; i<warehouse.size();i++) {
+			if(warehouse.get(i).equals(item)) { 
+				warehouse.remove(i);
+			}
+		}
+	}
+	
+	public void itemRemove(int index) {
+		warehouse.remove(index);
+	}
+
+
+    
     /**
      * Diese Methode Definiert die Raumausgänge
      */

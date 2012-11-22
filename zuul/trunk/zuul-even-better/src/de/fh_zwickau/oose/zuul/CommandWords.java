@@ -5,8 +5,12 @@ import java.util.Iterator;
 import commands.Command;
 import commands.GoCommand;
 import commands.HelpCommand;
+import commands.LookCommand;
 import commands.QuitCommand;
 import commands.RestartCommand;
+import commands.SpeakCommand;
+import commands.TakeCommand;
+import commands.UseCommand;
 
 /**
  * 
@@ -32,6 +36,10 @@ public class CommandWords
         commands.put("?", new HelpCommand(this));
         commands.put("ende", new QuitCommand());
         commands.put("neustart", new RestartCommand());
+        commands.put("guck", new LookCommand());
+        commands.put("nimm", new TakeCommand());
+        commands.put("sprich", new SpeakCommand());
+        commands.put("nutz", new UseCommand());
     }
 
     /**
