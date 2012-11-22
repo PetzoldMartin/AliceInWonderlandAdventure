@@ -98,7 +98,7 @@ public class Player {
 		this.size = size;
 	}
 
-	public List<GameObject> getInventory() {
+	public ArrayList<GameObject> getInventory() {
 		return inventory;
 	}
 

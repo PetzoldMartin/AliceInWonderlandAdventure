@@ -56,7 +56,7 @@ public class Room
     }
 
 
-    public List<GameObject> getWarehouse() {
+    public ArrayList<GameObject> getWarehouse() {
 		return warehouse;
 	}
 
