@@ -48,6 +48,7 @@ class Parser {
 
 		String word1;
 		String word2;
+		String word3;
 
 		System.out.print("> "); // print prompt
 
@@ -61,6 +62,10 @@ class Parser {
 			word2 = tokenizer.nextToken(); // bekomme zweites Wort
 		else
 			word2 = null;
+		if (tokenizer.hasMoreTokens())
+			word3 = tokenizer.nextToken(); // bekomme zweites Wort
+		else
+			word3 = null;
 
 		// Notiz: der Rest der Eingabe wird ignoriert
 
@@ -69,6 +74,7 @@ class Parser {
 			command = new NullCommand();
 		} else {
 			command.setSecondWord(word2);
+			command.setThirdWord(word3);
 		}
 		return command;
 	}

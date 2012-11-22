@@ -19,6 +19,7 @@ import GamePlayEnums.GameStatus;
 public abstract class Command
 {
     private String secondWord;
+	private String thirdWord;
 
     /**
      * Erzeugt ein Command-Objekt. Es werden das erste und das zweite  Wort
@@ -53,6 +54,9 @@ public abstract class Command
         this.secondWord = secondWord;
     }
     
+    public void setThirdWord(String thirdWord) {
+    	this.thirdWord = thirdWord;
+    }
     /**
      * Gibt das zweite Wort zurück. 
      * Wenn es kein zweites Kommandowort gibt gibt es <null> zurück
@@ -62,6 +66,11 @@ public abstract class Command
         return secondWord;
     }
 
+	public String getThirdWord()
+	{
+	       return thirdWord;
+	 }
+	    
     /**
      * überprüft ob das Kommando ein zweites  Wort hat
      */
@@ -69,5 +78,13 @@ public abstract class Command
     {
         return secondWord != null;
     }
+    
+    public boolean hasThirdWord()
+    {
+        return secondWord != null;
+    }
+
+		
+	
    
 }
