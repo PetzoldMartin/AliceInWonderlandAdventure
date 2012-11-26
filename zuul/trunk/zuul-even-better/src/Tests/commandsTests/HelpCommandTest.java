@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import commands.HelpCommand;
 import de.fh_zwickau.oose.zuul.CommandWords;
+import de.fh_zwickau.oose.zuul.Parser;
 import de.fh_zwickau.oose.zuul.Player;
 
 import GamePlayEnums.GameStatus;
@@ -17,10 +18,12 @@ public class HelpCommandTest extends TestCase{
 
 	HelpCommand command;
 	Player player;
+	Parser parser;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new HelpCommand(new CommandWords());
+		parser = new Parser();
 	}
 
 	@Test
@@ -31,6 +34,8 @@ public class HelpCommandTest extends TestCase{
 
 	@Test
 	public void testShowSpecialHelp() {
+		assertNotNull(parser.getCommand("? ?"));
+		System.out.println(parser.getCommand("? ?").execute(player));
 		//Nicht Testbar
 	}
 
