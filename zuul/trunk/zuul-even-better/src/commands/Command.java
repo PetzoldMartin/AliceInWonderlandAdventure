@@ -29,6 +29,7 @@ public abstract class Command
     public Command()
     {
         secondWord = null;
+        thirdWord= null;
     }
 
     /**
