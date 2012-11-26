@@ -53,7 +53,11 @@ public abstract class Command
     {
         this.secondWord = secondWord;
     }
-    
+    /**
+     * Definiert das dritte  Wort des Kommandos (das Wort
+     * das nach dem Kommando wort steht)
+     * Null zeigt das es kein drittes Wort gibt
+     */
     public void setThirdWord(String thirdWord) {
     	this.thirdWord = thirdWord;
     }
@@ -66,6 +70,10 @@ public abstract class Command
         return secondWord;
     }
 
+	/**
+    * Gibt das zweite Wort zurück. 
+	* Wenn es kein zweites Kommandowort gibt gibt es <null> zurück
+	*/
 	public String getThirdWord()
 	{
 	       return thirdWord;
@@ -79,6 +87,9 @@ public abstract class Command
         return secondWord != null;
     }
     
+    /**
+     * überprüft ob das Kommando ein drittes  Wort hat
+     */
     public boolean hasThirdWord()
     {
         return secondWord != null;

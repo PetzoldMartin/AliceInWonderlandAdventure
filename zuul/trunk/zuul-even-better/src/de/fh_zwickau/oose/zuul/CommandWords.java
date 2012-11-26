@@ -30,16 +30,7 @@ public class CommandWords
      */
     public CommandWords()
     {
-        commands = new HashMap<String, Command>();
-        commands.put("geh", new GoCommand());
-        commands.put("hilfe", new HelpCommand(this));
-        commands.put("?", new HelpCommand(this));
-        commands.put("ende", new QuitCommand());
-        commands.put("neustart", new RestartCommand());
-        commands.put("guck", new LookCommand());
-        commands.put("nimm", new TakeCommand());
-        commands.put("sprich", new SpeakCommand());
-        commands.put("nutz", new UseCommand());
+        InitialeCommands();
     }
 
     /**
@@ -70,5 +61,41 @@ public class CommandWords
 	public void showspecialhelp(String whoUnclear) {
 		
 		this.get(whoUnclear).showSpecialHelp();
+	}
+	/**
+	 * 	Methode um ein neues Kommando einzufügen
+	 * @param name der Name des Kommandos
+	 * @param command das einzufügende Kommando
+	 */
+	public void insertCommand(String name, Command command){
+		commands.put(name, command);
+	}
+	/**
+	 * Methode um ein neues Kommando zu löschen
+	 * @param name der Name des zu löschenden Kommandos
+	 */
+	public void deleteCommand(String name){
+		commands.remove(name);
+	}
+	/**
+	 * Methode zum leeeren der Kommandoliste
+	 */
+	public void clearCommands(){
+		commands.clear();
+	}
+	/**
+	 * Methode um die Kommando Liste zu initialisieren
+	 */
+	public void InitialeCommands(){
+		commands = new HashMap<String, Command>();
+        commands.put("geh", new GoCommand());
+        commands.put("hilfe", new HelpCommand(this));
+        commands.put("?", new HelpCommand(this));
+        commands.put("ende", new QuitCommand());
+        commands.put("neustart", new RestartCommand());
+        commands.put("guck", new LookCommand());
+        commands.put("nimm", new TakeCommand());
+        commands.put("sprich", new SpeakCommand());
+        commands.put("nutz", new UseCommand());
 	}
 }
