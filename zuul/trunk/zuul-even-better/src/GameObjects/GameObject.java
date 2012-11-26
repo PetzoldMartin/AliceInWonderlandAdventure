@@ -1,5 +1,7 @@
 package GameObjects;
 
+
+
 /**
  * Klasse GameObject
  *
@@ -12,6 +14,7 @@ public class GameObject {
 	private String amplification; //Itembeschreibung
 	private boolean takeAble;
 	private boolean speakAble;
+	private boolean visebility;
 	
 	/**
 	 * Standard Konstruktor der Alles Notwendige erstellt. 
@@ -21,7 +24,9 @@ public class GameObject {
 		amplification = "-!-defaul-!-";
 		takeAble = false;
 		speakAble = false;
+		visebility = true;
 	}
+	
 	
 	/**
 	 * Erstellt Item
@@ -31,11 +36,12 @@ public class GameObject {
 	 * @param takeA Ob man das GameObject aufnehmen kann.
 	 * @param speakA Ob man mit dem GameObject reden kann.
 	 */
-	public GameObject(String objn,String ampli,boolean takeA,boolean speakA) {
+	public GameObject(String objn,String ampli,boolean takeA,boolean speakA,boolean visibleA) {
 		objName = objn;
 		amplification = ampli;
 		takeAble = takeA;
 		speakAble = speakA;
+		visebility = visibleA;
 	}
 
 	
@@ -71,5 +77,15 @@ public class GameObject {
 
 	public void setSpeakAble(boolean speakAble) {
 		this.speakAble = speakAble;
+	}
+
+
+	public boolean isVisebility() {
+		return visebility;
+	}
+
+
+	public void setVisebility(boolean visebility) {
+		this.visebility = visebility;
 	}
 }

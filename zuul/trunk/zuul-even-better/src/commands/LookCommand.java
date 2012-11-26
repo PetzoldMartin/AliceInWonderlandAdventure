@@ -60,12 +60,23 @@ public class LookCommand extends Command {
 	}
 
 	private boolean itemShow(ArrayList<GameObject> searchArea, boolean contain) {
-		for (int j = 0; j < searchArea.size(); j++) {
-			System.out.print(searchArea.get(j).getObjName());
-			if (j < searchArea.size() - 1) {
-				System.out.print(", ");
+		int k=1;
+		for (int j = 0; j < searchArea.size(); j++){
+			if (searchArea.get(j).isVisebility() == false){
+				k++;
 			}
-			contain = true;
+		}
+		for (int j = 0; j < searchArea.size(); j++) {
+			if (searchArea.get(j).isVisebility() == true) {
+				System.out.print(searchArea.get(j).getObjName());
+				if (j < searchArea.size() - k) {
+					System.out.print(", ");
+				}
+				
+				contain = true;
+			
+			}
+			
 		}
 		return contain;
 	}
@@ -74,8 +85,10 @@ public class LookCommand extends Command {
 			boolean contain) {
 		for (int k = 0; k < searchArea.size(); k++) {
 			if (searchArea.get(k).getObjName().equals(getSecondWord())) {
-				System.out.println(searchArea.get(k).getAmplification());
-				contain = true;
+				if (searchArea.get(k).isVisebility() == true) {
+					System.out.println(searchArea.get(k).getAmplification());
+					contain = true;
+				}
 			}
 		}
 		return contain;

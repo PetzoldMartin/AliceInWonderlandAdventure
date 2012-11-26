@@ -48,7 +48,7 @@ public class UseCommand extends Command {
 	        		}
 	        	}
 	        	
-	        	player.getInventory().add(new GameObject("Blumenstrauﬂ", "Ein Blumenstrauﬂ aus den Blumen des Brunnens", false,false));
+	        	player.getInventory().add(new GameObject("Blumenstrauﬂ", "Ein Blumenstrauﬂ aus den Blumen des Brunnens", false,false,true));
 	        	System.out.println("FLOWER UND BLUME DIGITIEEERRREENN ZUUUMM BLUMENSTRAUﬂ O_O");
 	        	
 	        	

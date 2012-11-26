@@ -75,13 +75,89 @@ public class LevelCreator
 	    //--------------------------------------------------------
 	    
 	    //Items.Personen etc Erstellen
-	    GameObject flower= new GameObject("flower","blumen blumen", true,true);
-	    GameObject flower2= new GameObject("blumea","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false);
+	    GameObject flower= new GameObject("flower","blumen blumen", true,true,true);
+	    GameObject flower2= new GameObject("blumea","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
+	    
+	    //Spielrelevante Items
+	    //fountain
+	    GameObject rabbit= new GameObject("Kaninchen","Das weiße Kaninchen",false,true,true);
+	    GameObject wood = new GameObject("Holz","Holz für den Kamin",true,false,false);
+	    //eastcave
+	    GameObject desk1= new GameObject("Tisch","Ein Holztisch",false,false,true);
+	    GameObject blueBerry= new GameObject("BlaueBeere","eine Schrumpfbeere",true,false,true);
+	    //northcave
+	    GameObject picture=new GameObject("Bild","ein Schönes Bild",false,false,true);
+	    GameObject bed= new GameObject("Bett","Ein Kuschliges Bett",false,false ,true);
+	    GameObject harp= new GameObject("Harfe","Eine Goldene Harfe",true,false,true);
+	    //insideTheVase
+	    GameObject desk2= desk1;
+	    GameObject redberry= new GameObject("RoteBeere","eine Wachstumsbeere",true,false,true);
+	    //attic
+	    GameObject key1= new GameObject("Schluessel","ein Goldener Schlüssel",true,false,true);
+	    //Southcave
+	    GameObject boiler= new GameObject("Kessel","ein Kessel voller Wasser",true,false,true);
+	    //madHaddersHouse
+	    GameObject madHadder= new GameObject("Hutmacher","der Verückte Hutmacher",false,false,true);
+	    GameObject desk3= desk1;
+	    GameObject cup1= new GameObject("BlaueTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",false,false,true);
+	    GameObject cup2= new GameObject("RoteTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",false,false,true);
+	    GameObject pot= new GameObject("Teekanne","Eine TeeKanne die Nichtmehr im Schrank des Hutmachers ist",true,false,true);
+	    GameObject key2= new GameObject("Schluessel","ein Goldener Schlüssel",true,false,false);;
+	    //madHaddersKitchen
+	    GameObject cat= new GameObject("Katze","Die Grinsekatze",false,true,true);
+	    //insideTheFurnance
+	    GameObject fireGhost= new GameObject("Feuergeist","Ein kleiner trauriger Feuergeist",false,true,true);
+	    GameObject hairDryer= new GameObject("Foehn","Ein Foehn",true,false,false);
+	    //madHaddersGarden
+	    GameObject snownan= new GameObject("Schneemann","Ein Schneemann mit Möhrennase",false,true,true);
+	    GameObject fountainInGarden= new GameObject("Brunnen","Ein Brunnen im Garten",false,false,true);
+	    GameObject blueBerry2=blueBerry;
+	    GameObject carrot= new GameObject("Moehre","Eine Orange Moehre",true,false,false);
+	    //whitchcave
+	    GameObject which= new GameObject("Hexe","Die Böse Hexe",false,false,true);
+	    
 	    
 	    // Einfügen der Oben erstellten Objekte
+	  //fountain
 	    fountain.itemStore(flower);
 	    fountain.itemStore(flower2);
-	    
+	    fountain.itemStore(rabbit);
+	    fountain.itemStore(wood);
+	   //westcave
+	   //Nothing
+	   //eastcave
+	   eastCave.itemStore(desk1);
+	   eastCave.itemStore(blueBerry);
+	   //northcave
+	   northCave.itemStore(picture);
+	   northCave.itemStore(bed);
+	   northCave.itemStore(harp);
+	   //insideTheVase
+	   insideTheVase.itemStore(desk2);
+	   insideTheVase.itemStore(redberry);
+	   //attic
+	   attic.itemStore(key1);
+	   //southcave
+	   southCave.itemStore(boiler);
+	   //madHaddersHouse
+	   madHaddersHouse.itemStore(madHadder);
+	   madHaddersHouse.itemStore(desk3);
+	   madHaddersHouse.itemStore(cup1);
+	   madHaddersHouse.itemStore(cup2);
+	   madHaddersHouse.itemStore(pot);
+	   madHaddersHouse.itemStore(key2);
+	   //madHaddersKitchen
+	   madHaddersKitchen.itemStore(cat);
+	   //insideTheFurnance
+	   insideTheFurnance.itemStore(fireGhost);
+	   insideTheFurnance.itemStore(hairDryer);
+	   //madHaddersGarden
+	   madHaddersGarden.itemStore(snownan);
+	   madHaddersGarden.itemStore(fountainInGarden);
+	   madHaddersGarden.itemStore(blueBerry2);
+	   madHaddersGarden.itemStore(carrot);
+	   //Whichcave
+	   whichCave.itemStore(which);
 	    // Uselist hinzufügen.
 	    
 	}
