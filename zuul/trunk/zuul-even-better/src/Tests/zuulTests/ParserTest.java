@@ -6,8 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-
 import commands.NullCommand;
+
 import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Parser;

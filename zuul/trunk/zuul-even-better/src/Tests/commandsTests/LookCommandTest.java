@@ -8,8 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import GamePlayEnums.GameStatus;
+
 import commands.LookCommand;
-import commands.TakeCommand;
 
 import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Parser;

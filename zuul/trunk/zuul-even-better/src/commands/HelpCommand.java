@@ -1,8 +1,9 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.CommandWords;
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.CommandWords;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
 
 /**
  * Implementiert das Hilfe Kommando
@@ -35,17 +36,17 @@ public class HelpCommand extends Command
             try {
             	commandWords.showspecialhelp(direction);
             } catch (NullPointerException except) {
-            	System.out.println("Es gibt das Befehlswort nicht. Daher kann auch keine Hilfe angezeigt werden. " +
+            	Game.textOut.lineEntry("Es gibt das Befehlswort nicht. Daher kann auch keine Hilfe angezeigt werden. " +
             							"Bis auf diese Hilfe das keine Hilfe angezeigt werden kann. Ich hoffe es war Ihnen eine Hilfe.");
             }
             
             
         }
         else{
-        	 System.out.println("Ja, wo ist denn das Kaninchen hin?");
-             System.out.println("Du scheinst es aus den Augen verloren zu haben.");
-             System.out.println("Versuche es wieder zu finden!");
-             System.out.println("deine Befehlswörter sind:");
+        	Game.textOut.lineEntry("Ja, wo ist denn das Kaninchen hin?");
+        	Game.textOut.lineEntry("Du scheinst es aus den Augen verloren zu haben.");
+        	Game.textOut.lineEntry("Versuche es wieder zu finden!");
+        	Game.textOut.lineEntry("deine Befehlswörter sind:");
         commandWords.showAll();
         }
         return GameStatus.RUN;
@@ -54,7 +55,7 @@ public class HelpCommand extends Command
     //die spezielle Hilfe für das Hilfe Kommando
 	@Override
 	public void showSpecialHelp() {
-		System.out.println("Dies ist das Kommando für die Hilfe wie du schon herausgefunden hast.");
+		Game.textOut.lineEntry("Dies ist das Kommando für die Hilfe wie du schon herausgefunden hast.");
 		
 	}
 }

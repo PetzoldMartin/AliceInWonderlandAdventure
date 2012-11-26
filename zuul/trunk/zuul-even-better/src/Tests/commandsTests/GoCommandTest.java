@@ -6,11 +6,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import GamePlayEnums.GameStatus;
 
 import commands.GoCommand;
-import de.fh_zwickau.oose.zuul.Player;
 
-import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Player;
 
 public class GoCommandTest extends TestCase {
 

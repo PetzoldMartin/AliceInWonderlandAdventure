@@ -24,6 +24,7 @@ public class Game
     private Parser parser;// der Textparser des Spieles
     private Player player;// die Instanz der Player Klasse des Spieles
     private LevelCreator LC;//der Level/Raum Creator des Spieles
+	public static TextOut textOut;
 
     /**
      * Konstruktor der Game Klasse erstellt den Parser und Ruft die Initialisierungsmethode auf
@@ -53,6 +54,8 @@ public class Game
         player = new Player();
     	LC= new LevelCreator();
     	player.setCurrentRoom(LC.getStartRoom());
+    	textOut=new TextOut();
+    	
     }
     
 
@@ -60,24 +63,26 @@ public class Game
      *  Die Hauptmethode des Spieles
      */
     public void play() 
-    {            
+    {    
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
                 
         GameStatus gameStatus = GameStatus.RUN;
-        
+        textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
             Command command = parser.consoleReader();
                 gameStatus = command.execute(player);
+                textOut.ausgabe();
         }
         if(gameStatus==GameStatus.RESTART){
         	this.newGameInitialize();
         	this.play();
         }else{
-        	System.out.println("Danke fürs Spielen.  Schade das du Gehst.");
+        	textOut.lineEntry("Danke fürs Spielen.  Schade das du Gehst.");
+        	textOut.ausgabe();
         }
         
     }
@@ -87,12 +92,13 @@ public class Game
      */
     private void printWelcome()
     {
-        System.out.println();
-        System.out.println("Aufstehen Alice!");
-        System.out.println("Weisst du wo du bist?");
-        System.out.println("Du bist dem Weißen Kaninchen gefolgt. Finde es!");
-        System.out.println();
-        System.out.println(player.getCurrentRoom().getLongDescription());
+    	textOut.lineEntry();
+    	textOut.lineEntry("Aufstehen Alice!");
+    	textOut.lineEntry("Weisst du wo du bist?");
+    	textOut.lineEntry("Du bist dem Weißen Kaninchen gefolgt. Finde es!");
+    	textOut.lineEntry();
+    	textOut.lineEntry(player.getCurrentRoom().getLongDescription());
+    	
     }
 
 	public LevelCreator getLC() {
@@ -104,5 +110,9 @@ public class Game
 	
 	public Parser getParser() {
 		return parser;
+	}
+
+	public TextOut getTextOut() {
+		return textOut;
 	}
 }

@@ -1,7 +1,8 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
 
 /**
  * Implementation des null Commands
@@ -25,7 +26,7 @@ public class NullCommand extends Command
      */
     public GameStatus execute(Player player)
     {
-    	System.out.println("Was willst du...(Schreibe hilfe oder ? für Hilfe.)");
+    	Game.textOut.lineEntry("Was willst du...(Schreibe hilfe oder ? für Hilfe.)");
         return GameStatus.RUN;
     }
 

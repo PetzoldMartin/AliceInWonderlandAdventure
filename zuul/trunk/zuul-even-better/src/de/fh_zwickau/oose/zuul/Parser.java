@@ -38,7 +38,7 @@ public class Parser {
 		try {
 			inputLine = reader.readLine();
 		} catch (java.io.IOException exc) {
-			System.out.println("There was an error during reading: "
+			Game.textOut.lineEntry("There was an error during reading: "
 					+ exc.getMessage());
 		}
 		return getCommand(inputLine);
@@ -50,7 +50,7 @@ public class Parser {
 		String word2;
 		String word3;
 
-		System.out.print("> "); // print prompt
+		Game.textOut.entry("> "); // print prompt
 
 		StringTokenizer tokenizer = new StringTokenizer(inputLineFR);
 

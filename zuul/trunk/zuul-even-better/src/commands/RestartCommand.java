@@ -1,7 +1,8 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
 
 public class RestartCommand extends Command 
 {
@@ -27,15 +28,15 @@ public class RestartCommand extends Command
 	    {    	
 	        
 	        if(getSecondWord() == null) {
-	        	System.out.println("Das Wunderland wird neu Geträumt... ");
-		        System.out.println("Was getan war ist nun nie Geschehn... ");
-		        System.out.println("Der Hutmacher hat noch alle Tassen im Schrank... ");
-		        System.out.println("... ");
+	        	Game.textOut.lineEntry("Das Wunderland wird neu Geträumt... ");
+	        	Game.textOut.lineEntry("Was getan war ist nun nie Geschehn... ");
+	        	Game.textOut.lineEntry("Der Hutmacher hat noch alle Tassen im Schrank... ");
+	        	Game.textOut.lineEntry("... ");
    
 		        return GameStatus.RESTART ;
 	        }
 	        else {
-	            System.out.println("Ich kann das nicht neu starten...");
+	        	Game.textOut.lineEntry("Ich kann das nicht neu starten...");
 	            return GameStatus.RUN;
 	        }
 	    }
@@ -43,7 +44,7 @@ public class RestartCommand extends Command
 	  //Die spezielle Hilfe für das RestartCommand
 		@Override
 		public void showSpecialHelp() {
-			System.out.println("Mit diesen Befehl würd das Aktuelle Spiel neu gestartet. Alle Gegenstände verschwinden aus dem Inventar.");
+			Game.textOut.lineEntry("Mit diesen Befehl würd das Aktuelle Spiel neu gestartet. Alle Gegenstände verschwinden aus dem Inventar.");
 			
 		}
 

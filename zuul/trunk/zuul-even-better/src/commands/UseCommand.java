@@ -1,8 +1,8 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Player;
 
 public class UseCommand extends Command {
 	 public UseCommand()

@@ -1,7 +1,8 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
 
 /**
  * Implementation of the 'quit' user command.
@@ -28,7 +29,7 @@ public class QuitCommand extends Command
             return GameStatus.STOP;
         }
         else {
-            System.out.println("Ich kann das nicht beenden...");
+        	Game.textOut.lineEntry("Ich kann das nicht beenden...");
             return GameStatus.RUN;
         }
     }
@@ -36,7 +37,7 @@ public class QuitCommand extends Command
     //Die spezielle Hilfe für das QuitCommand
 	@Override
 	public void showSpecialHelp() {
-		System.out.println("Mithilfe dieses Befehls Beendest du das Spiel.");
+		Game.textOut.lineEntry("Mithilfe dieses Befehls Beendest du das Spiel.");
 		
 	}
 

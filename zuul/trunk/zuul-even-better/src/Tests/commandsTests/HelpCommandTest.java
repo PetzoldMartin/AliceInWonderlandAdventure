@@ -6,13 +6,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import GamePlayEnums.GameStatus;
 
 import commands.HelpCommand;
+
 import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Parser;
 import de.fh_zwickau.oose.zuul.Player;
-
-import GamePlayEnums.GameStatus;
 
 public class HelpCommandTest extends TestCase{
 

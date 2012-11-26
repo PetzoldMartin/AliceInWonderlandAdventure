@@ -2,8 +2,8 @@ package Tests;
 
 
 
-import commands.SpeakCommand;
-
+import junit.framework.Test;
+import junit.framework.TestSuite;
 import Tests.commandsTests.CommandWordsTest;
 import Tests.commandsTests.GoCommandTest;
 import Tests.commandsTests.HelpCommandTest;
@@ -20,8 +20,6 @@ import Tests.zuulTests.GameTest;
 import Tests.zuulTests.ParserTest;
 import Tests.zuulTests.PlayerTest;
 import Tests.zuulTests.RoomTest;
-import junit.framework.Test;
-import junit.framework.TestSuite;
 
 
 

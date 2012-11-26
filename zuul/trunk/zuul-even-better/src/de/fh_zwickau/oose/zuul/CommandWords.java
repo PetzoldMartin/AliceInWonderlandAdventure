@@ -49,9 +49,9 @@ public class CommandWords
     public void showAll() 
     {
         for(Iterator<String>  i = commands.keySet().iterator(); i.hasNext(); ) {
-            System.out.print(i.next() + "  ");
+        	Game.textOut.entry(i.next() + "  ");
         }
-        System.out.println();
+        Game.textOut.lineEntry();
     }
 
     /**

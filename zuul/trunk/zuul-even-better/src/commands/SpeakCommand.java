@@ -1,7 +1,8 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
 
 /**
  * Unterklasse der Basisklasse Command
@@ -19,11 +20,11 @@ public class SpeakCommand extends Command {
         	for(int i=0;i<player.getCurrentRoom().getWarehouse().size();i++) {	//Überprüft Ob der Gewünschte gegenstand im Raum ist.
         		if(player.getCurrentRoom().getWarehouse().get(i).getObjName().equals(getSecondWord())) {
         			if(player.getCurrentRoom().getWarehouse().get(i).isSpeakAble()){	//Überprüft ob der Gegenstand Sprechen kann
-        				System.out.println("--> Gespräch <-- ."); //Noch unklar wie ich implementier :D *todo dingens ka wie man das macht -.-'
+        				Game.textOut.lineEntry("--> Gespräch <-- ."); //Noch unklar wie ich implementier :D *todo dingens ka wie man das macht -.-'
         			}
         			else {
         				if(player.getCurrentRoom().getWarehouse().get(i).isVisebility()){
-        				System.out.println("So verrückt bin ich nun auch wieder nicht.");
+        					Game.textOut.lineEntry("So verrückt bin ich nun auch wieder nicht.");
         				}
         				else{}
         			}
@@ -32,7 +33,7 @@ public class SpeakCommand extends Command {
         	}
         }
         else {
-            System.out.println("So verrückt bin ich nun auch wieder nicht.");
+        	Game.textOut.lineEntry("So verrückt bin ich nun auch wieder nicht.");
         }
         return GameStatus.RUN;
 	}
@@ -42,7 +43,7 @@ public class SpeakCommand extends Command {
 	 */
 	@Override
 	public void showSpecialHelp() {
-		System.out.println("Du versuchst mit etwas oder jemand zu sprechen.");
+		Game.textOut.lineEntry("Du versuchst mit etwas oder jemand zu sprechen.");
 	}
 
 }

@@ -1,7 +1,9 @@
 package commands;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
+import de.fh_zwickau.oose.zuul.TextOut;
 
 /**
  * implementiert das geh Kommando
@@ -32,7 +34,7 @@ public class GoCommand extends Command
         }
         else {
             //Ausgabe, das das 2. Wort fehlt. (Richtung)
-            System.out.println("Wohin soll ich gehen?");
+        	Game.textOut.lineEntry("Wohin soll ich gehen?");
         }
         return GameStatus.RUN;
     }
@@ -40,7 +42,7 @@ public class GoCommand extends Command
 	@Override
 	public void showSpecialHelp() {
 		//Ausgabe wenn die Hilfe zu diesem Kommand abgefragt wird
-		System.out.println("Es dient dazu dich im Wunderland zu bewegen.");
+		Game.textOut.lineEntry("Es dient dazu dich im Wunderland zu bewegen.");
 		
 	}
 }
