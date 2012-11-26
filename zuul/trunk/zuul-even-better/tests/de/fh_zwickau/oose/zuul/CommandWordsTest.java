@@ -1,6 +1,5 @@
 package de.fh_zwickau.oose.zuul;
 
-import static org.junit.Assert.*;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 

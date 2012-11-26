@@ -1,23 +1,25 @@
 package de.fh_zwickau.oose.zuul;
 
-import static org.junit.Assert.*;
-
-import java.io.IOException;
-
 import junit.framework.TestCase;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import commands.NullCommand;
+
 public class ParserTest extends TestCase{
 	Parser parser;
+	@SuppressWarnings("unused")
 	private Game game;
+	@SuppressWarnings("unused")
+	private CommandWords cw;
 
 	@Before
 	public void setUp() throws Exception {
 		parser = new Parser();
 		game = new Game();
+		cw = new CommandWords();
 	}
 
 	@Test
@@ -25,6 +27,13 @@ public class ParserTest extends TestCase{
 		Assert.assertNotNull(parser);
 	}
 
+	@Test
+	public void testGetCommand() {
+		assertEquals(parser.getCommand("").getClass(),new NullCommand().getClass());
+		assertEquals(parser.getCommand("").getSecondWord(),new NullCommand().getSecondWord());
+		assertEquals(parser.getCommand("").getThirdWord(),new NullCommand().getThirdWord());
+	}
+	
 	@Test
 	public void testShowCommands() {
 		//funktioniert wen commands.showall funktioniert
