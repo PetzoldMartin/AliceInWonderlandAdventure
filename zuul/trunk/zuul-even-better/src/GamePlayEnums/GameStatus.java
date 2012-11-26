@@ -1,4 +1,6 @@
 package GamePlayEnums;
+
+
 /**
  * Die Zustände für den Gamestatus
  * @author Aismael

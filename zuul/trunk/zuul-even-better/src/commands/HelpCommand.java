@@ -1,8 +1,8 @@
 package commands;
 
-import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.CommandWords;
 import de.fh_zwickau.oose.zuul.Player;
+import GamePlayEnums.GameStatus;
 
 /**
  * Implementiert das Hilfe Kommando

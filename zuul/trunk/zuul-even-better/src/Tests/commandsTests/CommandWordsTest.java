@@ -1,10 +1,14 @@
-package de.fh_zwickau.oose.zuul;
+package Tests.commandsTests;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import de.fh_zwickau.oose.zuul.CommandWords;
+
+
 
 public class CommandWordsTest extends TestCase{
 	

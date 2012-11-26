@@ -1,7 +1,7 @@
 package commands;
 
-import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Player;
+import GamePlayEnums.GameStatus;
 
 /**
  * implementiert das geh Kommando

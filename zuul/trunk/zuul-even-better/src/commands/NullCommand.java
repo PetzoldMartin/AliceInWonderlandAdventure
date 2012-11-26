@@ -1,7 +1,6 @@
 package commands;
 
 import de.fh_zwickau.oose.zuul.Player;
-
 import GamePlayEnums.GameStatus;
 
 /**

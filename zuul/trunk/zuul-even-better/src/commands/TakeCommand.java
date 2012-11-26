@@ -1,7 +1,7 @@
 package commands;
 
-import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Player;
+import GamePlayEnums.GameStatus;
 
 public class TakeCommand extends Command {
 
@@ -10,7 +10,7 @@ public class TakeCommand extends Command {
         if(hasSecondWord()&&(!player.getCurrentRoom().getWarehouse().isEmpty())) {
             for(int i=0;i<player.getCurrentRoom().getWarehouse().size();i++) {
             	if(player.getCurrentRoom().getWarehouse().get(i).getObjName().equals(getSecondWord())) {
-            		if(player.getCurrentRoom().getWarehouse().get(i).isTakeAble()) {
+            		if(player.getCurrentRoom().getWarehouse().get(i).isTakeAble()&&player.getCurrentRoom().getWarehouse().get(i).isVisebility()) {
 	                	player.itemStore(player.getCurrentRoom().getWarehouse().get(i));
 	                	System.out.println("Du hast "+player.getCurrentRoom().getWarehouse().get(i).getObjName()+" aufgenommen.");
 	                	player.getCurrentRoom().getWarehouse().remove(i);

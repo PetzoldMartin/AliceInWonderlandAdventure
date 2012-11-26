@@ -2,9 +2,11 @@ package commands;
 
 import java.util.ArrayList;
 
+import de.fh_zwickau.oose.zuul.Player;
+
+
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Player;
 
 public class LookCommand extends Command {
 

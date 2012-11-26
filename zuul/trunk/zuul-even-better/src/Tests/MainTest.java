@@ -1,14 +1,24 @@
+package Tests;
 
 
-import commands.*;
-import de.fh_zwickau.oose.zuul.CommandWordsTest;
-import de.fh_zwickau.oose.zuul.GameTest;
-import de.fh_zwickau.oose.zuul.ParserTest;
-import de.fh_zwickau.oose.zuul.PlayerTest;
-import de.fh_zwickau.oose.zuul.RoomTest;
 
+import Tests.commandsTests.CommandWordsTest;
+import Tests.commandsTests.GoCommandTest;
+import Tests.commandsTests.HelpCommandTest;
+import Tests.commandsTests.NullCommandTest;
+import Tests.commandsTests.QuitCommandTest;
+import Tests.commandsTests.RestartCommandTest;
+import Tests.enumTests.GameStatusTest;
+import Tests.enumTests.PlayerSizeTest;
+import Tests.gameobjektTests.GameObjectTest;
+import Tests.zuulTests.GameTest;
+import Tests.zuulTests.ParserTest;
+import Tests.zuulTests.PlayerTest;
+import Tests.zuulTests.RoomTest;
 import junit.framework.Test;
 import junit.framework.TestSuite;
+
+
 
 public class MainTest extends TestSuite {
 //der MainTest der für das testcoverage tool
@@ -25,7 +35,9 @@ public class MainTest extends TestSuite {
 		mySuite.addTestSuite(ParserTest.class);
 		mySuite.addTestSuite(PlayerTest.class);
 		mySuite.addTestSuite(RoomTest.class);
-
+		mySuite.addTestSuite(GameObjectTest.class);
+		mySuite.addTestSuite(GameStatusTest.class);
+		mySuite.addTestSuite(PlayerSizeTest.class);
 		// ... weitere Testklassen hinzufügen
 		return mySuite;
 	}

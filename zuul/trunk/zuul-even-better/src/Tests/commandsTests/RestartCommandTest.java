@@ -1,4 +1,4 @@
-package commands;
+package Tests.commandsTests;
 
 import junit.framework.TestCase;
 
@@ -6,26 +6,28 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import GamePlayEnums.GameStatus;
 
+import commands.RestartCommand;
 import de.fh_zwickau.oose.zuul.Player;
 
-public class QuitCommandTest extends TestCase{
+import GamePlayEnums.GameStatus;
 
-	QuitCommand command;
+public class RestartCommandTest extends TestCase{
+
+	RestartCommand command;
 	Player player;
 	
 	@Before
 	public void setUp() throws Exception {
-		command = new QuitCommand();
+		command = new RestartCommand();
 	}
 
 	@Test
 	public void testExecute() {
-		Assert.assertEquals(GameStatus.STOP, command.execute(player));
-		Assert.assertEquals(GameStatus.STOP, command.execute(null));
+		Assert.assertEquals(GameStatus.RESTART, command.execute(player));
+		Assert.assertEquals(GameStatus.RESTART, command.execute(null));
 		command.setSecondWord("testword");
-		Assert.assertEquals(GameStatus.RUN, command.execute(player));
+		Assert.assertEquals(GameStatus.RUN, command.execute(null));
 	}
 
 	@Test
@@ -34,7 +36,7 @@ public class QuitCommandTest extends TestCase{
 	}
 
 	@Test
-	public void testQuitCommand() {
+	public void testRestartCommand() {
 		//Vorraussetzung: Get und Set -Methoden von Command funktionieren
 		Assert.assertNull(command.getSecondWord());
 		command.setSecondWord("Testwort");

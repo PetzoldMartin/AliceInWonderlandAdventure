@@ -1,10 +1,14 @@
-package de.fh_zwickau.oose.zuul;
+package Tests.zuulTests;
 
 import junit.framework.TestCase;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import de.fh_zwickau.oose.zuul.Game;
+
+
 
 public class GameTest extends TestCase{
 	

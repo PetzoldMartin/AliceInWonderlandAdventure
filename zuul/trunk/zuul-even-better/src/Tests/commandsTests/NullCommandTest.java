@@ -1,4 +1,4 @@
-package commands;
+package Tests.commandsTests;
 
 import junit.framework.TestCase;
 
@@ -6,19 +6,20 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import GamePlayEnums.GameStatus;
 
-import de.fh_zwickau.oose.zuul.CommandWords;
+import commands.NullCommand;
 import de.fh_zwickau.oose.zuul.Player;
 
-public class HelpCommandTest extends TestCase{
+import GamePlayEnums.GameStatus;
 
-	HelpCommand command;
+public class NullCommandTest extends TestCase{
+
+	NullCommand command;
 	Player player;
 	
 	@Before
 	public void setUp() throws Exception {
-		command = new HelpCommand(new CommandWords());
+		command = new NullCommand();
 	}
 
 	@Test
@@ -33,7 +34,7 @@ public class HelpCommandTest extends TestCase{
 	}
 
 	@Test
-	public void testHelpCommand() {
+	public void testNullCommand() {
 		//Vorraussetzung: Get und Set -Methoden von Command funktionieren
 		Assert.assertNull(command.getSecondWord());
 		command.setSecondWord("Testwort");

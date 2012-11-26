@@ -21,7 +21,7 @@ public class GameObject {
 	 */
 	public GameObject() {
 		objName = "-!-default-!-";
-		amplification = "-!-defaul-!-";
+		amplification = "-!-default-!-";
 		takeAble = false;
 		speakAble = false;
 		visebility = true;
