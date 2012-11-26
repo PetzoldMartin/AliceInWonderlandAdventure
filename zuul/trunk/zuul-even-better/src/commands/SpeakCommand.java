@@ -22,7 +22,10 @@ public class SpeakCommand extends Command {
         				System.out.println("--> Gespräch <-- ."); //Noch unklar wie ich implementier :D *todo dingens ka wie man das macht -.-'
         			}
         			else {
+        				if(player.getCurrentRoom().getWarehouse().get(i).isVisebility()){
         				System.out.println("So verrückt bin ich nun auch wieder nicht.");
+        				}
+        				else{}
         			}
         			
         		}
