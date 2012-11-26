@@ -1,5 +1,6 @@
 package gameBuilding;
 
+import de.fh_zwickau.oose.zuul.Player;
 import de.fh_zwickau.oose.zuul.Room;
 import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;

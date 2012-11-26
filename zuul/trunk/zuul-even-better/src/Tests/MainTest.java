@@ -2,12 +2,17 @@ package Tests;
 
 
 
+import commands.SpeakCommand;
+
 import Tests.commandsTests.CommandWordsTest;
 import Tests.commandsTests.GoCommandTest;
 import Tests.commandsTests.HelpCommandTest;
+import Tests.commandsTests.LookCommandTest;
 import Tests.commandsTests.NullCommandTest;
 import Tests.commandsTests.QuitCommandTest;
 import Tests.commandsTests.RestartCommandTest;
+import Tests.commandsTests.SpeakCommandTest;
+import Tests.commandsTests.TakeCommandTest;
 import Tests.enumTests.GameStatusTest;
 import Tests.enumTests.PlayerSizeTest;
 import Tests.gameobjektTests.GameObjectTest;
@@ -38,7 +43,11 @@ public class MainTest extends TestSuite {
 		mySuite.addTestSuite(GameObjectTest.class);
 		mySuite.addTestSuite(GameStatusTest.class);
 		mySuite.addTestSuite(PlayerSizeTest.class);
+		mySuite.addTestSuite(TakeCommandTest.class);
+		mySuite.addTestSuite(LookCommandTest.class);
+		mySuite.addTestSuite(SpeakCommandTest.class);
 		// ... weitere Testklassen hinzufügen
+		//FIXME Commandwords Test!!!
 		return mySuite;
 	}
 }

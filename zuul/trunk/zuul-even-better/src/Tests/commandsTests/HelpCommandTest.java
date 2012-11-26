@@ -34,8 +34,9 @@ public class HelpCommandTest extends TestCase{
 
 	@Test
 	public void testShowSpecialHelp() {
-		assertNotNull(parser.getCommand("? ?"));
-		System.out.println(parser.getCommand("? ?").execute(player));
+		assertEquals(parser.getCommand("? ?").getSecondWord(),"?");
+		assertEquals(parser.getCommand("? ?").execute(player), GameStatus.RUN);
+		assertEquals(parser.getCommand("? blabla").execute(player), GameStatus.RUN);
 		//Nicht Testbar
 	}
 

@@ -102,7 +102,7 @@ public class Game
 		return player;
 	}
 	
-	public Parser getPlarser() {
+	public Parser getParser() {
 		return parser;
 	}
 }
