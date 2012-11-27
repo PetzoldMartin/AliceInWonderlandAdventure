@@ -2,6 +2,8 @@ package Tests;
 
 
 
+import commands.UseCommand;
+
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import Tests.commandsTests.CommandWordsTest;
@@ -13,6 +15,7 @@ import Tests.commandsTests.QuitCommandTest;
 import Tests.commandsTests.RestartCommandTest;
 import Tests.commandsTests.SpeakCommandTest;
 import Tests.commandsTests.TakeCommandTest;
+import Tests.commandsTests.UseCommandTest;
 import Tests.enumTests.GameStatusTest;
 import Tests.enumTests.PlayerSizeTest;
 import Tests.gameobjektTests.GameObjectTest;
@@ -44,6 +47,7 @@ public class MainTest extends TestSuite {
 		mySuite.addTestSuite(TakeCommandTest.class);
 		mySuite.addTestSuite(LookCommandTest.class);
 		mySuite.addTestSuite(SpeakCommandTest.class);
+		mySuite.addTestSuite(UseCommandTest.class);
 		// ... weitere Testklassen hinzufügen
 		//FIXME Commandwords Test!!!
 		return mySuite;

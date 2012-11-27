@@ -69,7 +69,7 @@ public class UseCommand extends Command {
 	        
 	        	}
 	        	else {
-	        		System.out.println("Items find ich nicht "+indexa+" "+indexb);
+	        		Game.textOut.lineEntry("Items find ich nicht "+indexa+" "+indexb);
 	        		
 	        	}
 	        	
@@ -79,7 +79,7 @@ public class UseCommand extends Command {
 	        	
 	        }
 	        else {
-	            System.out.println("Wie soll ich das benutzen?");
+	        	Game.textOut.lineEntry("Wie soll ich das benutzen?");
 	        }
 	        return GameStatus.RUN;
 	    }
@@ -100,7 +100,7 @@ public class UseCommand extends Command {
 		@Override
 		public void showSpecialHelp() {
 			//Ausgabe wenn die Hilfe zu diesem Command abgefragt wird
-			System.out.println("mäh sinnvollere Erläuterung hier einfügen martin xD");
+			Game.textOut.lineEntry("Commando zum kombinieren von Gegenständen");
 			
 		}
 		
