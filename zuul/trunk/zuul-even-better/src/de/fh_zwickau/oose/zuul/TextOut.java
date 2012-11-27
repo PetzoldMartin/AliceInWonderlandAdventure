@@ -3,7 +3,7 @@ package de.fh_zwickau.oose.zuul;
 import java.util.ArrayList;
 
 
-public class TextOut extends Thread implements Runnable{
+public class TextOut {
 
 	ArrayList<String>ausgaben;
 	String textZeile;
@@ -34,12 +34,8 @@ public class TextOut extends Thread implements Runnable{
 		textZeile=textZeile+lineComp;
 	}
 	
-	public void run(){
-		while(true){
-		this.ausgabe();
-		
-		}
-	}
+
+	
 
 
 }

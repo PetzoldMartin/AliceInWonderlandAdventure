@@ -34,7 +34,8 @@ public class GoCommandTest extends TestCase {
 
 	@Test
 	public void testShowSpecialHelp() {
-		//Nicht Testbar(Es wird eh nur 1 Text Ausgegeben-Lösbar wenn wir string oder boolean als rückgabe wert nehmen)
+		assertEquals(game.getParser().getCommand("? geh").execute(player),GameStatus.RUN);
+		assertEquals(game.getParser().getCommand("? geh").getSecondWord(), "geh");
 	}
 
 	@Test

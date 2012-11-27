@@ -10,7 +10,7 @@ import GamePlayEnums.GameStatus;
 
 public class GameStatusTest extends TestCase{
 
-	private GameStatus GP;
+	private GameStatus mGP;
 
 	@Before
 	public void setUp() throws Exception {
@@ -23,12 +23,12 @@ public class GameStatusTest extends TestCase{
 
 	@Test
 	public void test() {
-	GP = GameStatus.RUN;
-	assertEquals(GP, GameStatus.RUN);
-	GP = GameStatus.STOP;
-	assertEquals(GP, GameStatus.STOP);
-	GP = GameStatus.RESTART;
-	assertEquals(GP, GameStatus.RESTART);
+	mGP = GameStatus.RUN;
+	assertEquals(mGP, GameStatus.RUN);
+	mGP = GameStatus.STOP;
+	assertEquals(mGP, GameStatus.STOP);
+	mGP = GameStatus.RESTART;
+	assertEquals(mGP, GameStatus.RESTART);
 	}
 
 }

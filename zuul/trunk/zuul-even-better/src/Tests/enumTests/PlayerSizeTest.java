@@ -10,7 +10,7 @@ import GamePlayEnums.PlayerSize;
 
 public class PlayerSizeTest extends TestCase{
 
-	private PlayerSize GP;
+	private PlayerSize mGP;
 
 	@Before
 	public void setUp() throws Exception {
@@ -23,12 +23,12 @@ public class PlayerSizeTest extends TestCase{
 
 	@Test
 	public void test() {
-	GP = PlayerSize.BIG;
-	assertEquals(GP, PlayerSize.BIG);
-	GP = PlayerSize.LITTLE;
-	assertEquals(GP, PlayerSize.LITTLE);
-	GP = PlayerSize.NORMAL;
-	assertEquals(GP, PlayerSize.NORMAL);
+	mGP = PlayerSize.BIG;
+	assertEquals(mGP, PlayerSize.BIG);
+	mGP = PlayerSize.LITTLE;
+	assertEquals(mGP, PlayerSize.LITTLE);
+	mGP = PlayerSize.NORMAL;
+	assertEquals(mGP, PlayerSize.NORMAL);
 	}
 
 }

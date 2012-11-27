@@ -35,7 +35,9 @@ public class QuitCommandTest extends TestCase{
 
 	@Test
 	public void testShowSpecialHelp() {
-		//Nicht Testbar
+		assertEquals(game.getParser().getCommand("? ende").execute(player),GameStatus.RUN);
+		assertEquals(game.getParser().getCommand("? ende").getSecondWord(), "ende");
+		
 	}
 
 	@Test

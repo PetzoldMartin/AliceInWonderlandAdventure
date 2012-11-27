@@ -35,7 +35,8 @@ public class RestartCommandTest extends TestCase{
 
 	@Test
 	public void testShowSpecialHelp() {
-		//Nicht Testbar
+		assertEquals(game.getParser().getCommand("? neustart").execute(player),GameStatus.RUN);
+		assertEquals(game.getParser().getCommand("? neustart").getSecondWord(), "neustart");
 	}
 
 	@Test
