@@ -11,6 +11,7 @@ import GamePlayEnums.GameStatus;
 import commands.HelpCommand;
 
 import de.fh_zwickau.oose.zuul.CommandWords;
+import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Parser;
 import de.fh_zwickau.oose.zuul.Player;
 
@@ -19,11 +20,13 @@ public class HelpCommandTest extends TestCase{
 	HelpCommand command;
 	Player player;
 	Parser parser;
+	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new HelpCommand(new CommandWords());
 		parser = new Parser();
+		game= new Game();
 	}
 
 	@Test

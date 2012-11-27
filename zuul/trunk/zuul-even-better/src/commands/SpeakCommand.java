@@ -17,10 +17,10 @@ public class SpeakCommand extends Command {
 		
 		
         if(hasSecondWord()) {	
-        	for(int i=0;i<player.getCurrentRoom().getWarehouse().size();i++) {	//Überprüft Ob der Gewünschte gegenstand im Raum ist.
+        	for(int i=0;i<player.getCurrentRoom().getWarehouse().size();i++) {	//Überprüft Ob der Gewünschte Gegenstand im Raum ist.
         		if(player.getCurrentRoom().getWarehouse().get(i).getObjName().equals(getSecondWord())) {
         			if(player.getCurrentRoom().getWarehouse().get(i).isSpeakAble()){	//Überprüft ob der Gegenstand Sprechen kann
-        				Game.textOut.lineEntry("--> Gespräch <-- ."); //Noch unklar wie ich implementier :D *todo dingens ka wie man das macht -.-'
+        				Game.textOut.lineEntry("--> Gespräch <-- ."); //Noch unklar wie implementiert :D *TODO Dingen QA wie man das macht -.-'
         			}
         			else {
         				if(player.getCurrentRoom().getWarehouse().get(i).isVisebility()){

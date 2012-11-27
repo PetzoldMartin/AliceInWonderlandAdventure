@@ -14,8 +14,8 @@ import commands.UseCommand;
 
 /**
  * 
- * Diese Klasse enthält eine Sammlung von allen Kommando Wörtern die das Spiel kennt.
- * Es nutzt die erstelten Kommandos um zu erkennen wie diese aufgerufen werden.
+ * Diese Klasse enthält eine Sammlung von allen Kommando Wörter die das Spiel kennt.
+ * Es nutzt die erstellten Kommandos um zu erkennen wie diese aufgerufen werden.
  *
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -30,13 +30,13 @@ public class CommandWords
      */
     public CommandWords()
     {
-        InitialeCommands();
+        initialeCommands(); // NOPMD by Aismael on 27.11.12 15:01
     }
 
     /**
      * nimmt ein Kommando Wort, und gibt bei Übereinstimmung mit einem
      * Objekt der Sammlung das Objekt zurück.
-     * Returnt  <null> wenn es das Kommando nicht gibt
+     * Returns  <null> wenn es das Kommando nicht gibt
      */
     public Command get(String word)
     {
@@ -63,9 +63,9 @@ public class CommandWords
 		this.get(whoUnclear).showSpecialHelp();
 	}
 	/**
-	 * 	Methode um ein neues Kommando einzufügen
+	 * 	Methode um ein neues Kommando hinzuzufügen
 	 * @param name der Name des Kommandos
-	 * @param command das einzufügende Kommando
+	 * @param command der einzufügenden Kommando
 	 */
 	public void insertCommand(String name, Command command){
 		commands.put(name, command);
@@ -78,7 +78,7 @@ public class CommandWords
 		commands.remove(name);
 	}
 	/**
-	 * Methode zum leeeren der Kommandoliste
+	 * Methode zum leeren der Kommandoliste
 	 */
 	public void clearCommands(){
 		commands.clear();
@@ -86,7 +86,7 @@ public class CommandWords
 	/**
 	 * Methode um die Kommando Liste zu initialisieren
 	 */
-	public void InitialeCommands(){
+	public void initialeCommands(){
 		commands = new HashMap<String, Command>();
         commands.put("geh", new GoCommand());
         commands.put("hilfe", new HelpCommand(this));

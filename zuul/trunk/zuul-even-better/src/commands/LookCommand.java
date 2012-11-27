@@ -16,7 +16,7 @@ public class LookCommand extends Command {
 		boolean contain;
 		if (hasSecondWord()) {
 			contain = false;
-			// inventar
+			// Inventar
 			if (getSecondWord().equals("inventar")) {
 				if (player.getInventory().size() == 0) {
 					Game.textOut.lineEntry("Ich habe kein Inventar");
@@ -40,10 +40,10 @@ public class LookCommand extends Command {
 				}
 				Game.textOut.entry(".");
 			}
-			// beschreibung invetar gegestand
+			// Beschreibung inventar Gegenstand
 			contain = itemDescription(player.getInventory(), contain);
 
-			// beschreibung gegenstand room
+			// Beschreibung Gegenstand room
 			contain = itemDescription(player.getCurrentRoom().getWarehouse(),
 					contain);
 
@@ -62,6 +62,7 @@ public class LookCommand extends Command {
 
 	private boolean itemShow(ArrayList<GameObject> searchArea, boolean contain) {
 		int k=1;
+		boolean b =contain;
 		for (int j = 0; j < searchArea.size(); j++){
 			if (searchArea.get(j).isVisebility() == false){
 				k++;
@@ -74,30 +75,31 @@ public class LookCommand extends Command {
 					Game.textOut.entry(", ");
 				}
 				
-				contain = true;
+				b = true;
 			
 			}
 			
 		}
-		return contain;
+		return b;
 	}
 
 	private boolean itemDescription(ArrayList<GameObject> searchArea,
 			boolean contain) {
+		boolean b =contain;
 		for (int k = 0; k < searchArea.size(); k++) {
 			if (searchArea.get(k).getObjName().equals(getSecondWord())) {
 				if (searchArea.get(k).isVisebility() == true) {
 					Game.textOut.lineEntry(searchArea.get(k).getAmplification());
-					contain = true;
+					b = true;
 				}
 			}
 		}
-		return contain;
+		return b;
 	}
 
 	@Override
 	public void showSpecialHelp() {
-		// Ausgabe wenn die Hilfe zu diesem Kommand abgefragt wird
+		// Ausgabe wenn die Hilfe zu diesem Command abgefragt wird
 		Game.textOut.lineEntry("Nutze Guck um Gegenstände genauer zu betrachten! ");
 		Game.textOut.lineEntry("Um dein Inventar anzuschaun nutz >Guck inventar< !");
 		Game.textOut.lineEntry("Um dein Raum anzuschaun nutz >Guck room< !");

@@ -10,16 +10,19 @@ import GamePlayEnums.GameStatus;
 
 import commands.RestartCommand;
 
+import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Player;
 
 public class RestartCommandTest extends TestCase{
 
 	RestartCommand command;
 	Player player;
+	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new RestartCommand();
+		game= new Game();
 	}
 
 	@Test

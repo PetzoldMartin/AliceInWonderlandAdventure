@@ -24,7 +24,7 @@ public abstract class Command
     /**
      * Erzeugt ein Command-Objekt. Es werden das erste und das zweite  Wort
      * unterstützt. Beide Worte oder das Zweite können auch <null> sein. 
-     * Das Kommando wort sollte <null> sein , um zu zeigen das es nicht vom spiel akzeptiert wird.
+     * Das Kommando Wort sollte <null> sein , um zu zeigen das es nicht vom Spiel akzeptiert wird.
      */
     public Command()
     {
@@ -47,7 +47,7 @@ public abstract class Command
 	
     /**
      * Definiert das zweite  Wort des Kommandos (das Wort
-     * das nach dem Kommando wort steht)
+     * das nach dem Kommando Wort steht)
      * Null zeigt das es kein zweites Wort gibt
      */
     public void setSecondWord(String secondWord)
@@ -56,7 +56,7 @@ public abstract class Command
     }
     /**
      * Definiert das dritte  Wort des Kommandos (das Wort
-     * das nach dem Kommando wort steht)
+     * das nach dem Kommando Wort steht)
      * Null zeigt das es kein drittes Wort gibt
      */
     public void setThirdWord(String thirdWord) {

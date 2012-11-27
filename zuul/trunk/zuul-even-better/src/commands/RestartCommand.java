@@ -19,8 +19,8 @@ public class RestartCommand extends Command
 
 
 	    /**
-	     * Startet das spiel neu,
-	     *  wenn es kein zweites Kommando Wort gibt, gibte Gamestatus RESTART zurück.
+	     * Startet das Spiel neu,
+	     *  wenn es kein zweites Kommando Wort gibt, gibt Gamestatus RESTART zurück.
 	     *  Ansonsten bei Fehlerausgabe gibt Gamestatus RUN zurück
 	     */
 	     

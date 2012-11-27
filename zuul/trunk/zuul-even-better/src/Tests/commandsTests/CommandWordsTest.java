@@ -7,16 +7,19 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.fh_zwickau.oose.zuul.CommandWords;
+import de.fh_zwickau.oose.zuul.Game;
 
 
 
 public class CommandWordsTest extends TestCase{
 	
 	CommandWords cWT;
+	private Game game;
 
 	@Before
 	public void setUp() throws Exception {
 		cWT = new CommandWords();
+		game= new Game();
 	}
 
 	@Test

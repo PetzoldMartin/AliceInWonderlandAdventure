@@ -10,16 +10,19 @@ import GamePlayEnums.GameStatus;
 
 import commands.QuitCommand;
 
+import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Player;
 
 public class QuitCommandTest extends TestCase{
 
 	QuitCommand command;
 	Player player;
+	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new QuitCommand();
+		game= new Game();
 	}
 
 	@Test

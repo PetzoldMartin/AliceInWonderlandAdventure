@@ -11,12 +11,12 @@ import commands.NullCommand;
  * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.
  * 
  * Dieser Parser liest die Texteingabe und versucht diese als Game Commands zu
- * interpretieren. Immer wenn er aufgerufen wird, liest er eine zeile vom
- * Terminal ein und versucht diese als zwei wort kommando zu interpretieren. Es
- * wird bei erfolg ein Objekt der Klasse des Kommandos zurückgegeben.
+ * interpretieren. Immer wenn er aufgerufen wird, liest er eine Zeile vom
+ * Terminal ein und versucht diese als zwei Wort Kommando zu interpretieren. Es
+ * wird bei Erfolg ein Objekt der Klasse des Kommandos zurückgegeben.
  * 
  * Der parser hat eine Liste mit Kommandowörtern. Er prüft die Eingabe gegen
- * diese Liste, wenn die eingabe nicht gefunden wird gibt er das null command
+ * diese Liste, wenn die Eingabe nicht gefunden wird gibt er das null command
  * Objekt zurück.
  * 
  * @author Martin Petzold
@@ -80,7 +80,7 @@ public class Parser {
 	}
 
 	/**
-	 * schreibt alle Komando wörter auf die Konsole
+	 * schreibt alle Kommando Wörter auf die Konsole
 	 */
 	public void showCommands() {
 		commands.showAll();

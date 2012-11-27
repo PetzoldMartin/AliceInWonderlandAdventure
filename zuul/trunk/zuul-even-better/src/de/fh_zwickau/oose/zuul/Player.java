@@ -16,10 +16,10 @@ import GamePlayEnums.PlayerSize;
 
 public class Player {
 	private Room currentRoom;//der Raum indem sich der Spieler befindet.
-	private PlayerSize size = PlayerSize.NORMAL;//die Grösse die der Spieler hat.
+	private PlayerSize size = PlayerSize.NORMAL;//die Größe die der Spieler hat.
 	 private ArrayList<GameObject>  inventory;
 	/**
-	 * Konstruktor für objekte der Klasse Player
+	 * Konstruktor für Objekte der Klasse Player
 	 */
 	public Player() {
 		currentRoom = null;
@@ -27,7 +27,7 @@ public class Player {
 	
 	
 	
-    //* Müsste in einer eigenen klasse. 
+    //* Müsste in einer eigenen Klasse. 
 	public void itemStore(GameObject item) {
 		inventory.add(item);
 	}
@@ -48,7 +48,7 @@ public class Player {
 	}
 
 	/**
-	 * Setzt den Momentanen Raum des Spielers.
+	 * Setzt den momentanen Raum des Spielers.
 	 */
 	public void setCurrentRoom(Room room) {
 		currentRoom = room;

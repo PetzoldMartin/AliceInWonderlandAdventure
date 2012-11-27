@@ -5,7 +5,7 @@ package GameObjects;
 /**
  * Klasse GameObject
  *
- * Erzeugt die Items die man Aufnehmen. Angucken. und Benutzen kann.
+ * Erzeugt die Items die man Aufnehmen. Anschauen. und Benutzen kann.
  * 
  */
 public class GameObject {
@@ -32,7 +32,7 @@ public class GameObject {
 	 * Erstellt Item
 	 * 
 	 * @param objn Name des GameObject --> Ansprechung des Items über dessen Name :: Proplemzone: Gleiche Belegung des Namens erzeugt doppelte Löschung und Aufnahme.
-	 * @param ampli Beschreibung des Objektes.
+	 * @param ampli Beschreibung des Objekts.
 	 * @param takeA Ob man das GameObject aufnehmen kann.
 	 * @param speakA Ob man mit dem GameObject reden kann.
 	 */

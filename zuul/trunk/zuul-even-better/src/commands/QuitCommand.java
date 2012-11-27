@@ -20,7 +20,7 @@ public class QuitCommand extends Command
     }
 
     /**
-     * Beendet das Spiel wenn es kein zweites Kommando Wort gibt, gibte Gamestatus STOP zurück
+     * Beendet das Spiel wenn es kein zweites Kommando Wort gibt, gibt Gamestatus STOP zurück
      * ansonsten Fehlerausgabe gibt Gamestatus RUN zurück
      */
     public GameStatus execute(Player player)

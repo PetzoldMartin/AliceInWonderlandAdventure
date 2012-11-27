@@ -43,7 +43,7 @@ public class Room
     }    
     /**
      * Konstruktor der Raumklasse mit Beschreibung und
-     * mit erwarteter Spielergrösse
+     * mit erwartete Spielergrösse
      */
     public Room(String description,PlayerSize sizeExpeced) 
     {
@@ -65,7 +65,7 @@ public class Room
 	}
 
 
-	//* Müsste in einer eigenen klasse. 
+	//* Müsste in einer eigenen Klasse. 
 	public void itemStore(GameObject item) {
 		warehouse.add(item);
 	}

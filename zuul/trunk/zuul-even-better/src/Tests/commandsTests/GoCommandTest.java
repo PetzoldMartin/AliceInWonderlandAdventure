@@ -10,16 +10,20 @@ import GamePlayEnums.GameStatus;
 
 import commands.GoCommand;
 
+import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Player;
 
 public class GoCommandTest extends TestCase {
 
 	GoCommand command;
 	Player player;
+	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new GoCommand();
+		player=new Player();
+		game= new Game();
 	}
 
 	@Test

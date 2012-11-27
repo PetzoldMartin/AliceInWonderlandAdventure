@@ -2,9 +2,9 @@ package commands;
 
 import java.util.ArrayList;
 
-import de.fh_zwickau.oose.zuul.Player;
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
+import de.fh_zwickau.oose.zuul.Player;
 
 public class UseCommand extends Command {
 	
@@ -20,9 +20,9 @@ public class UseCommand extends Command {
 
 	    /** 
 	     * Versuche in einen Raum zu gehen, wenn ein Ausgang vorhanden ist.
-	     * ,der Spieler die richtige Grösse hat und der Raum nicht verschlossen ist
+	     * ,der Spieler die richtige Größe hat und der Raum nicht verschlossen ist
 	     * erfolgreich gehe in den Raum
-	     * wenn das nicht möglich ist schreibe Error Nachricht. Returnt immer Gamestatus RUN
+	     * wenn das nicht möglich ist schreibe Error Nachricht. Returns immer Gamestatus RUN
 	     */
 	    public GameStatus execute(Player player)
 	    {
@@ -56,7 +56,7 @@ public class UseCommand extends Command {
 
 		@Override
 		public void showSpecialHelp() {
-			//Ausgabe wenn die Hilfe zu diesem Kommand abgefragt wird
+			//Ausgabe wenn die Hilfe zu diesem Command abgefragt wird
 			System.out.println("mäh sinnvollere Erläuterung hier einfügen martin xD");
 			
 		}
@@ -96,7 +96,7 @@ public class UseCommand extends Command {
 		private void ItemManipulation(Player player) {
 			
 			if(wordsEqualSimple("flower","blumea")){
-				// Methode die die arraylisten übergibt. Dort wird rausgesucht welches element sich wo befindet und die zu verwendete arrraylist bla
+				// Methode die die array Listen übergibt. Dort wird rausgesucht welches element sich wo befindet und die zu verwendete arrraylist bla
 			}
 			else if(wordsEqualSimple("Moehre", "Kaninchen")) {
 				

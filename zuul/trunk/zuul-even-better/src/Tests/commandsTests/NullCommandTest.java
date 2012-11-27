@@ -10,16 +10,19 @@ import GamePlayEnums.GameStatus;
 
 import commands.NullCommand;
 
+import de.fh_zwickau.oose.zuul.Game;
 import de.fh_zwickau.oose.zuul.Player;
 
 public class NullCommandTest extends TestCase{
 
 	NullCommand command;
 	Player player;
+	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new NullCommand();
+		game= new Game();
 	}
 
 	@Test

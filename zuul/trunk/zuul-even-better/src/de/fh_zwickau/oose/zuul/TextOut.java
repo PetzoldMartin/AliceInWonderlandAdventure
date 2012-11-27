@@ -17,7 +17,8 @@ public class TextOut extends Thread implements Runnable{
 	{
 		ausgaben.add(textZeile);
 		for (int j = 0; j < ausgaben.size(); j++){
-			System.out.println(ausgaben.get(j));
+			System.out.println(ausgaben.get(j)); // NOPMD by Aismael on 27.11.12 15:07
+			
 		}
 		ausgaben.clear();
 		textZeile="";

@@ -1,16 +1,16 @@
 package gameBuilding;
 
 
-import de.fh_zwickau.oose.zuul.Room;
 import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
+import de.fh_zwickau.oose.zuul.Room;
 
 public class LevelCreator 
 
 {
 	/**
-	 * Diese Klasse beinhaltet alle Räume des Spieles und kan den Startraum zurückgeben
+	 * Diese Klasse beinhaltet alle Räume des Spiels und kann den Startraum zurückgehen
 	 * @author Martin Petzold
 	 * @version 0.1 (October 2012)
 	 */
@@ -25,10 +25,10 @@ public class LevelCreator
     
 	}
 	
-	// die Methode die Alle Räume erstellt die Verbindungen zwischen den Räumen Festlegt und alle Attribute der Räume festlegt
+	// die Methode die Alle Räume erstellt die Verbindungen zwischen den Räumen festlegt und alle Attribute der Räume festlegt
 	private void createRooms() {
 		Room fountain, westCave, eastCave, northCave, southCave,insideTheVase,attic,madHaddersHouse,madHaddersGarden,madHaddersKitchen,insideTheFurnance,whichCave;
-	    // erstellen der Räume mit der erwarteten Player Grösse, wenn keine Grösse angegeben, grösse Normal
+	    // erstellen der Räume mit der erwarteten Player Größe, wenn keine Größe angegeben, Größe Normal
 	    fountain = new Room("Du befindest dich in einem Brunnen");
 	    westCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
 	    eastCave = new Room("Du bist in einer Höhle in der nähe des Brunnens.");
@@ -69,7 +69,7 @@ public class LevelCreator
 	    // Der Startraum für den Spieler
 	    startRoom=fountain;
 		
-	    // verschlossene Räume
+	    // Verschlossene Räume
 	    madHaddersHouse.setClosed(LockedStatus.LOCKED);
 	    whichCave.setClosed(LockedStatus.LOCKED);
 	    
@@ -138,7 +138,7 @@ public class LevelCreator
 	   insideTheVase.itemStore(redberry);
 	   //attic
 	   attic.itemStore(key1);
-	   //southcave
+	   //Southcave
 	   southCave.itemStore(boiler);
 	   //madHaddersHouse
 	   madHaddersHouse.itemStore(madHadder);
@@ -157,7 +157,7 @@ public class LevelCreator
 	   madHaddersGarden.itemStore(fountainInGarden);
 	   madHaddersGarden.itemStore(blueBerry2);
 	   madHaddersGarden.itemStore(carrot);
-	   //Whichcave
+	   //Whitchcave
 	   whichCave.itemStore(which);
 	    // Uselist hinzufügen.
 	    

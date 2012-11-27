@@ -11,9 +11,9 @@ import commands.Command;
  *  
  * 
  *  Um das Spiel zu spielen erzeuge Eine Instanz dieser Klasse und rufe 
- *  die play klasse auf
+ *  die play Klasse auf
  * 
- *  Diese Main Klasse initiallisiert alle anderen Klassen.
+ *  Diese Main Klasse initialisiert alle anderen Klassen.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -21,9 +21,9 @@ import commands.Command;
 
 public class Game 
 {
-    private Parser parser;// der Textparser des Spieles
-    private Player player;// die Instanz der Player Klasse des Spieles
-    private LevelCreator LC;//der Level/Raum Creator des Spieles
+    private Parser parser;// der Textparser des Spiels
+    private Player player;// die Instanz der Player Klasse des Spiels
+    private LevelCreator mLC;//der Level/Raum Creator des Spiels
 	public static TextOut textOut;
 
     /**
@@ -46,21 +46,21 @@ public class Game
     }
 
     /**
-     * Die Spiel Initialisier Methode erstellt den Spieler, den LevelCreator der die Räume erstellt
+     * Die Spiel Initializer Methode erstellt den Spieler, den LevelCreator der die Räume erstellt
      * und setzt den Startraum fest
      */
     private void newGameInitialize()
     {
         player = new Player();
-    	LC= new LevelCreator();
-    	player.setCurrentRoom(LC.getStartRoom());
+    	mLC= new LevelCreator();
+    	player.setCurrentRoom(mLC.getStartRoom());
     	textOut=new TextOut();
     	
     }
     
 
     /**
-     *  Die Hauptmethode des Spieles
+     *  Die Hauptmethode des Spiels
      */
     public void play() 
     {    
@@ -71,7 +71,7 @@ public class Game
                 
         GameStatus gameStatus = GameStatus.RUN;
         textOut.ausgabe();
-        //Haupt-Spiel-Schleifschen
+        //Haupt-Spiel-Schleifen
         while(gameStatus==GameStatus.RUN) {
             Command command = parser.consoleReader();
                 gameStatus = command.execute(player);
@@ -102,7 +102,7 @@ public class Game
     }
 
 	public LevelCreator getLC() {
-		return LC;
+		return mLC;
 	}
 	public Player getPlayer() {
 		return player;
