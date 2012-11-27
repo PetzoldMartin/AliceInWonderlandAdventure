@@ -20,14 +20,14 @@ public class Player {
 	private Room currentRoom;//der Raum indem sich der Spieler befindet.
 	private PlayerSize size = PlayerSize.NORMAL;//die Größe die der Spieler hat.
 	 private ArrayList<GameObject>  inventory;
-	 private UsableCreator UC; // Erstellt liste der Verwendbaren Items
+	 private UsableCreator nUC; // Erstellt liste der Verwendbaren Items
 	
 	/**
 	 * Konstruktor für Objekte der Klasse Player
 	 */
 	public Player() {
 		currentRoom = null;
-		 UC=new UsableCreator();
+		 nUC=new UsableCreator();
 		inventory = new ArrayList<GameObject>();	}
 	
 	
@@ -111,6 +111,6 @@ public class Player {
 	}
 	
 	public UsableCreator getUC() {
-		return UC;
+		return nUC;
 	}
 }

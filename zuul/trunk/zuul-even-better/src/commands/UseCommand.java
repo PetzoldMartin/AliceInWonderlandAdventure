@@ -49,7 +49,7 @@ public class UseCommand extends Command {
 	    					if(useList.get(i+1).equals(getThirdWord())) {
 	    						remover(player, (String) useList.get(i));
 	    						remover(player, (String) useList.get(i+1));
-	    						ItemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
+	    						itemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
 	    						breaker = true;
 	    					}
 	    				}
@@ -57,7 +57,7 @@ public class UseCommand extends Command {
 	    					if(useList.get(i+1).equals(getSecondWord())) {
 	    						remover(player, (String) useList.get(i));
 	    						remover(player, (String) useList.get(i+1));
-	    						ItemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
+	    						itemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
 	    						breaker = true;    						
 	    					}
 	    				}
@@ -108,25 +108,25 @@ public class UseCommand extends Command {
 
 			for(int i=0; i<a2.size();i++) {
         		if(a2.get(i).getObjName().equals(getSecondWord())) {
-        			IndexSetter(i);	
+        			indexSetter(i);	
         		}
         	}
 
         	for(int j=0; j<a1.size();j++) {
         		if(a1.get(j).getObjName().equals(getSecondWord())) {
-        			IndexSetter(j);		
+        			indexSetter(j);		
         		}
         	}
     	
         	for(int k=0; k<a2.size();k++) {
         		if(a2.get(k).getObjName().equals(getThirdWord())) {
-        			IndexSetter(k);		
+        			indexSetter(k);		
         			}	
         	}	
         	
         	for(int l=0; l<a1.size();l++) {
         		if(a1.get(l).getObjName().equals(getThirdWord())) {
-        			IndexSetter(l);
+        			indexSetter(l);
         		}
         	}
         	
@@ -137,7 +137,7 @@ public class UseCommand extends Command {
 		}
 		
 
-		private void ItemManipulation(Player player,int x, String s) {
+		private void itemManipulation(Player player,int x, String s) {
 			int i=-1;
 			switch (x) {
 			case 1:
@@ -167,7 +167,7 @@ public class UseCommand extends Command {
 			
 		}
 
-		private void IndexSetter(int i) {
+		private void indexSetter(int i) {
 			if(indexa<0) {
 				indexa=i;
 			}

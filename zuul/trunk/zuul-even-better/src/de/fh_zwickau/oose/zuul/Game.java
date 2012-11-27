@@ -23,7 +23,7 @@ public class Game
 {
     private Parser parser;// der Textparser des Spieles
     private Player player;// die Instanz der Player Klasse des Spieles
-    private LevelCreator LC;//der Level/Raum Creator des Spieles
+    private LevelCreator nLC;//der Level/Raum Creator des Spieles
 	public static TextOut textOut;
 	
     /**
@@ -52,9 +52,9 @@ public class Game
     private void newGameInitialize()
     {
         player = new Player();
-    	LC= new LevelCreator();
+    	nLC= new LevelCreator();
     	
-    	player.setCurrentRoom(LC.getStartRoom());
+    	player.setCurrentRoom(nLC.getStartRoom());
     	textOut=new TextOut();
     	
     }
@@ -103,7 +103,7 @@ public class Game
     }
 
 	public LevelCreator getLC() {
-		return LC;
+		return nLC;
 	}
 	public Player getPlayer() {
 		return player;
