@@ -1,12 +1,21 @@
 package commands;
 
+import java.util.ArrayList;
+
+import de.fh_zwickau.oose.zuul.Player;
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Player;
 
 public class UseCommand extends Command {
+	
+	private int indexa;
+	private int indexb;
+	
 	 public UseCommand()
 	    {
+		 super();
+		 indexa = -1;
+		 indexb = -1;
 	    }
 
 	    /** 
@@ -17,41 +26,26 @@ public class UseCommand extends Command {
 	     */
 	    public GameStatus execute(Player player)
 	    {
-	        if(hasSecondWord()) {
-	        	//Vereinfachung wenn 3. wort vorhanden ist. Idee. Abfangen der 2 wörter. Üperprüfen ob sie vorhanden sind. Wenn nicht. 
-	        	// Pech gehabt^^' --> User Proplem: Er kann Gegenstände Unbestimmt Reihenfolge nutzen.
-	        	/*
-	        	if((item1.getObjName().equals("flower")&&item2.getObjName().equals("blumea"))
-	        	||(item2.getObjName().equals("flower")&&item1.getObjName().equals("blumea"))) { */	
+	    	indexb = indexa = -1;
+			
+			 
+	        if(hasSecondWord()&&hasThirdWord()) {
 	        	
-	        	for(int i=0; i<player.getCurrentRoom().getWarehouse().size();i++) {
-	        		if(player.getCurrentRoom().getWarehouse().get(i).getObjName().equals("flower")) {
-	        			player.getCurrentRoom().getWarehouse().remove(i);	
-	        		}
+	        	//if((itemExistent(player.getInventory()))&&(itemExistent(player.getCurrentRoom().getWarehouse()))) {
+	        	if(itemExistent(player.getInventory(),player.getCurrentRoom().getWarehouse())) {
+	        	
+	        		System.out.print("Items da. Index gespeichert.");
+	        		ItemManipulation(player);
+	        
+	        	}
+	        	else {
+	        		System.out.println("Items find ich nicht "+indexa+" "+indexb);
+	        		
 	        	}
 	        	
-	        	for(int j=0; j<player.getInventory().size();j++) {
-	        		if(player.getInventory().get(j).getObjName().equals("flower")) {
-	        			player.getInventory().remove(j);	
-	        		}
-	        	}
-        	
-	        	for(int k=0; k<player.getCurrentRoom().getWarehouse().size();k++) {
-	        		if(player.getCurrentRoom().getWarehouse().get(k).getObjName().equals("blumea")) {
-	        				player.getCurrentRoom().getWarehouse().remove(k);		
-	        			}	
-	        	}	
-	        	
-	        	for(int l=0; l<player.getInventory().size();l++) {
-	        		if(player.getInventory().get(l).getObjName().equals("blumea")) {
-	        			player.getInventory().remove(l);	
-	        		}
-	        	}
-	        	
-	        	player.getInventory().add(new GameObject("Blumenstrauß", "Ein Blumenstrauß aus den Blumen des Brunnens", false,false,true));
-	        	System.out.println("FLOWER UND BLUME DIGITIEEERRREENN ZUUUMM BLUMENSTRAUß O_O");
 	        	
 	        	
+	 
 	        	
 	        }
 	        else {
@@ -66,4 +60,68 @@ public class UseCommand extends Command {
 			System.out.println("mäh sinnvollere Erläuterung hier einfügen martin xD");
 			
 		}
+		
+		private boolean itemExistent(ArrayList<GameObject> a1,ArrayList<GameObject> a2) {
+
+			for(int i=0; i<a2.size();i++) {
+        		if(a2.get(i).getObjName().equals(getSecondWord())) {
+        			IndexSetter(i);	
+        		}
+        	}
+
+        	for(int j=0; j<a1.size();j++) {
+        		if(a1.get(j).getObjName().equals(getSecondWord())) {
+        			IndexSetter(j);		
+        		}
+        	}
+    	
+        	for(int k=0; k<a2.size();k++) {
+        		if(a2.get(k).getObjName().equals(getThirdWord())) {
+        			IndexSetter(k);		
+        			}	
+        	}	
+        	
+        	for(int l=0; l<a1.size();l++) {
+        		if(a1.get(l).getObjName().equals(getThirdWord())) {
+        			IndexSetter(l);
+        		}
+        	}
+        	
+        	if(!(indexa<0)&&!(indexb<0)) {
+        		return true;
+        	}
+			return false;
+		}
+		
+		private void ItemManipulation(Player player) {
+			
+			if(wordsEqualSimple("flower","blumea")){
+				// Methode die die arraylisten übergibt. Dort wird rausgesucht welches element sich wo befindet und die zu verwendete arrraylist bla
+			}
+			else if(wordsEqualSimple("Moehre", "Kaninchen")) {
+				
+			}
+			
+		}
+
+		private boolean wordsEqualSimple(String s1,String s2){
+			
+			if(((getThirdWord().equals(s1))&&(getSecondWord().equals(s2)))
+					||((getThirdWord().equals(s2))&&(getSecondWord().equals(s1)))) {
+				return true;
+			}
+			return false;
+		}		
+		
+		private void IndexSetter(int i) {
+			if(indexa<0) {
+				indexa=i;
+			}
+			else {
+				indexb=i;
+			}
+		}
+		
+
+		
 }
