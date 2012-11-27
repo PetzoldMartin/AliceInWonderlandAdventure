@@ -1,7 +1,14 @@
 package commands;
 
+import gameBuilding.UsableCreator;
+
 import java.util.ArrayList;
 
+
+import de.fh_zwickau.oose.zuul.Game;
+import de.fh_zwickau.oose.zuul.Player;
+
+import de.fh_zwickau.oose.zuul.TextOut;
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 import de.fh_zwickau.oose.zuul.Player;
@@ -10,6 +17,7 @@ public class UseCommand extends Command {
 	
 	private int indexa;
 	private int indexb;
+	private ArrayList<Object> useList;
 	
 	 public UseCommand()
 	    {
@@ -26,6 +34,7 @@ public class UseCommand extends Command {
 	     */
 	    public GameStatus execute(Player player)
 	    {
+	    	useList = player.getUC().getUseAbleList();
 	    	indexb = indexa = -1;
 			
 			 
@@ -33,9 +42,30 @@ public class UseCommand extends Command {
 	        	
 	        	//if((itemExistent(player.getInventory()))&&(itemExistent(player.getCurrentRoom().getWarehouse()))) {
 	        	if(itemExistent(player.getInventory(),player.getCurrentRoom().getWarehouse())) {
-	        	
-	        		System.out.print("Items da. Index gespeichert.");
-	        		ItemManipulation(player);
+	        		boolean breaker=false;
+	    			for(int i=0;i<(useList.size());i+=4) {
+	    			
+	    				if(useList.get(i).equals(getSecondWord())) {
+	    					if(useList.get(i+1).equals(getThirdWord())) {
+	    						remover(player, (String) useList.get(i));
+	    						remover(player, (String) useList.get(i+1));
+	    						ItemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
+	    						breaker = true;
+	    					}
+	    				}
+	    				if(useList.get(i).equals(getThirdWord())) {
+	    					if(useList.get(i+1).equals(getSecondWord())) {
+	    						remover(player, (String) useList.get(i));
+	    						remover(player, (String) useList.get(i+1));
+	    						ItemManipulation(player,(int)useList.get(i+2),(String)useList.get(i+3));
+	    						breaker = true;    						
+	    					}
+	    				}
+	    				if(breaker) {
+	    					break;
+	    				}
+	    			}
+	        		
 	        
 	        	}
 	        	else {
@@ -53,6 +83,19 @@ public class UseCommand extends Command {
 	        }
 	        return GameStatus.RUN;
 	    }
+
+		private void remover(Player pl,String object) {
+			for (int j = 0; j < pl.getInventory().size(); j++) {
+					if(pl.getInventory().get(j).getObjName().equals(object)) {
+						pl.getInventory().remove(j);		
+					}		
+			}
+			for (int i = 0; i < pl.getCurrentRoom().getWarehouse().size(); i++) {
+				if(pl.getCurrentRoom().getWarehouse().get(i).getObjName().equals(object)) {
+					pl.getCurrentRoom().getWarehouse().remove(i);		
+				}		
+			}
+		}
 
 		@Override
 		public void showSpecialHelp() {
@@ -93,26 +136,37 @@ public class UseCommand extends Command {
 			return false;
 		}
 		
-		private void ItemManipulation(Player player) {
-			
-			if(wordsEqualSimple("flower","blumea")){
-				// Methode die die array Listen übergibt. Dort wird rausgesucht welches element sich wo befindet und die zu verwendete arrraylist bla
-			}
-			else if(wordsEqualSimple("Moehre", "Kaninchen")) {
+
+		private void ItemManipulation(Player player,int x, String s) {
+			int i=-1;
+			switch (x) {
+			case 1:
+				i = indexChecker(player.getCurrentRoom().getWarehouse(), s);
+				if(i<0) {
+					Game.textOut.lineEntry("Error Bei Itemnutzung!");
+				}
+				else {
+				player.getCurrentRoom().getWarehouse().get(i).setVisebility(true);
+					Game.textOut.lineEntry("Etwas neues ist im Raum!");
+				}
+				break;
+			case 2:
 				
+				break;
+			case 3:
+
+				
+				break;
+			case 4:
+				
+				break;
+			default:
+				Game.textOut.lineEntry("Fehlerhaftes Itemnutzen");
+				break;
 			}
 			
 		}
 
-		private boolean wordsEqualSimple(String s1,String s2){
-			
-			if(((getThirdWord().equals(s1))&&(getSecondWord().equals(s2)))
-					||((getThirdWord().equals(s2))&&(getSecondWord().equals(s1)))) {
-				return true;
-			}
-			return false;
-		}		
-		
 		private void IndexSetter(int i) {
 			if(indexa<0) {
 				indexa=i;
@@ -122,6 +176,15 @@ public class UseCommand extends Command {
 			}
 		}
 		
-
+		private int indexChecker(ArrayList<GameObject> aL, String s) {
+			
+			for (int i = 0; i < aL.size(); i++) {
+				if(aL.get(i).getObjName().equals(s)) {
+					
+					return i;			
+				}
+			}	
+			return -1;	
+		}
 		
 }

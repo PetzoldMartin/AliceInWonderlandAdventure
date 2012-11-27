@@ -76,9 +76,9 @@ public class LevelCreator
 	    //--------------------------------------------------------
 	    
 	    //Items.Personen etc Erstellen
-	    GameObject flower= new GameObject("flower","blumen blumen", true,true,true);
-	    GameObject flower2= new GameObject("blumea","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
-	    
+	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,true);
+	    GameObject flower2= new GameObject("Rose","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
+	    GameObject flower3 = new GameObject("Blumenstrauß","Verschiedene Blumen!",false,false,false);
 	    //Spielrelevante Items
 	    //fountain
 	    GameObject rabbit= new GameObject("Kaninchen","Das weiße Kaninchen",false,true,true);
@@ -94,7 +94,7 @@ public class LevelCreator
 	    GameObject desk2= desk1;
 	    GameObject redberry= new GameObject("RoteBeere","eine Wachstumsbeere",true,false,true);
 	    //attic
-	    GameObject key1= new GameObject("Schluessel","ein Goldener Schlüssel",true,false,true);
+	    GameObject key1= new GameObject("Schluessel","ein Goldener Schlüssel. Die Gravuren zeigen den Hutmacher wie er die Merzmaus jagt.",true,false,true);
 	    //Southcave
 	    GameObject boiler= new GameObject("Kessel","ein Kessel voller Wasser",true,false,true);
 	    //madHaddersHouse
@@ -122,6 +122,7 @@ public class LevelCreator
 	  //fountain
 	    fountain.itemStore(flower);
 	    fountain.itemStore(flower2);
+	    fountain.itemStore(flower3);
 	    fountain.itemStore(rabbit);
 	    fountain.itemStore(wood);
 	   //westcave

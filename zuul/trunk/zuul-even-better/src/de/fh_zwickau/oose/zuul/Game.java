@@ -11,9 +11,9 @@ import commands.Command;
  *  
  * 
  *  Um das Spiel zu spielen erzeuge Eine Instanz dieser Klasse und rufe 
- *  die play Klasse auf
+ *  die play klasse auf
  * 
- *  Diese Main Klasse initialisiert alle anderen Klassen.
+ *  Diese Main Klasse initiallisiert alle anderen Klassen.
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -21,11 +21,11 @@ import commands.Command;
 
 public class Game 
 {
-    private Parser parser;// der Textparser des Spiels
-    private Player player;// die Instanz der Player Klasse des Spiels
-    private LevelCreator mLC;//der Level/Raum Creator des Spiels
+    private Parser parser;// der Textparser des Spieles
+    private Player player;// die Instanz der Player Klasse des Spieles
+    private LevelCreator LC;//der Level/Raum Creator des Spieles
 	public static TextOut textOut;
-
+	
     /**
      * Konstruktor der Game Klasse erstellt den Parser und Ruft die Initialisierungsmethode auf
      */
@@ -46,21 +46,22 @@ public class Game
     }
 
     /**
-     * Die Spiel Initializer Methode erstellt den Spieler, den LevelCreator der die Räume erstellt
+     * Die Spiel Initialisier Methode erstellt den Spieler, den LevelCreator der die Räume erstellt
      * und setzt den Startraum fest
      */
     private void newGameInitialize()
     {
         player = new Player();
-    	mLC= new LevelCreator();
-    	player.setCurrentRoom(mLC.getStartRoom());
+    	LC= new LevelCreator();
+    	
+    	player.setCurrentRoom(LC.getStartRoom());
     	textOut=new TextOut();
     	
     }
     
 
     /**
-     *  Die Hauptmethode des Spiels
+     *  Die Hauptmethode des Spieles
      */
     public void play() 
     {    
@@ -71,7 +72,7 @@ public class Game
                 
         GameStatus gameStatus = GameStatus.RUN;
         textOut.ausgabe();
-        //Haupt-Spiel-Schleifen
+        //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
             Command command = parser.consoleReader();
                 gameStatus = command.execute(player);
@@ -102,7 +103,7 @@ public class Game
     }
 
 	public LevelCreator getLC() {
-		return mLC;
+		return LC;
 	}
 	public Player getPlayer() {
 		return player;
