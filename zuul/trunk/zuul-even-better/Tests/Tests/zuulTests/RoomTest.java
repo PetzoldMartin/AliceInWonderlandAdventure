@@ -6,8 +6,9 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
+import zuulCore.Room;
+
 import GamePlayEnums.PlayerSize;
-import de.fh_zwickau.oose.zuul.Room;
 
 public class RoomTest extends TestCase{
 	Room room;

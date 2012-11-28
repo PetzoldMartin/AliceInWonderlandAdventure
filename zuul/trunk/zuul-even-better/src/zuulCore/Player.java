@@ -1,4 +1,4 @@
-package de.fh_zwickau.oose.zuul;
+package zuulCore;
 
 
 import gameBuilding.UsableCreator;

@@ -6,12 +6,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import zuulCore.Game;
+import zuulCore.Player;
+import zuulCore.Room;
+
 import GamePlayEnums.GameStatus;
 
 import commands.GoCommand;
 
-import de.fh_zwickau.oose.zuul.Game;
-import de.fh_zwickau.oose.zuul.Player;
 
 public class GoCommandTest extends TestCase {
 
@@ -30,6 +32,13 @@ public class GoCommandTest extends TestCase {
 	public void testExecute() {
 		Assert.assertEquals(GameStatus.RUN, command.execute(player));
 		Assert.assertEquals(GameStatus.RUN, command.execute(null));
+		//
+		Room raum=game.getPlayer().getCurrentRoom();
+		game.getParser().getCommand("geh norden").execute(game.getPlayer());
+		assertFalse(raum.equals( game.getPlayer().getCurrentRoom()));
+		//
+		game.getParser().getCommand("geh sueden").execute(game.getPlayer());
+		assertEquals(raum, game.getPlayer().getCurrentRoom());
 	}
 
 	@Test
@@ -43,7 +52,7 @@ public class GoCommandTest extends TestCase {
 		//Vorraussetzung: Get und Set -Methoden von Command funktionieren
 		Assert.assertNull(command.getSecondWord());
 		command.setSecondWord("Testwort");
-		Assert.assertNotNull(command.getSecondWord());
+		Assert.assertEquals(command.getSecondWord(),"Testwort");
 	}
 
 }

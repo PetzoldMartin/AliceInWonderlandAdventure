@@ -1,4 +1,4 @@
-package de.fh_zwickau.oose.zuul;
+package zuulCore;
 import java.util.HashMap;
 import java.util.Iterator;
 

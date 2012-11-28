@@ -6,11 +6,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import zuulCore.CommandWords;
+import zuulCore.Game;
+import zuulCore.Parser;
+
 import commands.NullCommand;
 
-import de.fh_zwickau.oose.zuul.CommandWords;
-import de.fh_zwickau.oose.zuul.Game;
-import de.fh_zwickau.oose.zuul.Parser;
 
 public class ParserTest extends TestCase{
 	Parser parser;

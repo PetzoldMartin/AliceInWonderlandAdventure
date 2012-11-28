@@ -23,6 +23,7 @@ import Tests.zuulTests.GameTest;
 import Tests.zuulTests.ParserTest;
 import Tests.zuulTests.PlayerTest;
 import Tests.zuulTests.RoomTest;
+import Tests.zuulTests.TextOutTest;
 
 
 
@@ -31,6 +32,7 @@ public class MainTest extends TestSuite {
 
 	public static Test suite() {
 		TestSuite mySuite = new TestSuite("Shapes Test-Suite");
+		mySuite.addTestSuite(TextOutTest.class);
 		mySuite.addTestSuite(GoCommandTest.class);
 		mySuite.addTestSuite(HelpCommandTest.class);
 		mySuite.addTestSuite(NullCommandTest.class);

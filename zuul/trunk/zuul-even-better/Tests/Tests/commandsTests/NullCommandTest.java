@@ -6,42 +6,39 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import zuulCore.Game;
+import zuulCore.Player;
+
 import GamePlayEnums.GameStatus;
 
-import commands.QuitCommand;
+import commands.NullCommand;
 
-import de.fh_zwickau.oose.zuul.Game;
-import de.fh_zwickau.oose.zuul.Player;
 
-public class QuitCommandTest extends TestCase{
+public class NullCommandTest extends TestCase{
 
-	QuitCommand command;
+	NullCommand command;
 	Player player;
 	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
-		command = new QuitCommand();
+		command = new NullCommand();
 		game= new Game();
 	}
 
 	@Test
 	public void testExecute() {
-		Assert.assertEquals(GameStatus.STOP, command.execute(player));
-		Assert.assertEquals(GameStatus.STOP, command.execute(null));
-		command.setSecondWord("testword");
 		Assert.assertEquals(GameStatus.RUN, command.execute(player));
+		Assert.assertEquals(GameStatus.RUN, command.execute(null));
 	}
 
 	@Test
 	public void testShowSpecialHelp() {
-		assertEquals(game.getParser().getCommand("? ende").execute(player),GameStatus.RUN);
-		assertEquals(game.getParser().getCommand("? ende").getSecondWord(), "ende");
-		
+		//Nicht Testbar
 	}
 
 	@Test
-	public void testQuitCommand() {
+	public void testNullCommand() {
 		//Vorraussetzung: Get und Set -Methoden von Command funktionieren
 		Assert.assertNull(command.getSecondWord());
 		command.setSecondWord("Testwort");

@@ -1,10 +1,10 @@
 package gameBuilding;
 
 
+import zuulCore.Room;
 import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
 import GamePlayEnums.PlayerSize;
-import de.fh_zwickau.oose.zuul.Room;
 
 public class LevelCreator 
 

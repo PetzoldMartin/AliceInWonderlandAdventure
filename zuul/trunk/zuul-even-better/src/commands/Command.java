@@ -1,7 +1,7 @@
 package commands;
 
+import zuulCore.Player;
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Player;
 
 /**
  * Basisklasse für die Kommandos im Spiel.

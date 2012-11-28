@@ -6,8 +6,9 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fh_zwickau.oose.zuul.CommandWords;
-import de.fh_zwickau.oose.zuul.Game;
+import zuulCore.CommandWords;
+import zuulCore.Game;
+
 
 
 

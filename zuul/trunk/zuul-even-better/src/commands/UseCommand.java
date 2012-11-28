@@ -4,14 +4,14 @@ import gameBuilding.UsableCreator;
 
 import java.util.ArrayList;
 
+import zuulCore.Game;
+import zuulCore.Player;
+import zuulCore.TextOut;
 
-import de.fh_zwickau.oose.zuul.Game;
-import de.fh_zwickau.oose.zuul.Player;
 
-import de.fh_zwickau.oose.zuul.TextOut;
+
 import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
-import de.fh_zwickau.oose.zuul.Player;
 
 public class UseCommand extends Command {
 	

@@ -6,12 +6,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import zuulCore.Game;
+import zuulCore.Player;
+
 import GamePlayEnums.GameStatus;
 
 import commands.RestartCommand;
 
-import de.fh_zwickau.oose.zuul.Game;
-import de.fh_zwickau.oose.zuul.Player;
 
 public class RestartCommandTest extends TestCase{
 

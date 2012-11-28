@@ -6,7 +6,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.fh_zwickau.oose.zuul.Game;
+import zuulCore.Game;
+
 
 
 
