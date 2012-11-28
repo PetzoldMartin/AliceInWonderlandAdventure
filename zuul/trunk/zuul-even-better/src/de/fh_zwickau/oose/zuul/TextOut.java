@@ -15,11 +15,18 @@ public class TextOut {
 	
 	public void ausgabe()
 	{
+		String newEntry = null;
 		ausgaben.add(textZeile);
 		for (int j = 0; j < ausgaben.size(); j++){
-			System.out.println(ausgaben.get(j)); // NOPMD by Aismael on 27.11.12 15:07
+			if(ausgaben.get(j)!=">"){
+			System.out.println(ausgaben.get(j));} // NOPMD by Aismael on 27.11.12 15:07
+			else{
+				newEntry = ausgaben.get(j);// NOPMD by Aismael on 27.11.12 15:07
+			}
 			
 		}
+		if(newEntry!=null){
+		System.out.print(newEntry);}
 		ausgaben.clear();
 		textZeile="";
 		

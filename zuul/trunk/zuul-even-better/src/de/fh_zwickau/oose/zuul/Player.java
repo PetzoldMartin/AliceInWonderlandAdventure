@@ -66,6 +66,7 @@ public class Player {
 	public void walk(String direction) {
 		// Versuch den aktuellen Raum zu verlassen
 		Room nextRoom = currentRoom.getExit(direction);
+		Game.textOut.lineEntry(">");
 		if (nextRoom == null)//Überprüfung ob Raum vorhanden ist.
 			Game.textOut.lineEntry("Da ist keine Durchgang!");
 		else {

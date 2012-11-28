@@ -50,7 +50,7 @@ public class Parser {
 		String word2;
 		String word3;
 
-		Game.textOut.entry("> "); // print prompt
+		Game.textOut.lineEntry(">"); // print prompt
 
 		StringTokenizer tokenizer = new StringTokenizer(inputLineFR);
 

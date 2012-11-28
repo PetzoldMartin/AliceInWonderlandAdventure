@@ -99,6 +99,7 @@ public class Game
     	textOut.lineEntry("Du bist dem Weißen Kaninchen gefolgt. Finde es!");
     	textOut.lineEntry();
     	textOut.lineEntry(player.getCurrentRoom().getLongDescription());
+    	Game.textOut.lineEntry(">");
     	
     }
 
