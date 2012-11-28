@@ -78,7 +78,7 @@ public class LevelCreator
 	    //Items.Personen etc Erstellen
 	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,true);
 	    GameObject flower2= new GameObject("Rose","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
-	    GameObject flower3 = new GameObject("Blumenstrauﬂ","Verschiedene Blumen!",false,false,false);
+	    GameObject flower3 = new GameObject("Blumenstrauﬂ","Verschiedene Blumen!",true,false,false);
 	    //Spielrelevante Items
 	    //fountain
 	    GameObject rabbit= new GameObject("Kaninchen","Das weiﬂe Kaninchen",false,true,true);
