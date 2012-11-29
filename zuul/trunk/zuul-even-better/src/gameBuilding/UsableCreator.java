@@ -1,13 +1,20 @@
 package gameBuilding;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import GamePlayEnums.PlayerSize;
+import GamePlayRules.PlayerSizeChange;
+import GamePlayRules.gameplayRuleHead;
+import GamePlayRules.matchItems;
+import GamePlayRules.openDoor;
 
 public class UsableCreator {
 	
-		ArrayList<Object> useAbleList;
+	private HashMap<String, gameplayRuleHead> rules;
 
 	public UsableCreator() {
-		useAbleList = new ArrayList<Object>();
+		rules= new HashMap<String , gameplayRuleHead>();
 		
 		createUseableList();
 	}
@@ -20,26 +27,20 @@ public class UsableCreator {
 	 */
 	private void createUseableList() {
 		
-		fourAdder("Moehre","Kaninchen",2,"Holz");
-		fourAdder("Lilie","Rose",1,"Blumenstrauß");
+		fourAdder(new matchItems("Moehre","Kaninchen","Holz",true,false));
+		fourAdder(new matchItems("Lilie","Rose","Blumenstrauß",true,true));
+		fourAdder(new openDoor("Schluessel", "sueden", "sueden"));
+		fourAdder(new PlayerSizeChange("Blumenstrauß", true, PlayerSize.BIG));
+	}
+
+	private void fourAdder(gameplayRuleHead gr ) {
+		rules.put(gr.getName(), gr);
+		
+	}
+
+	public HashMap<String, gameplayRuleHead> getRules() {
+		return rules;
 	}
 	
-	/**
-	 * Vereinfacht die Darstellung und Übersicht für die einfügen der UseAbleElemente
-	 * 
-	 * @param string GameObject 1
-	 * @param string2 GameObject 2
-	 * @param string3 GameObject was Erschaffen/Verändert wird (nicht immer relavant)
-	 * @param i Anwendungsfall
-	 */
-	private void fourAdder(String string, String string2, int i,String string3) {
-		useAbleList.add(string);
-		useAbleList.add(string2);
-		useAbleList.add(i);
-		useAbleList.add(string3);
-	}
 	
-	public ArrayList<Object> getUseAbleList() {
-		return useAbleList;
-	}
 }

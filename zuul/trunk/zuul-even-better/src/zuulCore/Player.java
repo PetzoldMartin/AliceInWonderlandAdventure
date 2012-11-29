@@ -4,6 +4,8 @@ package zuulCore;
 import gameBuilding.UsableCreator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
@@ -16,34 +18,24 @@ import GamePlayEnums.PlayerSize;
  * @version 1.1 (October 2012)
  */
 
-public class Player {
+public class Player extends ThingWithStore {
 	private Room currentRoom;//der Raum indem sich der Spieler befindet.
 	private PlayerSize size = PlayerSize.NORMAL;//die Größe die der Spieler hat.
-	 private ArrayList<GameObject>  inventory;
 	 private UsableCreator nUC; // Erstellt liste der Verwendbaren Items
 	
 	/**
+	 *
 	 * Konstruktor für Objekte der Klasse Player
 	 */
 	public Player() {
+		super();
 		currentRoom = null;
 		 nUC=new UsableCreator();
-		inventory = new ArrayList<GameObject>();	}
-	
-	
-	
-    //* Müsste in einer eigenen Klasse. 
-	public void itemStore(GameObject item) {
-		inventory.add(item);
+		
 	}
 	
-	public void itemRemove(GameObject item) {
-		for(int i=0; i<inventory.size();i++) {
-			if(inventory.get(i).equals(item)) { 
-				inventory.remove(i);
-			}
-		}
-	}
+	
+
 
 	/**
 	 * gibt den Raum zurück in dem sich der Spieler momentan befindet.
@@ -102,16 +94,9 @@ public class Player {
 	public void setSize(PlayerSize size) {
 		this.size = size;
 	}
-
-	public ArrayList<GameObject> getInventory() {
-		return inventory;
-	}
-
-	public void setInventory(ArrayList<GameObject> inventory) {
-		this.inventory = inventory;
-	}
 	
 	public UsableCreator getUC() {
 		return nUC;
 	}
+
 }

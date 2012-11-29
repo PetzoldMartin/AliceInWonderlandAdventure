@@ -8,34 +8,43 @@ import GamePlayEnums.GameStatus;
  * Unterklasse der Basisklasse Command
  * 
  * Dient um mit GameObjekten zu Reden.
- *
+ * 
  */
+// TODO REDO
 public class SpeakCommand extends Command {
 
 	@Override
 	public GameStatus execute(Player player) {
-		
-		
-        if(hasSecondWord()) {	
-        	for(int i=0;i<player.getCurrentRoom().getWarehouse().size();i++) {	//Überprüft Ob der Gewünschte Gegenstand im Raum ist.
-        		if(player.getCurrentRoom().getWarehouse().get(i).getObjName().equals(getSecondWord())) {
-        			if(player.getCurrentRoom().getWarehouse().get(i).isSpeakAble()){	//Überprüft ob der Gegenstand Sprechen kann
-        				Game.textOut.lineEntry("--> Gespräch <-- ."); //Noch unklar wie implementiert :D *TODO Dingen QA wie man das macht -.-'
-        			}
-        			else {
-        				if(player.getCurrentRoom().getWarehouse().get(i).isVisebility()){
-        					Game.textOut.lineEntry("So verrückt bin ich nun auch wieder nicht.");
-        				}
-        				else{}
-        			}
-        			
-        		}
-        	}
-        }
-        else {
-        	Game.textOut.lineEntry("So verrückt bin ich nun auch wieder nicht.");
-        }
-        return GameStatus.RUN;
+
+		if (hasSecondWord()) {
+			if (player.getCurrentRoom().hasObject(getSecondWord())) {
+				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
+						.isSpeakAble()) { // Überprüft ob der Gegenstand
+											// Sprechen kann
+					Game.textOut.lineEntry("--> Gespräch <-- ."); // Noch unklar
+																	// wie
+																	// implementiert
+																	// :D *TODO
+																	// Dingen QA
+																	// wie man
+																	// das macht
+																	// -.-'
+				} else {
+					Game.textOut
+							.lineEntry("So verrückt bin ich nun auch wieder nicht.");
+
+				}
+
+			} else {
+				Game.textOut
+						.lineEntry("So verrückt bin ich nun auch wieder nicht.");
+
+			}
+		} else {
+			Game.textOut
+					.lineEntry("So verrückt bin ich nun auch wieder nicht.");
+		}
+		return GameStatus.RUN;
 	}
 
 	/**
@@ -43,7 +52,8 @@ public class SpeakCommand extends Command {
 	 */
 	@Override
 	public void showSpecialHelp() {
-		Game.textOut.lineEntry("Du versuchst mit etwas oder jemand zu sprechen.");
+		Game.textOut
+				.lineEntry("Du versuchst mit etwas oder jemand zu sprechen.");
 	}
 
 }

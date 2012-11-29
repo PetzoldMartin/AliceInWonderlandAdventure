@@ -55,11 +55,11 @@ public class LevelCreator
 	    attic.setExit("runter", eastCave);
 	    northCave.setExit("sueden", fountain);
 	    southCave.setExit("norden", fountain);
-	    southCave.setExit("süden", madHaddersHouse);
+	    southCave.setExit("sueden", madHaddersHouse);
 	    madHaddersHouse.setExit("norden", southCave);
 	    madHaddersHouse.setExit("westen", madHaddersGarden);
 	    madHaddersHouse.setExit("osten", madHaddersKitchen);
-	    madHaddersHouse.setExit("süden", whichCave);
+	    madHaddersHouse.setExit("sueden", whichCave);
 	    madHaddersGarden.setExit("osten", madHaddersHouse);
 	    madHaddersKitchen.setExit("westen", madHaddersHouse);
 	    madHaddersKitchen.setExit("ofen", insideTheFurnance);
@@ -125,6 +125,7 @@ public class LevelCreator
 	    fountain.itemStore(flower3);
 	    fountain.itemStore(rabbit);
 	    fountain.itemStore(wood);
+	    fountain.itemStore(key1);
 	   //westcave
 	   //Nothing
 	   //eastcave
