@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-import commands.Command;
-import commands.NullCommand;
+import executeAble.commands.Command;
+import executeAble.commands.NullCommand;
 
 /**
  * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.

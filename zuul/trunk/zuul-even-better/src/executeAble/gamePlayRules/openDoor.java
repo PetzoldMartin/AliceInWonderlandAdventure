@@ -1,8 +1,9 @@
-package GamePlayRules;
+package executeAble.gamePlayRules;
 
-import GamePlayEnums.LockedStatus;
 import zuulCore.Game;
 import zuulCore.Player;
+import GamePlayEnums.GameStatus;
+import GamePlayEnums.LockedStatus;
 
 public class openDoor extends gameplayRuleHead {
 
@@ -12,14 +13,16 @@ public class openDoor extends gameplayRuleHead {
 	}
 
 	@Override
-	public void execute(Player player) {
-		if (player.getCurrentRoom().getExit(maniO).isClosed() == LockedStatus.LOCKED) {
-			player.getCurrentRoom().getExit(maniO)
+	public GameStatus execute(Player player) {
+		if (player.getCurrentRoom().getExit(getManiO()).isClosed() == LockedStatus.LOCKED) {
+			player.getCurrentRoom().getExit(getManiO())
 					.setClosed(LockedStatus.UNLOCKED);
 			Game.textOut.lineEntry("Die Tür ist Offen");
 		} else {
 			Game.textOut.lineEntry("da ist keine Verschlossene Tür");
 		}
+		return GameStatus.RUN;
 	}
+
 
 }

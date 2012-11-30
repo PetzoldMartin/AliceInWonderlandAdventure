@@ -1,15 +1,8 @@
-package commands;
+package executeAble.commands;
 
 //TODO REDO
-import gameBuilding.UsableCreator;
-
-import java.util.ArrayList;
-
 import zuulCore.Game;
 import zuulCore.Player;
-import zuulCore.TextOut;
-
-import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 
 public class UseCommand extends Command {
@@ -28,7 +21,7 @@ public class UseCommand extends Command {
 
 		if (hasSecondWord() && hasThirdWord()) {
 
-				player.getUC().getRule(getSecondWord(),getThirdWord()).execute(player);			
+			return	player.getUC().getRule(getSecondWord(),getThirdWord()).execute(player);			
 		} else {
 			Game.textOut.lineEntry("Das Kann ich nicht benutzen");
 		}
@@ -39,7 +32,8 @@ public class UseCommand extends Command {
 	public void showSpecialHelp() {
 		// Ausgabe wenn die Hilfe zu diesem Command abgefragt wird
 		Game.textOut.lineEntry("Commando zum kombinieren von Gegenständen oder Gegenstand und Richtung");
-
+		
+		
 	}
 
 }

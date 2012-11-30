@@ -1,7 +1,8 @@
-package GamePlayRules;
+package executeAble.gamePlayRules;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GamePlayEnums.GameStatus;
 
 public class matchItems extends gameplayRuleHead {
 	boolean firstDelete, secondDelete;
@@ -15,15 +16,16 @@ public class matchItems extends gameplayRuleHead {
 	}
 
 	/**
+	 * @return 
 	 * 
 	 */
 	@Override
-	public void execute(Player player) {
+	public GameStatus execute(Player player) {
 		this.player = player;
-		if (gameObjectIsAvaible(secondWord) && gameObjectIsAvaible(thirdWord)) {
+		if (gameObjectIsAvaible(getSecondWord()) && gameObjectIsAvaible(getThirdWord())) {
 			if (makeItemVisebill()) {
-				removeGameObject(secondWord, firstDelete);
-				removeGameObject(thirdWord, secondDelete);
+				removeGameObject(getSecondWord(), firstDelete);
+				removeGameObject(getThirdWord(), secondDelete);
 				right();
 			} else {
 
@@ -36,6 +38,7 @@ public class matchItems extends gameplayRuleHead {
 
 		}
 
+		return GameStatus.RUN;
 	}
 
 	private void right() {
@@ -48,12 +51,12 @@ public class matchItems extends gameplayRuleHead {
 	 * @return
 	 */
 	private boolean makeItemVisebill() {
-		if (player.getCurrentRoom().hasObject(maniO)) {
-			player.getCurrentRoom().getSpecialObject(maniO).setVisebility(true);
+		if (player.getCurrentRoom().hasObject(getManiO())) {
+			player.getCurrentRoom().getSpecialObject(getManiO()).setVisebility(true);
 			return true;
 		} else {
-			if (player.hasObject(maniO)) {
-				player.getSpecialObject(maniO).setVisebility(true);
+			if (player.hasObject(getManiO())) {
+				player.getSpecialObject(getManiO()).setVisebility(true);
 				return true;
 			} else {
 				return false;
@@ -91,4 +94,6 @@ public class matchItems extends gameplayRuleHead {
 			}
 		}
 	}
+
+	
 }

@@ -2,15 +2,15 @@ package zuulCore;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import commands.Command;
-import commands.GoCommand;
-import commands.HelpCommand;
-import commands.LookCommand;
-import commands.QuitCommand;
-import commands.RestartCommand;
-import commands.SpeakCommand;
-import commands.TakeCommand;
-import commands.UseCommand;
+import executeAble.commands.Command;
+import executeAble.commands.GoCommand;
+import executeAble.commands.HelpCommand;
+import executeAble.commands.LookCommand;
+import executeAble.commands.QuitCommand;
+import executeAble.commands.RestartCommand;
+import executeAble.commands.SpeakCommand;
+import executeAble.commands.TakeCommand;
+import executeAble.commands.UseCommand;
 
 /**
  * 

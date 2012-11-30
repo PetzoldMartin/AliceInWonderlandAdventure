@@ -1,4 +1,4 @@
-package commands;
+package executeAble.commands;
 
 import zuulCore.CommandWords;
 import zuulCore.Game;

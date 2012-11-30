@@ -2,8 +2,6 @@ package Tests;
 
 
 
-import commands.UseCommand;
-
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import Tests.commandsTests.CommandWordsTest;

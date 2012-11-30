@@ -1,4 +1,4 @@
-package commands;
+package executeAble;
 
 import zuulCore.Player;
 import GamePlayEnums.GameStatus;
@@ -16,7 +16,7 @@ import GamePlayEnums.GameStatus;
  * @version 1.1 (October 2012)
  */
 
-public abstract class Command
+public abstract class ExecuteAble
 {
     private String secondWord;
 	private String thirdWord;
@@ -26,7 +26,7 @@ public abstract class Command
      * unterstützt. Beide Worte oder das Zweite können auch <null> sein. 
      * Das Kommando Wort sollte <null> sein , um zu zeigen das es nicht vom Spiel akzeptiert wird.
      */
-    public Command()
+    public ExecuteAble()
     {
         secondWord = null;
         thirdWord= null;
@@ -39,11 +39,6 @@ public abstract class Command
      * und RESTART wenn das Spiel neu gestartet und Initialisiert werden soll.
      */  
     public abstract GameStatus execute(Player player);
-    
-    /**
-     * Wenn diese Methode ausgeführt wird, wird eine Hilfenachricht auf der Konsole Ausgegeben
-     */
-	public abstract void showSpecialHelp() ;
 	
     /**
      * Definiert das zweite  Wort des Kommandos (das Wort

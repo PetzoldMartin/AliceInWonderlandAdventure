@@ -10,10 +10,9 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-
 import GamePlayEnums.GameStatus;
 
-import commands.SpeakCommand;
+import executeAble.commands.SpeakCommand;
 
 
 public class SpeakCommandTest  extends TestCase{

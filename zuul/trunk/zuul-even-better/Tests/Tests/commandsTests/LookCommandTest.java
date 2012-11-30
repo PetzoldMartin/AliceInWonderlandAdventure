@@ -10,10 +10,9 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-
 import GamePlayEnums.GameStatus;
 
-import commands.LookCommand;
+import executeAble.commands.LookCommand;
 
 
 public class LookCommandTest  extends TestCase{

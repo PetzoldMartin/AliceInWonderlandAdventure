@@ -1,7 +1,8 @@
-package GamePlayRules;
+package executeAble.gamePlayRules;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GamePlayEnums.GameStatus;
 
 public class NullRule extends gameplayRuleHead {
 
@@ -11,9 +12,11 @@ public class NullRule extends gameplayRuleHead {
 	}
 
 	@Override
-	public void execute(Player player) {
+	public GameStatus execute(Player player) {
 		Game.textOut.lineEntry("Das ist keine Sinnvolle Nutzung");
+		return GameStatus.RUN;
 
 	}
+
 
 }

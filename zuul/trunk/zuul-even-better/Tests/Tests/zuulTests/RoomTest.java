@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import zuulCore.Room;
-
 import GamePlayEnums.PlayerSize;
 
 public class RoomTest extends TestCase{

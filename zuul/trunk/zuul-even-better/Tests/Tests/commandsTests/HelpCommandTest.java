@@ -10,10 +10,9 @@ import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-
 import GamePlayEnums.GameStatus;
 
-import commands.HelpCommand;
+import executeAble.commands.HelpCommand;
 
 
 public class HelpCommandTest extends TestCase{

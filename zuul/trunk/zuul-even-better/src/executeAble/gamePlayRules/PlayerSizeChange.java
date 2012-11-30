@@ -1,8 +1,9 @@
-package GamePlayRules;
+package executeAble.gamePlayRules;
 
-import GamePlayEnums.PlayerSize;
 import zuulCore.Game;
 import zuulCore.Player;
+import GamePlayEnums.GameStatus;
+import GamePlayEnums.PlayerSize;
 
 public class PlayerSizeChange extends gameplayRuleHead {
 
@@ -17,23 +18,24 @@ public class PlayerSizeChange extends gameplayRuleHead {
 	}
 
 	@Override
-	public void execute(Player player) {
-		if(player.hasObject(secondWord)){
+	public GameStatus execute(Player player) {
+		if(player.hasObject(getSecondWord())){
 			player.setSize(size);
 			if(remove){
-			player.itemRemove(secondWord);}
+			player.itemRemove(getSecondWord());}
 			Game.textOut.lineEntry("Deine Größe wurde auf "+size+" geändert");
 		}else{
-			if(player.getCurrentRoom().hasObject(secondWord)){
+			if(player.getCurrentRoom().hasObject(getSecondWord())){
 				player.setSize(size);
 				if(remove){
-				player.getCurrentRoom().itemRemove(secondWord);}
+				player.getCurrentRoom().itemRemove(getSecondWord());}
 				Game.textOut.lineEntry("Deine Größe wurde auf "+size+" geändert");
 		}else{
 			Game.textOut.lineEntry("Das Kann ich nicht benutzen");
 		}
 		}
-
+		return GameStatus.RUN;
 	}
+
 
 }

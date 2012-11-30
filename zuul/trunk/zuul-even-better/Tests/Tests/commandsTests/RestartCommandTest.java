@@ -8,10 +8,9 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-
 import GamePlayEnums.GameStatus;
 
-import commands.RestartCommand;
+import executeAble.commands.RestartCommand;
 
 
 public class RestartCommandTest extends TestCase{

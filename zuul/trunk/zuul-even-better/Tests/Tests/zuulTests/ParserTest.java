@@ -10,7 +10,7 @@ import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Parser;
 
-import commands.NullCommand;
+import executeAble.commands.NullCommand;
 
 
 public class ParserTest extends TestCase{
