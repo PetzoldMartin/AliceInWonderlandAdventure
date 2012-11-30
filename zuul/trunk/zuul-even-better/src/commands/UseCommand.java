@@ -28,17 +28,7 @@ public class UseCommand extends Command {
 
 		if (hasSecondWord() && hasThirdWord()) {
 
-			if (player.getUC().getRules()
-					.containsKey(getSecondWord() + getThirdWord())) {
-				player.getUC().getRules().get(getSecondWord() + getThirdWord()).execute(player);
-			}else{
-			if (player.getUC().getRules()
-					.containsKey(getThirdWord() + getSecondWord())) {
-				player.getUC().getRules().get(getThirdWord() + getSecondWord()).execute(player);
-			}else{Game.textOut.lineEntry("Das Kann ich nicht benutzen"); }}
-
-			
-
+				player.getUC().getRule(getSecondWord(),getThirdWord()).execute(player);			
 		} else {
 			Game.textOut.lineEntry("Das Kann ich nicht benutzen");
 		}

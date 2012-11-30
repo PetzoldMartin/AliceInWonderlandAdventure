@@ -20,7 +20,7 @@ public class PlayerTest extends TestCase{
 	@Before
 	public void setUp() throws Exception {
 		player = new Player();
-		levelcreator= new LevelCreator();
+		levelcreator= new LevelCreator(player);
 		room= levelcreator.getStartRoom();
 		
 		

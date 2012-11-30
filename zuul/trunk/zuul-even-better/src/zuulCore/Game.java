@@ -52,7 +52,7 @@ public class Game
     private void newGameInitialize()
     {
         player = new Player();
-    	nLC= new LevelCreator();
+    	nLC= new LevelCreator(player);
     	
     	player.setCurrentRoom(nLC.getStartRoom());
     	textOut=new TextOut();

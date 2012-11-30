@@ -6,9 +6,9 @@ import zuulCore.Player;
 
 public class openDoor extends gameplayRuleHead {
 
-	public openDoor(String secondWord, String thirdWord,
-			String manipulatetObject) {
-		super(secondWord, thirdWord, manipulatetObject);
+	public openDoor(String secondWord,
+			String Direction) {
+		super(secondWord, Direction, Direction);
 	}
 
 	@Override

@@ -9,7 +9,7 @@ public abstract class gameplayRuleHead {
 	String secondWord,thirdWord;
 
 	public gameplayRuleHead(String secondWord,String thirdWord,String manipulatetObject){
-		name=secondWord+thirdWord;	
+		name=secondWord+"$"+thirdWord;	
 		maniO=manipulatetObject;
 		this.secondWord=secondWord;
 		this.thirdWord=thirdWord;

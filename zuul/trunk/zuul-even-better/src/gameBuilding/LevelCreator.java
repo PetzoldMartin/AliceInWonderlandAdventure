@@ -1,6 +1,7 @@
 package gameBuilding;
 
 
+import zuulCore.Player;
 import zuulCore.Room;
 import GameObjects.GameObject;
 import GamePlayEnums.LockedStatus;
@@ -15,12 +16,14 @@ public class LevelCreator
 	 * @version 0.1 (October 2012)
 	 */
 	private Room startRoom;
+	private Player player;
 	
 	/**
 	 * der Konstruktor des LevelCreators
 	 */
-	public LevelCreator()
+	public LevelCreator(Player player)
 	{	
+		this.player=player;
 	createRooms();
     
 	}
@@ -75,10 +78,12 @@ public class LevelCreator
 	    
 	    //--------------------------------------------------------
 	    
+	    // Items Personen des Players
+	    GameObject flower3 = new GameObject("Blumenstrauﬂ","Verschiedene Blumen!",true,false,false);
+	    
 	    //Items.Personen etc Erstellen
 	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,true);
 	    GameObject flower2= new GameObject("Rose","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
-	    GameObject flower3 = new GameObject("Blumenstrauﬂ","Verschiedene Blumen!",true,false,false);
 	    //Spielrelevante Items
 	    //fountain
 	    GameObject rabbit= new GameObject("Kaninchen","Das weiﬂe Kaninchen",false,true,true);
@@ -122,7 +127,6 @@ public class LevelCreator
 	  //fountain
 	    fountain.itemStore(flower);
 	    fountain.itemStore(flower2);
-	    fountain.itemStore(flower3);
 	    fountain.itemStore(rabbit);
 	    fountain.itemStore(wood);
 	    fountain.itemStore(key1);
@@ -162,7 +166,7 @@ public class LevelCreator
 	   //Whitchcave
 	   whichCave.itemStore(which);
 	    // Uselist hinzuf¸gen.
-	    
+	   player.itemStore(flower3);
 	}
 
 	public Room getStartRoom()
