@@ -9,15 +9,15 @@ import GamePlayEnums.GameStatus;
  * @author Aismael
  *
  */
-public class matchItems extends gameplayRuleHead {
+public class matchItems extends GameplayRule {
 	boolean firstDelete, secondDelete;
 	Player player;
 
 	/**
-	 * Der Konstruktor der Spielregel {@link gameplayRuleHead} zum kombinieren von zwei 
+	 * Der Konstruktor der Spielregel {@link GameplayRule} zum kombinieren von zwei 
 	 * {@link GameObject} Objekten zum "erstellen" eines neuen
-	 * @param secondWord secondWord der erste Teil des Namens der Spielregel {@link gameplayRuleHead} und das erste beteiligte {@link GameObject}
-	 * @param thirdWord thirdWord der zeite Teil des Namens der Spielregel {@link gameplayRuleHead}  und das zweite beteiligte {@link GameObject}
+	 * @param secondWord secondWord der erste Teil des Namens der Spielregel {@link GameplayRule} und das erste beteiligte {@link GameObject}
+	 * @param thirdWord thirdWord der zeite Teil des Namens der Spielregel {@link GameplayRule}  und das zweite beteiligte {@link GameObject}
 	 * @param manipulatetObject Das zu erstellende {@link GameObject}
 	 * @param firstDelete das {@link Boolean} das angibt ob das erste beteiligte {@link GameObject} nach ausführung Gelöscht werden soll
 	 * @param secondDelete das {@link Boolean} das angibt ob das zweite beteiligte {@link GameObject} nach ausführung Gelöscht werden soll

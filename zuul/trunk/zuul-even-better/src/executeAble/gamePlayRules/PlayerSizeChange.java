@@ -10,7 +10,7 @@ import GamePlayEnums.PlayerSize;
  * @author Aismael
  *
  */
-public class PlayerSizeChange extends gameplayRuleHead {
+public class PlayerSizeChange extends GameplayRule {
 
 	private boolean remove;//boolean ob das {@link GameObject}  entfernt werden soll
 	private PlayerSize size;

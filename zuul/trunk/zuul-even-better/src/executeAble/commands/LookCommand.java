@@ -14,7 +14,7 @@ public class LookCommand extends Command {
 		if (hasSecondWord()) {
 			// Inventar
 			if (getSecondWord().equals("inventar")) {
-				if (player.storeIsempty()) {
+				if (player.isThereanyvisible()) {
 					Game.textOut.lineEntry("Ich habe kein Inventar");
 				} else {
 					Game.textOut.entry("In dein Inventar befindet sich: ");
@@ -23,7 +23,7 @@ public class LookCommand extends Command {
 			} else {
 				// Raum anzeigen
 				if (getSecondWord().equals("raum")) {
-					if (player.getCurrentRoom().storeIsempty()) {
+					if (player.getCurrentRoom().isThereanyvisible()) {
 						Game.textOut.entry("Der Raum ist Leer");
 					} else {
 						Game.textOut.entry("Im Raum erkennst du: ");

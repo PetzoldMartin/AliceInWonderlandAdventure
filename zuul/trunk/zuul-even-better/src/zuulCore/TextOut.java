@@ -45,7 +45,7 @@ public class TextOut {
 	}
 
 	/**
-	 * 
+	 * Die Methode die eine Textzeile engegenimmt
 	 * @param line
 	 */
 	public void lineEntry(String line) {
@@ -53,14 +53,14 @@ public class TextOut {
 	}
 
 	/**
-	 * 
+	 * Die Methode die eine Leerzeile erzeugt
 	 */
 	public void lineEntry() {
 		ausgaben.add("");
 	}
 
 	/**
-	 * 
+	 * die methode die eine Eingabe engegenimmt die auf die Zusammengesetzte Ausgabezeile geschrieben wird
 	 * @param lineComp
 	 */
 	public void entry(String lineComp) {
@@ -68,9 +68,9 @@ public class TextOut {
 	}
 
 	/**
-	 * 
-	 * @param gesucht
-	 * @return
+	 * die methode die wenn der gesuchte Text vorhanden ist desen existenz bestätigt
+	 * @param gesucht der Gesuchte Ausgabetext
+	 * @return ob der gesuchte Text vorhanden ist
 	 */
 	public boolean AusgabeVorhanden(String gesucht) {
 		for (int i = 0; i < ausgaben.size(); i++) {

@@ -8,7 +8,7 @@ import GamePlayEnums.GameStatus;
  * @author Martin Petzold
  *
  */
-public class NullRule extends gameplayRuleHead {
+public class NullRule extends GameplayRule {
 
 	/**
 	 * Konstruktor der {@link NullRule}

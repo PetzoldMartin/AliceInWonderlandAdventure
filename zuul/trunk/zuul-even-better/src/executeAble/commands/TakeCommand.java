@@ -2,15 +2,24 @@ package executeAble.commands;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 
-//TODO REDO
+/**
+ * das {@link Command} das dafür sorgt das ein Spieler {@link GameObject}e in sein Inventar überführen kann
+ * @author Aismael
+ *
+ */
 public class TakeCommand extends Command {
 
+	/**
+	 * verschiebt ein {@link GameObject} sofern es vorhanden ist und mitnehmbar
+	 * in das Inventar des Spielers
+	 */
 	@Override
 	public GameStatus execute(Player player) {
 		boolean isFound = false;
-		if (hasSecondWord() && (!player.getCurrentRoom().storeIsempty())) {
+		if (hasSecondWord() && (!player.getCurrentRoom().isThereanyvisible())) {
 			if (player.getCurrentRoom().hasObject(getSecondWord())) {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isTakeAble()
@@ -41,6 +50,9 @@ public class TakeCommand extends Command {
 		return GameStatus.RUN;
 	}
 
+	/**
+	 * die Spezielle Hilfe für das {@link TakeCommand}
+	 */
 	@Override
 	public void showSpecialHelp() {
 		Game.textOut

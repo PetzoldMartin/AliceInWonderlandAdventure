@@ -1,10 +1,17 @@
 package executeAble.commands;
 
 //TODO REDO
+import executeAble.gamePlayRules.GameplayRule;
 import zuulCore.Game;
 import zuulCore.Player;
+import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
-
+/**
+ * 
+ * @author Aismael
+ * das {@link Command} das den Spieler {@link GameObject}e auf verschiedene Weise je nach {@link GameplayRule}
+ * benutzen lässt
+ */
 public class UseCommand extends Command {
 
 	public UseCommand() {
@@ -12,10 +19,8 @@ public class UseCommand extends Command {
 	}
 
 	/**
-	 * Versuche in einen Raum zu gehen, wenn ein Ausgang vorhanden ist. ,der
-	 * Spieler die richtige Größe hat und der Raum nicht verschlossen ist
-	 * erfolgreich gehe in den Raum wenn das nicht möglich ist schreibe Error
-	 * Nachricht. Returns immer Gamestatus RUN
+	 * die Methode die wenn das {@link UseCommand} ein secondWord und ein Thirdword hat die zu den Gegenständen passende 
+	 * {@link GameplayRule} aufruft
 	 */
 	public GameStatus execute(Player player) {
 
@@ -28,6 +33,9 @@ public class UseCommand extends Command {
 		return GameStatus.RUN;
 	}
 
+	/**
+	 * die spezielle hilfe für das {@link UseCommand}
+	 */
 	@Override
 	public void showSpecialHelp() {
 		// Ausgabe wenn die Hilfe zu diesem Command abgefragt wird

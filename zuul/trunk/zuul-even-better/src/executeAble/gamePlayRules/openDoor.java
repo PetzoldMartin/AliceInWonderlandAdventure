@@ -6,11 +6,11 @@ import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 import GamePlayEnums.LockedStatus;
 /**
- * Die Spielregel {@link gameplayRuleHead} zum öffnen von Verschlossenen Türen im Spiel
+ * Die Spielregel {@link GameplayRule} zum öffnen von Verschlossenen Türen im Spiel
  * @author Martin Petzold
  *
  */
-public class openDoor extends gameplayRuleHead {
+public class openDoor extends GameplayRule {
 
 	private boolean keyRemove;//boolean ob der Schlüssel entfernt werden soll
 

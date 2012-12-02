@@ -2,6 +2,7 @@ package executeAble.commands;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 
 /**
@@ -10,9 +11,12 @@ import GamePlayEnums.GameStatus;
  * Dient um mit GameObjekten zu Reden.
  * 
  */
-// TODO REDO
 public class SpeakCommand extends Command {
 
+	/**
+	 * Löst wenn das {@link GameObject} mit dem der Spieler reden will vorhanden ist und man mit ihm sprechen kann ein
+	 * gespräch aus
+	 */
 	@Override
 	public GameStatus execute(Player player) {
 

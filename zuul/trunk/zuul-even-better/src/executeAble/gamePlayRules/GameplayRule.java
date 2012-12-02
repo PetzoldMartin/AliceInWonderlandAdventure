@@ -9,18 +9,18 @@ import executeAble.ExecuteAble;
  * @author Martin Petzold
  *
  */
-public abstract class gameplayRuleHead extends ExecuteAble{
+public abstract class GameplayRule extends ExecuteAble{
 
 	private String name;//das Auslösewort der Spieleregel
 	private String maniO;//das interne SchlüsselWort für den zu manipulierenden Spielteil
 
 	/**
 	 * Der Konstruktor der Allgemeinen Spielregel
-	 * @param secondWord der erste Teil des Namens der Spielregel {@link gameplayRuleHead}
-	 * @param thirdWord der zeite Teil des Namens der Spielregel {@link gameplayRuleHead}
+	 * @param secondWord der erste Teil des Namens der Spielregel {@link GameplayRule}
+	 * @param thirdWord der zeite Teil des Namens der Spielregel {@link GameplayRule}
 	 * @param manipulatetObject das interne SchlüsselWort für den zu manipulierenden Spielteil
 	 */
-	public gameplayRuleHead(String secondWord,String thirdWord,String manipulatetObject){
+	public GameplayRule(String secondWord,String thirdWord,String manipulatetObject){
 		super();
 		name=secondWord+"$"+thirdWord;//das Auslösewort der Spieleregel mit Trennzeichen für Korekkte Schreibung der Auslösewortteile	
 		setManiO(manipulatetObject);
@@ -30,7 +30,7 @@ public abstract class gameplayRuleHead extends ExecuteAble{
 	
 	/**
 	 * 
-	 * @return name das Auslösewort der Spieleregel {@link gameplayRuleHead}
+	 * @return name das Auslösewort der Spieleregel {@link GameplayRule}
 	 */
 	public String getName() {
 		return name;
@@ -38,7 +38,7 @@ public abstract class gameplayRuleHead extends ExecuteAble{
 
 	/**
 	 * 
-	 * @return maniO das interne SchlüsselWort für den zu manipulierenden Spielteil {@link gameplayRuleHead}
+	 * @return maniO das interne SchlüsselWort für den zu manipulierenden Spielteil {@link GameplayRule}
 	 */
 	public String getManiO() {
 		return maniO;
