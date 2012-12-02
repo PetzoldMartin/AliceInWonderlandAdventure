@@ -4,13 +4,12 @@ import zuulCore.Player;
 import GamePlayEnums.GameStatus;
 
 /**
- * Basisklasse für die Kommandos im Spiel.
- * Jeder Nutzerkommando wird als Unterklasse dieser Klasse eingebunden.
+ * Basisklasse für die Dinge im Spiel die vom Spieler Ausgelöst werden können
  *
- * Objekte der Klasse Command können ein optionales argument Wort beinhalten.
- * 		(ein zweites Wort das in der Commandozeile geschrieben wird)
+ * Objekte der Klasse ExecuteAble können zwei optionale argument Woerter beinhalten.
+ * 		
  * 
- * Wenn das Kommando nur ein Wort hat ist das zweite Wort <null>
+ * Wenn die Argumentwoerter nicht Vorhanden sind sind sie <null>
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -22,9 +21,8 @@ public abstract class ExecuteAble
 	private String thirdWord;
 
     /**
-     * Erzeugt ein Command-Objekt. Es werden das erste und das zweite  Wort
-     * unterstützt. Beide Worte oder das Zweite können auch <null> sein. 
-     * Das Kommando Wort sollte <null> sein , um zu zeigen das es nicht vom Spiel akzeptiert wird.
+     * Erzeugt ein executeAble-Objekt. Es werden zwei optionale argument Woerter 
+     * unterstützt. Beide Worte  können auch <null> sein. 
      */
     public ExecuteAble()
     {
@@ -41,7 +39,7 @@ public abstract class ExecuteAble
     public abstract GameStatus execute(Player player);
 	
     /**
-     * Definiert das zweite  Wort des Kommandos (das Wort
+     * Definiert das erste  Wort des ExecuteAbles (das Wort
      * das nach dem Kommando Wort steht)
      * Null zeigt das es kein zweites Wort gibt
      */
@@ -50,7 +48,7 @@ public abstract class ExecuteAble
         this.secondWord = secondWord;
     }
     /**
-     * Definiert das dritte  Wort des Kommandos (das Wort
+     * Definiert das dritte  Wort des ExecuteAbles (das Wort
      * das nach dem Kommando Wort steht)
      * Null zeigt das es kein drittes Wort gibt
      */
@@ -59,7 +57,7 @@ public abstract class ExecuteAble
     }
     /**
      * Gibt das zweite Wort zurück. 
-     * Wenn es kein zweites Kommandowort gibt gibt es <null> zurück
+     * Wenn es kein zweites Wort gibt gibt es <null> zurück
      */
 	    public String getSecondWord()
     {
@@ -67,8 +65,8 @@ public abstract class ExecuteAble
     }
 
 	/**
-    * Gibt das zweite Wort zurück. 
-	* Wenn es kein zweites Kommandowort gibt gibt es <null> zurück
+    * Gibt das dritte Wort zurück. 
+	* Wenn es kein zweites Wort gibt gibt es <null> zurück
 	*/
 	public String getThirdWord()
 	{
@@ -76,7 +74,7 @@ public abstract class ExecuteAble
 	 }
 	    
     /**
-     * überprüft ob das Kommando ein zweites  Wort hat
+     * überprüft ob das ExecuteAble ein zweites  Wort hat
      */
     public boolean hasSecondWord()
     {
@@ -84,7 +82,7 @@ public abstract class ExecuteAble
     }
     
     /**
-     * überprüft ob das Kommando ein drittes  Wort hat
+     * überprüft ob das Executeable ein drittes  Wort hat
      */
     public boolean hasThirdWord()
     {

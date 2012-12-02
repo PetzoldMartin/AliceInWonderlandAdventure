@@ -27,9 +27,12 @@ public class UsableCreator {
 	private void createUseableList() {
 
 		fourAdder(new matchItems("Moehre", "Kaninchen", "Holz", true, false));
-		fourAdder(new matchItems("Lilie", "Rose", "Blumenstrauﬂ", true, true));
-		fourAdder(new openDoor("Schluessel", "sueden"));
-		fourAdder(new PlayerSizeChange("Blumenstrauﬂ", true, PlayerSize.BIG));
+		fourAdder(new matchItems("Lilie", "Rose", "Blumenstrauss", true, true));
+		fourAdder(new PlayerSizeChange("Blumenstrauss", true, PlayerSize.BIG));
+		fourAdder(new openDoor("Schluessel", "sueden",true));
+		fourAdder(new openDoor("Schluessel", "norden",true));
+		fourAdder(new openDoor("Schluessel", "osten",true));
+		fourAdder(new openDoor("Schluessel", "westen",true));
 	}
 
 	private void fourAdder(gameplayRuleHead gr) {

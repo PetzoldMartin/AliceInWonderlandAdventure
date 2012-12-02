@@ -2,25 +2,48 @@ package executeAble.gamePlayRules;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 import GamePlayEnums.LockedStatus;
-
+/**
+ * Die Spielregel {@link gameplayRuleHead} zum öffnen von Verschlossenen Türen im Spiel
+ * @author Martin Petzold
+ *
+ */
 public class openDoor extends gameplayRuleHead {
 
+	private boolean keyRemove;//boolean ob der Schlüssel entfernt werden soll
+
+	/**
+	 * Der Konstruktor der openDoor Regel
+	 * @param secondWord der Name des {@link GameObject} zum Türöffnen
+	 * @param Direction der Name der zu Öfnenden Tür/direction
+	 * @param keyRemove ob das {@link GameObject} zum Türöffnen danach entfernt wird
+	 */
 	public openDoor(String secondWord,
-			String Direction) {
+			String Direction,boolean keyRemove) {
 		super(secondWord, Direction, Direction);
+		this.keyRemove=keyRemove;
 	}
 
+	/**
+	 * Die Methode zum Raumöffnen
+	 * überprüft ob {@link GameObject} zum öffnen und der verschlossene Ausgang vorhanden ist
+	 * und entfernt wenn gefordert den Schlüssel
+	 */
 	@Override
 	public GameStatus execute(Player player) {
+		if (player.hasObject(getSecondWord())){
 		if (player.getCurrentRoom().getExit(getManiO()).isClosed() == LockedStatus.LOCKED) {
 			player.getCurrentRoom().getExit(getManiO())
 					.setClosed(LockedStatus.UNLOCKED);
+			if(keyRemove){
+			player.itemRemove(getSecondWord());
+			}
 			Game.textOut.lineEntry("Die Tür ist Offen");
 		} else {
 			Game.textOut.lineEntry("da ist keine Verschlossene Tür");
-		}
+		}}
 		return GameStatus.RUN;
 	}
 

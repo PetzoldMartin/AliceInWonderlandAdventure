@@ -44,6 +44,11 @@ public class ThingWithStore {
         Game.textOut.lineEntry();
 	}
 	public boolean storeIsempty(){
-		return store.isEmpty();
+		for(Iterator<String>  i = store.keySet().iterator(); i.hasNext(); ){
+			if(store.get(i.next()).isVisebility()){
+				return false;
+			}
+		}
+		return true;
 	}
 }

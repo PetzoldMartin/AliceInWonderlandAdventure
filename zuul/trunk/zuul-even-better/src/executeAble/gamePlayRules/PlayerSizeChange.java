@@ -2,21 +2,35 @@ package executeAble.gamePlayRules;
 
 import zuulCore.Game;
 import zuulCore.Player;
+import GameObjects.GameObject;
 import GamePlayEnums.GameStatus;
 import GamePlayEnums.PlayerSize;
-
+/**
+ * Die Spielregel um mit einem {@link GameObject} die Spielergröße zu verändern
+ * @author Aismael
+ *
+ */
 public class PlayerSizeChange extends gameplayRuleHead {
 
-	private boolean remove;
+	private boolean remove;//boolean ob das {@link GameObject}  entfernt werden soll
 	private PlayerSize size;
 
+	/**
+	 * Konstruktor für die Spielregel zum Ändern der Spielergröße
+	 * @param secondWord der Name des {@link GameObject} zur Spielergrößenänderung
+	 * @param remove boolean ob das {@link GameObject}  entfernt werden soll
+	 * @param size die Spielergröße {@link PlayerSize} die der Spieler nach änderung haben soll
+	 */
 	public PlayerSizeChange(String secondWord,boolean remove,PlayerSize size) {
 		super(secondWord, null, null);
 		this.remove=remove;
 		this.size=size;
-		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Methode die wenn das {@link GameObject} vorhanden ist die Spielergröße wie gewünscht ändert
+	 * 
+	 */
 	@Override
 	public GameStatus execute(Player player) {
 		if(player.hasObject(getSecondWord())){

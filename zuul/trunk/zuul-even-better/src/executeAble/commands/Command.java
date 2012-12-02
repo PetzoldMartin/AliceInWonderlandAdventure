@@ -1,7 +1,5 @@
 package executeAble.commands;
 
-import zuulCore.Player;
-import GamePlayEnums.GameStatus;
 import executeAble.ExecuteAble;
 
 /**
@@ -28,14 +26,6 @@ public abstract class Command extends ExecuteAble
     {
         super();
     }
-
-    /**
-     * wenn diese Methode ausgeführt wird wird der Gamestatus zurückgegeben.
-     * 
-     * @return {@link GameStatus}, RUN wenn das Spiel weiterlaufen soll, STOP wenn das Spiel beendet werden soll
-     * und RESTART wenn das Spiel neu gestartet und Initialisiert werden soll.
-     */  
-    public abstract GameStatus execute(Player player);
     
     /**
      * Wenn diese Methode ausgeführt wird, wird eine Hilfenachricht auf der Konsole Ausgegeben

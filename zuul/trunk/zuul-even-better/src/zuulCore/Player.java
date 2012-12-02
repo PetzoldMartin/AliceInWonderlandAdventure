@@ -62,6 +62,7 @@ public class Player extends ThingWithStore {
 				} else {
 					if (nextRoom.getSizeExpected() == size) {
 						walkReally(nextRoom);
+						this.setSize(PlayerSize.NORMAL);
 					} else {
 						Game.textOut.lineEntry("Hättest du nicht die Falsche Größe würdest du sogar da durch Passen!");
 					}

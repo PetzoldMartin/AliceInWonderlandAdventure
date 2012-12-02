@@ -79,7 +79,7 @@ public class LevelCreator
 	    //--------------------------------------------------------
 	    
 	    // Items Personen des Players
-	    GameObject flower3 = new GameObject("Blumenstrauﬂ","Verschiedene Blumen!",true,false,false);
+	    GameObject flower3 = new GameObject("Blumenstrauss","Verschiedene Blumen!",true,false,false);
 	    
 	    //Items.Personen etc Erstellen
 	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,true);

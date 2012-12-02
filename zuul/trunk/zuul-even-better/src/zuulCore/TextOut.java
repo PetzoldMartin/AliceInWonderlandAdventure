@@ -2,16 +2,28 @@ package zuulCore;
 
 import java.util.ArrayList;
 
+/**
+ * Die Klasse die sämtliche Textausgaben des Spieles Entgegenimmt
+ * und an die GUI weiterleitet
+ * @author Aismael
+ *
+ */
 public class TextOut {
 
-	ArrayList<String> ausgaben;
-	String textZeile;
-
+	ArrayList<String> ausgaben;//der interne Speicher für Ausgabezeilen
+	String textZeile;//der Interne Speicher für Ausgaben die auf einer Zeile Zusammengesetzt werden sollen
+	/**
+	 * Der Konstruktor der TextOut Klasse
+	 */
 	public TextOut() {
 		ausgaben = new ArrayList<String>();
 		textZeile = "";
 	}
 
+	/**
+	 * Die Methode die den Text den das {@link TextOut} entgegenimmt an die GUI
+	 * übergibt und aus dem Internen Speicher Löscht
+	 */
 	public void ausgabe() {
 		String newEntry = null;
 		ausgaben.add(textZeile);
@@ -32,18 +44,34 @@ public class TextOut {
 
 	}
 
+	/**
+	 * 
+	 * @param line
+	 */
 	public void lineEntry(String line) {
 		ausgaben.add(line);
 	}
 
+	/**
+	 * 
+	 */
 	public void lineEntry() {
 		ausgaben.add("");
 	}
 
+	/**
+	 * 
+	 * @param lineComp
+	 */
 	public void entry(String lineComp) {
 		textZeile = textZeile + lineComp;
 	}
 
+	/**
+	 * 
+	 * @param gesucht
+	 * @return
+	 */
 	public boolean AusgabeVorhanden(String gesucht) {
 		for (int i = 0; i < ausgaben.size(); i++) {
 			if (ausgaben.get(i) == gesucht)
@@ -53,6 +81,10 @@ public class TextOut {
 
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getTextZeile() {
 		return textZeile;
 	}
