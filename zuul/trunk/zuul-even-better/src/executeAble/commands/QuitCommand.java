@@ -2,7 +2,7 @@ package executeAble.commands;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 
 /**
  * Implementation of the 'quit' user command.

@@ -2,8 +2,8 @@ package zuulCore;
 
 
 import gameBuilding.UsableCreator;
-import GamePlayEnums.LockedStatus;
-import GamePlayEnums.PlayerSize;
+import gameEnums.LockedStatus;
+import gameEnums.PlayerSize;
 
 /**
  * Diese Klasse repräsentiert den Spieler im Spiel.

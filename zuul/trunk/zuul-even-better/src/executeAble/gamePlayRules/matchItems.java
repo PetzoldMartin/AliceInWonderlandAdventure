@@ -1,9 +1,9 @@
 package executeAble.gamePlayRules;
 
 import zuulCore.Game;
+import zuulCore.GameObject;
 import zuulCore.Player;
-import GameObjects.GameObject;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 /**
  * 
  * @author Aismael

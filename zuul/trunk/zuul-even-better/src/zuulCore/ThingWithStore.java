@@ -3,7 +3,6 @@ package zuulCore;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import GameObjects.GameObject;
 
 /**
  * Die Klasse die Etwas mit Inventar oder Raum daerstellt in dem

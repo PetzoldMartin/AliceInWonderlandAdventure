@@ -1,6 +1,7 @@
 package Tests.zuulTests;
 
 import gameBuilding.LevelCreator;
+import gameEnums.PlayerSize;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
@@ -9,7 +10,6 @@ import org.junit.Test;
 
 import zuulCore.Player;
 import zuulCore.Room;
-import GamePlayEnums.PlayerSize;
 
 public class PlayerTest extends TestCase{
 	Player player;

@@ -2,7 +2,7 @@ package zuulCore;
 
 import executeAble.commands.Command;
 import gameBuilding.LevelCreator;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 
 /**
  *  Diese Klasse ist die Hauptklasse der "World of Zuul" Anwendung

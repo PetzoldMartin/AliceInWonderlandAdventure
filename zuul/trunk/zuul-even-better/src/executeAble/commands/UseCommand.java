@@ -3,9 +3,9 @@ package executeAble.commands;
 //TODO REDO
 import executeAble.gamePlayRules.GameplayRule;
 import zuulCore.Game;
+import zuulCore.GameObject;
 import zuulCore.Player;
-import GameObjects.GameObject;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 /**
  * 
  * @author Aismael

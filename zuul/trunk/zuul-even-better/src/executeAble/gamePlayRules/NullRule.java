@@ -2,7 +2,7 @@ package executeAble.gamePlayRules;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 /**
  * Die Spielregel die Zurückgegeben wird wenn die Geforderte Spielregel nicht vorhanden ist
  * @author Martin Petzold

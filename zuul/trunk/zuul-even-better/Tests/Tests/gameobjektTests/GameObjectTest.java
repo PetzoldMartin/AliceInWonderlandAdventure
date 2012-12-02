@@ -6,7 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import GameObjects.GameObject;
+import zuulCore.GameObject;
+
 
 public class GameObjectTest extends TestCase{
 

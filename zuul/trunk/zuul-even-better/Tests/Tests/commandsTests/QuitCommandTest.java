@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 import executeAble.commands.QuitCommand;
 
 

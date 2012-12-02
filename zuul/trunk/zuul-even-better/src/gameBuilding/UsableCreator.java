@@ -2,14 +2,15 @@ package gameBuilding;
 
 import java.util.HashMap;
 
-import GameObjects.GameObject;
-import GamePlayEnums.GameStatus;
-import GamePlayEnums.PlayerSize;
+import zuulCore.GameObject;
+
+import gameEnums.GameStatus;
 import executeAble.gamePlayRules.NullRule;
 import executeAble.gamePlayRules.PlayerSizeChange;
 import executeAble.gamePlayRules.GameplayRule;
 import executeAble.gamePlayRules.matchItems;
 import executeAble.gamePlayRules.openDoor;
+import gameEnums.PlayerSize;
 
 /**
  * die Klasse in der festgelegt wird welchen Auslöseworten ({@link GameObject}en oder directions) welche {@link GameplayRule}

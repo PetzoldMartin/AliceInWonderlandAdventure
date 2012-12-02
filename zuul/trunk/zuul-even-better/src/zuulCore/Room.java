@@ -1,10 +1,11 @@
 package zuulCore;
+import gameEnums.LockedStatus;
+import gameEnums.PlayerSize;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import GamePlayEnums.LockedStatus;
-import GamePlayEnums.PlayerSize;
 
 /**
  * Klasse Room - ein Raum im Spiel.

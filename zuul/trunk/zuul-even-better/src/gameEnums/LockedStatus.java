@@ -1,4 +1,4 @@
-package GamePlayEnums;
+package gameEnums;
 /**
  * Die Zustände für das verschliessen von Räumen
  * @author Aismael

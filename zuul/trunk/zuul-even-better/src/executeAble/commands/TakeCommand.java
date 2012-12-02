@@ -1,9 +1,9 @@
 package executeAble.commands;
 
 import zuulCore.Game;
+import zuulCore.GameObject;
 import zuulCore.Player;
-import GameObjects.GameObject;
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 
 /**
  * das {@link Command} das dafür sorgt das ein Spieler {@link GameObject}e in sein Inventar überführen kann

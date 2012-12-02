@@ -9,8 +9,8 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Player;
 import zuulCore.Room;
-import GamePlayEnums.GameStatus;
 import executeAble.commands.GoCommand;
+import gameEnums.GameStatus;
 
 
 public class GoCommandTest extends TestCase {

@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import GamePlayEnums.GameStatus;
+import gameEnums.GameStatus;
 
 public class GameStatusTest extends TestCase{
 
