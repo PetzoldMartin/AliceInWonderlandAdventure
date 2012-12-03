@@ -2,7 +2,9 @@ package gameBuilding;
 
 import java.util.HashMap;
 
+import zuulCore.Game;
 import zuulCore.GameObject;
+import executeAble.gamePlayRules.GameEndingRule;
 import executeAble.gamePlayRules.GameplayRule;
 import executeAble.gamePlayRules.NullRule;
 import executeAble.gamePlayRules.PlayerSizeChange;
@@ -33,12 +35,23 @@ public class UsableCreator {
 	private void createUseableList() {
 
 		//itemerstellung
-		fourAdder(new matchItems("Moehre", "Kaninchen", "Holz", true, false));
 		fourAdder(new matchItems("Lilie", "Rose", "Blumenstrauss", true, true));
+		fourAdder(new matchItems("Feuergeist", "Harfe", "Foehn", false, true));
+		fourAdder(new matchItems("Foehn", "Schneemann", "Moehre", true, true));
+		fourAdder(new matchItems("Moehre", "Kaninchen", "Holz", true, false));
+		fourAdder(new matchItems("Holz", "Ofen", "BrennenderOfen", true, true));
+		fourAdder(new matchItems("BrennenderOfen", "Teekanne", "TeekanneVollTee", true, true));
+		fourAdder(new matchItems("TeekanneVollTee", "BlaueTasse", "BlaueTasseVollTee", false, true));
+		fourAdder(new matchItems("TeekanneVollTee", "RoteTasse", "RoteTasseVollTee", false, true));
+		fourAdder(new matchItems("RoteTasseVollTee", "Hutmacher", "Schluessel", false, true));
+		fourAdder(new matchItems("Kessel", "Hexe", "KriegshammerFuer40K", true, true));
 		
+		//Spielende
+		fourAdder(new GameEndingRule("KriegshammerFuer40K"));
+	
 		//Spielergrößmanipulation
-		fourAdder(new PlayerSizeChange("BlaueBeere", true, PlayerSize.BIG));
-		fourAdder(new PlayerSizeChange("RoteBeere", true, PlayerSize.LITTLE));
+		fourAdder(new PlayerSizeChange("BlaueBeere", true, PlayerSize.LITTLE));
+		fourAdder(new PlayerSizeChange("RoteBeere", true, PlayerSize.BIG));
 		
 		
 		

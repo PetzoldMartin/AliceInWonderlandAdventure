@@ -33,7 +33,7 @@ public class openDoor extends GameplayRule {
 	 */
 	@Override
 	public GameStatus execute(Player player) {
-		if (player.hasObject(getSecondWord())){
+		if (player.hasReadyToUseObject(getSecondWord())){
 		if (player.getCurrentRoom().getExit(getManiO()).isClosed() == LockedStatus.LOCKED) {
 			player.getCurrentRoom().getExit(getManiO())
 					.setClosed(LockedStatus.UNLOCKED);
@@ -43,7 +43,9 @@ public class openDoor extends GameplayRule {
 			Game.textOut.lineEntry("Die Tür ist Offen");
 		} else {
 			Game.textOut.lineEntry("da ist keine Verschlossene Tür");
-		}}
+		}}else{
+			Game.textOut.lineEntry("Du hast keinen Schluessel");
+		}
 		return GameStatus.RUN;
 	}
 

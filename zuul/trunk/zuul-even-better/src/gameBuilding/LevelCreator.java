@@ -105,8 +105,8 @@ public class LevelCreator
 	    //madHaddersHouse
 	    GameObject madHadder= new GameObject("Hutmacher","der Verückte Hutmacher",false,false,true);
 	    GameObject desk3= desk1;
-	    GameObject cup1= new GameObject("BlaueTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",false,false,true);
-	    GameObject cup2= new GameObject("RoteTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",false,false,true);
+	    GameObject cup1= new GameObject("BlaueTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,true);
+	    GameObject cup2= new GameObject("RoteTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,true);
 	    GameObject pot= new GameObject("Teekanne","Eine TeeKanne die Nichtmehr im Schrank des Hutmachers ist",true,false,true);
 	    GameObject key2= new GameObject("Schluessel","ein Goldener Schlüssel",true,false,false);;
 	    //madHaddersKitchen
@@ -121,14 +121,17 @@ public class LevelCreator
 	    GameObject carrot= new GameObject("Moehre","Eine Orange Moehre",true,false,false);
 	    //whitchcave
 	    GameObject which= new GameObject("Hexe","Die Böse Hexe",false,false,true);
-	    
-	    
+	    GameObject cup1Filled= new GameObject("BlaueTasseVollTee","Eine Volle Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,false);
+	    GameObject cup2Filled= new GameObject("RoteTasseVollTee","Eine Volle Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,false);
+	    GameObject potFilled= new GameObject("TeekanneVollTee","Eine Volle TeeKanne die Nichtmehr im Schrank des Hutmachers ist",true,false,false);
+	    GameObject furnance= new GameObject("Ofen", "Ein Russiger Ofen", false, false, true);
+	    GameObject furnance2= new GameObject("BrennenderOfen", "Ein Russiger brennender Ofen", false, false, false);
+	    GameObject Warhammer= new GameObject("KriegshammerFuer40K", "der Weltenzerstörende Kriegshammer", true, true, false);
 	    // Einfügen der Oben erstellten Objekte
 	  //fountain
 	    fountain.itemStore(flower);
 	    fountain.itemStore(flower2);
 	    fountain.itemStore(rabbit);
-	    fountain.itemStore(wood);
 	   //westcave
 	   //Nothing
 	   //eastcave
@@ -141,7 +144,7 @@ public class LevelCreator
 	   //insideTheVase
 	   insideTheVase.itemStore(desk2);
 	   insideTheVase.itemStore(redberry);
-	   //attic
+	   //attic"
 	   attic.itemStore(key1);
 	   //Southcave
 	   southCave.itemStore(boiler);
@@ -154,18 +157,27 @@ public class LevelCreator
 	   madHaddersHouse.itemStore(key2);
 	   //madHaddersKitchen
 	   madHaddersKitchen.itemStore(cat);
+	   madHaddersKitchen.itemStore(furnance);
+	   madHaddersKitchen.itemStore(furnance2);
 	   //insideTheFurnance
 	   insideTheFurnance.itemStore(fireGhost);
-	   insideTheFurnance.itemStore(hairDryer);
 	   //madHaddersGarden
 	   madHaddersGarden.itemStore(snownan);
 	   madHaddersGarden.itemStore(fountainInGarden);
 	   madHaddersGarden.itemStore(blueBerry2);
-	   madHaddersGarden.itemStore(carrot);
 	   //Whitchcave
 	   whichCave.itemStore(which);
 	    // Uselist hinzufügen.
 	   player.itemStore(flower3);
+	   player.itemStore(hairDryer);
+	   player.itemStore(carrot);
+	   player.itemStore(cup1Filled);
+	   player.itemStore(cup2Filled);
+	   player.itemStore(potFilled);
+	   player.itemStore(key2);
+	   player.itemStore(Warhammer);
+	   player.itemStore(wood);
+
 	}
 
 	public Room getStartRoom()

@@ -39,16 +39,24 @@ public class ThingWithStore {
 	}
 
 	/**
-	 * Methode die Überprüft ob das Objekt in der Sammlung vorhanden ist
+	 * Methode die Überprüft ob das Objekt in der Sammlung vorhanden und sichtbar ist
 	 * @param Objektname der name des zu überprüfenden Objects
 	 * @return ob das {@link GameObject} vorhanden ist
 	 */
+	public boolean hasReadyToUseObject(String Objektname) {
+
+		if(store.containsKey(Objektname)){
+		return store.get(Objektname).isVisebility();}else{
+			return false;
+		}
+
+	}
+
 	public boolean hasObject(String Objektname) {
 
 		return store.containsKey(Objektname);
 
 	}
-
 	/**
 	 * Methode die das {@link GameObject} zurückgibt wenn es vorhanden ist ansonsten wird ein default Object zurückgegeben
 	 * @param ObjektName der Name des auszugebenden {@link GameObject}s

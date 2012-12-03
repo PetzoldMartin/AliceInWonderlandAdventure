@@ -64,11 +64,11 @@ public class matchItems extends GameplayRule {
 	 * @return Boolean ob das "erschaffen" erfolgreich war
 	 */
 	private boolean makeItemVisebill() {
-		if (player.getCurrentRoom().hasObject(getManiO())) {
+		if (player.getCurrentRoom().hasReadyToUseObject(getManiO())) {
 			player.getCurrentRoom().getSpecialObject(getManiO()).setVisebility(true);
 			return true;
 		} else {
-			if (player.hasObject(getManiO())) {
+			if (player.hasReadyToUseObject(getManiO())) {
 				player.getSpecialObject(getManiO()).setVisebility(true);
 				return true;
 			} else {
@@ -83,8 +83,8 @@ public class matchItems extends GameplayRule {
 	 * @return Boolean ob das benötigte {@link GameObject} vorhanden ist
 	 */
 	private boolean gameObjectIsAvaible(String gString) {
-		if (player.hasObject(gString)
-				|| player.getCurrentRoom().hasObject(gString)) {
+		if (player.hasReadyToUseObject(gString)
+				|| player.getCurrentRoom().hasReadyToUseObject(gString)) {
 			return true;
 		} else {
 			return false;
@@ -98,10 +98,10 @@ public class matchItems extends GameplayRule {
 	 */
 	private void removeGameObject(String gString, boolean remove) {
 		if (remove) {
-			if (player.hasObject(gString)) {
+			if (player.hasReadyToUseObject(gString)) {
 				player.itemRemove(gString);
 			} else {
-				if (player.getCurrentRoom().hasObject(gString)) {
+				if (player.getCurrentRoom().hasReadyToUseObject(gString)) {
 					player.getCurrentRoom().itemRemove(gString);
 				}
 			}

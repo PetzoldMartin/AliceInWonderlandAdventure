@@ -32,13 +32,13 @@ public class LookCommand extends Command {
 					}
 				} else {
 					// Gegenstand aus Inventar oder Raum ansehen
-					if (player.hasObject(getSecondWord())
+					if (player.hasReadyToUseObject(getSecondWord())
 							&& player.getSpecialObject(getSecondWord())
 									.isVisebility()) {
 						Game.textOut.lineEntry(player.getSpecialObject(
 								getSecondWord()).getAmplification());
 					} else {
-						if (player.getCurrentRoom().hasObject(
+						if (player.getCurrentRoom().hasReadyToUseObject(
 								getSecondWord())
 								&& player.getCurrentRoom()
 										.getSpecialObject(getSecondWord())

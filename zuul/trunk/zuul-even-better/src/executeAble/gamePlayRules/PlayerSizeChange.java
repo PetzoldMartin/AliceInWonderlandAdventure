@@ -33,13 +33,13 @@ public class PlayerSizeChange extends GameplayRule {
 	 */
 	@Override
 	public GameStatus execute(Player player) {
-		if(player.hasObject(getSecondWord())){
+		if(player.hasReadyToUseObject(getSecondWord())){
 			player.setSize(size);
 			if(remove){
 			player.itemRemove(getSecondWord());}
 			Game.textOut.lineEntry("Deine Größe wurde auf "+size+" geändert");
 		}else{
-			if(player.getCurrentRoom().hasObject(getSecondWord())){
+			if(player.getCurrentRoom().hasReadyToUseObject(getSecondWord())){
 				player.setSize(size);
 				if(remove){
 				player.getCurrentRoom().itemRemove(getSecondWord());}

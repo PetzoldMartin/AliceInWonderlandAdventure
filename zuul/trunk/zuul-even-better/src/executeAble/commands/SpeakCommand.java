@@ -21,7 +21,7 @@ public class SpeakCommand extends Command {
 	public GameStatus execute(Player player) {
 
 		if (hasSecondWord()) {
-			if (player.getCurrentRoom().hasObject(getSecondWord())) {
+			if (player.getCurrentRoom().hasReadyToUseObject(getSecondWord())) {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isSpeakAble()) { // Überprüft ob der Gegenstand
 											// Sprechen kann
