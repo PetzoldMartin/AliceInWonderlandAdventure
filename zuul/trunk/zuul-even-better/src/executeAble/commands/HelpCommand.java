@@ -1,7 +1,7 @@
 package executeAble.commands;
 
+import gameBuilding.CommandWords;
 import gameEnums.GameStatus;
-import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Player;
 

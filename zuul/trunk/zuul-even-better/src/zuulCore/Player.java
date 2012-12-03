@@ -1,6 +1,7 @@
 package zuulCore;
 
 
+import gameBuilding.CommandWords;
 import gameBuilding.DialogCreator;
 import gameBuilding.LevelCreator;
 import gameBuilding.UsableCreator;

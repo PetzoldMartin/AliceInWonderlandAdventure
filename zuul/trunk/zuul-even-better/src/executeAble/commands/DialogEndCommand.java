@@ -13,7 +13,8 @@ public class DialogEndCommand extends Command {
 	public GameStatus execute(Player player) {
 		player.getnCW().clearCommands();
 		player.getnCW().initialeCommands();
-		Game.textOut.lineEntry("Du hastr das Gespräch beendet");
+		Game.textOut.lineEntry("Du hast das Gespräch beendet");
+		Game.textOut.lineEntry(player.getCurrentRoom().getLongDescription());
 		return GameStatus.RUN;
 	}
 

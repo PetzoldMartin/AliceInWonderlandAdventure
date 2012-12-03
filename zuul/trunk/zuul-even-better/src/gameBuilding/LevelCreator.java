@@ -129,7 +129,6 @@ public class LevelCreator
 	    fountain.itemStore(flower2);
 	    fountain.itemStore(rabbit);
 	    fountain.itemStore(wood);
-	    fountain.itemStore(key1);
 	   //westcave
 	   //Nothing
 	   //eastcave

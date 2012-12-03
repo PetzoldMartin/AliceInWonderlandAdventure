@@ -28,6 +28,7 @@ public class LookCommand extends Command {
 					} else {
 						Game.textOut.entry("Im Raum erkennst du: ");
 						player.getCurrentRoom().getAllItems();
+						Game.textOut.lineEntry(player.getCurrentRoom().getLongDescription());
 					}
 				} else {
 					// Gegenstand aus Inventar oder Raum ansehen

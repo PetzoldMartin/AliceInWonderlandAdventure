@@ -1,12 +1,12 @@
 package Tests.commandsTests;
 
+import gameBuilding.CommandWords;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.CommandWords;
 import zuulCore.Game;
 
 

@@ -38,7 +38,7 @@ public class DialogCommand extends Command {
 			k++;
 			}
 		 player.getnCW().insertCommand(k.toString(), new DialogEndCommand());
-		 Game.textOut.lineEntry(k.toString()+" :  "+ "Dialog Beenden");
+		 Game.textOut.lineEntry(k.toString()+" :  "+ "Auf wiedersehen");
 		 player.getnCW().insertCommand("?", new HelpCommand(player.getnCW()));
 		 Game.textOut.lineEntry("? :  "+ "Hilfe");
 		return GameStatus.RUN;

@@ -26,7 +26,11 @@ public class SpeakCommand extends Command {
 						.isSpeakAble()) { // Überprüft ob der Gegenstand
 											// Sprechen kann
 					Game.textOut.lineEntry("du sprichst mit  "+ getSecondWord());
+					if(player.getnDC().hasDialog(getSecondWord())){
 					player.getnDC().getDialog(getSecondWord()).execute(player); 
+					}else{
+						Game.textOut.lineEntry("ich könnte damit reden wenn der text nicht fehlen würde");
+					}
 				} else {
 					Game.textOut
 							.lineEntry("So verrückt bin ich nun auch wieder nicht.");

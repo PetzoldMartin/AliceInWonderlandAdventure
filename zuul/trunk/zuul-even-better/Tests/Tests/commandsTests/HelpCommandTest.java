@@ -6,11 +6,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
 import executeAble.commands.HelpCommand;
+import gameBuilding.CommandWords;
 import gameEnums.GameStatus;
 
 

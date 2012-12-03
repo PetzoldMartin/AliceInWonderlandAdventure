@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 import executeAble.commands.Command;
 import executeAble.commands.NullCommand;
+import gameBuilding.CommandWords;
 
 /**
  * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.

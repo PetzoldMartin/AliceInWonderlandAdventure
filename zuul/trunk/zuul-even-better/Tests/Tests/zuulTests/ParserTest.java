@@ -6,10 +6,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Parser;
 import executeAble.commands.NullCommand;
+import gameBuilding.CommandWords;
 
 
 public class ParserTest extends TestCase{
