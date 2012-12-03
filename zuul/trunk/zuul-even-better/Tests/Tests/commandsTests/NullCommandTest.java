@@ -8,8 +8,8 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.NullCommand;
+import gameEnums.GameStatus;
 
 
 public class NullCommandTest extends TestCase{

@@ -10,8 +10,8 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.TakeCommand;
+import gameEnums.GameStatus;
 
 
 public class TakeCommandTest  extends TestCase{
@@ -24,7 +24,6 @@ public class TakeCommandTest  extends TestCase{
 	@Before
 	public void setUp() throws Exception{
 		command = new TakeCommand();
-		parser = new Parser();
 		game = new Game();
 	}
 

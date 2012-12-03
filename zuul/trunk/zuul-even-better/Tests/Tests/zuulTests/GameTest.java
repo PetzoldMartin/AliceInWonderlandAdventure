@@ -24,7 +24,6 @@ public class GameTest extends TestCase{
 	public void testGame() {
 		Assert.assertNotNull(game);
 		Assert.assertNotNull(game.getParser());
-		Assert.assertNotNull(game.getLC());
 		Assert.assertNotNull(game.getPlayer());
 	}
 

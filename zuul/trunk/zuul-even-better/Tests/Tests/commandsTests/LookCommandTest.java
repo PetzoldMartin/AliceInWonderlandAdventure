@@ -10,8 +10,8 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.LookCommand;
+import gameEnums.GameStatus;
 
 
 public class LookCommandTest  extends TestCase{
@@ -24,7 +24,6 @@ public class LookCommandTest  extends TestCase{
 	@Before
 	public void setUp() throws Exception{
 		command = new LookCommand();
-		parser = new Parser();
 		game = new Game();
 	}
 

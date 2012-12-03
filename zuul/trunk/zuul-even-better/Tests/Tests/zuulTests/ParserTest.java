@@ -21,7 +21,6 @@ public class ParserTest extends TestCase{
 
 	@Before
 	public void setUp() throws Exception {
-		parser = new Parser();
 		game = new Game();
 		cw = new CommandWords();
 	}

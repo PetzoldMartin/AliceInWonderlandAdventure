@@ -1,9 +1,9 @@
 package executeAble.commands;
 
+import gameEnums.GameStatus;
 import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 
 /**
  * Implementiert das Hilfe Kommando

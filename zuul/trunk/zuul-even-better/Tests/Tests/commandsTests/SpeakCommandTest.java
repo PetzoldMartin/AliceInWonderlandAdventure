@@ -10,8 +10,8 @@ import org.junit.Test;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.SpeakCommand;
+import gameEnums.GameStatus;
 
 
 public class SpeakCommandTest  extends TestCase{
@@ -24,7 +24,6 @@ public class SpeakCommandTest  extends TestCase{
 	@Before
 	public void setUp() throws Exception{
 		command = new SpeakCommand();
-		parser = new Parser();
 		game = new Game();
 	}
 

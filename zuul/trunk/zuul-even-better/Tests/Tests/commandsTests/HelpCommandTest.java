@@ -10,8 +10,8 @@ import zuulCore.CommandWords;
 import zuulCore.Game;
 import zuulCore.Parser;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.HelpCommand;
+import gameEnums.GameStatus;
 
 
 public class HelpCommandTest extends TestCase{
@@ -24,7 +24,6 @@ public class HelpCommandTest extends TestCase{
 	@Before
 	public void setUp() throws Exception {
 		command = new HelpCommand(new CommandWords());
-		parser = new Parser();
 		game= new Game();
 	}
 

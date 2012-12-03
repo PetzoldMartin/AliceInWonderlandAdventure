@@ -1,10 +1,10 @@
 package executeAble.gamePlayRules;
 
+import gameEnums.GameStatus;
 import gameEnums.PlayerSize;
 import zuulCore.Game;
 import zuulCore.GameObject;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 /**
  * Die Spielregel um mit einem {@link GameObject} die Spielergröße zu verändern
  * @author Aismael

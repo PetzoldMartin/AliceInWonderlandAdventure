@@ -1,12 +1,11 @@
 package Tests.enumTests;
 
+import gameEnums.GameStatus;
 import junit.framework.TestCase;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import gameEnums.GameStatus;
 
 public class GameStatusTest extends TestCase{
 

@@ -1,6 +1,8 @@
 package zuulCore;
 
 
+import executeAble.dialog.DialogCreator;
+import gameBuilding.LevelCreator;
 import gameBuilding.UsableCreator;
 import gameEnums.LockedStatus;
 import gameEnums.PlayerSize;
@@ -16,6 +18,9 @@ public class Player extends ThingWithStore {
 	private Room currentRoom;//der Raum indem sich der Spieler befindet.
 	private PlayerSize size = PlayerSize.NORMAL;//die Größe die der Spieler hat.
 	 private UsableCreator nUC; // Erstellt liste der Verwendbaren Items
+	 private DialogCreator nDC;//
+	 private LevelCreator nLC;
+	 private CommandWords nCW;
 	
 	/**
 	 *
@@ -25,7 +30,9 @@ public class Player extends ThingWithStore {
 		super();
 		currentRoom = null;
 		 nUC=new UsableCreator();
-		
+		 nDC=new DialogCreator();
+		 nCW=new CommandWords();
+		 nLC=new LevelCreator(this);
 	}
 	
 	
@@ -92,6 +99,27 @@ public class Player extends ThingWithStore {
 	
 	public UsableCreator getUC() {
 		return nUC;
+	}
+
+
+
+
+	public DialogCreator getnDC() {
+		return nDC;
+	}
+
+
+
+
+	public LevelCreator getnLC() {
+		return nLC;
+	}
+
+
+
+
+	public CommandWords getnCW() {
+		return nCW;
 	}
 
 }

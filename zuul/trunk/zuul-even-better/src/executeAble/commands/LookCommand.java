@@ -1,8 +1,8 @@
 package executeAble.commands;
 
+import gameEnums.GameStatus;
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 
 //TODO REDO
 public class LookCommand extends Command {

@@ -1,7 +1,6 @@
 package zuulCore;
 
 import executeAble.commands.Command;
-import gameBuilding.LevelCreator;
 import gameEnums.GameStatus;
 
 /**
@@ -22,7 +21,7 @@ public class Game
 {
     private Parser parser;// der Textparser des Spieles
     private Player player;// die Instanz der Player Klasse des Spieles
-    private LevelCreator nLC;//der Level/Raum Creator des Spieles
+//    private LevelCreator nLC;//der Level/Raum Creator des Spieles
 	public static TextOut textOut;
 	
     /**
@@ -31,7 +30,7 @@ public class Game
     public Game() 
     {
 
-        parser = new Parser();
+        
         newGameInitialize();
         
     }
@@ -51,9 +50,8 @@ public class Game
     private void newGameInitialize()
     {
         player = new Player();
-    	nLC= new LevelCreator(player);
-    	
-    	player.setCurrentRoom(nLC.getStartRoom());
+        player.setCurrentRoom(player.getnLC().getStartRoom());
+        parser = new Parser(player.getnCW());
     	textOut=new TextOut();
     	
     }
@@ -102,9 +100,7 @@ public class Game
     	
     }
 
-	public LevelCreator getLC() {
-		return nLC;
-	}
+
 	public Player getPlayer() {
 		return player;
 	}

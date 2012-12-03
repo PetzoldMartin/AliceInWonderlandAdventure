@@ -27,8 +27,8 @@ public class Parser {
 
 	private CommandWords commands; // enthält alle KommandoWörter
 
-	public Parser() {
-		commands = new CommandWords();
+	public Parser( CommandWords CW) {
+		commands = CW;
 	}
 
 	public Command consoleReader() {

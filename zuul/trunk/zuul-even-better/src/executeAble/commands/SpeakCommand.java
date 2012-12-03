@@ -1,9 +1,9 @@
 package executeAble.commands;
 
+import gameEnums.GameStatus;
 import zuulCore.Game;
 import zuulCore.GameObject;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 
 /**
  * Unterklasse der Basisklasse Command
@@ -25,7 +25,7 @@ public class SpeakCommand extends Command {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isSpeakAble()) { // Überprüft ob der Gegenstand
 											// Sprechen kann
-					Game.textOut.lineEntry("--> Gespräch <-- ."); // Noch unklar
+					player.getnDC().getDialog(getSecondWord()).execute(player); // Noch unklar
 																	// wie
 																	// implementiert
 																	// :D *TODO

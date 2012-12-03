@@ -8,8 +8,8 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.QuitCommand;
+import gameEnums.GameStatus;
 
 
 public class QuitCommandTest extends TestCase{

@@ -8,8 +8,8 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 import executeAble.commands.RestartCommand;
+import gameEnums.GameStatus;
 
 
 public class RestartCommandTest extends TestCase{

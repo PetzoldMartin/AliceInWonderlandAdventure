@@ -1,10 +1,10 @@
 package executeAble.gamePlayRules;
 
+import gameEnums.GameStatus;
 import gameEnums.LockedStatus;
 import zuulCore.Game;
 import zuulCore.GameObject;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 /**
  * Die Spielregel {@link GameplayRule} zum öffnen von Verschlossenen Türen im Spiel
  * @author Martin Petzold
