@@ -25,6 +25,7 @@ public class SpeakCommand extends Command {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isSpeakAble()) { // Überprüft ob der Gegenstand
 											// Sprechen kann
+					Game.textOut.lineEntry("du sprichst mit  "+ getSecondWord());
 					player.getnDC().getDialog(getSecondWord()).execute(player); 
 				} else {
 					Game.textOut

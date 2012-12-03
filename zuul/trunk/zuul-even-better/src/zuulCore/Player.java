@@ -1,7 +1,7 @@
 package zuulCore;
 
 
-import executeAble.dialog.DialogCreator;
+import gameBuilding.DialogCreator;
 import gameBuilding.LevelCreator;
 import gameBuilding.UsableCreator;
 import gameEnums.LockedStatus;
