@@ -1,5 +1,7 @@
 package executeAble.dialog;
 
+import java.util.HashMap;
+
 import executeAble.commands.Command;
 import gameEnums.GameStatus;
 import zuulCore.Game;
@@ -9,7 +11,7 @@ public class DialogPartCommand extends Command {
 
 	private String textout;
 
-	public DialogPartCommand(String textout,String pfad){
+	public DialogPartCommand(String textout){
 		this.textout=textout;
 	}
 	@Override
@@ -22,6 +24,9 @@ public class DialogPartCommand extends Command {
 	public void showSpecialHelp() {
 		Game.textOut.lineEntry("Das Kommando was einen Gesprächsteil auslöst");
 		
+	}
+	public String getTextout() {
+		return textout;
 	}
 
 }

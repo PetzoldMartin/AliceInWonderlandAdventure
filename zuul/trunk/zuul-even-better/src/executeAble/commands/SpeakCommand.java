@@ -25,14 +25,7 @@ public class SpeakCommand extends Command {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isSpeakAble()) { // Überprüft ob der Gegenstand
 											// Sprechen kann
-					player.getnDC().getDialog(getSecondWord()).execute(player); // Noch unklar
-																	// wie
-																	// implementiert
-																	// :D *TODO
-																	// Dingen QA
-																	// wie man
-																	// das macht
-																	// -.-'
+					player.getnDC().getDialog(getSecondWord()).execute(player); 
 				} else {
 					Game.textOut
 							.lineEntry("So verrückt bin ich nun auch wieder nicht.");

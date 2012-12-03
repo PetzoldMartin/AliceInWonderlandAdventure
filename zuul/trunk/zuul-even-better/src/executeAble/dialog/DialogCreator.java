@@ -9,6 +9,7 @@ public class DialogCreator {
 	
 	public DialogCreator() {
 		dialogs = new HashMap<String,Dialog>();
+		intintialtheDialogcreator();
 	}
 	
 	public Dialog getDialog(String dialogName){
