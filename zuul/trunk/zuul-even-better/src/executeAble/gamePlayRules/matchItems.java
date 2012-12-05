@@ -46,12 +46,12 @@ public class matchItems extends GameplayRule {
 				Game.textOut.lineEntry("Du Hast ein neues Object erschaffen");
 			} else {
 
-				Game.textOut.lineEntry("Das Kann ich hier nicht benutzen");
+				Game.textOut.lineEntry("Das Kann ich hier nicht benutzen1");
 
 			}
 		} else {
 
-			Game.textOut.lineEntry("Das Kann ich nicht benutzen");
+			Game.textOut.lineEntry("Das Kann ich nicht benutzen2");
 
 		}
 
@@ -64,11 +64,11 @@ public class matchItems extends GameplayRule {
 	 * @return Boolean ob das "erschaffen" erfolgreich war
 	 */
 	private boolean makeItemVisebill() {
-		if (player.getCurrentRoom().hasReadyToUseObject(getManiO())) {
+		if (player.getCurrentRoom().hasObject(getManiO())) {
 			player.getCurrentRoom().getSpecialObject(getManiO()).setVisebility(true);
 			return true;
 		} else {
-			if (player.hasReadyToUseObject(getManiO())) {
+			if (player.hasObject(getManiO())) {
 				player.getSpecialObject(getManiO()).setVisebility(true);
 				return true;
 			} else {
