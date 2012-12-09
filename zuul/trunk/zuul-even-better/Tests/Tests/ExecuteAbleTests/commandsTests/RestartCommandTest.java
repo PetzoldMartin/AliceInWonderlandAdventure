@@ -1,4 +1,4 @@
-package Tests.commandsTests;
+package Tests.ExecuteAbleTests.commandsTests;
 
 import junit.framework.TestCase;
 
@@ -8,35 +8,38 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import executeAble.commands.NullCommand;
+import executeAble.commands.RestartCommand;
 import gameEnums.GameStatus;
 
 
-public class NullCommandTest extends TestCase{
+public class RestartCommandTest extends TestCase{
 
-	NullCommand command;
+	RestartCommand command;
 	Player player;
 	private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
-		command = new NullCommand();
+		command = new RestartCommand();
 		game= new Game();
 	}
 
 	@Test
 	public void testExecute() {
-		Assert.assertEquals(GameStatus.RUN, command.execute(player));
+		Assert.assertEquals(GameStatus.RESTART, command.execute(player));
+		Assert.assertEquals(GameStatus.RESTART, command.execute(null));
+		command.setSecondWord("testword");
 		Assert.assertEquals(GameStatus.RUN, command.execute(null));
 	}
 
 	@Test
 	public void testShowSpecialHelp() {
-		//Nicht Testbar
+		assertEquals(game.getParser().getCommand("? neustart").execute(player),GameStatus.RUN);
+		assertEquals(game.getParser().getCommand("? neustart").getSecondWord(), "neustart");
 	}
 
 	@Test
-	public void testNullCommand() {
+	public void testRestartCommand() {
 		//Vorraussetzung: Get und Set -Methoden von Command funktionieren
 		Assert.assertNull(command.getSecondWord());
 		command.setSecondWord("Testwort");

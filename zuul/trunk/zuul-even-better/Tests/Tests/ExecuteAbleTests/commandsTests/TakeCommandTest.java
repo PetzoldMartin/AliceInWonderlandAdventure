@@ -1,4 +1,4 @@
-package Tests.commandsTests;
+package Tests.ExecuteAbleTests.commandsTests;
 
 import junit.framework.TestCase;
 

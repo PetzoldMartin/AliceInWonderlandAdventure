@@ -39,11 +39,15 @@ public class TextOut {
 		if (newEntry != null) {
 			System.out.print(newEntry);// NOPMD by Aismael on 27.11.12 15:07
 		}
-		ausgaben.clear();
-		textZeile = "";
+		clearTextOut();
 
 	}
 
+	
+	public void clearTextOut(){
+		ausgaben.clear();
+		textZeile = "";
+	}
 	/**
 	 * Die Methode die eine Textzeile engegenimmt
 	 * @param line
@@ -74,7 +78,7 @@ public class TextOut {
 	 */
 	public boolean AusgabeVorhanden(String gesucht) {
 		for (int i = 0; i < ausgaben.size(); i++) {
-			if (ausgaben.get(i) == gesucht)
+			if (ausgaben.get(i).equals(gesucht))
 				return true;
 		}
 		return false;

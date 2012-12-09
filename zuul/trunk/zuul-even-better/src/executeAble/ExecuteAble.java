@@ -86,7 +86,7 @@ public abstract class ExecuteAble
      */
     public boolean hasThirdWord()
     {
-        return secondWord != null;
+        return thirdWord != null;
     }
 
 		

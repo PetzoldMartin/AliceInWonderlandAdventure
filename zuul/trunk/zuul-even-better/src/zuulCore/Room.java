@@ -75,7 +75,7 @@ public class Room extends ThingWithStore
      */
     public String getLongDescription()
     {
-        return "" + description + ".\n" + getExitString();
+        return "" + description + "\n" + getExitString();
     }
     
     /**

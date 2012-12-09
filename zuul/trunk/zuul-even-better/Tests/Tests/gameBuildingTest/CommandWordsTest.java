@@ -1,4 +1,4 @@
-package Tests.commandsTests;
+package Tests.gameBuildingTest;
 
 import gameBuilding.CommandWords;
 import junit.framework.Assert;
