@@ -1,6 +1,6 @@
 package Tests.ExecuteAbleTests.commandsTests;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +10,7 @@ import zuulCore.Game;
 
 import executeAble.commands.DialogCommand;
 
-public class DialogCommandTest {
+public class DialogCommandTest extends TestCase {
 
 	private DialogCommand dialogCommand1;
 	private DialogCommand dialogCommand2;
@@ -27,6 +27,16 @@ public class DialogCommandTest {
 	public void tearDown() throws Exception {
 	}
 
+	@Test
+	public void testDialogCommandString() {
+		assertNotNull(dialogCommand1);
+	}
+	
+	@Test
+	public void testDialogCommandStringString() {
+		assertNotNull(dialogCommand2);
+	}
+	
 	@Test
 	public void testExecute() {
 		dialogCommand1.execute(game.getPlayer());
@@ -46,27 +56,22 @@ public class DialogCommandTest {
 
 	@Test
 	public void testShowSpecialHelp() {
-		fail("Not yet implemented"); // TODO
+		dialogCommand1.showSpecialHelp();
+		assertTrue(game.getTextOut().AusgabeVorhanden("damit kannst du "+"Gesprächsanfang" + " sagen"));
+		game.getTextOut().clearTextOut();
+		dialogCommand2.showSpecialHelp();
+		assertTrue(game.getTextOut().AusgabeVorhanden("damit kannst du "+"test21" + " sagen"));
 	}
 
-	@Test
-	public void testDialogCommandString() {
-		fail("Not yet implemented"); // TODO
-	}
-
-	@Test
-	public void testDialogCommandStringString() {
-		fail("Not yet implemented"); // TODO
-	}
 
 	@Test
 	public void testGetTextout() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(dialogCommand1.getTextout(),"Gesprächsanfang");
 	}
 
 	@Test
 	public void testInsertDialog() {
-		fail("Not yet implemented"); // TODO
+		assertEquals(dialogCommand2.getTextout(),"test21");
 	}
 
 }

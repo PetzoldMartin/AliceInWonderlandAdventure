@@ -4,6 +4,9 @@ package Tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
+import Tests.ExecuteAbleTests.ExecuteAbleTest;
+import Tests.ExecuteAbleTests.commandsTests.DialogCommandTest;
+import Tests.ExecuteAbleTests.commandsTests.DialogEndCommandTest;
 import Tests.ExecuteAbleTests.commandsTests.GoCommandTest;
 import Tests.ExecuteAbleTests.commandsTests.HelpCommandTest;
 import Tests.ExecuteAbleTests.commandsTests.LookCommandTest;
@@ -48,6 +51,9 @@ public class MainTest extends TestSuite {
 		mySuite.addTestSuite(LookCommandTest.class);
 		mySuite.addTestSuite(SpeakCommandTest.class);
 		mySuite.addTestSuite(UseCommandTest.class);
+		mySuite.addTestSuite(DialogCommandTest.class);
+		mySuite.addTestSuite(ExecuteAbleTest.class);
+		mySuite.addTestSuite(DialogEndCommandTest.class);
 		// ... weitere Testklassen hinzufügen
 		//FIXME Commandwords Test!!!
 		return mySuite;

@@ -1,5 +1,7 @@
 package Tests.zuulTests;
 
+import executeAble.commands.NullCommand;
+import gameBuilding.CommandWords;
 import junit.framework.TestCase;
 
 import org.junit.Assert;
@@ -8,8 +10,6 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Parser;
-import executeAble.commands.NullCommand;
-import gameBuilding.CommandWords;
 
 
 public class ParserTest extends TestCase{

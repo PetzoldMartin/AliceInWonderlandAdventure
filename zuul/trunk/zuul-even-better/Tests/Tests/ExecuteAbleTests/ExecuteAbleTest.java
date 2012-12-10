@@ -1,6 +1,7 @@
 package Tests.ExecuteAbleTests;
 
 import static org.junit.Assert.*;
+import junit.framework.TestCase;
 import executeAble.ExecuteAble;
 import gameEnums.GameStatus;
 
@@ -10,7 +11,7 @@ import org.junit.Test;
 
 import zuulCore.Player;
 
-public class ExecuteAbleTest {
+public class ExecuteAbleTest extends TestCase {
 
 	private ExecuteAble executeAble;
 	private Player player;
