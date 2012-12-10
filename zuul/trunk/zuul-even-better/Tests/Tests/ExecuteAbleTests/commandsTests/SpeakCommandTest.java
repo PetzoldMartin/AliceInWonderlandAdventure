@@ -35,15 +35,24 @@ public class SpeakCommandTest  extends TestCase{
 	public void testExecute() {
 		Assert.assertEquals(GameStatus.RUN, command.execute(player));
 		Assert.assertEquals(GameStatus.RUN, command.execute(null));
+		game.getTextOut().clearTextOut();
 		Assert.assertEquals(game.getParser().getCommand("sprich dass").execute(game.getPlayer()),GameStatus.RUN);
+		assertTrue(game.getTextOut().AusgabeVorhanden("So verrückt bin ich nun auch wieder nicht."));
+		game.getTextOut().clearTextOut();
 		Assert.assertEquals(game.getParser().getCommand("sprich flower").execute(game.getPlayer()),GameStatus.RUN);
-		Assert.assertEquals(game.getParser().getCommand("sprich blumea").execute(game.getPlayer()),GameStatus.RUN);
+		assertTrue(game.getTextOut().AusgabeVorhanden("So verrückt bin ich nun auch wieder nicht."));
+		game.getTextOut().clearTextOut();
 		Assert.assertEquals(game.getParser().getCommand("sprich Holz").execute(game.getPlayer()),GameStatus.RUN);
+		assertTrue(game.getTextOut().AusgabeVorhanden("So verrückt bin ich nun auch wieder nicht."));
+		game.getTextOut().clearTextOut();
+		Assert.assertEquals(game.getParser().getCommand("sprich Kaninchen").execute(game.getPlayer()),GameStatus.RUN);
+		
 	}
 
 	@Test
 	public void testShowSpecialHelp() {
-		Assert.assertEquals(game.getParser().getCommand("? sprich").execute(game.getPlayer()),GameStatus.RUN);
+		command.showSpecialHelp();
+		game.getTextOut().AusgabeVorhanden("Du versuchst mit etwas oder jemand zu sprechen.");
 	}
 
 }

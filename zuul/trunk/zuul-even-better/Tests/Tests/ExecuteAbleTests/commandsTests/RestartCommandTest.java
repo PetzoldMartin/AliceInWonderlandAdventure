@@ -26,16 +26,21 @@ public class RestartCommandTest extends TestCase{
 
 	@Test
 	public void testExecute() {
-		Assert.assertEquals(GameStatus.RESTART, command.execute(player));
-		Assert.assertEquals(GameStatus.RESTART, command.execute(null));
-		command.setSecondWord("testword");
-		Assert.assertEquals(GameStatus.RUN, command.execute(null));
+		command.execute(game.getPlayer());
+		assertTrue(game.getTextOut().AusgabeVorhanden("Das Wunderland wird neu Geträumt... "));
+		assertTrue(game.getTextOut().AusgabeVorhanden("Was getan war ist nun nie Geschehn... "));
+		assertTrue(game.getTextOut().AusgabeVorhanden("Der Hutmacher hat noch alle Tassen im Schrank... "));
+		assertTrue(game.getTextOut().AusgabeVorhanden("... "));
+		game.getTextOut().clearTextOut();
+		command.setSecondWord("test");
+		command.execute(null);
+		assertTrue(game.getTextOut().AusgabeVorhanden("Ich kann das nicht neu starten..."));
 	}
 
 	@Test
 	public void testShowSpecialHelp() {
-		assertEquals(game.getParser().getCommand("? neustart").execute(player),GameStatus.RUN);
-		assertEquals(game.getParser().getCommand("? neustart").getSecondWord(), "neustart");
+		command.showSpecialHelp();
+		assertTrue(game.getTextOut().AusgabeVorhanden("Mit diesen Befehl würd das Aktuelle Spiel neu gestartet. Alle Gegenstände verschwinden aus dem Inventar."));
 	}
 
 	@Test

@@ -35,7 +35,6 @@ public class HelpCommandTest extends TestCase{
 
 	@Test
 	public void testShowSpecialHelp() {
-		assertFalse(game.getTextOut().AusgabeVorhanden("Irgendwas"));
 		game.getParser().getCommand("? ?").execute(game.getPlayer());
 		assertTrue(game.getTextOut().AusgabeVorhanden("Dies ist das Kommando für die Hilfe wie du schon herausgefunden hast."));
 		assertEquals(game.getParser().getCommand("? ?").getSecondWord(),"?");
@@ -54,6 +53,7 @@ public class HelpCommandTest extends TestCase{
 		assertTrue(game.getTextOut().AusgabeVorhanden("Versuche es wieder zu finden!"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("deine Befehlswörter sind:"));
 		assertEquals(game.getTextOut().getTextZeile(),"ende  nutz  hilfe  sprich  geh  neustart  nimm  guck  ?  ");
+		game.getTextOut().clearTextOut();
 		
 	}
 

@@ -9,6 +9,7 @@ import org.junit.Test;
 import zuulCore.Game;
 
 import executeAble.commands.DialogCommand;
+import gameEnums.GameStatus;
 
 public class DialogCommandTest extends TestCase {
 
@@ -39,13 +40,13 @@ public class DialogCommandTest extends TestCase {
 	
 	@Test
 	public void testExecute() {
-		dialogCommand1.execute(game.getPlayer());
+		assertEquals(dialogCommand1.execute(game.getPlayer()),GameStatus.RUN);
 		assertTrue(game.getTextOut().AusgabeVorhanden("test1"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("Deine Antwort möglichkeiten sind"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("1"+" :  "+ "Auf wiedersehen"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("? :  "+ "Hilfe"));
 		game.getTextOut().clearTextOut();
-		dialogCommand2.execute(game.getPlayer());
+		assertEquals(dialogCommand2.execute(game.getPlayer()),GameStatus.RUN);
 		assertTrue(game.getTextOut().AusgabeVorhanden("test22"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("Deine Antwort möglichkeiten sind"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("1"+" :  "+ "Auf wiedersehen"));

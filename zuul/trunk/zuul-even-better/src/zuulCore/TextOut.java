@@ -30,14 +30,14 @@ public class TextOut {
 		for (int j = 0; j < ausgaben.size(); j++) {
 			if (ausgaben.get(j) != ">") {
 				System.out.println(ausgaben.get(j));
-			} // NOPMD by Aismael on 27.11.12 15:07
+			} 
 			else {
 				newEntry = ausgaben.get(j);
 			}
 
 		}
 		if (newEntry != null) {
-			System.out.print(newEntry);// NOPMD by Aismael on 27.11.12 15:07
+			System.out.print(newEntry);
 		}
 		clearTextOut();
 

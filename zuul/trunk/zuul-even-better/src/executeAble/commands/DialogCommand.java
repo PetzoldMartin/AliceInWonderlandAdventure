@@ -1,11 +1,12 @@
 package executeAble.commands;
 
+import gameEnums.GameStatus;
+
 import java.util.HashMap;
 import java.util.Iterator;
 
 import zuulCore.Game;
 import zuulCore.Player;
-import gameEnums.GameStatus;
 
 public class DialogCommand extends Command {
 

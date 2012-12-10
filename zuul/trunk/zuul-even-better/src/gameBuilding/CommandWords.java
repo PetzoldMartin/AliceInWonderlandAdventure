@@ -3,7 +3,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import zuulCore.Game;
-
 import executeAble.commands.Command;
 import executeAble.commands.GoCommand;
 import executeAble.commands.HelpCommand;
@@ -32,7 +31,7 @@ public class CommandWords
      */
     public CommandWords()
     {
-        initialeCommands(); // NOPMD by Aismael on 27.11.12 15:01
+        initialeCommands(); 
     }
 
     /**

@@ -32,13 +32,13 @@ public class GoCommandTest extends TestCase {
 		Assert.assertEquals(GameStatus.RUN, command.execute(null));
 		//
 		Room raum=game.getPlayer().getCurrentRoom();
-		game.getParser().getCommand("geh norden").execute(game.getPlayer());
+		assertEquals(game.getParser().getCommand("geh norden").execute(game.getPlayer()),GameStatus.RUN);
 		assertFalse(raum.equals( game.getPlayer().getCurrentRoom()));
 		assertEquals(""+"Du bist in einer Höhle in der nähe des Brunnens."+"\n"+"Ausgänge: sueden", game.getPlayer().getCurrentRoom().getLongDescription());
 		assertTrue(game.getTextOut().AusgabeVorhanden(""+"Du bist in einer Höhle in der nähe des Brunnens."+"\n"+"Ausgänge: sueden"));
 		game.getTextOut().clearTextOut();
 		//
-		game.getParser().getCommand("geh sueden").execute(game.getPlayer());
+		assertEquals(game.getParser().getCommand("geh sueden").execute(game.getPlayer()),GameStatus.RUN);
 		assertEquals(raum, game.getPlayer().getCurrentRoom());
 		assertEquals(""+"Du befindest dich in einem Brunnen"+"\n"+"Ausgänge: osten norden westen sueden", game.getPlayer().getCurrentRoom().getLongDescription());
 		assertTrue(game.getTextOut().AusgabeVorhanden(""+"Du befindest dich in einem Brunnen"+"\n"+"Ausgänge: osten norden westen sueden"));
@@ -47,8 +47,7 @@ public class GoCommandTest extends TestCase {
 
 	@Test
 	public void testShowSpecialHelp() {
-		assertEquals(game.getParser().getCommand("? geh").execute(player),GameStatus.RUN);
-		assertEquals(game.getParser().getCommand("? geh").getSecondWord(), "geh");
+		command.showSpecialHelp();
 		assertTrue(game.getTextOut().AusgabeVorhanden("Es dient dazu dich im Wunderland zu bewegen."));
 		game.getTextOut().clearTextOut();
 	}

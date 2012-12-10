@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import executeAble.commands.DialogEndCommand;
 import gameBuilding.CommandWords;
+import gameEnums.GameStatus;
 
 import zuulCore.Game;
 
@@ -28,7 +29,7 @@ public class DialogEndCommandTest extends TestCase{
 
 	@Test
 	public void testExecute() {
-		dialogEndCommand.execute(game.getPlayer());
+		assertEquals(dialogEndCommand.execute(game.getPlayer()),GameStatus.RUN);
 		assertTrue(game.getTextOut().AusgabeVorhanden("Du hast das Gespräch beendet"));
 		assertTrue(game.getTextOut().AusgabeVorhanden(""+"Du befindest dich in einem Brunnen"+"\n"+"Ausgänge: osten norden westen sueden"));
 		game.getTextOut().clearTextOut();

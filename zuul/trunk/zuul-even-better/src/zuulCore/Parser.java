@@ -1,12 +1,12 @@
 package zuulCore;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
-
 import executeAble.commands.Command;
 import executeAble.commands.NullCommand;
 import gameBuilding.CommandWords;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 /**
  * Diese Klasse ist eine der Hauptklassen der "World of Zuul" Anwendung.
