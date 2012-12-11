@@ -137,7 +137,7 @@ public class GameGui extends JFrame implements Runnable{
 			btnNewButton_1.setBounds(140, 519, 89, 23);
 			contentPane.add(btnNewButton_1);
 			
-			JButton btnWasTolles = new JButton("Was tolles");
+			JButton btnWasTolles = new JButton("test");
 			btnWasTolles.setBounds(239, 519, 89, 23);
 			contentPane.add(btnWasTolles);
 			
@@ -157,7 +157,7 @@ public class GameGui extends JFrame implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		this.setVisible(true);
 		
 	}
 }

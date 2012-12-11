@@ -1,7 +1,10 @@
 package zuulCore;
 
+import java.util.Observable;
+
 import executeAble.commands.Command;
 import gameEnums.GameStatus;
+import gameObserver.GameListener;
 import gui.GameGui;
 
 /**
@@ -18,7 +21,8 @@ import gui.GameGui;
  * @version 1.1 (October 2012)
  */
 
-public class Game 
+public class Game extends Observable implements Runnable
+
 {
     private Parser parser;// der Textparser des Spieles
     private Player player;// die Instanz der Player Klasse des Spieles
@@ -31,8 +35,9 @@ public class Game
     public Game() 
     {
 
-        
         newGameInitialize();
+        
+        
         
     }
     
@@ -40,11 +45,14 @@ public class Game
      * Die Main Klasse erstellt ein Spiel und ruft die Hauptmethode auf.
      */
     public static void main(String[] args) {
-    	GameGui gui=new GameGui();
-    	gui.main(args);
     	Game game = new Game();
-    	game.play();
-
+    	GameGui gG= new GameGui();
+    	GameListener currentRoomListener= new GameListener(gG);
+    	game.addObserver(currentRoomListener);
+    	Thread a1= new Thread(game);
+    	Thread a2= new Thread(gG);
+    	a2.start();
+    	a1.start();
     }
 
     /**
@@ -56,7 +64,7 @@ public class Game
         player = new Player();
         player.setCurrentRoom(player.getnLC().getStartRoom());
         parser = new Parser(player.getnCW());
-    	textOut=new TextOut();
+    	textOut=new TextOut();        
     	
     }
     
@@ -66,6 +74,7 @@ public class Game
      */
     public void play() 
     {    
+    	updateGuiStats();
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -76,8 +85,9 @@ public class Game
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
             Command command = parser.consoleReader();
-                gameStatus = command.execute(player);
+                gameStatus = command.execute(player);         
                 textOut.ausgabe();
+                updateGuiStats();
         }
         if(gameStatus==GameStatus.RESTART){
         	this.newGameInitialize();
@@ -116,4 +126,16 @@ public class Game
 	public TextOut getTextOut() {
 		return textOut;
 	}
+	
+	public void updateGuiStats(){
+		setChanged();
+		notifyObservers(player);
+	}
+
+	@Override
+	public void run() {
+		this.play();
+		
+	}
+
 }
