@@ -16,14 +16,44 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>GuiSrc/data/default.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/default.png</location>
+		</link>
+		<link>
 			<name>GuiSrc/data/fountain.png</name>
 			<type>1</type>
 			<location>C:/Users/Asmodai/Desktop/fountain.png</location>
 		</link>
 		<link>
+			<name>GuiSrc/data/fr.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/fr.png</location>
+		</link>
+		<link>
+			<name>GuiSrc/data/grey.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/grey.png</location>
+		</link>
+		<link>
 			<name>GuiSrc/data/northCave.png</name>
 			<type>1</type>
 			<location>C:/Users/Asmodai/Desktop/northCave.png</location>
+		</link>
+		<link>
+			<name>GuiSrc/data/re.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/re.png</location>
+		</link>
+		<link>
+			<name>GuiSrc/data/white.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/white.png</location>
+		</link>
+		<link>
+			<name>GuiSrc/data/x.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/x.png</location>
 		</link>
 	</linkedResources>
 </projectDescription>
