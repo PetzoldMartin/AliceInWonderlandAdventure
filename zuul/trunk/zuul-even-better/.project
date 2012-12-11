@@ -14,41 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>GuiSrc/data/default.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/default.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/fountain.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/fountain.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/fr.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/fr.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/grey.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/grey.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/re.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/re.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/white.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/white.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/x.png</name>
-			<type>1</type>
-			<location>C:/Users/Aismael/Desktop/ydfhg/x.png</location>
-		</link>
-	</linkedResources>
 </projectDescription>
