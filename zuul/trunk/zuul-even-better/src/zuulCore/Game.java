@@ -2,6 +2,7 @@ package zuulCore;
 
 import executeAble.commands.Command;
 import gameEnums.GameStatus;
+import gui.GameGui;
 
 /**
  *  Diese Klasse ist die Hauptklasse der "World of Zuul" Anwendung
@@ -39,8 +40,11 @@ public class Game
      * Die Main Klasse erstellt ein Spiel und ruft die Hauptmethode auf.
      */
     public static void main(String[] args) {
+    	GameGui gui=new GameGui();
+    	gui.main(args);
     	Game game = new Game();
     	game.play();
+
     }
 
     /**
