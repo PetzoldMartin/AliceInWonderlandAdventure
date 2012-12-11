@@ -15,8 +15,8 @@ public class RoomTest extends TestCase{
 
 	@Before
 	public void setUp() throws Exception {
-		room = new Room("raum1");
-		room2 = new Room("raum2", PlayerSize.NORMAL);
+		room = new Room("raum1","raum1");
+		room2 = new Room("raum2","raum2", PlayerSize.NORMAL);
 	}
 
 	@Test

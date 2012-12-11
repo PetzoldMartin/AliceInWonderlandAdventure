@@ -25,15 +25,17 @@ public class Room extends ThingWithStore
     private HashMap<String, Room> exits;// stores exits of this room.
     private PlayerSize sizeExpected;// die vom Raum erwartete Spielergrösse
     private LockedStatus closed;// Status ob der Raum verschlossen ist oder nicht
+	private String name;
  
     
     /**
      * Konstruktor der Raumklasse mit Beschreibung und
      * ohne erwartete Spielergrösse
      */
-    public Room(String description) 
+    public Room(String name,String description) 
     {
     	super();
+    	this.name=name;
     	this.sizeExpected=PlayerSize.NORMAL;
         this.description = description;
         exits = new HashMap<String, Room>();
@@ -44,9 +46,9 @@ public class Room extends ThingWithStore
      * Konstruktor der Raumklasse mit Beschreibung und
      * mit erwartete Spielergrösse
      */
-    public Room(String description,PlayerSize sizeExpeced) 
+    public Room(String name,String description,PlayerSize sizeExpeced) 
     {
-    	this(description);
+    	this(name,description);
     	this.sizeExpected=sizeExpeced;
         
     }
@@ -134,6 +136,9 @@ public class Room extends ThingWithStore
 	 */
 	public void setClosed(LockedStatus closed) {
 		this.closed = closed;
+	}
+	public String getName() {
+		return name;
 	}
 	
 
