@@ -18,42 +18,37 @@
 		<link>
 			<name>GuiSrc/data/default.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/default.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/default.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/fountain.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/fountain.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/fountain.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/fr.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/fr.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/fr.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/grey.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/grey.png</location>
-		</link>
-		<link>
-			<name>GuiSrc/data/northCave.png</name>
-			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/northCave.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/grey.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/re.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/re.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/re.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/white.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/white.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/white.png</location>
 		</link>
 		<link>
 			<name>GuiSrc/data/x.png</name>
 			<type>1</type>
-			<location>C:/Users/Asmodai/Desktop/x.png</location>
+			<location>C:/Users/Aismael/Desktop/ydfhg/x.png</location>
 		</link>
 	</linkedResources>
 </projectDescription>
