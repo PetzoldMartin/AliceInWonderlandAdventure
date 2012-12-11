@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>GuiSrc/data/fountain.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/fountain.png</location>
+		</link>
+		<link>
+			<name>GuiSrc/data/northCave.png</name>
+			<type>1</type>
+			<location>C:/Users/Asmodai/Desktop/northCave.png</location>
+		</link>
+	</linkedResources>
 </projectDescription>

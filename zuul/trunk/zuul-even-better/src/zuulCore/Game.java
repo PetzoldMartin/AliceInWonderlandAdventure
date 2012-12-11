@@ -134,8 +134,7 @@ public class Game extends Observable implements Runnable
 
 	@Override
 	public void run() {
-		this.play();
-		
+		this.play();	
 	}
 
 }
