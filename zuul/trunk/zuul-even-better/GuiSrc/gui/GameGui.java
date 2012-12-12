@@ -3,6 +3,7 @@ package gui;
 
 
 import gameObserver.BackroundActioner;
+import gameObserver.TextOutActioner;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -11,6 +12,9 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -23,6 +27,8 @@ public class GameGui extends JFrame implements Runnable , Observer{
 		private String currentRoom="white";
 		private JLabel lblNewLabel_1;
 		private boolean isChanged=true;
+		private JTextArea outText;
+		private String ausgabe="Start";
 	
 
 		public GameGui() {
@@ -102,7 +108,7 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			
 			lblNewLabel_1 = new JLabel("");
 			lblNewLabel_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
-			lblNewLabel_1.setBounds(30, 96, 500, 400);
+			lblNewLabel_1.setBounds(30, 140, 500, 400);
 			contentPane.add(lblNewLabel_1);
 			
 			JButton btnNewButton = new JButton("");
@@ -132,17 +138,28 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			btnWasTolles.setBounds(239, 519, 89, 23);
 			contentPane.add(btnWasTolles);
 			
-			JLabel lblNewLabel_2 = new JLabel("New label");
-			lblNewLabel_2.setIcon(new ImageIcon(GameGui.class.getResource("/data/grey.png")));
-			lblNewLabel_2.setBounds(52, 43, 478, 82);
-			contentPane.add(lblNewLabel_2);
+//			JLabel lblNewLabel_2 = new JLabel("New label");
+//			lblNewLabel_2.setIcon(new ImageIcon(GameGui.class.getResource("/data/grey.png")));
+//			lblNewLabel_2.setBounds(52, 43, 478, 82);
+//			contentPane.add(lblNewLabel_2);
+			
+			outText = new JTextArea("New label",52,38);
+			//outText.setIcon(new ImageIcon(GameGui.class.getResource("/data/grey.png")));
+			//outText.setBounds(52, 38, 478, 82);
+			outText.setText("test");
+			JScrollPane scroll = new JScrollPane(outText);
+			scroll.setBounds(52, 0, 478, 160);
+			//contentPane.add(outText);
+			contentPane.add(scroll);
 			guiUpdate();
 
 		}
 	
 	public void guiUpdate(){
 		lblNewLabel_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
-		//System.out.println("Update");
+		outText.setText(ausgabe);
+		outText.setCaretPosition(outText.getText().length());
+		
 	}
 		
 	@Override
@@ -177,7 +194,16 @@ public class GameGui extends JFrame implements Runnable , Observer{
 	public void update(Observable arg0, Object arg1) {
 		if(arg0.getClass().equals(BackroundActioner.class))
 		{setCurrentRoom((String) arg1);}
+		if(arg0.getClass().equals(TextOutActioner.class))
+		{setCurrentTextout((String) arg1);
+		//System.out.println((String) arg1);
+		}
 		isChanged=true;
+		
+	}
+
+	private void setCurrentTextout(String arg1) {
+		ausgabe=ausgabe+"\n"+arg1;
 		
 	}
 

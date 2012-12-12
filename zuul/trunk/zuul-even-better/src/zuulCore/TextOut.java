@@ -1,6 +1,7 @@
 package zuulCore;
 
 import java.util.ArrayList;
+import java.util.Observable;
 
 /**
  * Die Klasse die sämtliche Textausgaben des Spieles Entgegenimmt
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * @author Aismael
  *
  */
-public class TextOut {
+public class TextOut extends Observable {
 
 	ArrayList<String> ausgaben;//der interne Speicher für Ausgabezeilen
 	String textZeile;//der Interne Speicher für Ausgaben die auf einer Zeile Zusammengesetzt werden sollen
@@ -29,7 +30,8 @@ public class TextOut {
 		ausgaben.add(textZeile);
 		for (int j = 0; j < ausgaben.size(); j++) {
 			if (ausgaben.get(j) != ">") {
-				System.out.println(ausgaben.get(j));
+				//System.out.println(ausgaben.get(j));
+				gameMakeTextout(ausgaben.get(j));
 			} 
 			else {
 				newEntry = ausgaben.get(j);
@@ -38,6 +40,7 @@ public class TextOut {
 		}
 		if (newEntry != null) {
 			System.out.print(newEntry);
+			gameMakeTextout(newEntry);
 		}
 		clearTextOut();
 
@@ -91,6 +94,11 @@ public class TextOut {
 	 */
 	public String getTextZeile() {
 		return textZeile;
+	}
+	
+	public void gameMakeTextout(String textout){
+		setChanged();
+		notifyObservers(textout);
 	}
 
 }

@@ -6,6 +6,8 @@ import executeAble.commands.Command;
 import gameEnums.GameStatus;
 import gameObserver.BackroundActioner;
 import gameObserver.GameListener;
+import gameObserver.TextOutActioner;
+import gameObserver.TextoutListener;
 import gui.GameGui;
 
 /**
@@ -50,7 +52,11 @@ public class Game extends Observable implements Runnable
     	GameGui gG= new GameGui();
     	//Von GUI beobachtete Klassen
     	BackroundActioner backRndActioner=new BackroundActioner();
+    	TextOutActioner tOA= new TextOutActioner();
+    	TextoutListener tol= new TextoutListener(tOA);
+    	textOut.addObserver(tol);
     	backRndActioner.addObserver(gG);
+    	tOA.addObserver(gG);
     	
     	//Beobachter des Games
     	GameListener gameListener= new GameListener(backRndActioner);
