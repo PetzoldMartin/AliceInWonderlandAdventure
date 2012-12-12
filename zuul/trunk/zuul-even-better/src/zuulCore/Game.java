@@ -4,6 +4,7 @@ import java.util.Observable;
 
 import executeAble.commands.Command;
 import gameEnums.GameStatus;
+import gameObserver.BackroundActioner;
 import gameObserver.GameListener;
 import gui.GameGui;
 
@@ -47,8 +48,15 @@ public class Game extends Observable implements Runnable
     public static void main(String[] args) {
     	Game game = new Game();
     	GameGui gG= new GameGui();
-    	GameListener currentRoomListener= new GameListener(gG);
-    	game.addObserver(currentRoomListener);
+    	//Von GUI beobachtete Klassen
+    	BackroundActioner backRndActioner=new BackroundActioner();
+    	backRndActioner.addObserver(gG);
+    	
+    	//Beobachter des Games
+    	GameListener gameListener= new GameListener(backRndActioner);
+    	game.addObserver(gameListener);
+    	
+    	//Spielstart
     	Thread a1= new Thread(game);
     	Thread a2= new Thread(gG);
     	a2.start();

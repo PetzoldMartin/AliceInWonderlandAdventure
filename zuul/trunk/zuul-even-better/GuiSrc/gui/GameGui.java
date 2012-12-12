@@ -2,6 +2,11 @@ package gui;
 
 
 
+import gameObserver.BackroundActioner;
+
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -11,12 +16,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 	
-public class GameGui extends JFrame implements Runnable{
+public class GameGui extends JFrame implements Runnable , Observer{
 	
 		private static final long serialVersionUID = -7974319251489449012L;
 		private JPanel contentPane;
 		private String currentRoom="white";
 		private JLabel lblNewLabel_1;
+		private boolean isChanged=true;
 	
 
 		public GameGui() {
@@ -142,6 +148,7 @@ public class GameGui extends JFrame implements Runnable{
 	@Override
 	public void run() {
 		this.setVisible(true);
+		
 		while(true){
 		try {
 			Thread.sleep(100);
@@ -150,7 +157,10 @@ public class GameGui extends JFrame implements Runnable{
 			e.printStackTrace();
 		}
 		this.repaint();
+		while(isChanged){
 		guiUpdate();
+		isChanged=false;
+		}
 		}
 	}
 		
@@ -161,6 +171,14 @@ public class GameGui extends JFrame implements Runnable{
 	public void setCurrentRoom(String s) {
 		
 		currentRoom = s;
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		if(arg0.getClass().equals(BackroundActioner.class))
+		{setCurrentRoom((String) arg1);}
+		isChanged=true;
+		
 	}
 
 
