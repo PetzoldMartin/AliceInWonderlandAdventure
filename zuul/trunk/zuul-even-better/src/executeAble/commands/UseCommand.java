@@ -24,7 +24,7 @@ public class UseCommand extends Command {
 	 */
 	public GameStatus execute(Player player) {
 
-		if (hasSecondWord() && hasThirdWord()) {
+		if (hasSecondWord()) {
 
 			return	player.getUC().getRule(getSecondWord(),getThirdWord()).execute(player);			
 		} else {
