@@ -42,115 +42,144 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			layeredPane.setBounds(52, 125, 478, -93);
 			contentPane.add(layeredPane);
 			
-			JLabel lblNewLabel = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			lblNewLabel.setBounds(710, 50, 64, 64);
+			JButton lblNewLabel = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			lblNewLabel.setBounds(710, 25, 64, 64);
 			contentPane.add(lblNewLabel);
 			
-			JLabel label = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label.setBounds(636, 50, 64, 64);
+			JButton label = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label.setBounds(636, 25, 64, 64);
 			contentPane.add(label);
 			
 			JLabel label_1 = new JLabel((Icon) null);
 			label_1.setBounds(636, 50, 64, 64);
 			contentPane.add(label_1);
 			
-			JLabel label_2 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_2.setBounds(562, 50, 64, 64);
+			JButton label_2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_2.setBounds(562, 25, 64, 64);
 			contentPane.add(label_2);
 			
-			JLabel label_3 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_3.setBounds(710, 125, 64, 64);
+			JButton label_3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_3.setBounds(710, 100, 64, 64);
 			contentPane.add(label_3);
 			
-			JLabel label_4 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_4.setBounds(636, 125, 64, 64);
+			JButton label_4 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_4.setBounds(636, 100, 64, 64);
 			contentPane.add(label_4);
 			
-			JLabel label_5 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_5.setBounds(562, 125, 64, 64);
+			JButton label_5 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_5.setBounds(562, 100, 64, 64);
 			contentPane.add(label_5);
 			
-			JLabel label_6 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_6.setBounds(636, 350, 64, 64);
+			JButton label_6 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_6.setBounds(636, 380, 64, 64);
 			contentPane.add(label_6);
 			
-			JLabel label_7 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_7.setBounds(710, 350, 64, 64);
-			contentPane.add(label_7);
-			
-			JLabel label_8 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_8.setBounds(562, 350, 64, 64);
-			contentPane.add(label_8);
-			
-			JLabel label_9 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_9 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_9.setBounds(710, 200, 64, 64);
 			contentPane.add(label_9);
 			
-			JLabel label_10 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_10 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_10.setBounds(636, 200, 64, 64);
 			contentPane.add(label_10);
 			
-			JLabel label_11 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_11 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_11.setBounds(562, 200, 64, 64);
 			contentPane.add(label_11);
 			
-			JLabel label_12 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_12 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_12.setBounds(562, 275, 64, 64);
 			contentPane.add(label_12);
 			
-			JLabel label_13 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_13 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_13.setBounds(636, 275, 64, 64);
 			contentPane.add(label_13);
 			
-			JLabel label_14 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			JButton label_14 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
 			label_14.setBounds(710, 275, 64, 64);
 			contentPane.add(label_14);
 			
 			lblNewLabel_1 = new JLabel("");
 			lblNewLabel_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
-			lblNewLabel_1.setBounds(30, 140, 500, 400);
+			lblNewLabel_1.setBounds(30, 140, 500, 368);
 			contentPane.add(lblNewLabel_1);
 			
 			JButton btnNewButton = new JButton("");
 			btnNewButton.setIcon(new ImageIcon(GameGui.class.getResource("/data/x.png")));
-			btnNewButton.setBounds(742, 519, 32, 32);
+			btnNewButton.setBounds(742, 530, 32, 32);
 			contentPane.add(btnNewButton);
 			
 			JButton button = new JButton("");
 			button.setIcon(new ImageIcon(GameGui.class.getResource("/data/re.png")));
-			button.setBounds(700, 519, 32, 33);
+			button.setBounds(700, 529, 32, 33);
 			contentPane.add(button);
 			
 			JButton button_1 = new JButton("");
 			button_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
-			button_1.setBounds(658, 519, 32, 32);
+			button_1.setBounds(656, 530, 32, 32);
 			contentPane.add(button_1);
 			
 			JButton btnAnschaun = new JButton("Anschaun");
-			btnAnschaun.setBounds(20, 519, 89, 23);
+			btnAnschaun.setBounds(0, 539, 89, 23);
 			contentPane.add(btnAnschaun);
 			
 			JButton btnNewButton_1 = new JButton("Benutzen");
-			btnNewButton_1.setBounds(140, 519, 89, 23);
+			btnNewButton_1.setBounds(99, 539, 89, 23);
 			contentPane.add(btnNewButton_1);
 			
 			JButton btnWasTolles = new JButton(currentRoom);
-			btnWasTolles.setBounds(239, 519, 89, 23);
+			btnWasTolles.setBounds(198, 539, 89, 23);
 			contentPane.add(btnWasTolles);
 			
-//			JLabel lblNewLabel_2 = new JLabel("New label");
-//			lblNewLabel_2.setIcon(new ImageIcon(GameGui.class.getResource("/data/grey.png")));
-//			lblNewLabel_2.setBounds(52, 43, 478, 82);
-//			contentPane.add(lblNewLabel_2);
-			
 			outText = new JTextArea("New label",52,38);
-			//outText.setIcon(new ImageIcon(GameGui.class.getResource("/data/grey.png")));
-			//outText.setBounds(52, 38, 478, 82);
 			outText.setText("test");
 			JScrollPane scroll = new JScrollPane(outText);
-			scroll.setBounds(52, 0, 478, 160);
+			scroll.setBounds(97, 0, 455, 139);
 			//contentPane.add(outText);
 			contentPane.add(scroll);
+			
+			JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
+			raumgegenständeHeader.setBounds(562, 0, 212, 23);
+			contentPane.add(raumgegenständeHeader);
+			
+			JLabel InventarHeader = new JLabel("Inventar");
+			InventarHeader.setBounds(562, 175, 212, 23);
+			contentPane.add(InventarHeader);
+			
+			JButton button_2 = new JButton("white");
+			button_2.setBounds(297, 539, 89, 23);
+			contentPane.add(button_2);
+			
+			JButton button_3 = new JButton("white");
+			button_3.setBounds(396, 539, 89, 23);
+			contentPane.add(button_3);
+			
+			JButton label_15 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_15.setBounds(562, 455, 64, 64);
+			contentPane.add(label_15);
+			
+			JButton label_16 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_16.setBounds(636, 455, 64, 64);
+			contentPane.add(label_16);
+			
+			JButton label_17 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			label_17.setBounds(710, 455, 64, 64);
+			contentPane.add(label_17);
+			
+			JLabel Richtungen = new JLabel("Richtungen");
+			Richtungen.setBounds(562, 350, 212, 23);
+			contentPane.add(Richtungen);
+			
+			JLabel label_7 = new JLabel("Kommandos");
+			label_7.setBounds(0, 505, 212, 23);
+			contentPane.add(label_7);
+			
+			JButton button_4 = new JButton("white");
+			button_4.setBounds(495, 539, 89, 23);
+			contentPane.add(button_4);
+			
+			JLabel button_5 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
+			button_5.setBounds(10, 11, 82, 118);
+			contentPane.add(button_5);
 			guiUpdate();
 
 		}
@@ -207,7 +236,5 @@ public class GameGui extends JFrame implements Runnable , Observer{
 		ausgabe=ausgabe+"\n"+arg1;
 		
 	}
-
-
 }
 
