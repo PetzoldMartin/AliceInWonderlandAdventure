@@ -19,13 +19,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 	
 public class GameGui extends JFrame implements Runnable , Observer{
 	
 		private static final long serialVersionUID = -7974319251489449012L;
 		private JPanel contentPane;
 		private String currentRoom="white";
-		private JLabel lblNewLabel_1;
+		private JLabel Bildanzeige;
 		private boolean isChanged=true;
 		private JTextArea outText;
 		private String ausgabe="Start";
@@ -35,6 +38,7 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			setBounds(100, 100, 800, 600);
 			contentPane = new JPanel();
+			contentPane.setBackground(Color.DARK_GRAY);
 			contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 			setContentPane(contentPane);
 			contentPane.setLayout(null);
@@ -42,150 +46,182 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			layeredPane.setBounds(52, 125, 478, -93);
 			contentPane.add(layeredPane);
 			
-			JButton lblNewLabel = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			lblNewLabel.setBounds(710, 25, 64, 64);
-			contentPane.add(lblNewLabel);
+			JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
+			raumgegenständeHeader.setForeground(Color.BLACK);
+			raumgegenständeHeader.setBackground(Color.GRAY);
+			raumgegenständeHeader.setBounds(562, 0, 212, 23);
+			contentPane.add(raumgegenständeHeader);
 			
-			JButton label = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label.setBounds(636, 25, 64, 64);
-			contentPane.add(label);
+			JButton RoomInventar1p1 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar1p1.setBounds(562, 25, 64, 64);
+			contentPane.add(RoomInventar1p1);
 			
-			JLabel label_1 = new JLabel((Icon) null);
-			label_1.setBounds(636, 50, 64, 64);
-			contentPane.add(label_1);
+			JButton RoomInventar1p2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar1p2.setBounds(636, 25, 64, 64);
+			contentPane.add(RoomInventar1p2);
 			
-			JButton label_2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_2.setBounds(562, 25, 64, 64);
-			contentPane.add(label_2);
+			JButton RoomInventar1p3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar1p3.setBounds(710, 25, 64, 64);
+			contentPane.add(RoomInventar1p3);
 			
-			JButton label_3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_3.setBounds(710, 100, 64, 64);
-			contentPane.add(label_3);
+			JButton RoomInventar2p1 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar2p1.setBounds(562, 100, 64, 64);
+			contentPane.add(RoomInventar2p1);
 			
-			JButton label_4 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_4.setBounds(636, 100, 64, 64);
-			contentPane.add(label_4);
+			JButton RoomInventar2p2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar2p2.setBounds(636, 100, 64, 64);
+			contentPane.add(RoomInventar2p2);
 			
-			JButton label_5 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_5.setBounds(562, 100, 64, 64);
-			contentPane.add(label_5);
+			JButton RoomInventar2p3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			RoomInventar2p3.setBounds(710, 100, 64, 64);
+			contentPane.add(RoomInventar2p3);
 			
-			JButton label_6 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_6.setBounds(636, 380, 64, 64);
-			contentPane.add(label_6);
+			JLabel InventarHeader = new JLabel("Inventar");
+			InventarHeader.setForeground(Color.BLACK);
+			InventarHeader.setBackground(Color.GRAY);
+			InventarHeader.setBounds(562, 175, 212, 23);
+			contentPane.add(InventarHeader);
 			
-			JButton label_9 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_9.setBounds(710, 200, 64, 64);
-			contentPane.add(label_9);
+			JButton Inventar1p1 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar1p1.setBounds(562, 200, 64, 64);
+			contentPane.add(Inventar1p1);
 			
-			JButton label_10 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_10.setBounds(636, 200, 64, 64);
-			contentPane.add(label_10);
+			JButton Inventar1p2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar1p2.setBounds(636, 200, 64, 64);
+			contentPane.add(Inventar1p2);
 			
-			JButton label_11 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_11.setBounds(562, 200, 64, 64);
-			contentPane.add(label_11);
+			JButton Inventar1p3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar1p3.setBounds(710, 200, 64, 64);
+			contentPane.add(Inventar1p3);
 			
-			JButton label_12 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_12.setBounds(562, 275, 64, 64);
-			contentPane.add(label_12);
+			JButton Inventar2p1 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar2p1.setBounds(562, 275, 64, 64);
+			contentPane.add(Inventar2p1);
 			
-			JButton label_13 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_13.setBounds(636, 275, 64, 64);
-			contentPane.add(label_13);
+			JButton Inventar2p2 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar2p2.setBounds(636, 275, 64, 64);
+			contentPane.add(Inventar2p2);
 			
-			JButton label_14 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_14.setBounds(710, 275, 64, 64);
-			contentPane.add(label_14);
+			JButton Inventar2p3 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
+			Inventar2p3.setBounds(710, 275, 64, 64);
+			contentPane.add(Inventar2p3);
 			
-			lblNewLabel_1 = new JLabel("");
-			lblNewLabel_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
-			lblNewLabel_1.setBounds(30, 140, 500, 368);
-			contentPane.add(lblNewLabel_1);
+			JLabel Richtungen = new JLabel("Richtungen");
+			Richtungen.setForeground(Color.BLACK);
+			Richtungen.setBackground(Color.GRAY);
+			Richtungen.setBounds(562, 350, 212, 23);
+			contentPane.add(Richtungen);
 			
-			JButton btnNewButton = new JButton("");
-			btnNewButton.setIcon(new ImageIcon(GameGui.class.getResource("/data/x.png")));
-			btnNewButton.setBounds(742, 530, 32, 32);
-			contentPane.add(btnNewButton);
+			JButton Norden = new JButton(new ImageIcon(GameGui.class.getResource("/data/norden.png")));
+			Norden.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			Norden.setBounds(636, 380, 64, 64);
+			contentPane.add(Norden);
 			
-			JButton button = new JButton("");
-			button.setIcon(new ImageIcon(GameGui.class.getResource("/data/re.png")));
-			button.setBounds(700, 529, 32, 33);
-			contentPane.add(button);
+			JButton Westen = new JButton(new ImageIcon(GameGui.class.getResource("/data/westen.png")));
+			Westen.setBounds(562, 455, 64, 64);
+			contentPane.add(Westen);
 			
-			JButton button_1 = new JButton("");
-			button_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
-			button_1.setBounds(656, 530, 32, 32);
-			contentPane.add(button_1);
+			JButton Sueden = new JButton(new ImageIcon(GameGui.class.getResource("/data/sueden.png")));
+			Sueden.setBounds(636, 455, 64, 64);
+			contentPane.add(Sueden);
 			
-			JButton btnAnschaun = new JButton("Anschaun");
-			btnAnschaun.setBounds(0, 539, 89, 23);
-			contentPane.add(btnAnschaun);
+			JButton Osten = new JButton(new ImageIcon(GameGui.class.getResource("/data/osten.png")));
+			Osten.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+				}
+			});
+			Osten.setBounds(710, 455, 64, 64);
+			contentPane.add(Osten);
 			
-			JButton btnNewButton_1 = new JButton("Benutzen");
-			btnNewButton_1.setBounds(99, 539, 89, 23);
-			contentPane.add(btnNewButton_1);
+			JLabel Kommandos = new JLabel("Kommandos");
+			Kommandos.setForeground(Color.BLACK);
+			Kommandos.setBounds(0, 505, 212, 23);
+			contentPane.add(Kommandos);
 			
-			JButton btnWasTolles = new JButton(currentRoom);
-			btnWasTolles.setBounds(198, 539, 89, 23);
-			contentPane.add(btnWasTolles);
+			JButton Ende = new JButton("");
+			Ende.setIcon(new ImageIcon(GameGui.class.getResource("/data/x.png")));
+			Ende.setBounds(742, 530, 32, 32);
+			contentPane.add(Ende);
+			
+			JButton Restart = new JButton("");
+			Restart.setIcon(new ImageIcon(GameGui.class.getResource("/data/re.png")));
+			Restart.setBounds(700, 529, 32, 33);
+			contentPane.add(Restart);
+			
+			JButton Hilfe = new JButton("");
+			Hilfe.setBackground(Color.DARK_GRAY);
+			Hilfe.setIcon(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
+			Hilfe.setBounds(656, 530, 32, 32);
+			contentPane.add(Hilfe);
+			
+			JButton Kommando1 = new JButton("Anschaun");
+			Kommando1.setForeground(Color.BLACK);
+			Kommando1.setBackground(Color.DARK_GRAY);
+			Kommando1.setBounds(0, 539, 89, 23);
+			contentPane.add(Kommando1);
+			
+			JButton Kommando2 = new JButton("Benutzen");
+			Kommando2.setForeground(Color.BLACK);
+			Kommando2.setBackground(Color.DARK_GRAY);
+			Kommando2.setBounds(99, 539, 89, 23);
+			contentPane.add(Kommando2);
+			
+			JButton Kommando3 = new JButton(currentRoom);
+			Kommando3.setForeground(Color.BLACK);
+			Kommando3.setBackground(Color.DARK_GRAY);
+			Kommando3.setBounds(198, 539, 89, 23);
+			contentPane.add(Kommando3);
+			
+			JButton Kommando4 = new JButton("white");
+			Kommando4.setForeground(Color.BLACK);
+			Kommando4.setBackground(Color.DARK_GRAY);
+			Kommando4.setBounds(297, 539, 89, 23);
+			contentPane.add(Kommando4);
+			
+			JButton Kommando5 = new JButton("white");
+			Kommando5.setForeground(Color.BLACK);
+			Kommando5.setBackground(Color.DARK_GRAY);
+			Kommando5.setBounds(396, 539, 89, 23);
+			contentPane.add(Kommando5);
+			
+			JButton Kommando6 = new JButton("white");
+			Kommando6.setForeground(Color.BLACK);
+			Kommando6.setBackground(Color.DARK_GRAY);
+			Kommando6.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+				}
+			});
+			Kommando6.setBounds(495, 539, 89, 23);
+			contentPane.add(Kommando6);
+			
+			Bildanzeige = new JLabel("");
+			Bildanzeige.setBackground(Color.DARK_GRAY);
+			Bildanzeige.setForeground(Color.DARK_GRAY);
+			Bildanzeige.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
+			Bildanzeige.setBounds(30, 140, 500, 368);
+			contentPane.add(Bildanzeige);
+			
+			JLabel Avatar = new JLabel(new ImageIcon(GameGui.class.getResource("/data/Alice.png")));
+			Avatar.setBounds(0, 0, 92, 129);
+			contentPane.add(Avatar);
 			
 			outText = new JTextArea("New label",52,38);
+			outText.setForeground(Color.BLACK);
+			outText.setBackground(Color.GRAY);
 			outText.setText("test");
 			JScrollPane scroll = new JScrollPane(outText);
 			scroll.setBounds(97, 0, 455, 139);
 			//contentPane.add(outText);
 			contentPane.add(scroll);
-			
-			JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
-			raumgegenständeHeader.setBounds(562, 0, 212, 23);
-			contentPane.add(raumgegenständeHeader);
-			
-			JLabel InventarHeader = new JLabel("Inventar");
-			InventarHeader.setBounds(562, 175, 212, 23);
-			contentPane.add(InventarHeader);
-			
-			JButton button_2 = new JButton("white");
-			button_2.setBounds(297, 539, 89, 23);
-			contentPane.add(button_2);
-			
-			JButton button_3 = new JButton("white");
-			button_3.setBounds(396, 539, 89, 23);
-			contentPane.add(button_3);
-			
-			JButton label_15 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_15.setBounds(562, 455, 64, 64);
-			contentPane.add(label_15);
-			
-			JButton label_16 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_16.setBounds(636, 455, 64, 64);
-			contentPane.add(label_16);
-			
-			JButton label_17 = new JButton(new ImageIcon(GameGui.class.getResource("/data/default.png")));
-			label_17.setBounds(710, 455, 64, 64);
-			contentPane.add(label_17);
-			
-			JLabel Richtungen = new JLabel("Richtungen");
-			Richtungen.setBounds(562, 350, 212, 23);
-			contentPane.add(Richtungen);
-			
-			JLabel label_7 = new JLabel("Kommandos");
-			label_7.setBounds(0, 505, 212, 23);
-			contentPane.add(label_7);
-			
-			JButton button_4 = new JButton("white");
-			button_4.setBounds(495, 539, 89, 23);
-			contentPane.add(button_4);
-			
-			JLabel button_5 = new JLabel(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
-			button_5.setBounds(10, 11, 82, 118);
-			contentPane.add(button_5);
 			guiUpdate();
 
 		}
 	
 	public void guiUpdate(){
-		lblNewLabel_1.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
+		Bildanzeige.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+currentRoom+".png")));
 		outText.setText(ausgabe);
 		outText.setCaretPosition(outText.getText().length());
 		
