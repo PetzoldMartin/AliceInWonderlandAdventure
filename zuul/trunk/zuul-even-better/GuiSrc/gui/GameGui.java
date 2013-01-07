@@ -162,6 +162,7 @@ public class GameGui extends JFrame implements Runnable , Observer{
 		
 	}
 		
+	
 	@Override
 	public void run() {
 		this.setVisible(true);
