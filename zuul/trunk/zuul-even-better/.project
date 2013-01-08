@@ -14,4 +14,51 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>GuiSrc/data/Alice.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Desktop/Alice.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/Lilie.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/Lilie.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/Rose.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/Rose.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/WReast.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/WReast.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/WRmid.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/WRmid.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/WRnord.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/WRnord.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/WRsued.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/WRsued.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/WRwest.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/WRwest.png</locationURI>
+		</link>
+		<link>
+			<name>GuiSrc/data/default.png</name>
+			<type>1</type>
+			<locationURI>PARENT-4-PROJECT_LOC/Dropbox/Informatik%20LG/Projekte%20III/Zuul_Patrick-Martin/bilder/default.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

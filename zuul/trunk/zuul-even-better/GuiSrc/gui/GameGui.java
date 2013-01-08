@@ -41,12 +41,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private JButton Ende;
 	private JButton Restart;
 	private JButton Hilfe;
-	private JButton Kommando1;
-	private JButton Kommando2;
-	private JButton Kommando3;
-	private JButton Kommando4;
-	private JButton Kommando5;
-	private JButton Kommando6;
+	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5, Kommando6;
 	private String currentInventory="";
 	private String currentCommands="";
 	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
@@ -56,20 +51,23 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.DARK_GRAY);
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		/** Wozu brauch wir den teil?
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(52, 125, 478, -93);
 		contentPane.add(layeredPane);
-
+			*/
+	//--Raum.Gegenstände//--Raum.Gegenstände//--Raum.Gegenstände
 		JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
 		raumgegenständeHeader.setForeground(Color.BLACK);
 		raumgegenständeHeader.setBackground(Color.GRAY);
-		raumgegenständeHeader.setBounds(562, 0, 212, 23);
+		raumgegenständeHeader.setBounds(560, 0, 210, 25);
 		contentPane.add(raumgegenständeHeader);
-
+		
 		JButton RoomInventar1p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p1.setBounds(562, 25, 64, 64);
@@ -100,6 +98,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		RoomInventar2p3.setBounds(710, 100, 64, 64);
 		contentPane.add(RoomInventar2p3);
 
+	//--InventarGegenstände//--InventarGegenstände//--InventarGegenstände
 		JLabel InventarHeader = new JLabel("Inventar");
 		InventarHeader.setForeground(Color.BLACK);
 		InventarHeader.setBackground(Color.GRAY);
@@ -136,95 +135,97 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Inventar2p3.setBounds(710, 275, 64, 64);
 		contentPane.add(Inventar2p3);
 
-		JLabel Richtungen = new JLabel("Richtungen");
+		
+	//-Windrose Windrose Windrose
+		
+		JLabel Richtungen = new JLabel("Bewegung");
 		Richtungen.setForeground(Color.BLACK);
 		Richtungen.setBackground(Color.GRAY);
 		Richtungen.setBounds(562, 350, 212, 23);
 		contentPane.add(Richtungen);
+		
+		JButton btnNord = new JButton("");
+		btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/WRnord.png")));
+		btnNord.setBounds(600, 400, 50, 50);
+		contentPane.add(btnNord);
 
-		JButton Norden = new JButton(new ImageIcon(
-				GameGui.class.getResource("/data/norden.png")));
-		Norden.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		Norden.setBounds(636, 380, 64, 64);
-		contentPane.add(Norden);
+		JButton btnSued = new JButton("");
+		btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/WRsued.png")));
+		btnSued.setBounds(600, 500, 50, 50);
+		contentPane.add(btnSued);
+		
+		JButton btnWest = new JButton("");
+		btnWest.setIcon(new ImageIcon(GameGui.class.getResource("/data/WRwest.png")));
+		btnWest.setBounds(550, 450, 50, 50);
+		contentPane.add(btnWest);
+		
+		JButton btnEast = new JButton("");
+		btnEast.setIcon(new ImageIcon(GameGui.class.getResource("/data/WReast.png")));
+		btnEast.setBounds(650, 450, 50, 50);
+		contentPane.add(btnEast);
+		
+		JLabel lblWindrose = new JLabel(new ImageIcon(GameGui.class.getResource("/data/WRmid.png")));
+		lblWindrose.setBounds(550, 400, 150, 150);
+		contentPane.add(lblWindrose);
+		
+	//----
 
-		JButton Westen = new JButton(new ImageIcon(
-				GameGui.class.getResource("/data/westen.png")));
-		Westen.setBounds(562, 455, 64, 64);
-		contentPane.add(Westen);
-
-		JButton Sueden = new JButton(new ImageIcon(
-				GameGui.class.getResource("/data/sueden.png")));
-		Sueden.setBounds(636, 455, 64, 64);
-		contentPane.add(Sueden);
-
-		JButton Osten = new JButton(new ImageIcon(
-				GameGui.class.getResource("/data/osten.png")));
-		Osten.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		Osten.setBounds(710, 455, 64, 64);
-		contentPane.add(Osten);
 
 		JLabel Kommandos = new JLabel("Kommandos");
 		Kommandos.setForeground(Color.BLACK);
-		Kommandos.setBounds(0, 505, 212, 23);
+		Kommandos.setBounds(5, 505, 212, 23);
 		contentPane.add(Kommandos);
 
 		Ende = new JButton("");
 		Ende.setIcon(new ImageIcon(GameGui.class.getResource("/data/x.png")));
-		Ende.setBounds(742, 530, 32, 32);
+		Ende.setBounds(740, 520, 32, 32);
 		contentPane.add(Ende);
 
 		Restart = new JButton("");
 		Restart.setIcon(new ImageIcon(GameGui.class.getResource("/data/re.png")));
-		Restart.setBounds(700, 529, 32, 33);
+		Restart.setBounds(740, 480, 32, 33);
 		contentPane.add(Restart);
 
 		Hilfe = new JButton("");
 		Hilfe.setBackground(Color.DARK_GRAY);
 		Hilfe.setIcon(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
-		Hilfe.setBounds(656, 530, 32, 32);
+		Hilfe.setBounds(740, 440, 32, 32);
 		contentPane.add(Hilfe);
 
 		Kommando1 = new JButton("Kommando1");
 		Kommando1.setForeground(Color.BLACK);
 		Kommando1.setBackground(Color.DARK_GRAY);
-		Kommando1.setBounds(0, 539, 89, 23);
+		Kommando1.setBounds(5, 530, 89, 23);
 		contentPane.add(Kommando1);
 
 		Kommando2 = new JButton("Kommando2");
 		Kommando2.setForeground(Color.BLACK);
 		Kommando2.setBackground(Color.DARK_GRAY);
-		Kommando2.setBounds(99, 539, 89, 23);
+		Kommando2.setBounds(104, 530, 89, 23);
 		contentPane.add(Kommando2);
 
 		Kommando3 = new JButton("Kommando3");
 		Kommando3.setForeground(Color.BLACK);
 		Kommando3.setBackground(Color.DARK_GRAY);
-		Kommando3.setBounds(198, 539, 89, 23);
+		Kommando3.setBounds(203, 530, 89, 23);
 		contentPane.add(Kommando3);
 
 		Kommando4 = new JButton("Kommando4");
 		Kommando4.setForeground(Color.BLACK);
 		Kommando4.setBackground(Color.DARK_GRAY);
-		Kommando4.setBounds(297, 539, 89, 23);
+		Kommando4.setBounds(302, 530, 89, 23);
 		contentPane.add(Kommando4);
 
 		Kommando5 = new JButton("Kommando5");
 		Kommando5.setForeground(Color.BLACK);
 		Kommando5.setBackground(Color.DARK_GRAY);
-		Kommando5.setBounds(396, 539, 89, 23);
+		Kommando5.setBounds(401, 530, 89, 23);
 		contentPane.add(Kommando5);
 
 		Kommando6 = new JButton("Kommando6");
 		Kommando6.setForeground(Color.BLACK);
 		Kommando6.setBackground(Color.DARK_GRAY);
-		Kommando6.setBounds(495, 539, 89, 23);
+		Kommando6.setBounds(500, 530, 89, 23);
 		contentPane.add(Kommando6);
 
 		Bildanzeige = new JLabel("");
@@ -241,8 +242,8 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		contentPane.add(Avatar);
 
 		outText = new JTextArea("New label", 52, 38);
-		outText.setForeground(Color.BLACK);
-		outText.setBackground(Color.GRAY);
+		outText.setForeground(Color.DARK_GRAY);
+		outText.setBackground(Color.WHITE);
 		outText.setText("test");
 		JScrollPane scroll = new JScrollPane(outText);
 		scroll.setBounds(97, 0, 455, 139);
