@@ -23,5 +23,10 @@ public class DialogEndCommand extends Command {
 		Game.textOut.lineEntry("Das Kommando was das Gespräch beendet");
 		
 	}
+	@Override public int hashCode()
+	  {
+		return 9999;
+	  }
 
 }
+

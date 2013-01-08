@@ -38,8 +38,8 @@ public class DialogCommand extends Command {
 			Game.textOut.lineEntry(k.toString()+" :  "+ ((DialogCommand) dialogStore.get(name)).getTextout());
 			k++;
 			}
-		 player.getnCW().insertCommand(k.toString(), new DialogEndCommand());
-		 Game.textOut.lineEntry(k.toString()+" :  "+ "Auf wiedersehen");
+		player.getnCW().insertCommand(k.toString(), new DialogEndCommand());
+		Game.textOut.lineEntry(k.toString()+" :  "+ "Auf wiedersehen");
 		 player.getnCW().insertCommand("?", new HelpCommand(player.getnCW()));
 		 Game.textOut.lineEntry("? :  "+ "Hilfe");
 		return GameStatus.RUN;
@@ -57,4 +57,8 @@ public class DialogCommand extends Command {
 		dialogStore.put(name.toString(), d);
 		name++;
 	}
+	@Override public int hashCode()
+	  {
+		return name;
+	  }
 }
