@@ -1,9 +1,12 @@
 package gui;
 
 import gameObserver.BackroundActioner;
+import gameObserver.InventarActioner;
 import gameObserver.KommandActioner;
 import gameObserver.TextOutActioner;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.StringTokenizer;
@@ -44,8 +47,12 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private JButton Kommando4;
 	private JButton Kommando5;
 	private JButton Kommando6;
+	private String currentInventory="";
+	private String currentCommands="";
+	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
 
 	public GameGui() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -241,6 +248,11 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		scroll.setBounds(97, 0, 455, 139);
 		// contentPane.add(outText);
 		contentPane.add(scroll);
+		
+		//Buttons in arreylist initialisieren
+		JButton[] KommandoButtons = {Kommando1,Kommando2,Kommando3,Kommando4,Kommando5,Kommando6};
+		this.KommandoButtons=KommandoButtons;
+		
 		guiUpdate();
 
 	}
@@ -250,6 +262,8 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				+ currentRoom + ".png")));
 		outText.setText(ausgabe);
 		outText.setCaretPosition(outText.getText().length());
+		//ansprechen der Kommandobuttons
+		this.setButtons(new StringTokenizer(currentCommands));
 
 	}
 
@@ -281,9 +295,48 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		currentRoom = s;
 	}
 
-	public void setCommands(String Kommands) {
-		StringTokenizer tokenizer = new StringTokenizer(Kommands);
-
+	/**
+	 * die methode die den Stringtokenizer auf die Kommandobuttons überträgt
+	 * @param tokenizer
+	 */
+	public void setButtons(StringTokenizer tokenizer){
+		Ende.setVisible(false);
+		Restart.setVisible(false);
+		Hilfe.setVisible(false);
+		int buttonanzahl=KommandoButtons.length;
+		for(int i=0; i<KommandoButtons.length; i++)
+		{
+			KommandoButtons[i].setVisible(false);
+		}
+		while(tokenizer.hasMoreTokens()){
+			String aktualltoken = tokenizer.nextToken();
+			switch (aktualltoken) {
+			case "ende":
+				Ende.setVisible(true);
+				break;
+			case "neustart":
+				Restart.setVisible(true);
+				break;
+			case "?":
+				Hilfe.setVisible(true);
+				break;
+			case "hilfe":
+				Hilfe.setVisible(true);
+				break;
+			default:
+				if (buttonanzahl==0)
+				{
+					System.err.println("mehr Kommandos als buttons");
+				}
+					
+				else{
+					KommandoButtons[KommandoButtons.length-buttonanzahl].setVisible(true);
+					KommandoButtons[KommandoButtons.length-buttonanzahl].setLabel(aktualltoken);
+					buttonanzahl--;
+				}
+				break;
+			}
+		}
 	}
 
 	@Override
@@ -295,13 +348,23 @@ public class GameGui extends JFrame implements Runnable, Observer {
 			setCurrentTextout((String) arg1);
 		}
 		if (arg0.getClass().equals(KommandActioner.class)) {
-			setCommands((String) arg1);
+			setCurrentCommands((String) arg1);
+		if(arg0.getClass().equals(InventarActioner.class)) {
+			setCurrentInventory((String)arg1);
+		}
 		}
 
 		isChanged = true;
 
 	}
 
+	public void setCurrentInventory(String currentInventory) {
+		this.currentInventory = currentInventory;
+	}
+	public void setCurrentCommands(String currentCommands) {
+		this.currentCommands = currentCommands;
+	}
+	
 	private void setCurrentTextout(String arg1) {
 		ausgabe = ausgabe + "\n" + arg1;
 

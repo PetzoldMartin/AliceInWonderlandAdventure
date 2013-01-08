@@ -105,4 +105,17 @@ public class ThingWithStore {
 	public boolean isempty() {
 		return store.isEmpty();
 	}
+	
+	public String getAllItemsToString() {
+		String s;
+		s= "";
+		for (Iterator<String> i = store.keySet().iterator(); i.hasNext();) {
+			String isUsed = i.next();
+			if (store.get(isUsed).isVisebility()) {
+				s = s + isUsed +" ";
+			}
+
+		}
+		return s;
+	}
 }
