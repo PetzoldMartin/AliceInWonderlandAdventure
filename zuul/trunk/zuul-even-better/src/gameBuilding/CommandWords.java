@@ -54,6 +54,17 @@ public class CommandWords
         }
         Game.textOut.lineEntry();
     }
+    
+    public String getAll()
+    {
+    	
+		String ausgabe = "";
+    	for(Iterator<String>  i = commands.keySet().iterator(); i.hasNext(); ) {
+    		ausgabe=ausgabe+i.next() + "  ";
+    	}
+		return ausgabe;
+    	
+    }
 
     /**
      * ruft die Spezielle Hilfe eines Kommandos auf

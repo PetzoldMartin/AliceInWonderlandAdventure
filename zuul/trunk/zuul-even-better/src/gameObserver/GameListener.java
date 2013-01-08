@@ -8,15 +8,18 @@ import zuulCore.Player;
 public class GameListener implements Observer {
 	
 	private BackroundActioner backRndAct;
+	private KommandActioner kmdAct;
 
-	public GameListener(BackroundActioner backRndAct) {
+	public GameListener(BackroundActioner backRndAct,KommandActioner kmActioner) {
 		this.backRndAct=backRndAct;
+		this.kmdAct=kmActioner;
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
 		backRndAct.setCurrentRoom(((Player) arg).getCurrentRoom().getName());
-		//System.out.println(gameGui.getCurrentRoom());
+		kmdAct.setCurrentAusgaben(((Player) arg).getnCW().getAll());
+		
 	}
 	
 	

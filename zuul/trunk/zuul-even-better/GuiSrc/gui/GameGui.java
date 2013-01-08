@@ -3,6 +3,7 @@ package gui;
 
 
 import gameObserver.BackroundActioner;
+import gameObserver.KommandActioner;
 import gameObserver.TextOutActioner;
 
 import java.util.Observable;
@@ -22,6 +23,8 @@ import javax.swing.JLayeredPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.BorderLayout;
+import javax.swing.JTable;
 	
 public class GameGui extends JFrame implements Runnable , Observer{
 	
@@ -157,37 +160,37 @@ public class GameGui extends JFrame implements Runnable , Observer{
 			Hilfe.setBounds(656, 530, 32, 32);
 			contentPane.add(Hilfe);
 			
-			JButton Kommando1 = new JButton("Anschaun");
+			JButton Kommando1 = new JButton("Kommando1");
 			Kommando1.setForeground(Color.BLACK);
 			Kommando1.setBackground(Color.DARK_GRAY);
 			Kommando1.setBounds(0, 539, 89, 23);
 			contentPane.add(Kommando1);
 			
-			JButton Kommando2 = new JButton("Benutzen");
+			JButton Kommando2 = new JButton("Kommando2");
 			Kommando2.setForeground(Color.BLACK);
 			Kommando2.setBackground(Color.DARK_GRAY);
 			Kommando2.setBounds(99, 539, 89, 23);
 			contentPane.add(Kommando2);
 			
-			JButton Kommando3 = new JButton(currentRoom);
+			JButton Kommando3 = new JButton("Kommando3");
 			Kommando3.setForeground(Color.BLACK);
 			Kommando3.setBackground(Color.DARK_GRAY);
 			Kommando3.setBounds(198, 539, 89, 23);
 			contentPane.add(Kommando3);
 			
-			JButton Kommando4 = new JButton("white");
+			JButton Kommando4 = new JButton("Kommando4");
 			Kommando4.setForeground(Color.BLACK);
 			Kommando4.setBackground(Color.DARK_GRAY);
 			Kommando4.setBounds(297, 539, 89, 23);
 			contentPane.add(Kommando4);
 			
-			JButton Kommando5 = new JButton("white");
+			JButton Kommando5 = new JButton("Kommando5");
 			Kommando5.setForeground(Color.BLACK);
 			Kommando5.setBackground(Color.DARK_GRAY);
 			Kommando5.setBounds(396, 539, 89, 23);
 			contentPane.add(Kommando5);
 			
-			JButton Kommando6 = new JButton("white");
+			JButton Kommando6 = new JButton("Kommando6");
 			Kommando6.setForeground(Color.BLACK);
 			Kommando6.setBackground(Color.DARK_GRAY);
 			Kommando6.addActionListener(new ActionListener() {
@@ -262,8 +265,11 @@ public class GameGui extends JFrame implements Runnable , Observer{
 		{setCurrentRoom((String) arg1);}
 		if(arg0.getClass().equals(TextOutActioner.class))
 		{setCurrentTextout((String) arg1);
-		//System.out.println((String) arg1);
 		}
+		if(arg0.getClass().equals(KommandActioner.class))
+		{System.out.println(arg1);
+			}
+		
 		isChanged=true;
 		
 	}
