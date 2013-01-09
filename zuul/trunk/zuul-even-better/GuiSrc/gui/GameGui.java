@@ -76,7 +76,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		JButton RoomInventar1p2 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p2.setBounds(636, 25, 64, 64);
-		contentPane.add(RoomInventar1p2);
+		contentPane.add(RoomInventar1p2); 
 
 		JButton RoomInventar1p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
@@ -194,7 +194,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 
 		Kommando1 = new JButton("Kommando1");
 		Kommando1.setForeground(Color.BLACK);
-		Kommando1.setBackground(Color.DARK_GRAY);
+		Kommando1.setBackground(Color.WHITE);
 		Kommando1.setBounds(5, 530, 89, 23);
 		contentPane.add(Kommando1);
 
@@ -238,7 +238,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 
 		JLabel Avatar = new JLabel(new ImageIcon(
 				GameGui.class.getResource("/data/Alice.png")));
-		Avatar.setBounds(0, 0, 92, 129);
+		Avatar.setBounds(0, 0, 92, 129); 
 		contentPane.add(Avatar);
 
 		outText = new JTextArea("New label", 52, 38);
