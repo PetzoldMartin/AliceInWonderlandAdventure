@@ -45,9 +45,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private String currentInventory="";
 	private String currentCommands="";
 	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
+	private GuiString gst;
 
 	public GameGui() {
-		
+		gst = new GuiString();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -272,9 +273,13 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	public void run() {
 		this.setVisible(true);
 
+		//zu löschen
+		Thread a2= new Thread(gst);
+    	a2.start();
+    	//
 		while (true) {
 			try {
-				Thread.sleep(100);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -370,4 +375,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		ausgabe = ausgabe + "\n" + arg1;
 
 	}
+
+	public GuiString getGst() {
+		return gst;
+	}
+
 }
+

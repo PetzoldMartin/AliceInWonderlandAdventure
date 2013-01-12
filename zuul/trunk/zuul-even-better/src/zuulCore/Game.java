@@ -1,6 +1,7 @@
 package zuulCore;
 
 import java.util.Observable;
+import java.util.Observer;
 
 import executeAble.commands.Command;
 import gameEnums.GameStatus;
@@ -8,9 +9,12 @@ import gameObserver.BackroundActioner;
 import gameObserver.GameListener;
 import gameObserver.InventarActioner;
 import gameObserver.KommandActioner;
+import gameObserver.RoomInventarActioner;
 import gameObserver.TextOutActioner;
 import gameObserver.TextoutListener;
 import gui.GameGui;
+import guiObserver.GuiActioner;
+import guiObserver.GuiListener;
 
 /**
  *  Diese Klasse ist die Hauptklasse der "World of Zuul" Anwendung
@@ -26,11 +30,13 @@ import gui.GameGui;
  * @version 1.1 (October 2012)
  */
 
-public class Game extends Observable implements Runnable
+public class Game extends Observable implements Runnable,Observer
 
 {
     private Parser parser;// der Textparser des Spieles
     private Player player;// die Instanz der Player Klasse des Spieles
+	private GameStatus gameStatus;
+	private boolean ischanged;
 //    private LevelCreator nLC;//der Level/Raum Creator des Spieles
 	public static TextOut textOut;
 	
@@ -41,6 +47,7 @@ public class Game extends Observable implements Runnable
     {
 
         newGameInitialize();
+        gameStatus=GameStatus.RUN;
         
         
         
@@ -52,10 +59,12 @@ public class Game extends Observable implements Runnable
     public static void main(String[] args) {
     	Game game = new Game();
     	GameGui gG= new GameGui();
+    	
     	//Von GUI beobachtete Klassen
     	BackroundActioner backRndActioner=new BackroundActioner();
     	KommandActioner kmdActioner=new KommandActioner();
     	InventarActioner invActioner=new InventarActioner();
+    	RoomInventarActioner rommInvActioner=new RoomInventarActioner();
     	TextOutActioner tOA= new TextOutActioner();
     	TextoutListener tol= new TextoutListener(tOA);
     	textOut.addObserver(tol);
@@ -63,8 +72,14 @@ public class Game extends Observable implements Runnable
     	kmdActioner.addObserver(gG);
     	tOA.addObserver(gG);
     	
+    	//von dem Game bobachtete klassen
+    	GuiActioner gAct=new GuiActioner();
+    	GuiListener gLst = new GuiListener(gAct);
+    	gAct.addObserver(game);
+    	gG.getGst().addObserver(gLst);
+    	
     	//Beobachter des Games
-    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner);
+    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner);
     	game.addObserver(gameListener);
     	
     	//Spielstart
@@ -103,10 +118,14 @@ public class Game extends Observable implements Runnable
         textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-            Command command = parser.consoleReader();
-                gameStatus = command.execute(player);         
+//            Command command = parser.consoleReader();
+//                gameStatus = command.execute(player);
+        	if (ischanged){
+                gameStatus = this.gameStatus;
                 textOut.ausgabe();
                 updateGuiStats();
+                ischanged=false;
+        	}
         }
         if(gameStatus==GameStatus.RESTART){
         	this.newGameInitialize();
@@ -156,4 +175,10 @@ public class Game extends Observable implements Runnable
 		this.play();	
 	}
 
+	@Override
+	public void update(Observable o, Object arg) {
+		Command command = parser.getCommand((String)arg);
+		 gameStatus = command.execute(player);
+		 ischanged=true;
+	}
 }

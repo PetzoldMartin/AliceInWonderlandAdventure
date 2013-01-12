@@ -30,7 +30,6 @@ public class TextOut extends Observable {
 		ausgaben.add(textZeile);
 		for (int j = 0; j < ausgaben.size(); j++) {
 			if (ausgaben.get(j) != ">") {
-				//System.out.println(ausgaben.get(j));
 				gameMakeTextout(ausgaben.get(j));
 			} 
 			else {

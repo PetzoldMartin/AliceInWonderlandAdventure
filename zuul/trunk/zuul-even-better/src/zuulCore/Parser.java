@@ -3,9 +3,12 @@ package zuulCore;
 import executeAble.commands.Command;
 import executeAble.commands.NullCommand;
 import gameBuilding.CommandWords;
+import gui.GuiString;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.StringTokenizer;
 
 /**
@@ -24,10 +27,10 @@ import java.util.StringTokenizer;
  * @version 1.1 (October 2012)
  */
 
-public class Parser {
+public class Parser{
 
 	private CommandWords commands; // enthält alle KommandoWörter
-
+	
 	public Parser( CommandWords CW) {
 		commands = CW;
 	}
@@ -64,7 +67,7 @@ public class Parser {
 		else
 			word2 = null;
 		if (tokenizer.hasMoreTokens())
-			word3 = tokenizer.nextToken(); // bekomme zweites Wort
+			word3 = tokenizer.nextToken(); // bekomme drittes Wort
 		else
 			word3 = null;
 
@@ -86,4 +89,6 @@ public class Parser {
 	public void showCommands() {
 		commands.showAll();
 	}
+
+
 }

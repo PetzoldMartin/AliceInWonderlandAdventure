@@ -10,11 +10,13 @@ public class GameListener implements Observer {
 	private BackroundActioner backRndAct;
 	private KommandActioner kmdAct;
 	private InventarActioner inventAct;
+	private RoomInventarActioner roomInventAct;
 
-	public GameListener(BackroundActioner backRndAct,KommandActioner kmActioner, InventarActioner inventAct) {
+	public GameListener(BackroundActioner backRndAct,KommandActioner kmActioner, InventarActioner inventAct,RoomInventarActioner roomInventAct) {
 		this.backRndAct=backRndAct;
 		this.kmdAct=kmActioner;
 		this.inventAct=inventAct;
+		this.roomInventAct=roomInventAct;
 	}
 
 	@Override
