@@ -4,12 +4,23 @@ import gameEnums.GameStatus;
 import zuulCore.Game;
 import zuulCore.Player;
 
-//TODO REDO
+/**
+ * Die Klasse für ein Kommand zum ansehen von Gegenständen Räumen und des Spielerinventars
+ * @author Aismael
+ *
+ */
 public class LookCommand extends Command {
 
+	/**
+	 * der Konstruktor des LookCommands
+	 */
 	public LookCommand() {
 	}
 
+	/**
+	 * Die Methode zum auswerten was angesehen werden soll die dann die richtige beschreibung auf die Ausgabe schreibt
+	 * @param der Spieler des Spieles
+	 */
 	public GameStatus execute(Player player) {
 		if (hasSecondWord()) {
 			// Inventar
@@ -62,6 +73,9 @@ public class LookCommand extends Command {
 		return GameStatus.RUN;
 	}
 
+	/**
+	 * die spezielle Hilfe des LookKommands
+	 */
 	@Override
 	public void showSpecialHelp() {
 		// Ausgabe wenn die Hilfe zu diesem Command abgefragt wird

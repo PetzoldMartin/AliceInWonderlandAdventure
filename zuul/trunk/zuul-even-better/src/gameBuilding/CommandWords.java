@@ -66,6 +66,10 @@ public class CommandWords {
 		Game.textOut.lineEntry();
 	}
 
+	/**
+	 * gibt die Kommandos geordnet in einem String zurück
+	 * @return ausgabe der String mit den geordneten Kommandos
+	 */
 	public String getAll() {
 
 		String ausgabe = "";

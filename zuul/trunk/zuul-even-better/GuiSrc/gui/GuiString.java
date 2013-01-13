@@ -10,12 +10,8 @@ public class GuiString extends Observable {
 		test="";
 	}
 	
-	public void guiNewCommand(String textout){
-		setChanged();
-		notifyObservers(textout);
-	}
-		
-
+	
+	
 	//aufrufen wenn neues kommando eingetragen wird
 	void noty(){
 	setChanged();

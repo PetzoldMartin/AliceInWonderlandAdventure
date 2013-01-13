@@ -72,9 +72,11 @@ public class Game extends Observable implements Runnable,Observer
     	kmdActioner.addObserver(gG);
     	tOA.addObserver(gG);
     	
-    	//von dem Game bobachtete klassen
+    	//beobachter des Games
     	GuiActioner gAct=new GuiActioner();
     	GuiListener gLst = new GuiListener(gAct);
+    	
+    	//von dem Game bobachtete klassen
     	gAct.addObserver(game);
     	gG.getGst().addObserver(gLst);
     	
@@ -118,8 +120,8 @@ public class Game extends Observable implements Runnable,Observer
         textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-           // Command command = parser.consoleReader();
-           //     gameStatus = command.execute(player);
+//            Command command = parser.consoleReader();
+//                gameStatus = command.execute(player);
         	if (ischanged){
                 gameStatus = this.gameStatus;
                 textOut.ausgabe();
@@ -165,6 +167,9 @@ public class Game extends Observable implements Runnable,Observer
 		return textOut;
 	}
 	
+	/**
+	 * Methode die meldet wenn es neuigkeiten für die Gui gibt
+	 */
 	public void updateGuiStats(){
 		setChanged();
 		notifyObservers(player);
@@ -175,6 +180,9 @@ public class Game extends Observable implements Runnable,Observer
 		this.play();	
 	}
 
+	/**
+	 * methode die Änderungen der Gui an das spiel weitergibt 
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		Command command = parser.getCommand((String)arg);

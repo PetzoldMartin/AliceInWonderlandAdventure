@@ -8,25 +8,43 @@ import java.util.Iterator;
 import zuulCore.Game;
 import zuulCore.Player;
 
+/**
+ * Die Klasse für Dialogkommands die eine Dialogoption oder einen Dialoganfandarstellt
+ * @author Aismael
+ *
+ */
 public class DialogCommand extends Command {
 
-	HashMap<String,Command> dialogStore;
-	private String textout;
-	Integer name =1;
-	private String textIn;
+	HashMap<String,Command> dialogStore;//die Hashmap die die Dialogoptionen beinhaltet
+	private String textout;//der Text der das vom Player gesagte darstellt
+	Integer name =1;//der integer der den zur ausahl benötigten namen Darstellt
+	private String textIn;//der Text der die Antwort des Dialogpartners Darstellt
 	
-	
+	/**
+	 * Konstruktor zum erzeugen eines Dialogkommands als eine Dialogwurzel
+	 * @param textIn der Text des Dialogpartners
+	 */
 	public DialogCommand(String textIn){
 		dialogStore= new HashMap<String,Command>();
 		textout="Gesprächsanfang";
 		this.textIn=textIn;
 	}
+	/**
+	 * Konstruktor zum erzeugen eines Dialogkommands
+	 * @param textOut der Text des Spielers
+	 * @param textIn der Text des Dialogpartners
+	 */
 	public DialogCommand(String textOut,String textIn){
 		this(textIn);
 		textout=textOut;
 	}
 	
 	@Override
+	/**
+	 * Methode die die normalen Game Kommands aus den Commandwords löscht und diese durch die momentanen Dialogkommands
+	 * ersetzt fügt automatisch ein Gameendkommand und ein Hilfekommand hinzu 
+	 * @param player der Spieler des Spieles
+	 */
 	public GameStatus execute(Player player) {
 		Integer k=1;
 		player.getnCW().clearCommands();
@@ -45,20 +63,28 @@ public class DialogCommand extends Command {
 		return GameStatus.RUN;
 	}
 	@Override
+	/**
+	 * zeigt die spezielle Hilfe des Dialogkommands
+	 */
 	public void showSpecialHelp() {
 		Game.textOut.lineEntry("damit kannst du "+textout + " sagen");
 	}
 
+	/**
+	 * 
+	 * @return der Text des Spielers
+	 */
 	public String getTextout() {
 		return textout;
 	}
 	
+	/**
+	 * Die Methode um eine Dialogoption ein Dialogkommand in den Dialogstore Einzutragen
+	 * @param d Das einzufügende DialogKommand
+	 */
 	public void insertDialog(DialogCommand d){
 		dialogStore.put(name.toString(), d);
 		name++;
 	}
-	@Override public int hashCode()
-	  {
-		return name;
-	  }
+	
 }
