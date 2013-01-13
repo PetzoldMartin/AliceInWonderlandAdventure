@@ -2,7 +2,7 @@ package executeAble.commands;
 
 import gameEnums.GameStatus;
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * Die Klasse für ein Kommand zum ansehen von Gegenständen Räumen und des Spielerinventars

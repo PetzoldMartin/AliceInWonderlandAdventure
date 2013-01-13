@@ -4,8 +4,6 @@ package observer.guiObserver;
 import java.util.Observable;
 import java.util.Observer;
 
-import observer.gameObserver.TextOutActioner;
-
 /**
  * Klasse die die GUI beobachtet
  * 

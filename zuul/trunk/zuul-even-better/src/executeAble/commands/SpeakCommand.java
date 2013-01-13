@@ -3,7 +3,7 @@ package executeAble.commands;
 import gameEnums.GameStatus;
 import zuulCore.Game;
 import zuulCore.GameObject;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * Unterklasse der Basisklasse Command

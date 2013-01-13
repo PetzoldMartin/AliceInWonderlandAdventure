@@ -1,4 +1,4 @@
-package zuulCore;
+package zuulCore.thingsWithstore;
 
 
 import gameBuilding.CommandWords;
@@ -7,6 +7,8 @@ import gameBuilding.LevelCreator;
 import gameBuilding.UsableCreator;
 import gameEnums.LockedStatus;
 import gameEnums.PlayerSize;
+import zuulCore.Game;
+import zuulCore.ThingWithStore;
 
 /**
  * Diese Klasse repräsentiert den Spieler im Spiel.

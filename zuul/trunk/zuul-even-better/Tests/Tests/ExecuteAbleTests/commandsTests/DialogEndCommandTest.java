@@ -6,11 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import executeAble.commands.DialogEndCommand;
-import gameBuilding.CommandWords;
-import gameEnums.GameStatus;
-
 import zuulCore.Game;
+import executeAble.commands.DialogEndCommand;
+import gameEnums.GameStatus;
 
 public class DialogEndCommandTest extends TestCase{
 

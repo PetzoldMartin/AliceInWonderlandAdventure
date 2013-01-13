@@ -7,7 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 import executeAble.commands.NullCommand;
 import gameEnums.GameStatus;
 

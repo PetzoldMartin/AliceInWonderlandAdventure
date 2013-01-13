@@ -3,7 +3,7 @@ package observer.gameObserver;
 import java.util.Observable;
 import java.util.Observer;
 
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * die Klasse die das Spiel beobachtet um Veränderungen in die Actioner zu schreiben

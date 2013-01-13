@@ -1,5 +1,9 @@
 package zuulCore;
 
+import executeAble.commands.Command;
+import gameEnums.GameStatus;
+import gui.GameGui;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -12,10 +16,7 @@ import observer.gameObserver.TextOutActioner;
 import observer.gameObserver.TextoutListener;
 import observer.guiObserver.GuiActioner;
 import observer.guiObserver.GuiListener;
-
-import executeAble.commands.Command;
-import gameEnums.GameStatus;
-import gui.GameGui;
+import zuulCore.thingsWithstore.Player;
 
 /**
  *  Diese Klasse ist die Hauptklasse der "World of Zuul" Anwendung

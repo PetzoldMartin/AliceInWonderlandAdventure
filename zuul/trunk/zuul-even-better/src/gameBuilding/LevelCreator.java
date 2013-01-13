@@ -4,8 +4,8 @@ package gameBuilding;
 import gameEnums.LockedStatus;
 import gameEnums.PlayerSize;
 import zuulCore.GameObject;
-import zuulCore.Player;
-import zuulCore.Room;
+import zuulCore.thingsWithstore.Player;
+import zuulCore.thingsWithstore.Room;
 
 public class LevelCreator 
 

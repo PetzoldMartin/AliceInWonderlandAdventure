@@ -3,7 +3,7 @@ package executeAble.commands;
 //TODO REDO
 import zuulCore.Game;
 import zuulCore.GameObject;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 import executeAble.gamePlayRules.GameplayRule;
 import gameEnums.GameStatus;
 /**

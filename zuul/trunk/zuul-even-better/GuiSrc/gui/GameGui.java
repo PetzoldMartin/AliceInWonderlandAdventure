@@ -1,36 +1,26 @@
 package gui;
 
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.StringTokenizer;
 
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import java.awt.BorderLayout;
-import javax.swing.JTable;
 
 import observer.gameObserver.BackroundActioner;
 import observer.gameObserver.InventarActioner;
 import observer.gameObserver.KommandActioner;
 import observer.gameObserver.RoomInventarActioner;
 import observer.gameObserver.TextOutActioner;
-
-import java.util.StringTokenizer;
 
 public class GameGui extends JFrame implements Runnable, Observer {
 

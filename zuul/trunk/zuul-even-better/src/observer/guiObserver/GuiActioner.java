@@ -1,8 +1,6 @@
 package observer.guiObserver;
 
 
-import java.util.Observable;
-
 import observer.Actioner;
 
 /**

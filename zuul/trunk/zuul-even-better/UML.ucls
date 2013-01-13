@@ -128,8 +128,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="17" corner="BOTTOM_RIGHT" language="java" name="zuulCore.Room" project="Zuul" 
-    file="/Zuul/src/zuulCore/Room.java" binary="false">    
+  <class id="17" corner="BOTTOM_RIGHT" language="java" name="zuulCore.thingsWithstore.Room" project="Zuul" 
+    file="/Zuul/src/zuulCore/thingsWithstore/Room.java" binary="false">    
     <position height="299" width="187" x="1155" y="1309"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -272,8 +272,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="35" corner="BOTTOM_RIGHT" language="java" name="zuulCore.Player" project="Zuul" 
-    file="/Zuul/src/zuulCore/Player.java" binary="false">    
+  <class id="35" corner="BOTTOM_RIGHT" language="java" name="zuulCore.thingsWithstore.Player" project="Zuul" 
+    file="/Zuul/src/zuulCore/thingsWithstore/Player.java" binary="false">    
     <position height="248" width="160" x="1413" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      

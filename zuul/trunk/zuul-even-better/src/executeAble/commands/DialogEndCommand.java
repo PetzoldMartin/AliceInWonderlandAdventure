@@ -2,7 +2,7 @@ package executeAble.commands;
 
 import gameEnums.GameStatus;
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 /**
  * die Klasse die ein Kommand zum beenden eines Dialogs erzeugt
  * @author Aismael

@@ -1,7 +1,7 @@
 package executeAble;
 
 import gameEnums.GameStatus;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * Basisklasse für die Dinge im Spiel die vom Spieler Ausgelöst werden können

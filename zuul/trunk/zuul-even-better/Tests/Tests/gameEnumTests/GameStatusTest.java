@@ -1,4 +1,4 @@
-package Tests.enumTests;
+package Tests.gameEnumTests;
 
 import gameEnums.GameStatus;
 import junit.framework.TestCase;

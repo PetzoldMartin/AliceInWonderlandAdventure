@@ -8,8 +8,8 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.Player;
-import zuulCore.Room;
+import zuulCore.thingsWithstore.Player;
+import zuulCore.thingsWithstore.Room;
 
 public class PlayerTest extends TestCase{
 	Player player;

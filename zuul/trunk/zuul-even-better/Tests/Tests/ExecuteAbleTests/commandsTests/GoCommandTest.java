@@ -7,8 +7,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import zuulCore.Game;
-import zuulCore.Player;
-import zuulCore.Room;
+import zuulCore.thingsWithstore.Player;
+import zuulCore.thingsWithstore.Room;
 import executeAble.commands.GoCommand;
 import gameEnums.GameStatus;
 

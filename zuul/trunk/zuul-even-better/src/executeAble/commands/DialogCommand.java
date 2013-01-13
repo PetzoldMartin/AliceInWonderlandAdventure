@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * Die Klasse für Dialogkommands die eine Dialogoption oder einen Dialoganfandarstellt

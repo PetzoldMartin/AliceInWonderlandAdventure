@@ -3,7 +3,7 @@ package executeAble.gamePlayRules;
 import executeAble.commands.QuitCommand;
 import gameEnums.GameStatus;
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 /**
  *
  *

@@ -1,15 +1,14 @@
 package Tests.ExecuteAbleTests;
 
-import static org.junit.Assert.*;
 import junit.framework.TestCase;
-import executeAble.ExecuteAble;
-import gameEnums.GameStatus;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
+import executeAble.ExecuteAble;
+import gameEnums.GameStatus;
 
 public class ExecuteAbleTest extends TestCase {
 

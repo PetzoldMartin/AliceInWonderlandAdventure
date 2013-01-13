@@ -1,10 +1,12 @@
-package zuulCore;
+package zuulCore.thingsWithstore;
 import gameEnums.LockedStatus;
 import gameEnums.PlayerSize;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
+
+import zuulCore.ThingWithStore;
 
 
 /**

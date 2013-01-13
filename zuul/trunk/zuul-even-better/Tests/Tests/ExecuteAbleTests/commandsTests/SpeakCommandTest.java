@@ -9,7 +9,7 @@ import org.junit.Test;
 
 import zuulCore.Game;
 import zuulCore.Parser;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 import executeAble.commands.SpeakCommand;
 import gameEnums.GameStatus;
 

@@ -3,12 +3,9 @@ package zuulCore;
 import executeAble.commands.Command;
 import executeAble.commands.NullCommand;
 import gameBuilding.CommandWords;
-import gui.GuiString;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.StringTokenizer;
 
 /**

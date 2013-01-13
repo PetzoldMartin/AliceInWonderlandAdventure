@@ -3,7 +3,7 @@ package executeAble.commands;
 import gameBuilding.CommandWords;
 import gameEnums.GameStatus;
 import zuulCore.Game;
-import zuulCore.Player;
+import zuulCore.thingsWithstore.Player;
 
 /**
  * Implementiert das Hilfe Kommando
