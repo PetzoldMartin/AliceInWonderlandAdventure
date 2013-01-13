@@ -44,7 +44,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5, Kommando6;
 	private String currentInventory="";
 	private String currentCommands="";
+	private String currentRoomInvent="";
 	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
+	private JButton[] InventarButtons ;
+	private JButton[] RoomButtons;
 	private GuiString gst;
 
 	public GameGui() {
@@ -252,9 +255,20 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		contentPane.add(scroll);
 		
 		//Buttons in arreylist initialisieren
+			//Kommandos
 		JButton[] KommandoButtons = {Kommando1,Kommando2,Kommando3,Kommando4,Kommando5,Kommando6};
 		this.KommandoButtons=KommandoButtons;
+			//Inventar
+		JButton[] InventarButtons = {Inventar1p1,Inventar1p2,Inventar1p3,Inventar2p1,Inventar2p2,Inventar2p3};
+		this.InventarButtons = InventarButtons;
+			//Raum
+		JButton[] RoomButtons = {RoomInventar1p1,RoomInventar1p2,RoomInventar1p3,RoomInventar2p1,RoomInventar2p2,Inventar2p3};
+		this.RoomButtons = RoomButtons;
 		
+		
+		
+		
+
 		guiUpdate();
 
 	}
@@ -266,17 +280,34 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		outText.setCaretPosition(outText.getText().length());
 		//ansprechen der Kommandobuttons
 		this.setButtons(new StringTokenizer(currentCommands));
+		itemUpdater();
 
+	}
+
+	private void itemUpdater() {
+		String[] splitResult = currentInventory.split(" ");	
+		System.out.println(currentInventory);
+		System.out.println(currentRoomInvent);
+		System.out.println(currentRoom);
+			// Kann funktionieren...Abwarten der 
+		if(splitResult[0]!=""){
+			for (int i = 0; i < splitResult.length; i++) {
+				InventarButtons[i].setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ splitResult[i]+".png")));
+			}
+		}
+		splitResult = currentRoomInvent.split(" ");
+		if(splitResult[0]!=""){
+			for (int i = 0; i < splitResult.length; i++) {
+				RoomButtons[i].setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ splitResult[i]+".png")));
+			}
+		}
 	}
 
 	@Override
 	public void run() {
 		this.setVisible(true);
 
-		//zu löschen
-		Thread a2= new Thread(gst);
-    	a2.start();
-    	//
+
 		while (true) {
 			try {
 				Thread.sleep(1000);
@@ -305,6 +336,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	 * die methode die den Stringtokenizer auf die Kommandobuttons überträgt
 	 * @param tokenizer
 	 */
+	@SuppressWarnings("deprecation")
 	public void setButtons(StringTokenizer tokenizer){
 		Ende.setVisible(false);
 		Restart.setVisible(false);

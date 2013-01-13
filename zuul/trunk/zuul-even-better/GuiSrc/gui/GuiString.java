@@ -3,7 +3,7 @@ package gui;
 import java.util.Observable;
 
 //kein runnable mehr
-public class GuiString extends Observable implements Runnable{
+public class GuiString extends Observable {
 
 	String test;
 	public GuiString(){
@@ -14,29 +14,8 @@ public class GuiString extends Observable implements Runnable{
 		setChanged();
 		notifyObservers(textout);
 	}
-	//methode unötig
-	@Override
-	public void run() {
-		while(true){
-			test="geh osten";
-			noty();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			test="geh westen";
-			noty();
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
 		
-	}
+
 	//aufrufen wenn neues kommando eingetragen wird
 	void noty(){
 	setChanged();

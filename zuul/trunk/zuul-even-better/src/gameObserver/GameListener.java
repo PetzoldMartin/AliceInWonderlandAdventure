@@ -24,6 +24,7 @@ public class GameListener implements Observer {
 		backRndAct.setCurrentRoom(((Player) arg).getCurrentRoom().getName());
 		kmdAct.setCurrentAusgaben(((Player) arg).getnCW().getAll());
 		inventAct.setInventarListe(((Player)arg).getAllItemsToString());
+		roomInventAct.setInventarListe(((Player)arg).getCurrentRoom().getAllItemsToString());
 		
 	}
 	
