@@ -60,13 +60,17 @@ public class Game extends Observable implements Runnable,Observer
     	Game game = new Game();
     	GameGui gG= new GameGui();
     	
-    	//Von GUI beobachtete Klassen
+    	//Beobachter die das game beobachten
     	BackroundActioner backRndActioner=new BackroundActioner();
     	KommandActioner kmdActioner=new KommandActioner();
     	InventarActioner invActioner=new InventarActioner();
     	RoomInventarActioner rommInvActioner=new RoomInventarActioner();
     	TextOutActioner tOA= new TextOutActioner();
     	TextoutListener tol= new TextoutListener(tOA);
+    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner);
+    	game.addObserver(gameListener);
+    	
+    	//actioner bei Gui eingetragen
     	textOut.addObserver(tol);
     	backRndActioner.addObserver(gG);
     	kmdActioner.addObserver(gG);
@@ -74,17 +78,13 @@ public class Game extends Observable implements Runnable,Observer
     	rommInvActioner.addObserver(gG);
     	tOA.addObserver(gG);
     	
-    	//beobachter des Games
+    	//beobachter die die Gui beobachten
     	GuiActioner gAct=new GuiActioner();
     	GuiListener gLst = new GuiListener(gAct);
     	
     	//von dem Game bobachtete klassen
     	gAct.addObserver(game);
     	gG.getGst().addObserver(gLst);
-    	
-    	//Beobachter des Games
-    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner);
-    	game.addObserver(gameListener);
     	
     	//Spielstart
     	Thread a1= new Thread(game);

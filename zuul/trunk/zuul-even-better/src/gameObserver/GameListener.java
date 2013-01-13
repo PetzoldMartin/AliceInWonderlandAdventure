@@ -36,10 +36,10 @@ public class GameListener implements Observer {
 	 * die Methode die Änderungen des Games an die Actioner Weitergibt
 	 */
 	public void update(Observable o, Object arg) {
-		backRndAct.setCurrentRoom(((Player) arg).getCurrentRoom().getName());
-		kmdAct.setCurrentAusgaben(((Player) arg).getnCW().getAll());
-		inventAct.setInventarListe(((Player)arg).getAllItemsToString());
-		roomInventAct.setInventarListe(((Player)arg).getCurrentRoom().getAllItemsToString());
+		backRndAct.changeString(((Player) arg).getCurrentRoom().getName());
+		kmdAct.changeString(((Player) arg).getnCW().getAll());
+		inventAct.changeString(((Player)arg).getAllItemsToString());
+		roomInventAct.changeString(((Player)arg).getCurrentRoom().getAllItemsToString());
 	}
 	
 	

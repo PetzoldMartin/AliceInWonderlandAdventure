@@ -106,6 +106,10 @@ public class ThingWithStore {
 		return store.isEmpty();
 	}
 	
+	/**
+	 * Methode die Alle im store vorhandenen {@link GameObject}e als ein string ausgibt
+	 * @return die {@link GameObject}e in einem String
+	 */
 	public String getAllItemsToString() {
 		String s;
 		s= "";

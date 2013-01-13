@@ -31,10 +31,18 @@ public class Parser{
 
 	private CommandWords commands; // enthält alle KommandoWörter
 	
+	/**
+	 * der Konstruktor des Parsers
+	 * @param CW die Kommandowötersammlung die der Parser auswerten kann
+	 */
 	public Parser( CommandWords CW) {
 		commands = CW;
 	}
 
+	/**
+	 * methode um die konsole einzulesen
+	 * @return den String der Konsole
+	 */
 	public Command consoleReader() {
 		String inputLine = ""; // enthält die gesamte Eingabe
 		BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -48,6 +56,11 @@ public class Parser{
 		return getCommand(inputLine);
 	}
 
+	/**
+	 * Methode die einen String in ein Gamecommand umwandelt
+	 * @param inputLineFR der Inputstring
+	 * @return das dem string entsprechende kommando
+	 */
 	public Command getCommand(String inputLineFR) {
 
 		String word1;
@@ -84,7 +97,7 @@ public class Parser{
 	}
 
 	/**
-	 * schreibt alle Kommando Wörter auf die Konsole
+	 * schreibt alle aktuellen Kommando Wörter auf die Konsole
 	 */
 	public void showCommands() {
 		commands.showAll();

@@ -29,7 +29,7 @@ public class TextoutListener implements Observer {
  */
 	@Override
 	public void update(Observable o, Object arg) {
-		guiActioner.setTextOutLine((String)arg);
+		guiActioner.changeString((String)arg);
 	}
 	
 	

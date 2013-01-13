@@ -89,12 +89,17 @@ public class TextOut extends Observable {
 
 	/**
 	 * 
-	 * @return
+	 * @return die Aktuelle zusammengesetzte textzeile
 	 */
 	public String getTextZeile() {
 		return textZeile;
 	}
 	
+	/**
+	 * Methode die eine Meldung an den Observer sendet
+	 * wenn sich die Textausgaebe Verändert
+	 * @param textout der String der sich verändert
+	 */
 	public void gameMakeTextout(String textout){
 		setChanged();
 		notifyObservers(textout);

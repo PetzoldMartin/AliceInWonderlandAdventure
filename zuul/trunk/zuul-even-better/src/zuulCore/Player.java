@@ -93,7 +93,10 @@ public class Player extends ThingWithStore {
 	public PlayerSize getSize() {
 		return size;
 	}
-
+/**
+ * 
+ * @param size {@link PlayerSize}
+ */
 	public void setSize(PlayerSize size) {
 		this.size = size;
 	}

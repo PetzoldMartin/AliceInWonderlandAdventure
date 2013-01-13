@@ -6,20 +6,5 @@ import java.util.Observable;
  * @author Aismael
  *
  */
-public class TextOutActioner extends Observable {
-	public TextOutActioner(){
-		
-	}
-	/**
-	 * die methode die Änderungen des Ausgabetextes meldet
-	 * @param arg der zu übergebende Text
-	 */
-	public void setTextOutLine(String arg) {
-		setChanged();
-		notifyObservers(arg);
-		
-	}
-	
-	
-
+public class TextOutActioner extends Actioner {
 }

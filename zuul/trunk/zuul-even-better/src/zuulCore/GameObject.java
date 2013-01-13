@@ -35,7 +35,9 @@ public class GameObject {
 	 * @param ampli Beschreibung des Objekts.
 	 * @param takeA Ob man das GameObject aufnehmen kann.
 	 * @param speakA Ob man mit dem GameObject reden kann.
+	 * @param visibleA Ob ein {@link GameObject} sichtbar und benutzbar ist
 	 */
+	
 	public GameObject(String objn,String ampli,boolean takeA,boolean speakA,boolean visibleA) {
 		objName = objn;
 		amplification = ampli;

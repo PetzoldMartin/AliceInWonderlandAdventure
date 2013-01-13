@@ -1,17 +1,13 @@
 package guiObserver;
 
+import gameObserver.Actioner;
+
 import java.util.Observable;
 
-public class GuiActioner extends Observable {
-	public GuiActioner(){
-		
-	}
-	public void setCommandstring(String arg) {
-		setChanged();
-		notifyObservers(arg);
-		
-	}
-	
-	
-
+/**
+ * Klasse die den Outputstring der Gui enthält
+ * @author Aismael
+ *
+ */
+public class GuiActioner extends Actioner {
 }

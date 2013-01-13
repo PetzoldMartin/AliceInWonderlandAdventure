@@ -7,19 +7,5 @@ import java.util.Observable;
  * @author Aismael
  * 
  */
-public class BackroundActioner extends Observable {
-	public BackroundActioner() {
-
-	}
-
-	/**
-	 * die Methode die den Aktuellen Raumnamen Meldet
-	 * @param name der Raumname
-	 */
-	public void setCurrentRoom(String name) {
-		setChanged();
-		notifyObservers(name);
-
-	}
-
+public class BackroundActioner extends Actioner {
 }

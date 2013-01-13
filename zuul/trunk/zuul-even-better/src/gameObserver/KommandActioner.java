@@ -7,20 +7,7 @@ import java.util.Observable;
  * @author Aismael
  *
  */
-public class KommandActioner extends Observable {
-	public KommandActioner(){
-		
-	}
-	/**
-	 * Die Methode die meldet wenn sich die Game Kommandos ändern
-	 * @param Ausgaben der String der die GameKommandos enthält
-	 */
-	public void setCurrentAusgaben(String Ausgaben) {
-		setChanged();
-		notifyObservers(Ausgaben);
-		
-	}
-	
+public class KommandActioner extends Actioner {
 	
 
 }
