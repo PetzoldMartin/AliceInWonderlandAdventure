@@ -70,6 +70,8 @@ public class Game extends Observable implements Runnable,Observer
     	textOut.addObserver(tol);
     	backRndActioner.addObserver(gG);
     	kmdActioner.addObserver(gG);
+    	invActioner.addObserver(gG);
+    	rommInvActioner.addObserver(gG);
     	tOA.addObserver(gG);
     	
     	//beobachter des Games
@@ -120,8 +122,10 @@ public class Game extends Observable implements Runnable,Observer
         textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-//            Command command = parser.consoleReader();
-//                gameStatus = command.execute(player);
+            Command command = parser.consoleReader();
+                gameStatus = command.execute(player);
+                textOut.ausgabe();
+                updateGuiStats();
         	if (ischanged){
                 gameStatus = this.gameStatus;
                 textOut.ausgabe();

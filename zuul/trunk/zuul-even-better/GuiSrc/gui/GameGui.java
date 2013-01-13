@@ -3,6 +3,7 @@ package gui;
 import gameObserver.BackroundActioner;
 import gameObserver.InventarActioner;
 import gameObserver.KommandActioner;
+import gameObserver.RoomInventarActioner;
 import gameObserver.TextOutActioner;
 
 import java.lang.reflect.Array;
@@ -46,6 +47,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private String currentCommands="";
 	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
 	private GuiString gst;
+	private Object currentRoomInventory;
 
 	public GameGui() {
 		gst = new GuiString();
@@ -57,11 +59,11 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		/** Wozu brauch wir den teil?
+		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(52, 125, 478, -93);
 		contentPane.add(layeredPane);
-			*/
+			
 	//--Raum.Gegenstände//--Raum.Gegenstände//--Raum.Gegenstände
 		JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
 		raumgegenständeHeader.setForeground(Color.BLACK);
@@ -353,20 +355,30 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		}
 		if (arg0.getClass().equals(KommandActioner.class)) {
 			setCurrentCommands((String) arg1);
+		}
 		if(arg0.getClass().equals(InventarActioner.class)) {
 			setCurrentInventory((String)arg1);
 		}
+		if(arg0.getClass().equals(RoomInventarActioner.class)) {
+			setCurrentRoomInventory((String)arg1);
 		}
+		
 
 		isChanged = true;
 
 	}
 
 	public void setCurrentInventory(String currentInventory) {
+		System.out.println("Spieler"+currentInventory);
 		this.currentInventory = currentInventory;
 	}
 	public void setCurrentCommands(String currentCommands) {
 		this.currentCommands = currentCommands;
+	}
+	
+	public void setCurrentRoomInventory(String currentRoomInventory) {
+		System.out.println("raum"+currentRoomInventory);
+		this.currentRoomInventory = currentRoomInventory;
 	}
 	
 	private void setCurrentTextout(String arg1) {
