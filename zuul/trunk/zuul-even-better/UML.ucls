@@ -8,16 +8,16 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="2" corner="BOTTOM_RIGHT" language="java" name="gameObserver.GameListener" project="Zuul" 
-    file="/Zuul/src/gameObserver/GameListener.java" binary="false">    
+  <class id="2" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.GameListener" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/GameListener.java" binary="false">    
     <position height="95" width="473" x="554" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="3" corner="BOTTOM_RIGHT" language="java" name="gameObserver.BackroundActioner" project="Zuul" 
-    file="/Zuul/src/gameObserver/BackroundActioner.java" binary="false">    
+  <class id="3" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.BackroundActioner" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/BackroundActioner.java" binary="false">    
     <position height="95" width="161" x="254" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -192,8 +192,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="25" corner="BOTTOM_RIGHT" language="java" name="gameObserver.TextoutListener" project="Zuul" 
-    file="/Zuul/src/gameObserver/TextoutListener.java" binary="false">    
+  <class id="25" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.TextoutListener" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/TextoutListener.java" binary="false">    
     <position height="95" width="184" x="3197" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -208,8 +208,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="27" corner="BOTTOM_RIGHT" language="java" name="gameObserver.InventarActioner" project="Zuul" 
-    file="/Zuul/src/gameObserver/InventarActioner.java" binary="false">    
+  <class id="27" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.InventarActioner" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/InventarActioner.java" binary="false">    
     <position height="95" width="160" x="455" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -248,8 +248,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </enumeration>  
-  <class id="32" corner="BOTTOM_RIGHT" language="java" name="gameObserver.TextOutActioner" project="Zuul" 
-    file="/Zuul/src/gameObserver/TextOutActioner.java" binary="false">    
+  <class id="32" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.TextOutActioner" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/TextOutActioner.java" binary="false">    
     <position height="95" width="155" x="3197" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -264,8 +264,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="34" corner="BOTTOM_RIGHT" language="java" name="gameObserver.RoomInventarActioner" project="Zuul" 
-    file="/Zuul/src/gameObserver/RoomInventarActioner.java" binary="false">    
+  <class id="34" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.RoomInventarActioner" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/RoomInventarActioner.java" binary="false">    
     <position height="95" width="160" x="655" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -304,8 +304,8 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="39" corner="BOTTOM_RIGHT" language="java" name="gameObserver.KommandActioner" project="Zuul" 
-    file="/Zuul/src/gameObserver/KommandActioner.java" binary="false">    
+  <class id="39" corner="BOTTOM_RIGHT" language="java" name="observer.gameObserver.KommandActioner" project="Zuul" 
+    file="/Zuul/src/observer/gameObserver/KommandActioner.java" binary="false">    
     <position height="95" width="184" x="855" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
@@ -320,16 +320,16 @@
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="41" corner="BOTTOM_RIGHT" language="java" name="guiObserver.GuiListener" project="Zuul" 
-    file="/Zuul/GuiSrc/guiObserver/GuiListener.java" binary="false">    
+  <class id="41" corner="BOTTOM_RIGHT" language="java" name="observer.guiObserver.GuiListener" project="Zuul" 
+    file="/Zuul/src/observer/guiObserver/GuiListener.java" binary="false">    
     <position height="95" width="178" x="42" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      
       <operations public="true" package="true" protected="true" private="true"/>    
     </display>  
   </class>  
-  <class id="42" corner="BOTTOM_RIGHT" language="java" name="guiObserver.GuiActioner" project="Zuul" 
-    file="/Zuul/GuiSrc/guiObserver/GuiActioner.java" binary="false">    
+  <class id="42" corner="BOTTOM_RIGHT" language="java" name="observer.guiObserver.GuiActioner" project="Zuul" 
+    file="/Zuul/src/observer/guiObserver/GuiActioner.java" binary="false">    
     <position height="95" width="172" x="42" y="648"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true"/>      

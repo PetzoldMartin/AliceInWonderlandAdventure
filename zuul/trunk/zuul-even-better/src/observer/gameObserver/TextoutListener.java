@@ -1,4 +1,4 @@
-package gameObserver;
+package observer.gameObserver;
 
 
 import java.util.Observable;

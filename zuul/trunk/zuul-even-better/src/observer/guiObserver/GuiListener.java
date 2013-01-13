@@ -1,9 +1,10 @@
-package guiObserver;
+package observer.guiObserver;
 
-import gameObserver.TextOutActioner;
 
 import java.util.Observable;
 import java.util.Observer;
+
+import observer.gameObserver.TextOutActioner;
 
 /**
  * Klasse die die GUI beobachtet

@@ -1,10 +1,5 @@
 package gui;
 
-import gameObserver.BackroundActioner;
-import gameObserver.InventarActioner;
-import gameObserver.KommandActioner;
-import gameObserver.RoomInventarActioner;
-import gameObserver.TextOutActioner;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -28,6 +23,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.BorderLayout;
 import javax.swing.JTable;
+
+import observer.gameObserver.BackroundActioner;
+import observer.gameObserver.InventarActioner;
+import observer.gameObserver.KommandActioner;
+import observer.gameObserver.RoomInventarActioner;
+import observer.gameObserver.TextOutActioner;
+
 import java.util.StringTokenizer;
 
 public class GameGui extends JFrame implements Runnable, Observer {

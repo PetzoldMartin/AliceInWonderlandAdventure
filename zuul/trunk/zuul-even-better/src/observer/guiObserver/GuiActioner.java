@@ -1,8 +1,9 @@
-package guiObserver;
+package observer.guiObserver;
 
-import gameObserver.Actioner;
 
 import java.util.Observable;
+
+import observer.Actioner;
 
 /**
  * Klasse die den Outputstring der Gui enthält

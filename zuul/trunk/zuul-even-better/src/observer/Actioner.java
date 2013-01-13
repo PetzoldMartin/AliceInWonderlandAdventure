@@ -1,4 +1,4 @@
-package gameObserver;
+package observer;
 
 import java.util.Observable;
 
@@ -9,7 +9,7 @@ public class Actioner extends Observable{
 
 		}
 		
-		/**
+		/**  
 		 * die Methode die einen AktuellenString meldet
 		 * @param something ein String der beobachtet wird
 		 */
