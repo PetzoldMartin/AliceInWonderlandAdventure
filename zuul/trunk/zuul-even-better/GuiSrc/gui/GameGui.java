@@ -37,9 +37,13 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5, Kommando6;
 	private String currentInventory="";
 	private String currentCommands="";
-	private JButton[] KommandoButtons ;//die Arreyliste der Kommando buttons
-	private GuiString gst;
-	private Object currentRoomInventory;
+	private JButton[] KommandoButtons ;//die Arreyliste der Kommando Buttons
+	private JButton[] Rauminventar ;// das Arrey mit den Rauminventar Buttons
+	private JButton[] PlayerInventar;//das Arrey mitt den Spielerinventar Buttons
+	private GuiString gst;//der an das spiel zu übergebende String als ÜbergabeKlasse
+	private String currentRoomInventory="";
+	private JButton RoomInventar1p1,RoomInventar1p2,RoomInventar1p3,RoomInventar2p1,RoomInventar2p2,RoomInventar2p3;
+	private JButton Inventar1p1,Inventar1p2,Inventar1p3,Inventar2p1,Inventar2p2,Inventar2p3;
 
 	public GameGui() {
 		gst = new GuiString();
@@ -63,32 +67,32 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		raumgegenständeHeader.setBounds(560, 0, 210, 25);
 		contentPane.add(raumgegenständeHeader);
 		
-		JButton RoomInventar1p1 = new JButton(new ImageIcon(
+		RoomInventar1p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p1.setBounds(562, 25, 64, 64);
 		contentPane.add(RoomInventar1p1);
 
-		JButton RoomInventar1p2 = new JButton(new ImageIcon(
+		RoomInventar1p2 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p2.setBounds(636, 25, 64, 64);
 		contentPane.add(RoomInventar1p2); 
 
-		JButton RoomInventar1p3 = new JButton(new ImageIcon(
+		RoomInventar1p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p3.setBounds(710, 25, 64, 64);
 		contentPane.add(RoomInventar1p3);
 
-		JButton RoomInventar2p1 = new JButton(new ImageIcon(
+		RoomInventar2p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar2p1.setBounds(562, 100, 64, 64);
 		contentPane.add(RoomInventar2p1);
 
-		JButton RoomInventar2p2 = new JButton(new ImageIcon(
+		RoomInventar2p2 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar2p2.setBounds(636, 100, 64, 64);
 		contentPane.add(RoomInventar2p2);
 
-		JButton RoomInventar2p3 = new JButton(new ImageIcon(
+		RoomInventar2p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar2p3.setBounds(710, 100, 64, 64);
 		contentPane.add(RoomInventar2p3);
@@ -100,32 +104,32 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		InventarHeader.setBounds(562, 175, 212, 23);
 		contentPane.add(InventarHeader);
 
-		JButton Inventar1p1 = new JButton(new ImageIcon(
+		Inventar1p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar1p1.setBounds(562, 200, 64, 64);
 		contentPane.add(Inventar1p1);
 
-		JButton Inventar1p2 = new JButton(new ImageIcon(
+		Inventar1p2 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar1p2.setBounds(636, 200, 64, 64);
 		contentPane.add(Inventar1p2);
 
-		JButton Inventar1p3 = new JButton(new ImageIcon(
+		Inventar1p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar1p3.setBounds(710, 200, 64, 64);
 		contentPane.add(Inventar1p3);
 
-		JButton Inventar2p1 = new JButton(new ImageIcon(
+		Inventar2p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar2p1.setBounds(562, 275, 64, 64);
 		contentPane.add(Inventar2p1);
 
-		JButton Inventar2p2 = new JButton(new ImageIcon(
+		Inventar2p2 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar2p2.setBounds(636, 275, 64, 64);
 		contentPane.add(Inventar2p2);
 
-		JButton Inventar2p3 = new JButton(new ImageIcon(
+		Inventar2p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		Inventar2p3.setBounds(710, 275, 64, 64);
 		contentPane.add(Inventar2p3);
@@ -195,31 +199,31 @@ public class GameGui extends JFrame implements Runnable, Observer {
 
 		Kommando2 = new JButton("Kommando2");
 		Kommando2.setForeground(Color.BLACK);
-		Kommando2.setBackground(Color.DARK_GRAY);
+		Kommando2.setBackground(Color.WHITE);
 		Kommando2.setBounds(104, 530, 89, 23);
 		contentPane.add(Kommando2);
 
 		Kommando3 = new JButton("Kommando3");
 		Kommando3.setForeground(Color.BLACK);
-		Kommando3.setBackground(Color.DARK_GRAY);
+		Kommando3.setBackground(Color.WHITE);
 		Kommando3.setBounds(203, 530, 89, 23);
 		contentPane.add(Kommando3);
 
 		Kommando4 = new JButton("Kommando4");
 		Kommando4.setForeground(Color.BLACK);
-		Kommando4.setBackground(Color.DARK_GRAY);
+		Kommando4.setBackground(Color.WHITE);
 		Kommando4.setBounds(302, 530, 89, 23);
 		contentPane.add(Kommando4);
 
 		Kommando5 = new JButton("Kommando5");
 		Kommando5.setForeground(Color.BLACK);
-		Kommando5.setBackground(Color.DARK_GRAY);
+		Kommando5.setBackground(Color.WHITE);
 		Kommando5.setBounds(401, 530, 89, 23);
 		contentPane.add(Kommando5);
 
 		Kommando6 = new JButton("Kommando6");
 		Kommando6.setForeground(Color.BLACK);
-		Kommando6.setBackground(Color.DARK_GRAY);
+		Kommando6.setBackground(Color.WHITE);
 		Kommando6.setBounds(500, 530, 89, 23);
 		contentPane.add(Kommando6);
 
@@ -248,7 +252,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		//Buttons in arreylist initialisieren
 		JButton[] KommandoButtons = {Kommando1,Kommando2,Kommando3,Kommando4,Kommando5,Kommando6};
 		this.KommandoButtons=KommandoButtons;
-		
+		JButton[] Rauminventar={RoomInventar1p1,RoomInventar1p2,RoomInventar1p3,RoomInventar2p1,RoomInventar2p2,RoomInventar2p3};
+		this.Rauminventar=Rauminventar;
+		JButton[] PlayerInventar={Inventar1p1,Inventar1p2,Inventar1p3,Inventar2p1,Inventar2p2,Inventar2p3};
+		this.PlayerInventar=PlayerInventar;
 		guiUpdate();
 
 	}
@@ -260,6 +267,8 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		outText.setCaretPosition(outText.getText().length());
 		//ansprechen der Kommandobuttons
 		this.setButtons(new StringTokenizer(currentCommands));
+		this.setPlayerinventory(PlayerInventar,new StringTokenizer(currentInventory));
+		this.setPlayerinventory(Rauminventar,new StringTokenizer(currentRoomInventory));
 
 	}
 
@@ -337,6 +346,29 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		}
 	}
 
+	public void setPlayerinventory(JButton[] buttons,StringTokenizer tokenizer){
+		int buttonanzahl=buttons.length;
+		for(int i=0; i<buttons.length; i++)
+		{
+			buttons[i].setVisible(false);
+		}
+		while(tokenizer.hasMoreTokens()){
+			String aktualltoken = tokenizer.nextToken();
+		if (buttonanzahl==0)
+		{
+			System.err.println("mehr Kommandos als buttons");
+		}
+			
+		else{
+			buttons[buttons.length-buttonanzahl].setVisible(true);
+			buttons[buttons.length-buttonanzahl].setLabel(aktualltoken);
+			buttons[buttons.length-buttonanzahl].setIcon(new ImageIcon(GameGui.class.getResource("/data/"
+					+ aktualltoken + ".png")));
+			buttonanzahl--;
+		}
+		}
+	}
+	
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if (arg0.getClass().equals(BackroundActioner.class)) {
