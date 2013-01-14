@@ -79,6 +79,8 @@ public class DialogCreator {
 		kaninchen3u1u2.insertDialog(kaninchen);
 		kaninchen4.insertDialog(kaninchen);
 
+		
+		
 		//Hutmacher dialoge
 		DialogCommand hutmacher = new DialogCommand("Hallo Allis ich habe dich erwartet.");
 		dialogs.put("Hutmacher", hutmacher);
@@ -96,6 +98,9 @@ public class DialogCreator {
 		//Möglichkeit der Rückkehr zu Anfangsdialog
 		hutmacher1u1.insertDialog(hutmacher);
 		hutmacher1u2.insertDialog(hutmacher);
+		
+		
+		
 		
 		dialogs.put("Katze", new DialogCommand("Hihihi na da bist ja Allis hat ja lange gedauert"));
 		dialogs.put("Feuergeist", new DialogCommand("Hui ich bin der Geist, der im Kamin Wohnt..wo kommst du den her."));

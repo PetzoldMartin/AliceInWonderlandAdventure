@@ -55,6 +55,12 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+				Kommando6 = new JButton("Kommando6");
+				Kommando6.setForeground(Color.BLACK);
+				Kommando6.setBackground(Color.WHITE);
+				Kommando6.setBounds(500, 530, 89, 23);
+				contentPane.add(Kommando6);
+		
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(52, 125, 478, -93);
@@ -220,12 +226,6 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Kommando5.setBackground(Color.WHITE);
 		Kommando5.setBounds(401, 530, 89, 23);
 		contentPane.add(Kommando5);
-
-		Kommando6 = new JButton("Kommando6");
-		Kommando6.setForeground(Color.BLACK);
-		Kommando6.setBackground(Color.WHITE);
-		Kommando6.setBounds(500, 530, 89, 23);
-		contentPane.add(Kommando6);
 
 		Bildanzeige = new JLabel("");
 		Bildanzeige.setBackground(Color.DARK_GRAY);
@@ -413,6 +413,5 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	public GuiString getGst() {
 		return gst;
 	}
-
 }
 
