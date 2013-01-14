@@ -16,13 +16,13 @@ public class ParserTest extends TestCase{
 	Parser parser;
 	@SuppressWarnings("unused")
 	private Game game;
-	@SuppressWarnings("unused")
 	private CommandWords cw;
 
 	@Before
 	public void setUp() throws Exception {
 		game = new Game();
 		cw = new CommandWords();
+		parser= new Parser(cw);
 	}
 
 	@Test

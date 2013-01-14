@@ -52,7 +52,7 @@ public class HelpCommandTest extends TestCase{
 		assertTrue(game.getTextOut().AusgabeVorhanden("Du scheinst es aus den Augen verloren zu haben."));
 		assertTrue(game.getTextOut().AusgabeVorhanden("Versuche es wieder zu finden!"));
 		assertTrue(game.getTextOut().AusgabeVorhanden("deine Befehlswörter sind:"));
-		assertEquals(game.getTextOut().getTextZeile(),"ende  nutz  hilfe  sprich  geh  neustart  nimm  guck  ?  ");
+		assertEquals(game.getTextOut().getTextZeile(),"?  ende  geh  guck  hilfe  neustart  nimm  nutz  sprich  ");
 		game.getTextOut().clearTextOut();
 		
 	}

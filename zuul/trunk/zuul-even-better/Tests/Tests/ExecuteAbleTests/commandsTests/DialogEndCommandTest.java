@@ -32,7 +32,7 @@ public class DialogEndCommandTest extends TestCase{
 		assertTrue(game.getTextOut().AusgabeVorhanden(""+"Du befindest dich in einem Brunnen"+"\n"+"Ausgänge: osten norden westen sueden"));
 		game.getTextOut().clearTextOut();
 		game.getPlayer().getnCW().showAll();
-		assertEquals(game.getTextOut().getTextZeile(), "ende  nutz  hilfe  sprich  geh  neustart  nimm  guck  ?  ");
+		assertEquals(game.getTextOut().getTextZeile(), "?  ende  geh  guck  hilfe  neustart  nimm  nutz  sprich  ");
 		game.getTextOut().clearTextOut();
 	}
 
