@@ -181,17 +181,17 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Kommandos.setBounds(5, 505, 212, 23);
 		contentPane.add(Kommandos);
 
-		Ende = new JButton("");
+		Ende = new JButton("ende");
 		Ende.setIcon(new ImageIcon(GameGui.class.getResource("/data/x.png")));
 		Ende.setBounds(740, 520, 32, 32);
 		contentPane.add(Ende);
 
-		Restart = new JButton("");
+		Restart = new JButton("neustart");
 		Restart.setIcon(new ImageIcon(GameGui.class.getResource("/data/re.png")));
 		Restart.setBounds(740, 480, 32, 33);
 		contentPane.add(Restart);
 
-		Hilfe = new JButton("");
+		Hilfe = new JButton("?");
 		Hilfe.setBackground(Color.DARK_GRAY);
 		Hilfe.setIcon(new ImageIcon(GameGui.class.getResource("/data/fr.png")));
 		Hilfe.setBounds(740, 440, 32, 32);
