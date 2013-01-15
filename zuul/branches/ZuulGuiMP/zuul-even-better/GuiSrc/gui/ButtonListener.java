@@ -22,22 +22,87 @@ public class ButtonListener implements ActionListener
 			case "geh":
 				gst.setStringAndSend(label);
 				break;
+			case "nutz":
+				gst.setStringAndSend(label);
+				break;
+			case "nimm":
+				gst.setStringAndSend(label);
+				break;
+			case "sprich":
+				gst.setStringAndSend(label);
+				break;
+			case "?":
+				gst.setStringAndSend(label);
+				break;
+			case "1":
+				gst.setStringAndSend(label);
+				break;
+			case "2":
+				gst.setStringAndSend(label);
+				break;
+			case "3":
+				gst.setStringAndSend(label);
+				break;
+			case "4":
+				gst.setStringAndSend(label);
+				break;
+			case "5":
+				gst.setStringAndSend(label);
+				break;
+			case "6":
+				gst.setStringAndSend(label);
+				break;
 			default:
-				System.out.println("test");
+				System.out.println(label);
 				gst.setString(label);
 				break;
 			}
 		}else{
 			switch (label) {
 			case "guck":
-				gst.setStringAndSend(label+" raum");
+				gst.setStringAndSend("? "+label);
 				break;
-
 			case "geh":
+				gst.setStringAndSend("? "+label);
+				break;
+			case "sprich":
+				gst.setStringAndSend("? "+label);
+				break;
+			case "nutz":
+				gst.setStringAndSend("? "+label);
+				break;
+			case "nimm":
+				gst.setStringAndSend("? "+label);
+				break;
+			case "neustart":
+				gst.setStringAndSend(label);
+				break;
+			case "ende":
+				gst.setStringAndSend(label);
+				break;
+			case "1":
+				gst.setStringAndSend(label);
+				break;
+			case "2":
+				gst.setStringAndSend(label);
+				break;
+			case "3":
+				gst.setStringAndSend(label);
+				break;
+			case "4":
+				gst.setStringAndSend(label);
+				break;
+			case "5":
+				gst.setStringAndSend(label);
+				break;
+			case "6":
+				gst.setStringAndSend(label);
+				break;
+			case "?":
 				gst.setStringAndSend(label);
 				break;
 			default:
-				System.out.println("test");
+				System.out.println(label);
 				gst.setString(label);
 				break;
 			}

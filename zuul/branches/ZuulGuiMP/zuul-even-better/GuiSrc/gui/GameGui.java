@@ -306,6 +306,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		o=new ButtonListener(btnEast.getText(), gst);
 		s=new ButtonListener(btnSued.getText(), gst);
 		w=new ButtonListener(btnWest.getText(), gst);
+		h=new ButtonListener(Hilfe.getText(), gst);
+		e=new ButtonListener(Ende.getText(), gst);
+		r=new ButtonListener(Restart.getText(), gst);
 		Kommando1.addActionListener(K1);
 		Kommando2.addActionListener(K2);
 		Kommando3.addActionListener(K3);
@@ -328,6 +331,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		btnNord.addActionListener(n);
 		btnSued.addActionListener(s);
 		btnWest.addActionListener(w);
+		Hilfe.addActionListener(h);
+		Ende.addActionListener(e);
+		Restart.addActionListener(r);
 		guiUpdate();
 
 	}
@@ -351,19 +357,22 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		RI1.setLabel(RoomInventar1p1.getText());
 		RI2.setLabel(RoomInventar1p2.getText());
 		RI3.setLabel(RoomInventar1p3.getText());
-		RI4.setLabel(RoomInventar1p1.getText());
+		RI4.setLabel(RoomInventar2p1.getText());
 		RI5.setLabel(RoomInventar2p2.getText());
 		RI6.setLabel(RoomInventar2p3.getText());
 		I1.setLabel(Inventar1p1.getText());
 		I2.setLabel(Inventar1p2.getText());
 		I3.setLabel(Inventar1p3.getText());
-		I4.setLabel(Inventar1p1.getText());
+		I4.setLabel(Inventar2p1.getText());
 		I5.setLabel(Inventar2p2.getText());
 		I6.setLabel(Inventar2p3.getText());
 		o.setLabel(btnEast.getText());
 		n.setLabel(btnNord.getText());
 		s.setLabel(btnSued.getText());
 		w.setLabel(btnWest.getText());
+		h.setLabel(Hilfe.getText());
+		r.setLabel(Restart.getText());
+		e.setLabel(Ende.getText());
 	}
 
 	@Override
@@ -433,7 +442,21 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
 				btnSued.setVisible(true);
 				btnSued.setText("vase");
-				break;	
+				break;
+			case "raus":
+				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "hoch" + ".png")));
+				btnNord.setVisible(true);
+				btnNord.setText("raus");
+				break;
+			case "runter":
+				btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "hoch" + ".png")));
+				btnSued.setVisible(true);
+				btnSued.setText("runter");
+				break;
+			case "ofen":
+				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "Ofen" + ".png")));
+				btnNord.setVisible(true);
+				btnNord.setText("ofen");
 			default:
 				break;
 			}
