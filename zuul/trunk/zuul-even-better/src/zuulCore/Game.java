@@ -8,6 +8,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import observer.gameObserver.BackroundActioner;
+import observer.gameObserver.DoorActioner;
 import observer.gameObserver.GameListener;
 import observer.gameObserver.InventarActioner;
 import observer.gameObserver.KommandActioner;
@@ -67,9 +68,10 @@ public class Game extends Observable implements Runnable,Observer
     	KommandActioner kmdActioner=new KommandActioner();
     	InventarActioner invActioner=new InventarActioner();
     	RoomInventarActioner rommInvActioner=new RoomInventarActioner();
+    	DoorActioner doorActioner=new DoorActioner();
     	TextOutActioner tOA= new TextOutActioner();
     	TextoutListener tol= new TextoutListener(tOA);
-    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner);
+    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner,doorActioner);
     	game.addObserver(gameListener);
     	
     	//actioner bei Gui eingetragen
@@ -79,6 +81,7 @@ public class Game extends Observable implements Runnable,Observer
     	invActioner.addObserver(gG);
     	rommInvActioner.addObserver(gG);
     	tOA.addObserver(gG);
+    	doorActioner.addObserver(gG);
     	
     	//beobachter die die Gui beobachten
     	GuiActioner gAct=new GuiActioner();
@@ -124,10 +127,10 @@ public class Game extends Observable implements Runnable,Observer
         textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-            Command command = parser.consoleReader();
-                gameStatus = command.execute(player);
-                textOut.ausgabe();
-                updateGuiStats();
+//            Command command = parser.consoleReader();
+//                gameStatus = command.execute(player);
+//                textOut.ausgabe();
+//                updateGuiStats();
         	if (ischanged){
                 gameStatus = this.gameStatus;
                 textOut.ausgabe();

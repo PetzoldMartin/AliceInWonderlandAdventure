@@ -5,9 +5,9 @@ import java.util.Observable;
 //kein runnable mehr
 public class GuiString extends Observable {
 
-	String test;
+	String Output;
 	public GuiString(){
-		test="";
+		Output="";
 	}
 	
 	
@@ -15,6 +15,29 @@ public class GuiString extends Observable {
 	//aufrufen wenn neues kommando eingetragen wird
 	void noty(){
 	setChanged();
-	notifyObservers(test);
+	notifyObservers(Output);
+	System.out.println(Output);
 	}
+	
+	
+	public void setString(String string){
+		Output=Output+" "+string;
+	}
+	
+    public void setStringAndSend(String string){
+    	Output=string+" "+Output;
+    	noty();
+    	Output="";
+	}
+    
+    public boolean hasInsert(){
+    	if(Output==""){
+    	return false;
+    	}
+    	else{
+    		return true;
+    	}
+    }
+	
+	
 }

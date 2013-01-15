@@ -85,7 +85,7 @@ public class Room extends ThingWithStore
     /**
      * Gibt die Ausgänge des Raumes zurück
      */
-	private String getExitString()
+	public String getExitString()
     {
         String returnString = "Ausgänge:";
         Set<String> keys = exits.keySet();
