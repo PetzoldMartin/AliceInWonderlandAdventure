@@ -1,6 +1,5 @@
 package gui;
 
-
 import java.awt.Color;
 import java.util.Observable;
 import java.util.Observer;
@@ -39,19 +38,26 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private JButton Ende;
 	private JButton Restart;
 	private JButton Hilfe;
-	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5, Kommando6;
-	private String currentInventory="";
-	private String currentCommands="";
-	private JButton[] KommandoButtons ;//die Arreyliste der Kommando Buttons
-	private JButton[] Rauminventar ;// das Arrey mit den Rauminventar Buttons
-	private JButton[] PlayerInventar;//das Arrey mitt den Spielerinventar Buttons
-	private GuiString gst;//der an das spiel zu übergebende String als ÜbergabeKlasse
-	private String currentRoomInventory="";
-	private JButton RoomInventar1p1,RoomInventar1p2,RoomInventar1p3,RoomInventar2p1,RoomInventar2p2,RoomInventar2p3;
-	private JButton Inventar1p1,Inventar1p2,Inventar1p3,Inventar2p1,Inventar2p2,Inventar2p3;
-	private String currentDoors="";
-	private JButton btnNord,btnSued,btnWest,btnEast;
-	private ButtonListener K1,K2,K3,K4,K5,K6,RI1,RI2,RI3,RI4,RI5,RI6,I1,I2,I3,I4,I5,I6,n,o,s,w,h,r,e;
+	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5,
+			Kommando6;
+	private String currentInventory = "";
+	private String currentCommands = "";
+	private JButton[] KommandoButtons;// die Arreyliste der Kommando Buttons
+	private JButton[] Rauminventar;// das Arrey mit den Rauminventar Buttons
+	private JButton[] PlayerInventar;// das Arrey mitt den Spielerinventar
+										// Buttons
+	private GuiString gst;// der an das spiel zu übergebende String als
+							// ÜbergabeKlasse
+	private String currentRoomInventory = "";
+	private JButton RoomInventar1p1, RoomInventar1p2, RoomInventar1p3,
+			RoomInventar2p1, RoomInventar2p2, RoomInventar2p3;
+	private JButton Inventar1p1, Inventar1p2, Inventar1p3, Inventar2p1,
+			Inventar2p2, Inventar2p3;
+	private String currentDoors = "";
+	private JButton btnNord, btnSued, btnWest, btnEast;
+	private ButtonListener K1, K2, K3, K4, K5, K6, RI1, RI2, RI3, RI4, RI5,
+			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;
+	private JLabel lblOutput;
 
 	public GameGui() {
 		gst = new GuiString();
@@ -63,24 +69,35 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-				Kommando6 = new JButton("Kommando6");
-				Kommando6.setForeground(Color.BLACK);
-				Kommando6.setBackground(Color.WHITE);
-				Kommando6.setBounds(500, 530, 89, 23);
-				contentPane.add(Kommando6);
-		
-		
+				JButton btnLschen = new JButton("Auswahl l\u00F6schen");
+				btnLschen.setForeground(Color.BLACK);
+				btnLschen.setBackground(Color.WHITE);
+				btnLschen.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						gst.setOutput("");
+						OutputInputRefresh();
+					}
+				});
+				btnLschen.setBounds(424, 510, 141, 18);
+				contentPane.add(btnLschen);
+
+		Kommando6 = new JButton("Kommando6");
+		Kommando6.setForeground(Color.BLACK);
+		Kommando6.setBackground(Color.WHITE);
+		Kommando6.setBounds(500, 530, 89, 23);
+		contentPane.add(Kommando6);
+
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(52, 125, 478, -93);
 		contentPane.add(layeredPane);
-			
-	//--Raum.Gegenstände//--Raum.Gegenstände//--Raum.Gegenstände
+
+		// --Raum.Gegenstände//--Raum.Gegenstände//--Raum.Gegenstände
 		JLabel raumgegenständeHeader = new JLabel("Raumgegenst\u00E4nde");
 		raumgegenständeHeader.setForeground(Color.BLACK);
 		raumgegenständeHeader.setBackground(Color.GRAY);
 		raumgegenständeHeader.setBounds(560, 0, 210, 25);
 		contentPane.add(raumgegenständeHeader);
-		
+
 		RoomInventar1p1 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p1.setFont(new Font("Tahoma", Font.PLAIN, 0));
@@ -91,7 +108,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				GameGui.class.getResource("/data/default.png")));
 		RoomInventar1p2.setFont(new Font("Tahoma", Font.PLAIN, 0));
 		RoomInventar1p2.setBounds(636, 25, 64, 64);
-		contentPane.add(RoomInventar1p2); 
+		contentPane.add(RoomInventar1p2);
 
 		RoomInventar1p3 = new JButton(new ImageIcon(
 				GameGui.class.getResource("/data/default.png")));
@@ -117,7 +134,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		RoomInventar2p3.setBounds(710, 100, 64, 64);
 		contentPane.add(RoomInventar2p3);
 
-	//--InventarGegenstände//--InventarGegenstände//--InventarGegenstände
+		// --InventarGegenstände//--InventarGegenstände//--InventarGegenstände
 		JLabel InventarHeader = new JLabel("Inventar");
 		InventarHeader.setForeground(Color.BLACK);
 		InventarHeader.setBackground(Color.GRAY);
@@ -160,49 +177,52 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Inventar2p3.setBounds(710, 275, 64, 64);
 		contentPane.add(Inventar2p3);
 
-		
-	//-Windrose Windrose Windrose
-		
+		// -Windrose Windrose Windrose
+
 		JLabel Richtungen = new JLabel("Bewegung");
 		Richtungen.setForeground(Color.BLACK);
 		Richtungen.setBackground(Color.GRAY);
 		Richtungen.setBounds(562, 350, 212, 23);
 		contentPane.add(Richtungen);
-		
+
 		btnNord = new JButton("norden");
 		btnNord.setFont(new Font("Tahoma", Font.PLAIN, 0));
-		btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/norden.png")));
+		btnNord.setIcon(new ImageIcon(GameGui.class
+				.getResource("/data/norden.png")));
 		btnNord.setBounds(600, 400, 50, 50);
 		contentPane.add(btnNord);
 
 		btnSued = new JButton("sueden");
 		btnSued.setFont(new Font("Tahoma", Font.PLAIN, 0));
-		btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/sueden.png")));
+		btnSued.setIcon(new ImageIcon(GameGui.class
+				.getResource("/data/sueden.png")));
 		btnSued.setBounds(600, 500, 50, 50);
 		contentPane.add(btnSued);
-		
+
 		btnWest = new JButton("westen");
 		btnWest.setFont(new Font("Tahoma", Font.PLAIN, 0));
-		btnWest.setIcon(new ImageIcon(GameGui.class.getResource("/data/westen.png")));
+		btnWest.setIcon(new ImageIcon(GameGui.class
+				.getResource("/data/westen.png")));
 		btnWest.setBounds(550, 450, 50, 50);
 		contentPane.add(btnWest);
-		
+
 		btnEast = new JButton("osten");
 		btnEast.setFont(new Font("Tahoma", Font.PLAIN, 0));
-		btnEast.setIcon(new ImageIcon(GameGui.class.getResource("/data/osten.png")));
+		btnEast.setIcon(new ImageIcon(GameGui.class
+				.getResource("/data/osten.png")));
 		btnEast.setBounds(650, 450, 50, 50);
 		contentPane.add(btnEast);
-		
-		JLabel lblWindrose = new JLabel(new ImageIcon(GameGui.class.getResource("/data/WRmid.png")));
+
+		JLabel lblWindrose = new JLabel(new ImageIcon(
+				GameGui.class.getResource("/data/WRmid.png")));
 		lblWindrose.setBounds(550, 400, 150, 150);
 		contentPane.add(lblWindrose);
-		
-	//----
 
+		// ----
 
 		JLabel Kommandos = new JLabel("Kommandos");
 		Kommandos.setForeground(Color.BLACK);
-		Kommandos.setBounds(5, 505, 212, 23);
+		Kommandos.setBounds(5, 505, 108, 23);
 		contentPane.add(Kommandos);
 
 		Ende = new JButton("ende");
@@ -259,12 +279,12 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Bildanzeige.setForeground(Color.DARK_GRAY);
 		Bildanzeige.setIcon(new ImageIcon(GameGui.class.getResource("/data/"
 				+ currentRoom + ".png")));
-		Bildanzeige.setBounds(30, 140, 500, 368);
+		Bildanzeige.setBounds(23, 140, 500, 368);
 		contentPane.add(Bildanzeige);
 
 		JLabel Avatar = new JLabel(new ImageIcon(
 				GameGui.class.getResource("/data/Alice.png")));
-		Avatar.setBounds(0, 0, 92, 129); 
+		Avatar.setBounds(0, 0, 92, 129);
 		contentPane.add(Avatar);
 
 		outText = new JTextArea("New label", 52, 38);
@@ -275,40 +295,52 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		scroll.setBounds(97, 0, 455, 139);
 		// contentPane.add(outText);
 		contentPane.add(scroll);
-		
-		//Buttons in arreylist initialisieren
-		JButton[] KommandoButtons = {Kommando1,Kommando2,Kommando3,Kommando4,Kommando5,Kommando6};
-		this.KommandoButtons=KommandoButtons;
-		JButton[] Rauminventar={RoomInventar1p1,RoomInventar1p2,RoomInventar1p3,RoomInventar2p1,RoomInventar2p2,RoomInventar2p3};
-		this.Rauminventar=Rauminventar;
-		JButton[] PlayerInventar={Inventar1p1,Inventar1p2,Inventar1p3,Inventar2p1,Inventar2p2,Inventar2p3};
-		this.PlayerInventar=PlayerInventar;
-		
-		K1=new ButtonListener(Kommando1.getText(),gst);
-		K2=new ButtonListener(Kommando2.getText(),gst);
-		K3=new ButtonListener(Kommando3.getText(),gst);
-		K4=new ButtonListener(Kommando4.getText(),gst);
-		K5=new ButtonListener(Kommando5.getText(),gst);
-		K6=new ButtonListener(Kommando6.getText(),gst);
-		RI1=new ButtonListener(RoomInventar1p1.getText(), gst);
-		RI2=new ButtonListener(RoomInventar1p2.getText(), gst);
-		RI3=new ButtonListener(RoomInventar1p3.getText(), gst);
-		RI4=new ButtonListener(RoomInventar2p1.getText(), gst);
-		RI5=new ButtonListener(RoomInventar2p2.getText(), gst);
-		RI6=new ButtonListener(RoomInventar2p3.getText(), gst);
-		I1=new ButtonListener(Inventar1p1.getText(), gst);
-		I2=new ButtonListener(Inventar1p2.getText(), gst);
-		I3=new ButtonListener(Inventar1p3.getText(), gst);
-		I4=new ButtonListener(Inventar1p1.getText(), gst);
-		I5=new ButtonListener(Inventar2p2.getText(), gst);
-		I6=new ButtonListener(Inventar2p3.getText(), gst);
-		n=new ButtonListener(btnNord.getText(), gst);
-		o=new ButtonListener(btnEast.getText(), gst);
-		s=new ButtonListener(btnSued.getText(), gst);
-		w=new ButtonListener(btnWest.getText(), gst);
-		h=new ButtonListener(Hilfe.getText(), gst);
-		e=new ButtonListener(Ende.getText(), gst);
-		r=new ButtonListener(Restart.getText(), gst);
+
+		JLabel lblAusfhrungszeile = new JLabel("Ausf\u00FChrungszeile:");
+		lblAusfhrungszeile.setBounds(123, 505, 127, 23);
+		contentPane.add(lblAusfhrungszeile);
+
+		lblOutput = new JLabel("Output");
+		lblOutput.setBounds(260, 505, 141, 23);
+		contentPane.add(lblOutput);
+
+		// Buttons in arreylist initialisieren
+		JButton[] KommandoButtons = { Kommando1, Kommando2, Kommando3,
+				Kommando4, Kommando5, Kommando6 };
+		this.KommandoButtons = KommandoButtons;
+		JButton[] Rauminventar = { RoomInventar1p1, RoomInventar1p2,
+				RoomInventar1p3, RoomInventar2p1, RoomInventar2p2,
+				RoomInventar2p3 };
+		this.Rauminventar = Rauminventar;
+		JButton[] PlayerInventar = { Inventar1p1, Inventar1p2, Inventar1p3,
+				Inventar2p1, Inventar2p2, Inventar2p3 };
+		this.PlayerInventar = PlayerInventar;
+
+		K1 = new ButtonListener(Kommando1.getText(), gst);
+		K2 = new ButtonListener(Kommando2.getText(), gst);
+		K3 = new ButtonListener(Kommando3.getText(), gst);
+		K4 = new ButtonListener(Kommando4.getText(), gst);
+		K5 = new ButtonListener(Kommando5.getText(), gst);
+		K6 = new ButtonListener(Kommando6.getText(), gst);
+		RI1 = new ButtonListener(RoomInventar1p1.getText(), gst);
+		RI2 = new ButtonListener(RoomInventar1p2.getText(), gst);
+		RI3 = new ButtonListener(RoomInventar1p3.getText(), gst);
+		RI4 = new ButtonListener(RoomInventar2p1.getText(), gst);
+		RI5 = new ButtonListener(RoomInventar2p2.getText(), gst);
+		RI6 = new ButtonListener(RoomInventar2p3.getText(), gst);
+		I1 = new ButtonListener(Inventar1p1.getText(), gst);
+		I2 = new ButtonListener(Inventar1p2.getText(), gst);
+		I3 = new ButtonListener(Inventar1p3.getText(), gst);
+		I4 = new ButtonListener(Inventar1p1.getText(), gst);
+		I5 = new ButtonListener(Inventar2p2.getText(), gst);
+		I6 = new ButtonListener(Inventar2p3.getText(), gst);
+		n = new ButtonListener(btnNord.getText(), gst);
+		o = new ButtonListener(btnEast.getText(), gst);
+		s = new ButtonListener(btnSued.getText(), gst);
+		w = new ButtonListener(btnWest.getText(), gst);
+		h = new ButtonListener(Hilfe.getText(), gst);
+		e = new ButtonListener(Ende.getText(), gst);
+		r = new ButtonListener(Restart.getText(), gst);
 		Kommando1.addActionListener(K1);
 		Kommando2.addActionListener(K2);
 		Kommando3.addActionListener(K3);
@@ -343,10 +375,12 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				+ currentRoom + ".png")));
 		outText.setText(ausgabe);
 		outText.setCaretPosition(outText.getText().length());
-		//ansprechen der Kommandobuttons
+		// ansprechen der Kommandobuttons
 		this.setButtons(new StringTokenizer(currentCommands));
-		this.setPlayerinventory(PlayerInventar,new StringTokenizer(currentInventory));
-		this.setPlayerinventory(Rauminventar,new StringTokenizer(currentRoomInventory));
+		this.setPlayerinventory(PlayerInventar, new StringTokenizer(
+				currentInventory));
+		this.setPlayerinventory(Rauminventar, new StringTokenizer(
+				currentRoomInventory));
 		this.setDirection(new StringTokenizer(currentDoors));
 		K1.setLabel(Kommando1.getText());
 		K2.setLabel(Kommando2.getText());
@@ -373,14 +407,13 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		h.setLabel(Hilfe.getText());
 		r.setLabel(Restart.getText());
 		e.setLabel(Ende.getText());
+
 	}
 
 	@Override
 	public void run() {
 		this.setVisible(true);
 
-		
-		
 		while (true) {
 			try {
 				Thread.sleep(100);
@@ -389,6 +422,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				e.printStackTrace();
 			}
 			this.repaint();
+			this.OutputInputRefresh();
 			while (isChanged) {
 				guiUpdate();
 				isChanged = false;
@@ -405,79 +439,89 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		currentRoom = s;
 	}
 
-	public void setDirection(StringTokenizer tokenizer){
+	public void setDirection(StringTokenizer tokenizer) {
 		btnEast.setVisible(false);
 		btnNord.setVisible(false);
 		btnSued.setVisible(false);
 		btnWest.setVisible(false);
-		while(tokenizer.hasMoreTokens()){
+		while (tokenizer.hasMoreTokens()) {
 			String aktualltoken = tokenizer.nextToken();
 			switch (aktualltoken) {
 			case "sueden":
-				btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnSued.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnSued.setVisible(true);
 				btnSued.setText("sueden");
 				break;
 			case "norden":
-				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnNord.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnNord.setVisible(true);
 				btnNord.setText("norden");
 				break;
 			case "osten":
-				btnEast.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnEast.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnEast.setVisible(true);
 				btnEast.setText("osten");
 				break;
 			case "westen":
-				btnWest.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnWest.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnWest.setVisible(true);
 				btnWest.setText("westen");
 				break;
 			case "hoch":
-				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnNord.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnNord.setVisible(true);
 				btnNord.setText("hoch");
 				break;
 			case "vase":
-				btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ aktualltoken + ".png")));
+				btnSued.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + aktualltoken + ".png")));
 				btnSued.setVisible(true);
 				btnSued.setText("vase");
 				break;
 			case "raus":
-				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "hoch" + ".png")));
+				btnNord.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + "hoch" + ".png")));
 				btnNord.setVisible(true);
 				btnNord.setText("raus");
 				break;
 			case "runter":
-				btnSued.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "hoch" + ".png")));
+				btnSued.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + "hoch" + ".png")));
 				btnSued.setVisible(true);
 				btnSued.setText("runter");
 				break;
 			case "ofen":
-				btnNord.setIcon(new ImageIcon(GameGui.class.getResource("/data/"+ "Ofen" + ".png")));
+				btnNord.setIcon(new ImageIcon(GameGui.class
+						.getResource("/data/" + "Ofen" + ".png")));
 				btnNord.setVisible(true);
 				btnNord.setText("ofen");
 			default:
 				break;
 			}
-		
+
 		}
-		
+
 	}
+
 	/**
 	 * die methode die den Stringtokenizer auf die Kommandobuttons überträgt
+	 * 
 	 * @param tokenizer
 	 */
-	public void setButtons(StringTokenizer tokenizer){
+	public void setButtons(StringTokenizer tokenizer) {
 		Ende.setVisible(false);
 		Restart.setVisible(false);
 		Hilfe.setVisible(false);
-		int buttonanzahl=KommandoButtons.length;
-		for(int i=0; i<KommandoButtons.length; i++)
-		{
+		int buttonanzahl = KommandoButtons.length;
+		for (int i = 0; i < KommandoButtons.length; i++) {
 			KommandoButtons[i].setVisible(false);
 		}
-		while(tokenizer.hasMoreTokens()){
+		while (tokenizer.hasMoreTokens()) {
 			String aktualltoken = tokenizer.nextToken();
 			switch (aktualltoken) {
 			case "ende":
@@ -493,14 +537,15 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				Hilfe.setVisible(true);
 				break;
 			default:
-				if (buttonanzahl==0)
-				{
+				if (buttonanzahl == 0) {
 					System.err.println("mehr Kommandos als buttons");
 				}
-					
-				else{
-					KommandoButtons[KommandoButtons.length-buttonanzahl].setVisible(true);
-					KommandoButtons[KommandoButtons.length-buttonanzahl].setText(aktualltoken);
+
+				else {
+					KommandoButtons[KommandoButtons.length - buttonanzahl]
+							.setVisible(true);
+					KommandoButtons[KommandoButtons.length - buttonanzahl]
+							.setText(aktualltoken);
 					buttonanzahl--;
 				}
 				break;
@@ -508,29 +553,28 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		}
 	}
 
-	public void setPlayerinventory(JButton[] buttons,StringTokenizer tokenizer){
-		int buttonanzahl=buttons.length;
-		for(int i=0; i<buttons.length; i++)
-		{
+	public void setPlayerinventory(JButton[] buttons, StringTokenizer tokenizer) {
+		int buttonanzahl = buttons.length;
+		for (int i = 0; i < buttons.length; i++) {
 			buttons[i].setVisible(false);
 		}
-		while(tokenizer.hasMoreTokens()){
+		while (tokenizer.hasMoreTokens()) {
 			String aktualltoken = tokenizer.nextToken();
-		if (buttonanzahl==0)
-		{
-			System.err.println("mehr Kommandos als buttons");
-		}
-			
-		else{
-			buttons[buttons.length-buttonanzahl].setVisible(true);
-			buttons[buttons.length-buttonanzahl].setText(aktualltoken);
-			buttons[buttons.length-buttonanzahl].setIcon(new ImageIcon(GameGui.class.getResource("/data/"
-					+ aktualltoken + ".png")));
-			buttonanzahl--;
-		}
+			if (buttonanzahl == 0) {
+				System.err.println("mehr Kommandos als buttons");
+			}
+
+			else {
+				buttons[buttons.length - buttonanzahl].setVisible(true);
+				buttons[buttons.length - buttonanzahl].setText(aktualltoken);
+				buttons[buttons.length - buttonanzahl].setIcon(new ImageIcon(
+						GameGui.class.getResource("/data/" + aktualltoken
+								+ ".png")));
+				buttonanzahl--;
+			}
 		}
 	}
-	
+
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if (arg0.getClass().equals(BackroundActioner.class)) {
@@ -542,40 +586,40 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		if (arg0.getClass().equals(KommandActioner.class)) {
 			setCurrentCommands((String) arg1);
 		}
-		if(arg0.getClass().equals(InventarActioner.class)) {
-			setCurrentInventory((String)arg1);
+		if (arg0.getClass().equals(InventarActioner.class)) {
+			setCurrentInventory((String) arg1);
 		}
-		if(arg0.getClass().equals(RoomInventarActioner.class)) {
-			setCurrentRoomInventory((String)arg1);
+		if (arg0.getClass().equals(RoomInventarActioner.class)) {
+			setCurrentRoomInventory((String) arg1);
 		}
-		if(arg0.getClass().equals(DoorActioner.class)) {
-			setDoors((String)arg1);
+		if (arg0.getClass().equals(DoorActioner.class)) {
+			setDoors((String) arg1);
 		}
-		
 
 		isChanged = true;
 
 	}
 
 	private void setDoors(String currentDoors) {
-		System.out.println("Spieler"+currentDoors);
-		this.currentDoors= currentDoors;
-		
+		// System.out.println("Spieler"+currentDoors);
+		this.currentDoors = currentDoors;
+
 	}
 
 	public void setCurrentInventory(String currentInventory) {
-		System.out.println("Spieler"+currentInventory);
+		// System.out.println("Spieler"+currentInventory);
 		this.currentInventory = currentInventory;
 	}
+
 	public void setCurrentCommands(String currentCommands) {
 		this.currentCommands = currentCommands;
 	}
-	
+
 	public void setCurrentRoomInventory(String currentRoomInventory) {
-		System.out.println("raum"+currentRoomInventory);
+		// System.out.println("raum"+currentRoomInventory);
 		this.currentRoomInventory = currentRoomInventory;
 	}
-	
+
 	private void setCurrentTextout(String arg1) {
 		ausgabe = ausgabe + "\n" + arg1;
 
@@ -585,5 +629,15 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		return gst;
 	}
 	
+	public void OutputInputRefresh(){
+		StringTokenizer str = new StringTokenizer(gst.getOutput());
+		lblOutput.setText("");
+		if (str.hasMoreTokens()) {
+			String one =str.nextToken();
+			lblOutput.setText(one);
+			if (str.hasMoreTokens()) {
+				lblOutput.setText(one+" & "+str.nextToken());
+			}
+		}
+	}
 }
-

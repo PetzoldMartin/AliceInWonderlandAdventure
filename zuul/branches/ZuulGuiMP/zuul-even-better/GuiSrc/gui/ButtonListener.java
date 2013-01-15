@@ -102,7 +102,7 @@ public class ButtonListener implements ActionListener
 				gst.setStringAndSend(label);
 				break;
 			default:
-				System.out.println(label);
+				//System.out.println(label);
 				gst.setString(label);
 				break;
 			}

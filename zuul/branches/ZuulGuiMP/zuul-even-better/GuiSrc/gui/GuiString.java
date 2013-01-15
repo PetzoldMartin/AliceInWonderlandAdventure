@@ -6,6 +6,20 @@ import java.util.Observable;
 public class GuiString extends Observable {
 
 	String Output;
+	
+	
+	public void setOutput(String output) {
+		Output = output;
+	}
+
+
+
+	public String getOutput() {
+		return Output;
+	}
+
+
+
 	public GuiString(){
 		Output="";
 	}
@@ -16,7 +30,7 @@ public class GuiString extends Observable {
 	void noty(){
 	setChanged();
 	notifyObservers(Output);
-	System.out.println(Output);
+	//System.out.println(Output);
 	}
 	
 	

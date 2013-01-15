@@ -31,7 +31,7 @@ public class HelpCommand extends Command
     public GameStatus execute(Player player)
     {
        
-        if(hasSecondWord()) {
+        if(hasSecondWord()&!hasThirdWord()) {
             String direction = getSecondWord();
             try {
             	commandWords.showspecialhelp(direction);

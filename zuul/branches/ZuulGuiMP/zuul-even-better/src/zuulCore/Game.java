@@ -144,6 +144,14 @@ public class Game extends Observable implements Runnable,Observer
         }else{
         	textOut.lineEntry("Danke fürs Spielen.  Schade das du Gehst.");
         	textOut.ausgabe();
+        	try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+        	System.exit( 0 );
+        	
         }
         
     }

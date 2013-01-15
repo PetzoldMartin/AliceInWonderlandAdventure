@@ -22,7 +22,7 @@ public class LookCommand extends Command {
 	 * @param der Spieler des Spieles
 	 */
 	public GameStatus execute(Player player) {
-		if (hasSecondWord()) {
+		if (hasSecondWord()&!hasThirdWord()) {
 			// Inventar
 			if (getSecondWord().equals("inventar")) {
 				if (player.isThereanyvisible()) {

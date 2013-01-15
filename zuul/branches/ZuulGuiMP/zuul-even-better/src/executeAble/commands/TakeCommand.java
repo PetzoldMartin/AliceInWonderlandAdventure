@@ -19,7 +19,7 @@ public class TakeCommand extends Command {
 	@Override
 	public GameStatus execute(Player player) {
 		boolean isFound = false;
-		if (hasSecondWord() && (!player.getCurrentRoom().isThereanyvisible())) {
+		if (hasSecondWord() && (!player.getCurrentRoom().isThereanyvisible())&!hasThirdWord()) {
 			if (player.getCurrentRoom().hasReadyToUseObject(getSecondWord())) {
 				if (player.getCurrentRoom().getSpecialObject(getSecondWord())
 						.isTakeAble()
