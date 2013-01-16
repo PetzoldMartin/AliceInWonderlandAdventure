@@ -79,11 +79,11 @@ public class LevelCreator
 	    //--------------------------------------------------------
 	    
 	    // Items Personen des Players
-//	    GameObject flower3 = new GameObject("Blumenstrauss","Verschiedene Blumen!",true,false,false);
+	    GameObject flower3 = new GameObject("Blumenstrauss","Verschiedene Blumen!",true,false,false);
 	    
 	    //Items.Personen etc Erstellen
-//	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,true);
-//	    GameObject flower2= new GameObject("Rose","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,true);
+	    GameObject flower= new GameObject("Lilie","blumen blumen", true,true,false);
+	    GameObject flower2= new GameObject("Rose","blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen", false,false,false);
 	    //Spielrelevante Items
 	    //fountain
 	    GameObject rabbit= new GameObject("Kaninchen","Das weiße Kaninchen",false,true,true);
@@ -129,8 +129,8 @@ public class LevelCreator
 	    GameObject Warhammer= new GameObject("KriegshammerFuer40K", "der Weltenzerstörende Kriegshammer", true, true, false);
 	    // Einfügen der Oben erstellten Objekte
 	  //fountain
-//	    fountain.itemStore(flower);
-//	    fountain.itemStore(flower2);
+	    fountain.itemStore(flower);
+	    fountain.itemStore(flower2);
 	    fountain.itemStore(rabbit);
 	   //westcave
 	   //Nothing
@@ -168,7 +168,7 @@ public class LevelCreator
 	   //Whitchcave
 	   whichCave.itemStore(which);
 	    // Uselist hinzufügen.
-//	  player.itemStore(flower3);
+	   player.itemStore(flower3);
 	   player.itemStore(hairDryer);
 	   player.itemStore(carrot);
 	   player.itemStore(cup1Filled);

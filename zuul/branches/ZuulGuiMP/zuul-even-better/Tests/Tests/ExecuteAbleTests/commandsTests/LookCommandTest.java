@@ -48,12 +48,14 @@ public class LookCommandTest  extends TestCase{
 		assertFalse(game.getTextOut().AusgabeVorhanden("Gegenstand ist nicht vorhanden."));
 		
 		//einen Aufnehmbaren Gegenstand anschauen
-		Assert.assertEquals(game.getParser().getCommand("guck Lilie").execute(game.getPlayer()),GameStatus.RUN);
-		assertTrue(game.getTextOut().AusgabeVorhanden("blumen blumen"));
+		game.getParser().getCommand("geh norden").execute(game.getPlayer());
+		Assert.assertEquals(game.getParser().getCommand("guck Harfe").execute(game.getPlayer()),GameStatus.RUN);
+		assertTrue(game.getTextOut().AusgabeVorhanden("Eine Goldene Harfe"));
+		game.getParser().getCommand("geh sueden").execute(game.getPlayer());
 		
 		//einen Nicht Aufnehmbaren Gegenstand Anschauen
-		Assert.assertEquals(game.getParser().getCommand("guck Rose").execute(game.getPlayer()),GameStatus.RUN);
-		assertTrue(game.getTextOut().AusgabeVorhanden("blumen blumen blumen die nicht ansprechen kannst und nicht aufnehmen"));
+		Assert.assertEquals(game.getParser().getCommand("guck Kaninchen").execute(game.getPlayer()),GameStatus.RUN);
+		assertTrue(game.getTextOut().AusgabeVorhanden("Das weiße Kaninchen"));
 		
 		//einen nicht sichtbaren Gegnstand Anschauen
 		Assert.assertEquals(game.getParser().getCommand("guck Holz").execute(game.getPlayer()),GameStatus.RUN);
@@ -66,13 +68,15 @@ public class LookCommandTest  extends TestCase{
 		
 		//im Raum umschauen
 		Assert.assertEquals(game.getParser().getCommand("guck raum").execute(game.getPlayer()),GameStatus.RUN);
-		assertEquals(game.getTextOut().getTextZeile(),("Im Raum erkennst du: Lilie  Kaninchen  Rose  "));
+		assertEquals(game.getTextOut().getTextZeile(),("Im Raum erkennst du: Kaninchen  "));
 		game.getTextOut().clearTextOut();
 		
 		//ein gefülltes Inventar anschauen
-		Assert.assertEquals(game.getParser().getCommand("nimm Lilie").execute(game.getPlayer()),GameStatus.RUN);
+		game.getParser().getCommand("geh norden").execute(game.getPlayer());
+		Assert.assertEquals(game.getParser().getCommand("nimm Harfe").execute(game.getPlayer()),GameStatus.RUN);
 		Assert.assertEquals(game.getParser().getCommand("guck inventar").execute(game.getPlayer()),GameStatus.RUN);
-		assertEquals(game.getTextOut().getTextZeile(),("In dein Inventar befindet sich: Lilie  "));
+		assertEquals(game.getTextOut().getTextZeile(),("In dein Inventar befindet sich: Harfe  "));
+		game.getParser().getCommand("geh sueden").execute(game.getPlayer());
 		
 	}
 

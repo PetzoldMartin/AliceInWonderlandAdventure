@@ -32,7 +32,6 @@ public class NullCommand extends Command
 
 	@Override
 	public void showSpecialHelp() {
-		// TODO Auto-generated method stub
 		
 	}
 }

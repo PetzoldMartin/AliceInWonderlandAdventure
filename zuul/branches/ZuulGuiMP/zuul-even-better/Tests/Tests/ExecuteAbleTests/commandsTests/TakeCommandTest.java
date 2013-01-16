@@ -40,10 +40,11 @@ public class TakeCommandTest  extends TestCase{
 		Assert.assertEquals("", game.getPlayer().getAllItemsToString());
 		Assert.assertEquals(game.getParser().getCommand("nimm Rose").execute(game.getPlayer()),GameStatus.RUN);
 		Assert.assertEquals("", game.getPlayer().getAllItemsToString());
-		Assert.assertEquals(game.getParser().getCommand("nimm Lilie").execute(game.getPlayer()),GameStatus.RUN);
-		Assert.assertEquals("Lilie ", game.getPlayer().getAllItemsToString());
+		game.getParser().getCommand("geh norden").execute(game.getPlayer());
+		Assert.assertEquals(game.getParser().getCommand("nimm Harfe").execute(game.getPlayer()),GameStatus.RUN);
+		Assert.assertEquals("Harfe ", game.getPlayer().getAllItemsToString());
 		Assert.assertEquals(game.getParser().getCommand("nimm Holz").execute(game.getPlayer()),GameStatus.RUN);
-		Assert.assertEquals("Lilie ", game.getPlayer().getAllItemsToString());
+		Assert.assertEquals("Harfe ", game.getPlayer().getAllItemsToString());
 	}
 
 	@Test

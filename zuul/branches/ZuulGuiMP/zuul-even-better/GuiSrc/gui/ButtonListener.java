@@ -2,16 +2,29 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+/**
+ * Die Listener Klasse für die Funtionsbuttons der Gui
+ * @author Aismael
+ *
+ */
 public class ButtonListener implements ActionListener
 {
 
-	private String label;
-	private GuiString gst;
+	private String label;//der label des Listeners vom Button übergeben
+	private GuiString gst;//Die Übergabeklasse der Gui
+	/**
+	 * der Konstruktor des Button listeners
+	 * @param label der Text der an die Übergabeklasse der Gui weitergegeben wird
+	 * @param gst Die Übergabeklasse der Gui
+	 */
 	public ButtonListener(String label,GuiString gst){
 		this.setLabel(label);
 		this.gst=gst;
 	}
 	@Override
+	/**
+	 * Die Methode die das Label Auswertet und den Guistring anspricht
+	 */
 	public void actionPerformed(ActionEvent e) {
 		if(gst.hasInsert()){
 			switch (label) {
@@ -102,12 +115,12 @@ public class ButtonListener implements ActionListener
 				gst.setStringAndSend(label);
 				break;
 			default:
-				//System.out.println(label);
 				gst.setString(label);
 				break;
 			}
 		}
 	}
+	
 	public String getLabel() {
 		return label;
 	}

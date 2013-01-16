@@ -141,13 +141,14 @@ public class Game extends Observable implements Runnable,Observer
         if(gameStatus==GameStatus.RESTART){
         	this.newGameInitialize();
         	this.play();
+        	ischanged=true;
         }else{
         	textOut.lineEntry("Danke fürs Spielen.  Schade das du Gehst.");
         	textOut.ausgabe();
         	try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				System.err.print("Beim herunterfahren ist ein Fehler aufgetreten");
 				e.printStackTrace();
 			}
         	System.exit( 0 );

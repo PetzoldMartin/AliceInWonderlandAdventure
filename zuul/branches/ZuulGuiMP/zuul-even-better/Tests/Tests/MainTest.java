@@ -54,8 +54,6 @@ public class MainTest extends TestSuite {
 		mySuite.addTestSuite(DialogCommandTest.class);
 		mySuite.addTestSuite(ExecuteAbleTest.class);
 		mySuite.addTestSuite(DialogEndCommandTest.class);
-		// ... weitere Testklassen hinzufügen
-		//FIXME Commandwords Test!!!
 		return mySuite;
 	}
 }

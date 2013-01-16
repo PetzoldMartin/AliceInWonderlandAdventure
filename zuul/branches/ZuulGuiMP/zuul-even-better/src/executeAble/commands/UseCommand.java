@@ -1,6 +1,5 @@
 package executeAble.commands;
 
-//TODO REDO
 import zuulCore.Game;
 import zuulCore.GameObject;
 import zuulCore.thingsWithstore.Player;

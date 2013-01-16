@@ -29,38 +29,42 @@ import java.awt.event.ActionEvent;
 public class GameGui extends JFrame implements Runnable, Observer {
 
 	private static final long serialVersionUID = -7974319251489449012L;
-	private JPanel contentPane;
-	private String currentRoom = "white";
-	private JLabel Bildanzeige;
-	private boolean isChanged = true;
-	private JTextArea outText;
-	private String ausgabe = "Start";
-	private JButton Ende;
-	private JButton Restart;
-	private JButton Hilfe;
+	private JPanel contentPane;//das Hauptpannel der Gui
+	private String currentRoom = "white";//der String des Aktuellen raumes
+	private JLabel Bildanzeige;//das panel der bildanzeige
+	private boolean isChanged = true;//das Boolean das angibt ob die gui Aktuallisiert werden wird
+	private JTextArea outText;//das panel für die Textausgabe
+	private String ausgabe = "Start";//der String der Textausgabe
+	private JButton Ende;//der Button um das spiel zu beenden
+	private JButton Restart;//der Button um das spiel neu zu starten
+	private JButton Hilfe;//der Button um die hilfe anzuzeigen
 	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5,
-			Kommando6;
-	private String currentInventory = "";
-	private String currentCommands = "";
+			Kommando6;//die Buttons für Die game kommandos
+	private String currentInventory = "";//das aktuelle spiel inventar
+	private String currentCommands = "";//die Aktuellen Spielekommandos
 	private JButton[] KommandoButtons;// die Arreyliste der Kommando Buttons
 	private JButton[] Rauminventar;// das Arrey mit den Rauminventar Buttons
 	private JButton[] PlayerInventar;// das Arrey mitt den Spielerinventar
 										// Buttons
 	private GuiString gst;// der an das spiel zu übergebende String als
 							// ÜbergabeKlasse
-	private String currentRoomInventory = "";
+	private String currentRoomInventory = "";//das  Aktuelle trauminventar
 	private JButton RoomInventar1p1, RoomInventar1p2, RoomInventar1p3,
-			RoomInventar2p1, RoomInventar2p2, RoomInventar2p3;
+			RoomInventar2p1, RoomInventar2p2, RoomInventar2p3;//die Buttons für das rauminventar
 	private JButton Inventar1p1, Inventar1p2, Inventar1p3, Inventar2p1,
-			Inventar2p2, Inventar2p3;
-	private String currentDoors = "";
-	private JButton btnNord, btnSued, btnWest, btnEast;
+			Inventar2p2, Inventar2p3;//das inventar des Spielers
+	private String currentDoors = "";//die Aktuellen Ausgänge des raumes
+	private JButton btnNord, btnSued, btnWest, btnEast;//Die buttons der ausgänge
 	private ButtonListener K1, K2, K3, K4, K5, K6, RI1, RI2, RI3, RI4, RI5,
-			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;
-	private JLabel lblOutput;
+			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;//Die listener der Guibuttons für spielrelevante dinge
+	private JLabel lblOutput;//das Label mit der anzeige der Ausgewählten gegensstände und richtungen
 
+	/***
+	 * der konstruktor der game gui
+	 */
 	public GameGui() {
 		gst = new GuiString();
+		//---------------------Initialisierung der Gui komponentn--------------------
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -218,7 +222,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		lblWindrose.setBounds(550, 400, 150, 150);
 		contentPane.add(lblWindrose);
 
-		// ----
+		// -------------Kommando buttons--------------------
 
 		JLabel Kommandos = new JLabel("Kommandos");
 		Kommandos.setForeground(Color.BLACK);
@@ -282,6 +286,8 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		Bildanzeige.setBounds(23, 140, 500, 368);
 		contentPane.add(Bildanzeige);
 
+		
+		//-----------------zusätzliche GUI Componenten-------------------------
 		JLabel Avatar = new JLabel(new ImageIcon(
 				GameGui.class.getResource("/data/Alice.png")));
 		Avatar.setBounds(0, 0, 92, 129);
@@ -304,7 +310,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		lblOutput.setBounds(260, 505, 141, 23);
 		contentPane.add(lblOutput);
 
-		// Buttons in arreylist initialisieren
+		// Buttons in arreylisten initialisieren
 		JButton[] KommandoButtons = { Kommando1, Kommando2, Kommando3,
 				Kommando4, Kommando5, Kommando6 };
 		this.KommandoButtons = KommandoButtons;
@@ -316,6 +322,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 				Inventar2p1, Inventar2p2, Inventar2p3 };
 		this.PlayerInventar = PlayerInventar;
 
+		//-------------------Listener der SpielerButtons-----------------
 		K1 = new ButtonListener(Kommando1.getText(), gst);
 		K2 = new ButtonListener(Kommando2.getText(), gst);
 		K3 = new ButtonListener(Kommando3.getText(), gst);
@@ -370,18 +377,22 @@ public class GameGui extends JFrame implements Runnable, Observer {
 
 	}
 
+	/**
+	 * Die Methode Updatet 
+	 */
 	public void guiUpdate() {
 		Bildanzeige.setIcon(new ImageIcon(GameGui.class.getResource("/data/"
 				+ currentRoom + ".png")));
 		outText.setText(ausgabe);
 		outText.setCaretPosition(outText.getText().length());
-		// ansprechen der Kommandobuttons
+		// ansprechen der guibuttons
 		this.setButtons(new StringTokenizer(currentCommands));
 		this.setPlayerinventory(PlayerInventar, new StringTokenizer(
 				currentInventory));
 		this.setPlayerinventory(Rauminventar, new StringTokenizer(
 				currentRoomInventory));
 		this.setDirection(new StringTokenizer(currentDoors));
+		//Aktualliesieren der Guibuttonlistener
 		K1.setLabel(Kommando1.getText());
 		K2.setLabel(Kommando2.getText());
 		K3.setLabel(Kommando3.getText());
@@ -411,6 +422,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	}
 
 	@Override
+	/**
+	 * 
+	 */
 	public void run() {
 		this.setVisible(true);
 
@@ -418,7 +432,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
+				System.err.println("Während des Gui delay ist ein fehler Aufgetreten");
 				e.printStackTrace();
 			}
 			this.repaint();
@@ -439,6 +453,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		currentRoom = s;
 	}
 
+	/**
+	 * 
+	 * @param tokenizer
+	 */
 	public void setDirection(StringTokenizer tokenizer) {
 		btnEast.setVisible(false);
 		btnNord.setVisible(false);
