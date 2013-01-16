@@ -44,7 +44,6 @@ public class TextOut extends Observable {
 
 		}
 		if (newEntry != null) {
-			System.out.print(newEntry);
 			gameMakeTextout(newEntry);
 		}
 		clearTextOut();
