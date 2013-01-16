@@ -14,12 +14,15 @@ import gameEnums.PlayerSize;
 /**
  * die Klasse in der festgelegt wird welchen Auslöseworten ({@link GameObject}en oder directions) welche {@link GameplayRule}
  * zugeordnet ist
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class UsableCreator {
 
-	private HashMap<String, GameplayRule> rules;// der interne speicher für die Spieleregeln
+	/**
+	 *  der interne speicher für die Spieleregeln
+	 */
+	private HashMap<String, GameplayRule> rules;
 
 	public UsableCreator() {
 		rules = new HashMap<String, GameplayRule>();
@@ -42,7 +45,7 @@ public class UsableCreator {
 		fourAdder(new matchItems("BrennenderOfen", "Teekanne", "TeekanneVollTee", true, true));
 		fourAdder(new matchItems("TeekanneVollTee", "BlaueTasse", "BlaueTasseVollTee", false, true));
 		fourAdder(new matchItems("TeekanneVollTee", "RoteTasse", "RoteTasseVollTee", false, true));
-		fourAdder(new matchItems("RoteTasseVollTee", "Hutmacher", "Schluessel", false, true));
+		fourAdder(new matchItems("RoteTasseVollTee", "Hutmacher", "Schluessel", true, false));
 		fourAdder(new matchItems("Kessel", "Hexe", "KriegshammerFuer40K", true, true));
 		
 		//Spielende

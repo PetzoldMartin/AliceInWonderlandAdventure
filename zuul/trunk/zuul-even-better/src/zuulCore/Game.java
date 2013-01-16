@@ -37,11 +37,26 @@ import zuulCore.thingsWithstore.Player;
 public class Game extends Observable implements Runnable,Observer
 
 {
-    private Parser parser;// der Textparser des Spieles
-    private Player player;// die Instanz der Player Klasse des Spieles
+	/** der Textparser des Spieles
+	 * 
+	 */
+	private Parser parser;
+	/**
+	 *  die Instanz der Player Klasse des Spieles
+	 */
+    private Player player;
+    /**
+     * Der Aktuelle Status des Spieles
+     */
 	private GameStatus gameStatus;
+	/**
+	 * boolean ob neue Eingaben für das Spiel vorhanden sind
+	 */
 	private boolean ischanged;
-//    private LevelCreator nLC;//der Level/Raum Creator des Spieles
+
+	/**
+	 * Klasse die sämtlichen text des Spieles Weiterleitet
+	 */
 	public static TextOut textOut;
 	
     /**

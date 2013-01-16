@@ -26,7 +26,10 @@ import java.util.StringTokenizer;
 
 public class Parser{
 
-	private CommandWords commands; // enthält alle KommandoWörter
+	/**
+	 *  enthält alle KommandoWörter
+	 */
+	private CommandWords commands; 
 	
 	/**
 	 * der Konstruktor des Parsers

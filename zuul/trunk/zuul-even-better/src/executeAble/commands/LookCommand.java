@@ -6,7 +6,7 @@ import zuulCore.thingsWithstore.Player;
 
 /**
  * Die Klasse für ein Kommand zum ansehen von Gegenständen Räumen und des Spielerinventars
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class LookCommand extends Command {
@@ -19,7 +19,7 @@ public class LookCommand extends Command {
 
 	/**
 	 * Die Methode zum auswerten was angesehen werden soll die dann die richtige beschreibung auf die Ausgabe schreibt
-	 * @param der Spieler des Spieles
+	 * @param player der Spieler des Spieles
 	 */
 	public GameStatus execute(Player player) {
 		if (hasSecondWord()&!hasThirdWord()) {

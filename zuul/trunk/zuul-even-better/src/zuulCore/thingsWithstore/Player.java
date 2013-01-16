@@ -18,11 +18,29 @@ import zuulCore.ThingWithStore;
  */
 
 public class Player extends ThingWithStore {
-	private Room currentRoom;//der Raum indem sich der Spieler befindet.
-	private PlayerSize size = PlayerSize.NORMAL;//die Größe die der Spieler hat.
-	 private UsableCreator nUC; // Erstellt liste der Verwendbaren Items
-	 private DialogCreator nDC;//
+	/**
+	 * der Raum indem sich der Spieler befindet.
+	 */
+	private Room currentRoom;
+	/**
+	 * die Größe die der Spieler hat.
+	 */
+	private PlayerSize size = PlayerSize.NORMAL;
+	/**
+	 *  enthält liste der Verwendbaren Items
+	 */
+	 private UsableCreator nUC; 
+	 /**
+	 *  enthält liste der Verwendbaren Dialoge
+	 */
+	 private DialogCreator nDC;
+	 /**
+		 *  enthält Personen Gegenstände Räume
+		 */
 	 private LevelCreator nLC;
+	 /**
+	  * enthält die Commandowörter
+	  */
 	 private CommandWords nCW;
 	
 	/**

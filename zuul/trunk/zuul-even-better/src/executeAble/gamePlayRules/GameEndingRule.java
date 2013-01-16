@@ -6,23 +6,26 @@ import zuulCore.Game;
 import zuulCore.thingsWithstore.Player;
 /**
  *
- *
+ * @author Martin Petzold
  */
 public class GameEndingRule extends GameplayRule {
 
 
 
-	
+	/**
+	 * Konstruktor der Game ending rule
+	 * @param secondWord das Befehlswort für die {@link GameEndingRule}
+	 */
 	public GameEndingRule(String secondWord) {
 		super(secondWord, null, null);
 
 	}
 
+	@Override
 	/**
 	 * 
-	 * 
+	 * beendet einen Dialog
 	 */
-	@Override
 	public GameStatus execute(Player player) {
 		if(player.hasReadyToUseObject(getSecondWord())){
 			if(player.getSpecialObject(getSecondWord()).isVisebility()){

@@ -6,11 +6,17 @@ import zuulCore.GameObject;
 import zuulCore.thingsWithstore.Player;
 /**
  * 
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class matchItems extends GameplayRule {
+	/**
+	 * {@link Boolean}s zum löschen der beteiligten Gameobjekte
+	 */
 	boolean firstDelete, secondDelete;
+	/**
+	 * der Spieler des Spieles
+	 */
 	Player player;
 
 	/**

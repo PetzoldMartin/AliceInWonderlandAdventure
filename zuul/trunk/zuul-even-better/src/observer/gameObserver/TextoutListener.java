@@ -8,13 +8,16 @@ import java.util.Observer;
 /**
  * Die Klasse die die Textausgabe auf veränderungen überprüft und diese an den 
  * {@link TextOutActioner} weitergibt
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class TextoutListener implements Observer {
 	
 
-	private TextOutActioner guiActioner;//enthält die Textausgaebe
+	/**
+	 * enthält die Textausgaebe
+	 */
+	private TextOutActioner guiActioner;
 
 	/**
 	 * der Konstruktor des {@link TextoutListener}

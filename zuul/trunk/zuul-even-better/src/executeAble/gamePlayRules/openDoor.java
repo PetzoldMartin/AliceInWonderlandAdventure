@@ -12,7 +12,10 @@ import zuulCore.thingsWithstore.Player;
  */
 public class openDoor extends GameplayRule {
 
-	private boolean keyRemove;//boolean ob der Schlüssel entfernt werden soll
+	/**
+	 * boolean ob der Schlüssel entfernt werden soll
+	 */
+	private boolean keyRemove;
 
 	/**
 	 * Der Konstruktor der openDoor Regel

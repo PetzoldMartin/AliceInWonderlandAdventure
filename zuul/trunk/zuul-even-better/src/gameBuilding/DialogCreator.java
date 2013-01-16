@@ -7,13 +7,15 @@ import executeAble.commands.DialogCommand;
 /**
  * Die Klasse die Die Spieldialoge erstellt und enthält
  * 
- * @author Aismael
+ * @author Martin Petzold
  * 
  */
 
 public class DialogCreator {
-	private HashMap<String, DialogCommand> dialogs;// Map die die Dialoge
-													// enthält
+	/**
+	 *  Map die die Dialoge enthält
+	 */
+	private HashMap<String, DialogCommand> dialogs;
 
 	/**
 	 * der Konstruktor des DialogCreators

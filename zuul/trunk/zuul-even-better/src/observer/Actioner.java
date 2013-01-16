@@ -1,7 +1,11 @@
 package observer;
 
 import java.util.Observable;
-
+/**
+ * Klasse die Strings an einen Observer übergibt
+ * @author Aismael
+ *
+ */
 public class Actioner extends Observable{
 	
 	

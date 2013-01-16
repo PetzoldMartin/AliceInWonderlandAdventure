@@ -4,15 +4,14 @@ import gameEnums.GameStatus;
 import zuulCore.Game;
 import zuulCore.thingsWithstore.Player;
 
-public class RestartCommand extends Command 
-{
 /**
  * @author Martin Petzold
  * @version 0.1 (October 2012)
- */
-	/*
 	 * Konstruktor von Objekten der Klasse RestartCommand
 	 */
+public class RestartCommand extends Command 
+{
+
 	    public RestartCommand()
 	    {
 	    }

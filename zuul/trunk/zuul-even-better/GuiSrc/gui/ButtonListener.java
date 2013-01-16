@@ -4,14 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  * Die Listener Klasse für die Funtionsbuttons der Gui
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class ButtonListener implements ActionListener
 {
 
-	private String label;//der label des Listeners vom Button übergeben
-	private GuiString gst;//Die Übergabeklasse der Gui
+	/**
+	 * der label des Listeners vom Button übergeben
+	 */
+	private String label;
+	/**
+	 * Die Übergabeklasse der Gui
+	 */
+	private GuiString gst;
 	/**
 	 * der Konstruktor des Button listeners
 	 * @param label der Text der an die Übergabeklasse der Gui weitergegeben wird

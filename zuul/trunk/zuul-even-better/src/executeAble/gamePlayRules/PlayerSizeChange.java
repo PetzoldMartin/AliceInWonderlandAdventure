@@ -7,12 +7,18 @@ import zuulCore.GameObject;
 import zuulCore.thingsWithstore.Player;
 /**
  * Die Spielregel um mit einem {@link GameObject} die Spielergröße zu verändern
- * @author Aismael
+ *  @author Martin Petzold
  *
  */
 public class PlayerSizeChange extends GameplayRule {
 
-	private boolean remove;//boolean ob das {@link GameObject}  entfernt werden soll
+	/**
+	 * boolean ob das {@link GameObject}  entfernt werden soll
+	 */
+	private boolean remove;
+	/**
+	 * die Interne Spielergrösse {@link PlayerSize}
+	 */
 	private PlayerSize size;
 
 	/**

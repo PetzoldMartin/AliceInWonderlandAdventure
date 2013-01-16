@@ -9,7 +9,7 @@ import zuulCore.thingsWithstore.Player;
  * Objekte der Klasse ExecuteAble können zwei optionale argument Woerter beinhalten.
  * 		
  * 
- * Wenn die Argumentwoerter nicht Vorhanden sind sind sie <null>
+ * Wenn die Argumentwoerter nicht Vorhanden sind sind sie null <null>
  * 
  * @author Martin Petzold
  * @version 1.1 (October 2012)
@@ -17,12 +17,18 @@ import zuulCore.thingsWithstore.Player;
 
 public abstract class ExecuteAble
 {
+	/**
+	 * das Secondword der Gamerule
+	 */
     private String secondWord;
+    /**
+	 * das Thirdword der Gamerule
+	 */
 	private String thirdWord;
 
     /**
      * Erzeugt ein executeAble-Objekt. Es werden zwei optionale argument Woerter 
-     * unterstützt. Beide Worte  können auch <null> sein. 
+     * unterstützt. Beide Worte  können auch null<null> sein. 
      */
     public ExecuteAble()
     {

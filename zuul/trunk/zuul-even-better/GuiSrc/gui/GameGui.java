@@ -25,40 +25,114 @@ import observer.gameObserver.KommandActioner;
 import observer.gameObserver.RoomInventarActioner;
 import observer.gameObserver.SizeActioner;
 import observer.gameObserver.TextOutActioner;
-
+/**
+ * Die Hauptklasse der GUI
+ * @author Martin Petzold,Patrick Rosenkranz
+ *
+ */
 public class GameGui extends JFrame implements Runnable, Observer {
 
 	private static final long serialVersionUID = -7974319251489449012L;
-	private JPanel contentPane;//das Hauptpannel der Gui
-	private String currentRoom = "white";//der String des Aktuellen raumes
-	private JLabel Bildanzeige;//das panel der bildanzeige
-	private boolean isChanged = true;//das Boolean das angibt ob die gui Aktuallisiert werden wird
-	private JTextArea outText;//das panel für die Textausgabe
-	private String ausgabe = "Start";//der String der Textausgabe
-	private JButton Ende;//der Button um das spiel zu beenden
-	private JButton Restart;//der Button um das spiel neu zu starten
-	private JButton Hilfe;//der Button um die hilfe anzuzeigen
+	/**
+	 * das Hauptpannel der Gui
+	 */
+	private JPanel contentPane;
+	/**
+	 * der String des Aktuellen raumes
+	 */
+	private String currentRoom = "white";
+	/**
+	 * das panel der bildanzeige
+	 */
+	private JLabel Bildanzeige;
+	/**
+	 * das Boolean das angibt ob die gui Aktuallisiert werden wird
+	 */
+	private boolean isChanged = true;
+	/**
+	 * das panel für die Textausgabe
+	 */
+	private JTextArea outText;
+	/**
+	 * der String der Textausgabe
+	 */
+	private String ausgabe = "Start";
+	/**
+	 * der Button um das spiel zu beenden
+	 */
+	private JButton Ende;
+	/**
+	 * der Button um das spiel neu zu starten
+	 */
+	private JButton Restart;
+	/**
+	 * der Button um die hilfe anzuzeigen
+	 */
+	private JButton Hilfe;
+	/**
+	 * die Buttons für Die game kommandos
+	 */
 	private JButton Kommando1, Kommando2, Kommando3, Kommando4, Kommando5,
-			Kommando6;//die Buttons für Die game kommandos
-	private String currentInventory = "";//das aktuelle spiel inventar
-	private String currentCommands = "";//die Aktuellen Spielekommandos
-	private JButton[] KommandoButtons;// die Arreyliste der Kommando Buttons
-	private JButton[] Rauminventar;// das Arrey mit den Rauminventar Buttons
-	private JButton[] PlayerInventar;// das Arrey mitt den Spielerinventar
-										// Buttons
-	private GuiString gst;// der an das spiel zu übergebende String als
-							// ÜbergabeKlasse
-	private String currentRoomInventory = "";//das  Aktuelle trauminventar
+			Kommando6;
+	/**
+	 * das aktuelle spiel inventar
+	 */
+	private String currentInventory = "";
+	/**
+	 * die Aktuellen Spielekommandos
+	 */
+	private String currentCommands = "";
+	/**
+	 *  die Arreyliste der Kommando Buttons
+	 */
+	private JButton[] KommandoButtons;
+	/**
+	 *  das Arrey mit den Rauminventar Buttons
+	 */
+	private JButton[] Rauminventar;
+	/**
+	 *  das Arrey mitt den Spielerinventar Buttons
+	 */
+	private JButton[] PlayerInventar;
+	/**
+	 *  der an das spiel zu übergebende String als ÜbergabeKlasse
+	 */
+	private GuiString gst;
+	/**
+	 * das  Aktuelle trauminventar
+	 */
+	private String currentRoomInventory = "";
+	/**
+	 * die Buttons für das rauminventar
+	 */
 	private JButton RoomInventar1p1, RoomInventar1p2, RoomInventar1p3,
-			RoomInventar2p1, RoomInventar2p2, RoomInventar2p3;//die Buttons für das rauminventar
+			RoomInventar2p1, RoomInventar2p2, RoomInventar2p3;
+	/**
+	 * das inventar des Spielers
+	 */
 	private JButton Inventar1p1, Inventar1p2, Inventar1p3, Inventar2p1,
-			Inventar2p2, Inventar2p3;//das inventar des Spielers
-	private String currentDoors = "";//die Aktuellen Ausgänge des raumes
-	private JButton btnNord, btnSued, btnWest, btnEast;//Die buttons der ausgänge
+			Inventar2p2, Inventar2p3;
+	/**
+	 * die Aktuellen Ausgänge des raumes
+	 */
+	private String currentDoors = "";
+	/**
+	 * Die buttons der ausgänge
+	 */
+	private JButton btnNord, btnSued, btnWest, btnEast;
+	/**
+	 * Die listener der Guibuttons für spielrelevante dinge
+	 */
 	private ButtonListener K1, K2, K3, K4, K5, K6, RI1, RI2, RI3, RI4, RI5,
-			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;//Die listener der Guibuttons für spielrelevante dinge
-	private JLabel lblOutput;//das Label mit der anzeige der Ausgewählten gegensstände und richtungen
-	private JLabel lblNormal;//das Label für die Spielergrösse
+			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;
+	/**
+	 * das Label mit der anzeige der Ausgewählten gegensstände und richtungen
+	 */
+	private JLabel lblOutput;
+	/**
+	 * das Label für die Spielergrösse
+	 */
+	private JLabel lblNormal;
 
 	/***
 	 * der konstruktor der game gui

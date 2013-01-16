@@ -11,8 +11,14 @@ import java.util.Observable;
  */
 public class TextOut extends Observable {
 
-	ArrayList<String> ausgaben;//der interne Speicher für Ausgabezeilen
-	String textZeile;//der Interne Speicher für Ausgaben die auf einer Zeile Zusammengesetzt werden sollen
+	/**
+	 * der interne Speicher für Ausgabezeilen
+	 */
+	ArrayList<String> ausgaben;
+	/**
+	 * der Interne Speicher für Ausgaben die auf einer Zeile Zusammengesetzt werden sollen
+	 */
+	String textZeile;
 	/**
 	 * Der Konstruktor der TextOut Klasse
 	 */
