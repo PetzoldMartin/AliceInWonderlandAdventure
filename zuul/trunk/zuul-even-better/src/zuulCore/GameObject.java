@@ -6,14 +6,29 @@ package zuulCore;
  * Klasse GameObject
  *
  * Erzeugt die Items die man Aufnehmen. Anschauen. und Benutzen kann.
- * 
+ * @author Patrick RosenKranz, Martin Petzold
  */
 public class GameObject {
 
-	private String objName;	//Itemname
-	private String amplification; //Itembeschreibung
+	/**
+	 * Itemname
+	 */
+	private String objName;	
+	/**
+	 * Itembeschreibung
+	 */
+	private String amplification; 
+	/**
+	 * {@link Boolean} ob das item mitnehmbar ist
+	 */
 	private boolean takeAble;
+	/**
+	 * {@link Boolean} ob das item dialogbereit ist
+	 */
 	private boolean speakAble;
+	/**
+	 * {@link Boolean} ob das item sichbar ist
+	 */
 	private boolean visebility;
 	
 	/**

@@ -7,15 +7,21 @@ import zuulCore.GameObject;
 import zuulCore.thingsWithstore.Player;
 import zuulCore.thingsWithstore.Room;
 
+/**
+ * Diese Klasse beinhaltet alle Räume des Spiels und kann den Startraum zurückgehen
+ * @author Martin Petzold
+ * @version 0.1 (October 2012)
+ */
 public class LevelCreator 
 
 {
 	/**
-	 * Diese Klasse beinhaltet alle Räume des Spiels und kann den Startraum zurückgehen
-	 * @author Martin Petzold
-	 * @version 0.1 (October 2012)
+	 * der Startraum des Spielers
 	 */
 	private Room startRoom;
+	/**
+	 * Der Spieler des spieles
+	 */
 	private Player player;
 	
 	/**

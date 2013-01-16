@@ -27,6 +27,9 @@ import executeAble.commands.UseCommand;
  */
 
 public class CommandWords {
+	/**
+	 * Hashmap mit den SpieleCommandos
+	 */
 	private HashMap<String, Command> commands;
 
 	/**

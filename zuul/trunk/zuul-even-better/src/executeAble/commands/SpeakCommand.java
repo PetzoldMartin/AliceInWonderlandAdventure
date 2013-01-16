@@ -7,7 +7,7 @@ import zuulCore.thingsWithstore.Player;
 
 /**
  * Unterklasse der Basisklasse Command
- * 
+ *  @author Martin Petzold
  * Dient um mit GameObjekten zu Reden.
  * 
  */

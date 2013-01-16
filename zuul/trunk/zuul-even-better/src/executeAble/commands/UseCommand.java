@@ -7,7 +7,7 @@ import executeAble.gamePlayRules.GameplayRule;
 import gameEnums.GameStatus;
 /**
  * 
- * @author Aismael
+ *  @author Martin Petzold
  * das {@link Command} das den Spieler {@link GameObject}e auf verschiedene Weise je nach {@link GameplayRule}
  * benutzen lässt
  */

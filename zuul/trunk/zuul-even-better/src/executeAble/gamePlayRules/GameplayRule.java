@@ -11,8 +11,14 @@ import executeAble.ExecuteAble;
  */
 public abstract class GameplayRule extends ExecuteAble{
 
-	private String name;//das Auslösewort der Spieleregel
-	private String maniO;//das interne SchlüsselWort für den zu manipulierenden Spielteil
+	/**
+	 * das Auslösewort der Spieleregel
+	 */
+	private String name;
+	/**
+	 * das interne SchlüsselWort für den zu manipulierenden Spielteil
+	 */
+	private String maniO;
 
 	/**
 	 * Der Konstruktor der Allgemeinen Spielregel

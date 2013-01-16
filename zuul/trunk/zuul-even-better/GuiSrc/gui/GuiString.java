@@ -2,9 +2,16 @@ package gui;
 
 import java.util.Observable;
 
-//kein runnable mehr
-public class GuiString extends Observable {
 
+/**
+ * Klasse die den Outputstring der Gui beinhaltet
+ * @author Martin Petzold
+ *
+ */
+public class GuiString extends Observable {
+/**
+ * Outputstring der gui
+ */
 	String Output;
 	
 	

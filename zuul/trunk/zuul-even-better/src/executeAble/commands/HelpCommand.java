@@ -13,6 +13,9 @@ import zuulCore.thingsWithstore.Player;
  */
 public class HelpCommand extends Command
 {
+	/**
+	 * Kommandowörter zu denen Hilfe angezeigt werden kann
+	 */
     private CommandWords commandWords;
     
     /**

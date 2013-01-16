@@ -4,7 +4,7 @@ import observer.Actioner;
 
 /**
  * Der Actioner der die Game Kommandos enthält
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class KommandActioner extends Actioner {

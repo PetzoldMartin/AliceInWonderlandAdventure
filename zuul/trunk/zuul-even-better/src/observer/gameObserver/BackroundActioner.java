@@ -4,7 +4,7 @@ import observer.Actioner;
 
 /**
  * Die Klasse die den namen des Aktuellen Raumes beinhaltet
- * @author Aismael
+ * @author Martin Petzold
  * 
  */
 public class BackroundActioner extends Actioner {

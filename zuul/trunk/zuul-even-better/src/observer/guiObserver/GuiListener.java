@@ -7,11 +7,14 @@ import java.util.Observer;
 /**
  * Klasse die die GUI beobachtet
  * 
- * @author Aismael
+ * @author Martin Petzold
  * 
  */
 public class GuiListener implements Observer {
 
+	/**
+	 * der zugehörige Actioner der die Werte der Gui enthält
+	 */
 	private GuiActioner gst;
 
 	/**

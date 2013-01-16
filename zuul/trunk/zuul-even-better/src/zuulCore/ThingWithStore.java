@@ -13,7 +13,10 @@ import java.util.Iterator;
  */
 public class ThingWithStore {
 
-	private HashMap<String, GameObject> store;//der interne speicher für Gameobjekte
+	/**
+	 * der interne speicher für Gameobjekte
+	 */
+	private HashMap<String, GameObject> store;
 
 	/**
 	 * Konstruktor der {@link ThingWithStore} Klasse
@@ -87,7 +90,7 @@ public class ThingWithStore {
 
 	/**
 	 * methode die Angibt ob sichtbare {@link GameObject}e vorhanden sind
-	 * @return
+	 * @return boolean ob eingegenstand sichtbar ist
 	 */
 	public boolean isThereanyvisible() {
 		for (Iterator<String> i = store.keySet().iterator(); i.hasNext();) {

@@ -23,11 +23,26 @@ import zuulCore.ThingWithStore;
 
 public class Room extends ThingWithStore
 {
-    private String description;// Die Beschreibung des Raumes
-    private HashMap<String, Room> exits;// stores exits of this room.
-    private PlayerSize sizeExpected;// die vom Raum erwartete Spielergrösse
-    private LockedStatus closed;// Status ob der Raum verschlossen ist oder nicht
-	private String name;
+	/**
+	 *  Die Beschreibung des Raumes
+	 */
+    private String description;
+    /**
+     * stores exits of this room.
+     */
+    private HashMap<String, Room> exits;
+    /**
+     * die vom Raum erwartete Spielergrösse
+     */
+    private PlayerSize sizeExpected;
+    /**
+     *  Status ob der Raum verschlossen ist oder nicht
+     */
+    private LockedStatus closed;
+	/**
+	 * der name des Raumes
+	 */
+    private String name;
  
     
     /**

@@ -10,15 +10,27 @@ import zuulCore.thingsWithstore.Player;
 
 /**
  * Die Klasse für Dialogkommands die eine Dialogoption oder einen Dialoganfandarstellt
- * @author Aismael
+ * @author Martin Petzold
  *
  */
 public class DialogCommand extends Command {
 
-	HashMap<String,Command> dialogStore;//die Hashmap die die Dialogoptionen beinhaltet
-	private String textout;//der Text der das vom Player gesagte darstellt
-	Integer name =1;//der integer der den zur ausahl benötigten namen Darstellt
-	private String textIn;//der Text der die Antwort des Dialogpartners Darstellt
+	/**
+	 * die Hashmap die die Dialogoptionen beinhaltet
+	 */
+	HashMap<String,Command> dialogStore;
+	/**
+	 * der Text der das vom Player gesagte darstellt 
+	 */
+	private String textout;
+	/**
+	 * der integer der den zur ausahl benötigten namen Darstellt
+	 */
+	Integer name =1;
+	/**
+	 * der Text der die Antwort des Dialogpartners Darstellt
+	 */
+	private String textIn;
 	
 	/**
 	 * Konstruktor zum erzeugen eines Dialogkommands als eine Dialogwurzel

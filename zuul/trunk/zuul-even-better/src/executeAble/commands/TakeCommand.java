@@ -7,7 +7,7 @@ import zuulCore.thingsWithstore.Player;
 
 /**
  * das {@link Command} das dafür sorgt das ein Spieler {@link GameObject}e in sein Inventar überführen kann
- * @author Aismael
+ *  @author Martin Petzold
  *
  */
 public class TakeCommand extends Command {
