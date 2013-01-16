@@ -135,7 +135,7 @@ public class Game extends Observable implements Runnable,Observer
      */
     public void play() 
     {    
-    	updateGuiStats();
+    	while(true){
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -143,9 +143,10 @@ public class Game extends Observable implements Runnable,Observer
                 
         GameStatus gameStatus = GameStatus.RUN;
         textOut.ausgabe();
+        updateGuiStats();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
-// ehemalige Konsoleneingabe
+// 	           ehemalige Konsoleneingabe
 //            Command command = parser.consoleReader();
 //                gameStatus = command.execute(player);
 //                textOut.ausgabe();
@@ -159,8 +160,6 @@ public class Game extends Observable implements Runnable,Observer
         }
         if(gameStatus==GameStatus.RESTART){
         	this.newGameInitialize();
-        	this.play();
-        	ischanged=true;
         }else{
         	textOut.lineEntry("Danke fürs Spielen.  Schade das du Gehst.");
         	textOut.ausgabe();
@@ -173,7 +172,7 @@ public class Game extends Observable implements Runnable,Observer
         	System.exit( 0 );
         	
         }
-        
+    	}  
     }
 
     /**
