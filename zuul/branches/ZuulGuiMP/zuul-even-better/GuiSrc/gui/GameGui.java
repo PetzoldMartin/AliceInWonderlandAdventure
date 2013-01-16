@@ -20,6 +20,7 @@ import observer.gameObserver.DoorActioner;
 import observer.gameObserver.InventarActioner;
 import observer.gameObserver.KommandActioner;
 import observer.gameObserver.RoomInventarActioner;
+import observer.gameObserver.SizeActioner;
 import observer.gameObserver.TextOutActioner;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -58,6 +59,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	private ButtonListener K1, K2, K3, K4, K5, K6, RI1, RI2, RI3, RI4, RI5,
 			RI6, I1, I2, I3, I4, I5, I6, n, o, s, w, h, r, e;//Die listener der Guibuttons für spielrelevante dinge
 	private JLabel lblOutput;//das Label mit der anzeige der Ausgewählten gegensstände und richtungen
+	private JLabel lblNormal;//das Label für die Spielergrösse
 
 	/***
 	 * der konstruktor der game gui
@@ -82,6 +84,12 @@ public class GameGui extends JFrame implements Runnable, Observer {
 						OutputInputRefresh();
 					}
 				});
+				
+				lblNormal = new JLabel("Normal");
+				lblNormal.setForeground(Color.BLACK);
+				lblNormal.setFont(new Font("Tahoma", Font.BOLD, 14));
+				lblNormal.setBounds(689, 379, 81, 32);
+				contentPane.add(lblNormal);
 				btnLschen.setBounds(424, 510, 141, 18);
 				contentPane.add(btnLschen);
 
@@ -186,7 +194,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		JLabel Richtungen = new JLabel("Bewegung");
 		Richtungen.setForeground(Color.BLACK);
 		Richtungen.setBackground(Color.GRAY);
-		Richtungen.setBounds(562, 350, 212, 23);
+		Richtungen.setBounds(562, 350, 107, 23);
 		contentPane.add(Richtungen);
 
 		btnNord = new JButton("norden");
@@ -303,12 +311,18 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		contentPane.add(scroll);
 
 		JLabel lblAusfhrungszeile = new JLabel("Ausf\u00FChrungszeile:");
+		lblAusfhrungszeile.setForeground(Color.BLACK);
 		lblAusfhrungszeile.setBounds(123, 505, 127, 23);
 		contentPane.add(lblAusfhrungszeile);
 
 		lblOutput = new JLabel("Output");
 		lblOutput.setBounds(260, 505, 141, 23);
 		contentPane.add(lblOutput);
+		
+		JLabel lblSpielergre = new JLabel("Spielergr\u00F6\u00DFe");
+		lblSpielergre.setForeground(Color.BLACK);
+		lblSpielergre.setBounds(679, 354, 91, 14);
+		contentPane.add(lblSpielergre);
 
 		// Buttons in arreylisten initialisieren
 		JButton[] KommandoButtons = { Kommando1, Kommando2, Kommando3,
@@ -378,7 +392,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	}
 
 	/**
-	 * Die Methode Updatet 
+	 * Die Methode Updatet alle Veränderbaren Dinge der Gui
 	 */
 	public void guiUpdate() {
 		Bildanzeige.setIcon(new ImageIcon(GameGui.class.getResource("/data/"
@@ -422,9 +436,6 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	}
 
 	@Override
-	/**
-	 * 
-	 */
 	public void run() {
 		this.setVisible(true);
 
@@ -432,7 +443,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
-				System.err.println("Während des Gui delay ist ein fehler Aufgetreten");
+				System.err.println("Während des Gui delay ist ein Fehler Aufgetreten");
 				e.printStackTrace();
 			}
 			this.repaint();
@@ -454,8 +465,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	}
 
 	/**
-	 * 
-	 * @param tokenizer
+	 * Die Methode die die Tokenizer eines Strings auf die Richtungsbutton verteilt
+	 * wenn die Tokens Richtungsangaben sind
+	 * @param tokenizer der zu Verarbeitendende Tokenizer
 	 */
 	public void setDirection(StringTokenizer tokenizer) {
 		btnEast.setVisible(false);
@@ -529,7 +541,7 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	/**
 	 * die methode die den Stringtokenizer auf die Kommandobuttons überträgt
 	 * 
-	 * @param tokenizer
+	 * @param tokenizer der zu übertragende Tokenizer
 	 */
 	public void setButtons(StringTokenizer tokenizer) {
 		Ende.setVisible(false);
@@ -571,6 +583,11 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		}
 	}
 
+	/**
+	 * Die Methode die Tokens eines Tokenizers auf ein Buttonarrey verteilt
+	 * @param buttons das Button Arrey was zu bearbeiten ist
+	 * @param tokenizer der Tokenizer dessen Tokenz auf das buttonarrey verteilt wird
+	 */
 	public void setPlayerinventory(JButton[] buttons, StringTokenizer tokenizer) {
 		int buttonanzahl = buttons.length;
 		for (int i = 0; i < buttons.length; i++) {
@@ -594,6 +611,10 @@ public class GameGui extends JFrame implements Runnable, Observer {
 	}
 
 	@Override
+	/**
+	 * Die Methode die Actioner des Games Beobachtet und je nach actioner
+	 * die werte in die Gui einträgt
+	 */
 	public void update(Observable arg0, Object arg1) {
 		if (arg0.getClass().equals(BackroundActioner.class)) {
 			setCurrentRoom((String) arg1);
@@ -612,6 +633,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		}
 		if (arg0.getClass().equals(DoorActioner.class)) {
 			setDoors((String) arg1);
+		}
+		if(arg0.getClass().equals(SizeActioner.class)) {
+			lblNormal.setText((String) arg1);
 		}
 
 		isChanged = true;
@@ -647,6 +671,9 @@ public class GameGui extends JFrame implements Runnable, Observer {
 		return gst;
 	}
 	
+	/**
+	 * Methode die die angewählten Gegenstände und Richtungen anzeigt
+	 */
 	public void OutputInputRefresh(){
 		StringTokenizer str = new StringTokenizer(gst.getOutput());
 		lblOutput.setText("");

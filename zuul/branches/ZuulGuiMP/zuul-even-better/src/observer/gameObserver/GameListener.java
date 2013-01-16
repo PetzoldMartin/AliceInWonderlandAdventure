@@ -16,7 +16,8 @@ public class GameListener implements Observer {
 	private KommandActioner kmdAct;//der Actioner der die Aktuellen Kommandos enthält
 	private InventarActioner inventAct;//der Aktioner der das Spielerinventar enthält
 	private RoomInventarActioner roomInventAct;//der Actioner der das Roominventar enthält
-	private DoorActioner doorActioner;
+	private DoorActioner doorActioner;//der Actioner der das Roominventar enthält
+	private SizeActioner sizeActioner;//enthält die Spielergröße
 
 	/**
 	 * der Konstruktor des GameListener
@@ -24,13 +25,15 @@ public class GameListener implements Observer {
 	 * @param kmActioner der Actioner der die Aktuellen Kommandos enthält
 	 * @param inventAct der Aktioner der das Spielerinventar enthält
 	 * @param roomInventAct der Actioner der das Roominventar enthält
+	 * @param sizeActioner enthält die Spielergröße
 	 */
-	public GameListener(BackroundActioner backRndAct,KommandActioner kmActioner, InventarActioner inventAct,RoomInventarActioner roomInventAct,DoorActioner doorActioner) {
+	public GameListener(BackroundActioner backRndAct,KommandActioner kmActioner, InventarActioner inventAct,RoomInventarActioner roomInventAct,DoorActioner doorActioner,SizeActioner sizeActioner) {
 		this.backRndAct=backRndAct;
 		this.kmdAct=kmActioner;
 		this.inventAct=inventAct;
 		this.roomInventAct=roomInventAct;
 		this.doorActioner=doorActioner;
+		this.sizeActioner=sizeActioner;
 	}
 
 	@Override
@@ -43,6 +46,7 @@ public class GameListener implements Observer {
 		inventAct.changeString(((Player)arg).getAllItemsToString());
 		roomInventAct.changeString(((Player)arg).getCurrentRoom().getAllItemsToString());
 		doorActioner.changeString(((Player)arg).getCurrentRoom().getExitString());
+		sizeActioner.changeString(((Player)arg).getSize().toString());
 	}
 	
 	

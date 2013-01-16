@@ -49,8 +49,8 @@ public class UsableCreator {
 		fourAdder(new GameEndingRule("KriegshammerFuer40K"));
 	
 		//Spielergrößmanipulation
-		fourAdder(new PlayerSizeChange("BlaueBeere", true, PlayerSize.LITTLE));
-		fourAdder(new PlayerSizeChange("RoteBeere", true, PlayerSize.BIG));
+		fourAdder(new PlayerSizeChange("BlaueBeere", true, PlayerSize.KLEIN));
+		fourAdder(new PlayerSizeChange("RoteBeere", true, PlayerSize.GROSS));
 		
 		
 		

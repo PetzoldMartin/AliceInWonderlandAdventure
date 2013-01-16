@@ -37,12 +37,12 @@ public class LevelCreator
 	    eastCave = new Room("eastCave","Du bist in einer Höhle in der nähe des Brunnens.");
 	    northCave = new Room("northCave","Du bist in einer Höhle in der nähe des Brunnens.");
 	    southCave = new Room("southCave","Du bist in einer Höhle in der nähe des Brunnens.");
-	    insideTheVase = new Room("insideTheVase","Du bist in einer braunen Vase",PlayerSize.LITTLE);
-	    attic = new Room("attic","Der Dachbode!? der Osthöhle.",PlayerSize.BIG);
+	    insideTheVase = new Room("insideTheVase","Du bist in einer braunen Vase",PlayerSize.KLEIN);
+	    attic = new Room("attic","Der Dachbode!? der Osthöhle.",PlayerSize.GROSS);
 	    madHaddersHouse = new Room("madHaddersHouse","Das verückte Haus des noch Verückteren Hutmachers.");
 	    madHaddersGarden = new Room("madHaddersGarden","Der Garten des Verückten Hutmachers.");
 	    madHaddersKitchen = new Room("madHaddersKitchen","Die unaufgeräumte Küche des Verrückten Hutmachers.");
-	    insideTheFurnance = new Room("insideTheFurnance","Du bist im Inneren des Ofens, die Wände sind schwarz.",PlayerSize.LITTLE);
+	    insideTheFurnance = new Room("insideTheFurnance","Du bist im Inneren des Ofens, die Wände sind schwarz.",PlayerSize.KLEIN);
 	    whichCave = new Room("whichCave","Der Eingang zum Schloss der Roten Königin.");
 	    
 	    // Initialisieren der Raum Ein- und Ausgänge
@@ -103,7 +103,7 @@ public class LevelCreator
 	    //Southcave
 	    GameObject boiler= new GameObject("Kessel","ein Kessel voller Wasser",true,false,true);
 	    //madHaddersHouse
-	    GameObject madHadder= new GameObject("Hutmacher","der Verückte Hutmacher",false,false,true);
+	    GameObject madHadder= new GameObject("Hutmacher","der Verückte Hutmacher",false,true,true);
 	    GameObject desk3= desk1;
 	    GameObject cup1= new GameObject("BlaueTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,true);
 	    GameObject cup2= new GameObject("RoteTasse","Eine Tasse die Nichtmehr im Schrank des Hutmachers ist",true,false,true);

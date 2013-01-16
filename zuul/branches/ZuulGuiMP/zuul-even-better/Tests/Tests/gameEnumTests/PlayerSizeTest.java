@@ -23,10 +23,10 @@ public class PlayerSizeTest extends TestCase{
 
 	@Test
 	public void test() {
-	mGP = PlayerSize.BIG;
-	assertEquals(mGP, PlayerSize.BIG);
-	mGP = PlayerSize.LITTLE;
-	assertEquals(mGP, PlayerSize.LITTLE);
+	mGP = PlayerSize.GROSS;
+	assertEquals(mGP, PlayerSize.GROSS);
+	mGP = PlayerSize.KLEIN;
+	assertEquals(mGP, PlayerSize.KLEIN);
 	mGP = PlayerSize.NORMAL;
 	assertEquals(mGP, PlayerSize.NORMAL);
 	}

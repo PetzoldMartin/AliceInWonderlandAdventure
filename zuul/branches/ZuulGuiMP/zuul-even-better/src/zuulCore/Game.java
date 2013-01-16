@@ -13,6 +13,7 @@ import observer.gameObserver.GameListener;
 import observer.gameObserver.InventarActioner;
 import observer.gameObserver.KommandActioner;
 import observer.gameObserver.RoomInventarActioner;
+import observer.gameObserver.SizeActioner;
 import observer.gameObserver.TextOutActioner;
 import observer.gameObserver.TextoutListener;
 import observer.guiObserver.GuiActioner;
@@ -51,7 +52,7 @@ public class Game extends Observable implements Runnable,Observer
 
         newGameInitialize();
         gameStatus=GameStatus.RUN;
-        
+        textOut=new TextOut();
         
         
     }
@@ -64,6 +65,7 @@ public class Game extends Observable implements Runnable,Observer
     	GameGui gG= new GameGui();
     	
     	//Beobachter die das game beobachten
+    	SizeActioner sizeActioner=new SizeActioner();
     	BackroundActioner backRndActioner=new BackroundActioner();
     	KommandActioner kmdActioner=new KommandActioner();
     	InventarActioner invActioner=new InventarActioner();
@@ -71,7 +73,7 @@ public class Game extends Observable implements Runnable,Observer
     	DoorActioner doorActioner=new DoorActioner();
     	TextOutActioner tOA= new TextOutActioner();
     	TextoutListener tol= new TextoutListener(tOA);
-    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner,doorActioner);
+    	GameListener gameListener= new GameListener(backRndActioner,kmdActioner,invActioner,rommInvActioner,doorActioner,sizeActioner);
     	game.addObserver(gameListener);
     	
     	//actioner bei Gui eingetragen
@@ -82,6 +84,7 @@ public class Game extends Observable implements Runnable,Observer
     	rommInvActioner.addObserver(gG);
     	tOA.addObserver(gG);
     	doorActioner.addObserver(gG);
+    	sizeActioner.addObserver(gG);
     	
     	//beobachter die die Gui beobachten
     	GuiActioner gAct=new GuiActioner();
@@ -107,7 +110,7 @@ public class Game extends Observable implements Runnable,Observer
         player = new Player();
         player.setCurrentRoom(player.getnLC().getStartRoom());
         parser = new Parser(player.getnCW());
-    	textOut=new TextOut();        
+    	        
     	
     }
     
@@ -127,6 +130,7 @@ public class Game extends Observable implements Runnable,Observer
         textOut.ausgabe();
         //Haupt-Spiel-Schleifschen
         while(gameStatus==GameStatus.RUN) {
+// ehemalige Konsoleneingabe
 //            Command command = parser.consoleReader();
 //                gameStatus = command.execute(player);
 //                textOut.ausgabe();

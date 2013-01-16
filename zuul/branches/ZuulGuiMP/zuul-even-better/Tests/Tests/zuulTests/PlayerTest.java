@@ -38,12 +38,12 @@ public class PlayerTest extends TestCase{
 
 	@Test
 	public void testSetSize(){
-		player.setSize(PlayerSize.LITTLE);
-		assertEquals(PlayerSize.LITTLE,player.getSize());
-		player.setSize(PlayerSize.BIG);
-		assertEquals(PlayerSize.BIG,player.getSize());
-		player.setSize(PlayerSize.BIG);
-		assertEquals(PlayerSize.BIG,player.getSize());
+		player.setSize(PlayerSize.KLEIN);
+		assertEquals(PlayerSize.KLEIN,player.getSize());
+		player.setSize(PlayerSize.GROSS);
+		assertEquals(PlayerSize.GROSS,player.getSize());
+		player.setSize(PlayerSize.GROSS);
+		assertEquals(PlayerSize.GROSS,player.getSize());
 	}
 	@Test
 	public void testWalk() {

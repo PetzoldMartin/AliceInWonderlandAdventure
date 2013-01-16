@@ -38,6 +38,9 @@ public class DialogCreator {
 	 * die methode die die Dialoge erzeugt
 	 */
 	public void intintialtheDialogcreator() {
+		
+		//----------------------------------------------------------------------------------------------------------------------------------
+		
 		// Dialog dess Kaninchens
 		// Urdialog
 		DialogCommand kaninchen = new DialogCommand("Grüße dich Allis");
@@ -79,7 +82,7 @@ public class DialogCreator {
 		kaninchen3u1u2.insertDialog(kaninchen);
 		kaninchen4.insertDialog(kaninchen);
 
-		
+		//------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		//Hutmacher dialoge
 		DialogCommand hutmacher = new DialogCommand("Hallo Allis ich habe dich erwartet.");
@@ -99,12 +102,27 @@ public class DialogCreator {
 		hutmacher1u1.insertDialog(hutmacher);
 		hutmacher1u2.insertDialog(hutmacher);
 		
+		//---------------------------------------------------------------------------------------------------------------------------------------------------
 		
+		//Feuergeist Dialoge
+		DialogCommand fireGhost=new DialogCommand("Hui ich bin der Geist, der im Kamin Wohnt..wo kommst du den her.");
+		dialogs.put("Feuergeist",fireGhost );
+		//Dialogebene 1
+		DialogCommand fireGhost1= new DialogCommand("schenkst du mir wärme?", "wenn du mir Musik spielst");
+		fireGhost.insertDialog(fireGhost1);
+
+		//----------------------------------------------------------------------------------------------------------------------------------------------------
 		
+		//Schneemann Dialoge
+		DialogCommand snowMan=new DialogCommand("Ein eisiges Hallo ***Oh du Fröhliche****Grmpf");
+		dialogs.put("Schneemann", snowMan);
+		//Dialogebene 1
+		DialogCommand snowMan1=new DialogCommand("Was ist du schaust so Traurig","Ich will es wärmer haben");
+		snowMan.insertDialog(snowMan1);
+		
+		//--------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		dialogs.put("Katze", new DialogCommand("Hihihi na da bist ja Allis hat ja lange gedauert"));
-		dialogs.put("Feuergeist", new DialogCommand("Hui ich bin der Geist, der im Kamin Wohnt..wo kommst du den her."));
-		dialogs.put("Schneemann", new DialogCommand("Ein eisiges Hallo ***Oh du Fröhliche****"));
 	}
 
 	/**
