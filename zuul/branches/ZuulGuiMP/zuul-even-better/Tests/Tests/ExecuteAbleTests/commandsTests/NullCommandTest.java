@@ -6,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.Game;
 import zuulCore.thingsWithstore.Player;
 import executeAble.commands.NullCommand;
 import gameEnums.GameStatus;
@@ -16,12 +15,12 @@ public class NullCommandTest extends TestCase{
 
 	NullCommand command;
 	Player player;
-	private Game game;
+	//private Game game;
 	
 	@Before
 	public void setUp() throws Exception {
 		command = new NullCommand();
-		game= new Game();
+		//game= new Game();
 	}
 
 	@Test

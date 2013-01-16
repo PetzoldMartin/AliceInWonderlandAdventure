@@ -7,20 +7,18 @@ import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import zuulCore.Game;
-
 
 
 
 public class CommandWordsTest extends TestCase{
 	
 	CommandWords cWT;
-	private Game game;
+	//private Game game;
 
 	@Before
 	public void setUp() throws Exception {
 		cWT = new CommandWords();
-		game= new Game();
+		//game= new Game();
 	}
 
 	@Test
